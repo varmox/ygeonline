@@ -5,17 +5,17 @@
 
 [[main]]
   name = "VMware"
-  url = ""
+  url = "post/vmware"
   weight = -114
 
-  [[main]]
+[[main]]
   name = "K8"
-  url = ""
+  url = "post/kubernetes"
   weight = -113
 
 [[main]]
   name = "Networking"
-  url = "post/rich-content/"
+  url = "tags/networking/"
   weight = -109
 
 # Submenus are done this way: parent -> identifier

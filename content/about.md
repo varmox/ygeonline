@@ -6,4 +6,4 @@ aliases = ["about-us", "about-hugo", "contact"]
 author = "YannickGerber"
 +++
 
-This blog reflects my own opinions.
+A blog about networking, virtualization and general IT related stuff. Opinions are my own.

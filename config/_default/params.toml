@@ -2,9 +2,9 @@
 enableSearch = true
 
 # socials
-twitter = "@janedoe"
+twitter = "@varmox"
 largeTwitterCard = false # set to true if you want to show a large twitter card image. The default is a small twitter card image
-introDescription = "Technologist, perpetual student, teacher, continual incremental improvement."
+introDescription = "Technologist, perpetual student, continual incremental improvement."
 # introURL = "about/" # set the url for the 'read more' button below the introDescription, or set to false to not show the button
 # description = "A blog based around virtualization, networking and general IT topics. Opinions are my own." # Set your site's meta tag (SEO) description here. Alternatively set this description in your home page content file e.g. content/_index.md. Whatever is set in the latter will take precedence.
 # keywords = ["itblog", "tanzu", "vmwareblog"] # Set your site's meta tag (SEO) keywords here. Alternatively set these in your home page content file e.g. content/_index.md. Whatever is set in the latter will take precedence.
@@ -48,7 +48,7 @@ fontsDir = "fonts/" # without a leading forward slash
 fallBackOgImage = "images/thumbnail.png"
 
 # Logo image
-logo = "logos/logo.png"
+logo = ""
 
 # center logo on navbar
 centerLogo = false # Set to "true" for centering or "false" for left aligned.
@@ -86,8 +86,8 @@ enforceLightMode = false
 # footerLogo = "icons/copy.svg"
 
 # Customize Sidebar Disclaimer Text
-# sidebardisclaimer = true
-# disclaimerText = "The opinions expressed on this site are my own personal opinions and do not represent my employer’s view in any way."
+sidebardisclaimer = true
+disclaimerText = "The opinions expressed on this site are my own personal opinions and do not represent my employer’s view in any way."
 
 # Text for the languages menu.
 # languageMenuName = "🌐"
@@ -105,7 +105,7 @@ enforceLightMode = false
 # utterancesIssueTerm = "pathname" # Default: pathname
 
 # Maximum number of recent posts. (default: 8)
-# numberOfRecentPosts = 8
+# numberOfRecentPosts = 0
 
 # Maximum number of featured posts. (default: 8)
 # numberOfFeaturedPosts = 8
@@ -122,7 +122,7 @@ enforceLightMode = false
 
 # The year when ths website was created, this value is used in the copyright
 # notice of the footer.
-# since = 2016
+since = 2022
 
 # Show related content at the end of an article based on the 'series' taxonomy. Can be set in post front matter.
 # showRelatedInArticle = false
@@ -130,8 +130,8 @@ enforceLightMode = false
 
 # website author
 [author]
-name = "Jane Doe"
-# photo = "images/jane-doe.png" #include this if you would like to show the author photo on the sidebar
+name = "Yannick Gerber"
+
 
 [plausible_analytics]
 enable = false # to enable plausible analytics set to true.
