@@ -43,11 +43,11 @@
   name = "github"
   type = "social"
   weight = 1
-  url = "https://github.com/#"
+  url = "https://github.com/varmox"
 [[social]]
   name = "twitter"
   weight = 2
-  url = "https://twitter.com/#"
+  url = "https://twitter.com/varmox"
 [[social]]
   name = "linkedin"
   weight = 3
