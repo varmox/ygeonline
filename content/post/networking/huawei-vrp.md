@@ -34,7 +34,7 @@ This post gives an overview about the network operating system for huawei networ
 |---|---|---|
 | Enter System View   |  < Huawei > sys  
 | Enter Interface View   |  [R1] int GigabitEthernet0/0/1  |   |   |   |
-|   |   |   |   |   |
+| Enter Protocol View  |  [R1] ospf 1  |   |   |   |
  
 
  
@@ -63,9 +63,9 @@ This post gives an overview about the network operating system for huawei networ
 
  
 
-Enter Protocol View 
 
-[R1] ospf 1 
+
+
 
  
 
