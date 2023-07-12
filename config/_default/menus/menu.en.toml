@@ -1,16 +1,16 @@
-[[main]]
-  name = "Home"
-  url = ""
-  weight = -115
+#[[main]]
+# name = "Home"
+#  url = ""
+#  weight = -115
 
 [[main]]
   name = "VMware"
-  url = "post/vmware"
+  url = "tags/vmware"
   weight = -114
 
 [[main]]
-  name = "K8"
-  url = "post/kubernetes"
+  name = "K8s"
+  url = "tags/kubernetes"
   weight = -113
 
 [[main]]
@@ -47,7 +47,7 @@
 [[social]]
   name = "twitter"
   weight = 2
-  url = "https://twitter.com/varmox"
+  url = "https://twitter.com/y_gerber"
 [[social]]
   name = "linkedin"
   weight = 3
