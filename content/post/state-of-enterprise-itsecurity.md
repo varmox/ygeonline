@@ -28,9 +28,29 @@ tags:
 The state of enterprise IT-Security is pretty bad and I don't think the current strategy to better it is any good. And here's the why:
 
 
-### status quo
+**status quo**
+
 But firstly, what are the security concerns of businesses regarding IT-Security?
 
-- Ransomware 
-- Data Leaks
+If we take the CIA triad for help:
+- Ransomware that disrups availability and integrity
+- Data Leaks that violences confidentiality
+- malware/virus that disrups integrity
+
+.. and more
+
+**current ways "to fix" the issue**
+
+If we look at current solutions that enterprise commonly use to "fix it":
+
+- somekind of antivirus systems (on servers, clients, firewalls)
+- IPD/IDS Systems (nothing other than an antivirus running on a network device)
 - 
+
+**Why I think current ways to better IT-Security is b*llshit**
+
+We simply to not fix the root cause of the problems. We use somekind of software to secure unsecure software and think the "secure" sofware is initself secure. 
+But there is a fundamental issue, every software has bugs. With each additional line of code written, there are potential bugs in that exact code. So more code just means more bugs. Bugs mean potential security bugs and weaknesses. 
+
+- You cannot train user to be secure 
+Cat an mouse game

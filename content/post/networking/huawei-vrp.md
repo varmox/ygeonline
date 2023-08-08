@@ -35,14 +35,29 @@ This post gives an overview about the network operating system for huawei networ
 | Enter System View   |  < Huawei > sys  
 | Enter Interface View   |  [R1] int GigabitEthernet0/0/1  |   |   |   |
 | Enter Protocol View  |  [R1] ospf 1  |   |   |   |
- 
+| Display Running Config in current View |  [R1- GigabitEthernet0/0/3] display this  |   |   |   |
+| Display current configuration of the System  | [R1] dis current-config   |   |   |   |
+
+ **System Configuration**
+
+ |  Task |  Command | Comment  |  
+|---|---|---|
+| Set hostname  |  [Huawei] sysname R1 
 
  
+**Interface Configuration**
 
- 
+ |  Task |  Command | Comment  |  
+|---|---|---|
+| Set IP Address of Interface  |  [R1-GigabitEthernet0/0/1] ip address 172.29.40.13 24
 
- 
+**Switching**
 
+ |  Task |  Command | Comment  |  
+|---|---|---|
+| ***VLAN taggin per Port***|---|---|
+| First create a vlanif |  int vlanif
+|
  
 
  
@@ -77,9 +92,9 @@ Display
 
  
 
-Display Config in Current View 
 
-[R1- GigabitEthernet0/0/3]display this 
+
+
 
 # interface GigabitEthernet0/0/3 ip address 10.0.12.1 255.255.255.0 ospf authentication-mode md5 1 cipher foCQTYsq-4.A\^38y!DVwQ0# 
 
@@ -87,9 +102,9 @@ Display Config in Current View
 
  
 
-Display current configuration of the System 
 
-[R1]dis current-config 
+
+
 
  
 
