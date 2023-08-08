@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kubernetes on ygerber</title>
+    <link>/categories/kubernetes/</link>
+    <description>Recent content in Kubernetes on ygerber</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2022-2023, Y.Gerber &amp; Authors</copyright>
+    <lastBuildDate>Sun, 04 Dec 2022 23:16:50 +0100</lastBuildDate><atom:link href="/categories/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>K8 Cheat Sheet</title>
+      <link>/post/kubernetes/k8-cheat-sheet/</link>
+      <pubDate>Sun, 04 Dec 2022 23:16:50 +0100</pubDate>
+      
+      <guid>/post/kubernetes/k8-cheat-sheet/</guid>
+      <description>
+        
+          
+            Kubernetes Cheat Sheet
+Cheat Sheet for kubectl, kubeadm and general k8s related commands.
+Troubleshooting Configuration Operations Run kubectl as non-root user non-root@cp: ̃$ mkdir -p $HOME/.kube non-root@cp: ̃$ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config non-root@cp: ̃$ sudo chown $(id -u):$(id -g) $HOME/.kube/config non-root@cp: ̃$ less .kube/config
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
