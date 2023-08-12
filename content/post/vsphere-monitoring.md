@@ -7,7 +7,7 @@ draft: false # Sets whether to render this page. Draft of true will not be rende
 toc: false # Controls if a table of contents should be generated for first-level links automatically.
 # menu: main
 usePageBundles: false # Set to true to group assets like images in the same folder as this post.
-featureImage: "static/images/vsphere-tig.png" # Sets featured image on blog post.
+featureImage: "/vsphere-tig.png" # Sets featured image on blog post.
 featureImageAlt: 'Description of image' # Alternative text for featured image.
 featureImageCap: 'This is the featured image.' # Caption (optional).
 thumbnail: "/images/path/thumbnail.png" # Sets thumbnail image appearing inside card on homepage.
