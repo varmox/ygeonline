@@ -457,4 +457,12 @@ docker ps -a
 
 **Create TIG Config**
 
+Head to your influxDB container ip with port 8086. In my case it is '172.29.31.3:8086'
 
+**Import Grafana Dashboards**
+
+Jorge de la cruz has some amazing grafana dashboards:
+
+https://github.com/jorgedlcruz/vmware-grafana/tree/master
+
+https://jorgedelacruz.uk/
