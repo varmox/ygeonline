@@ -20,6 +20,7 @@ categories:
 tags:
   - VMware
   - vSAN
+  - vSAN over RDMA
 # comment: false # Disable comment if false.
 ---
 
@@ -31,7 +32,9 @@ tags:
 
 With vSAN ESA 25GbE Adapters are a must. (In ESA-AF-0 vSAN Ready Nodes the network bandwidth has been mentioned as 10 GbE - so probalby 10GbE will work for smaller ESA Deployments)
 
-**RDMA**
+**vSAN over RDMA**
+
+With vSphere 7.0 U2 vSAN over RDMA is supportet. RDMA typically has lower CPU utilization and less I/O latency. 
 
 If your vSAN cluster will include adapters that support RoCE (RDMA over Converged Ethernet) for vSAN storage connectivity, the supporting network must support a “lossless” transport. A “lossless” network is defined as one where no frames are dropped because of network congestion.
 
