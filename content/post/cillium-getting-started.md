@@ -1,6 +1,6 @@
 ---
-title: "Leadership" # Title of the blog post.
-date: 2023-07-23T22:24:18+02:00 # Date of post creation.
+title: "Cillium Getting Started" # Title of the blog post.
+date: 2023-10-14T18:18:26+02:00 # Date of post creation.
 description: "Article description." # Description used for search engine.
 featured: true # Sets if post is a featured post, making appear on the home page side bar.
 draft: true # Sets whether to render this page. Draft of true will not be rendered.
@@ -16,23 +16,11 @@ codeMaxLines: 10 # Override global value for how many lines within a code block 
 codeLineNumbers: false # Override global value for showing of line numbers within code block.
 figurePositionShow: true # Override global value for showing the figure label.
 categories:
-  - my 2 cents
+  - Technology
 tags:
-  - Tag_name1
-  - Tag_name2
+  - Kubernetes Cillium
+  - CNI
 # comment: false # Disable comment if false.
 ---
 
-**Fundamentals of Leadership.**
-
-
-Why
-How
-What
-
-Challenge the status quo.
-They buy why you do it
-Authenticity
-Extreme Ownership
-Values & belives
-Everything you say, everything you do has to prove what you believes
+**Insert Lead paragraph here.**

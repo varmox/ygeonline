@@ -45,12 +45,15 @@ If we look at current solutions that enterprise commonly use to "fix it":
 
 - somekind of antivirus systems (on servers, clients, firewalls)
 - IPD/IDS Systems (nothing other than an antivirus running on a network device)
-- 
+- MFA an other Authentication Serivces, Conditional access etc - mostly based on Active Directory
 
 **Why I think current ways to better IT-Security is b*llshit**
 
 We simply to not fix the root cause of the problems. We use somekind of software to secure unsecure software and think the "secure" sofware is initself secure. 
 But there is a fundamental issue, every software has bugs. With each additional line of code written, there are potential bugs in that exact code. So more code just means more bugs. Bugs mean potential security bugs and weaknesses. 
 
-- You cannot train user to be secure 
+- You cannot shift the responsibility to the user (aka do not open that email attachement) - A Backoffice persons jobs is to open emails with attachements, how should they make sure every email attachement is save? The fundamental problem is that an office application can open doors to ransomware and encrypt your hole (microsoft based) Infrastructure
+
+- The deadly combination of Winodws + Office + Active Directory
+
 Cat an mouse game
