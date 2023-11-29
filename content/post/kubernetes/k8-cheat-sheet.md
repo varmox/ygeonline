@@ -28,11 +28,24 @@ tags:
 Cheat Sheet for kubectl, kubeadm and general k8s related commands.
 
 ### kubectl Client Side
-|  kubectl command	 |  description | Comment  |  
-|---|---|---|
-| kubectl config get-context  |  see existing contexts to k8s clusters
-| kubectl config use-context <xy> | switch to another context
-| kubectl config unset current-context | unset contexts
+| kubectl command | description | Comment |
+| --- | --- | --- |
+| kubectl config view | View Kubectl Configuration | Display the current Kubectl configuration |
+| kubectl config get-contexts | List available contexts | See the available Kubernetes clusters and their associated contexts |
+| kubectl config current-context | Display the current context | Show the active Kubernetes cluster and context |
+| kubectl config use-context <context_name> | Switch to another context | Change the active context to the specified one |
+| kubectl config set-context <context_name> --namespace=<namespace_name> | Set default namespace for a context | Specify the default namespace for a specific context |
+| kubectl config unset current-context | Unset the current context | Remove the association with the current context |
+| kubectl config set-cluster <cluster_name> --server=<api_server_url> | Add a new cluster to the configuration | Define a new Kubernetes cluster with its API server URL |
+| kubectl config set-credentials <user_name> --token=<access_token> | Add user credentials to the configuration | Specify user credentials, typically an access token |
+| kubectl config set-context <context_name> --cluster=<cluster_name> --user=<user_name> | Create a new context | Combine a cluster and user to create a context |
+| kubectl config delete-context <context_name> | Delete a context | Remove a specific context from the configuration |
+| kubectl config delete-cluster <cluster_name> | Delete a cluster | Remove a cluster from the configuration |
+| kubectl config delete-user <user_name> | Delete user credentials | Remove user credentials from the configuration |
+| kubectl config use-context <context_name> | Switch to another context | Change the active context to the specified one |
+| kubectl config rename-context <old_name> <new_name> | Rename a context | Change the name of an existing context |
+| kubectl config set preferences.colors true | Enable colorized output | Enhance readability with colorized command output |
+
 
 	
 	
