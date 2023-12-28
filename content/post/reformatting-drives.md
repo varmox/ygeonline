@@ -1,5 +1,5 @@
 ---
-title: "Reformatting enterprise storage drives" # Title of the blog post.
+title: "Reformatting enterprise storage drives - to use elsewhere" # Title of the blog post.
 date: 2023-12-26T15:28:45+02:00 # Date of post creation.
 description: "Article description." # Description used for search engine.
 featured: true # Sets if post is a featured post, making appear on the home page side bar.
@@ -66,4 +66,5 @@ Now the disks are formatted with 512 byte blocks and you should be able to use t
 ***References***
 
 [1] https://www.openfabrics.org/images/2018workshop/presentations/307_TOved_T10-DIFOffload.pdf 
+
 [2] https://sg.danny.cz/sg/sg3_utils.html 
