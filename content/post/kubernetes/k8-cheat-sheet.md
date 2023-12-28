@@ -27,7 +27,7 @@ tags:
 
 Cheat Sheet for kubectl, kubeadm and general k8s related commands.
 
-### kubectl Client Side
+### kubectl Interacting with clusters
 | kubectl command | description | Comment |
 | --- | --- | --- |
 | kubectl config view | View Kubectl Configuration | Display the current Kubectl configuration |
@@ -51,7 +51,7 @@ Cheat Sheet for kubectl, kubeadm and general k8s related commands.
 	
 	
 
-### Troubleshooting
+### General Troubleshooting
 
 | kubectl command | description | Comment |
 | --- | --- | --- |
@@ -118,6 +118,24 @@ Cheat Sheet for kubectl, kubeadm and general k8s related commands.
 | kubectl get persistentvolumeclaim -o yaml | Get the YAML definition of a persistent volume claim | Replace `<pvc_name>` with the actual persistent volume claim name |
 | kubectl exec -it <pod_name> -- df -h | Check storage usage inside a pod | Replace `<pod_name>` with the actual pod name and `df -h` with the desired command |
 | kubectl describe storageclass <storageclass_name> \| grep Provisioner | Get the provisioner information for a storage class | Replace `<storageclass_name>` with the actual storage class name |
+
+### Services
+
+| kubectl command | description | Comment |
+| --- | --- | --- |
+| kubectl get services | List all services in the current namespace | Display a list of services and their types |
+| kubectl get services -o wide | Display additional details about services | View IP addresses and ports of services |
+| kubectl describe service <service_name> | Get detailed information about a service | Replace `<service_name>` with the actual service name |
+| kubectl get service <service_name> -o yaml | Get the YAML definition of a service | Replace `<service_name>` with the actual service name |
+| kubectl expose deployment <deployment_name> --port=<port_number> --target-port=<target_port> --name=<service_name> --type=<service_type> | Expose a deployment as a service | Replace `<deployment_name>`, `<port_number>`, `<target_port>`, `<service_name>`, and `<service_type>` with the actual values |
+| kubectl apply -f <service_manifest.yaml> | Create or update a service using a manifest file | Replace `<service_manifest.yaml>` with the path to the service YAML manifest |
+| kubectl delete service <service_name> | Delete a specific service | Replace `<service_name>` with the actual service name |
+| kubectl get services --sort-by=.spec.ports[0].nodePort | Sort services by NodePort | Sort services based on NodePort value in ascending order |
+| kubectl get services -o custom-columns=NAME:.metadata.name,TYPE:.spec.type,CLUSTER-IP:.spec.clusterIP,EXTERNAL-IP:.status.loadBalancer.ingress[0].ip,PORT(S).:.spec.ports[*].nodePort | Display custom columns for services | Define custom output columns for services |
+| kubectl get services -n <namespace> | List services in a specific namespace | Replace `<namespace>` with the desired namespace |
+| kubectl get endpoints <service_name> | Display endpoints for a service | View the IP addresses and ports of pods backing a service |
+| kubectl describe ingress <ingress_name> | Get detailed information about an ingress | Replace `<ingress_name>` with the actual ingress name |
+| kubectl get svc <service_name> -o=jsonpath='{.spec.ports[0].nodePort}' | Get the NodePort of a service using JSONPath | Replace `<service_name>` with the actual service name |
 
 
 ### Operations
