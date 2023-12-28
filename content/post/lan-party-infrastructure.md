@@ -1,5 +1,5 @@
 ---
-title: "Lan Party Infrastructure"
+title: "Lan Party Infrastructure - containerized"
 date: 2023-11-29T22:04:40+01:00
 draft: true
 featured: true # Sets if post is a featured post, making appear on the home page side bar.
@@ -19,6 +19,8 @@ categories:
 tags:
   - docker 
   - networking
+  - VMware Tanzu
+  - VMware
 # comment: false # Disable comment if false.
 ---
 

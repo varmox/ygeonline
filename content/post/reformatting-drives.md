@@ -43,14 +43,16 @@ Basically the drives in a 3PAR Storage System use 520Bytes blocks as a low-level
 
 The first step is to install the disk in a system with only a simple SAS HBA - most raid adapters will give you errors when you want to expose the disk to the OS. We need SCSI Access from a OS to do some commands. I used a HPE P420i in HBA Mode (Note: to be able to set your RAID Controller to HBA Mode, no logical drives should be present)
 
-Next install a OS on a already working drive, I used Rocky Linux. To be able to format the drives we need sg3_utils. Simply install the package with dnf:
+Next install a OS on a already working drive, I used Rocky Linux - a live version also works fine. To be able to format the drives we need sg3_utils. Simply install the package with dnf:
 
 ```
-sudo dnf install sg3_utils.x86_64
+sudo dnf install sg3_utils
 ```
 
 
 Then with the help of sg3_utils package we run some commands. First we need to list all SCSI drives and get their ID (PDx)
+
+***Windows***
 
 ```
 sg_scan
@@ -59,6 +61,17 @@ Then format one drive at a time (in this case PD1)
 
 ```
 sg_format --format --size 512 PD1
+```
+
+***Linux***
+
+```
+sg_scan -i
+```
+Then format one drive at a time (in this case sg3)
+
+```
+sg_format --format --size 512 /dev/sg3
 ```
 
 Now the disks are formatted with 512 byte blocks and you should be able to use the disk in a JBOD or RAID.
