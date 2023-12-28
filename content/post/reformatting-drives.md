@@ -61,6 +61,8 @@ Then format one drive at a time (in this case PD1)
 sg_format --format --size 512 PD1
 ```
 
+Now the disks are formatted with 512 byte blocks and you should be able to use the disk in a JBOD or RAID.
+
 ***References***
 
 [1] https://www.openfabrics.org/images/2018workshop/presentations/307_TOved_T10-DIFOffload.pdf 
