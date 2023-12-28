@@ -10,8 +10,8 @@ usePageBundles: false # Set to true to group assets like images in the same fold
 #featureImage: "/vsphere-tig.png" # Sets featured image on blog post.
 #featureImageAlt: 'Description of image' # Alternative text for featured image.
 #featureImageCap: 'This is the featured image.' # Caption (optional).
-thumbnail: "/images/path/thumbnail.png" # Sets thumbnail image appearing inside card on homepage.
-shareImage: "/images/path/share.png" # Designate a separate image for social media sharing.
+#thumbnail: "/images/path/thumbnail.png" # Sets thumbnail image appearing inside card on homepage.
+#shareImage: "/images/path/share.png" # Designate a separate image for social media sharing.
 codeMaxLines: 10 # Override global value for how many lines within a code block before auto-collapsing.
 codeLineNumbers: false # Override global value for showing of line numbers within code block.
 figurePositionShow: true # Override global value for showing the figure label.
@@ -33,7 +33,7 @@ https://github.com/varmox/vsphere-monitoring.git
 **Prerequiries**
 
 - RHEL based Linux 
-- Docker & Docker Compose (or Podman with Docker Compose. In this tutorial wer are using docker & docker compose) installed
+- Docker & Docker Compose (or Podman with Docker Compose. In this tutorial we are using docker & docker compose) installed
 
 
 ***Environment Variables***
