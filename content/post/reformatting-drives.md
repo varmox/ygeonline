@@ -1,7 +1,7 @@
 ---
 title: "Reformatting enterprise storage drives to 512 bytes" # Title of the blog post.
 date: 2023-12-26T15:28:45+02:00 # Date of post creation.
-description: "Article description." # Description used for search engine.
+description: "use enterprise storage drives elsewhere." # Description used for search engine.
 featured: true # Sets if post is a featured post, making appear on the home page side bar.
 draft: false # Sets whether to render this page. Draft of true will not be rendered.
 toc: false # Controls if a table of contents should be generated for first-level links automatically.

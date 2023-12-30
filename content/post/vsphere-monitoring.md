@@ -1,5 +1,5 @@
 ---
-title: "vSphere Monitoring" # Title of the blog post.
+title: "vSphere Monitoring with Grafana" # Title of the blog post.
 date: 2023-08-08T20:43:03+02:00 # Date of post creation.
 description: "Article description." # Description used for search engine.
 featured: true # Sets if post is a featured post, making appear on the home page side bar.
@@ -18,7 +18,7 @@ figurePositionShow: true # Override global value for showing the figure label.
 categories:
   - VMware vSphere
 tags:
-  - vmware 
+  - VMware 
   - vSphere
   - Monitoring
   - TIG Stack
