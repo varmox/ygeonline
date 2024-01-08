@@ -16,7 +16,7 @@ codeMaxLines: 10 # Override global value for how many lines within a code block 
 codeLineNumbers: false # Override global value for showing of line numbers within code block.
 figurePositionShow: true # Override global value for showing the figure label.
 categories:
-  - VMware vSphere
+  - VMware
 tags:
   - VMware 
   - vSphere
@@ -24,8 +24,10 @@ tags:
   - TIG Stack
 # comment: false # Disable comment if false.
 ---
+**Intro**
+This blog post describes a solution for monitoring your SDDC Infrastructure with Telegraf, InfluxDB and Grafana. The solution is based on docker and will present graphs and metrics through grafana.
 
-**vSphere Monitoring with TIG (Telegraf, InfluxDB, Grafana).**
+**vSphere Monitoring with TIG (Telegraf, InfluxDB, Grafana)**
 
 TL;DR:
 https://github.com/varmox/vsphere-monitoring.git 
@@ -47,11 +49,11 @@ Filesystem structure:
 /srv/tig
 
 ├── docker-compose.yml
-
 └── telegraf.conf
 
 **Create Telegraf Config**
-
+Edit your telegraf.conf file with a editor of choice and paste overwrite your telegraf.conf File. 
+This config skips tls certificate checking so can be used for self-signed certificates.
 
 ```
 [agent]
@@ -371,7 +373,9 @@ Filesystem structure:
 ```
 
 **Create Docker Containers**
-Use the following docker compose file to start your containers
+Use the following docker compose file to start your containers. This solution uses ipvlan to assign each container an IPv4 Address. You don't have to assign the IPs to your OSes NIC.
+
+Change the passwords and secrets to your needs. 
 
 ```
 version: '3.6'
@@ -455,15 +459,26 @@ docker compose up -d
 docker ps -a
 ```
 
+The containers should all have a running state.
+
 **Create TIG Config**
 
 Head to your influxDB container ip with port 8086. In my case it is '172.29.31.3:8086'
 With help of the webinterface create your buckets according to the naming in your "telegraf.conf" file.
 
 **Import Grafana Dashboards**
+Access your grafana dashboard at your IP with port 3000 (in my case https://172.29.31.4:3000)
 
-Jorge de la cruz has some amazing grafana dashboards:
+The grafana dashboards can be access via github: https://github.com/jorgedlcruz/vmware-grafana/tree/master (Cudos to Jorge de la Cruz)
 
-https://github.com/jorgedlcruz/vmware-grafana/tree/master
+Import the grafana dashboards:
+
+- Click Dashboards in the left-side menu.
+- Click New and select Import in the dropdown menu.
+- Paste dashboard JSON text directly into the text area
+
+
+
+
 
 https://jorgedelacruz.uk/
