@@ -27,16 +27,19 @@ tags:
 
 **TKG Bootstrap Machine on Fedora**
 
-Tanzu Kubernetes Grid needs a workstation to bootstrap your Kubernetes Cluster. This is a short guide for a Linux RHEL based bootstrap Machine:
+Tanzu Kubernetes Grid needs a workstation to bootstrap your Kubernetes Cluster. This is a short guide for a Fedora based bootstrap Machine:
 
 **Requirements**
 
 - Docker
 - Tanzu CLI
+- dedicated admin user in the wheel-group
 
 **Install Docker**
 
-Docker in newest RHEL system can sometimes be confusing due to the confusing about docker and podman. I haven't tested this setup with podman, we will use docker-ce.
+Docker in newest RHEL system can sometimes be confusing due to the confusing about docker and podman. I should work with podman, but we explicity are going to install docker-ce.
+
+Login to your system (via ssh) with the admin user.
 
 Add Repo and Install Docker CE
 ```
@@ -51,7 +54,7 @@ sudo systemctl start docker && sudo systemctl enable docker
 
 ```
 
-Set Docker Socket context to current user
+Set Docker Socket context to current user. This step is crucial, to allow the current user to access the docker socket.
 
 ```
 sudo chown $USER:docker /var/run/docker.sock
@@ -93,3 +96,35 @@ Install
 ```
 sudo install kubectl-linux-v1.27.5+vmware.1 /usr/local/bin/kubectl
 ```
+
+**Test the setup**
+If everything worked you should be able to run the following commands without any issues:
+
+List your Tanzu CLI plugins
+```
+tanzu plugin list
+```
+
+Create a Tanzu Management Cluster to boostrap TKG
+```
+tanzu management-cluster create --ui
+```
+
+**Troubleshooting**
+
+***Error*** "Docker prerequiries not met"
+
+This is usually the case when the current user does not have access to docker. 
+In the current User Session run:
+
+```
+docker ps -a
+```
+
+If presented with "Got permission denied" try this:
+
+```
+docker ps -a
+```
+usermod -aG wheel $
+
