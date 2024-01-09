@@ -51,7 +51,6 @@ sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin dock
 Start & enable Docker
 ```
 sudo systemctl start docker && sudo systemctl enable docker
-
 ```
 
 Set Docker Socket context to current user. This step is crucial, to allow the current user to access the docker socket.
@@ -126,5 +125,10 @@ If presented with "Got permission denied" try this:
 ```
 docker ps -a
 ```
-usermod -aG wheel $
+
+Add current user to the wheel (local admin group) group
+```
+sudo usermod -aG wheel $USER
+```
+
 
