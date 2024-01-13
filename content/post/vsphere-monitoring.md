@@ -376,7 +376,8 @@ This config skips tls certificate checking so can be used for self-signed certif
 
 ```
 
-**Create Docker Containers**
+## Container Setup
+
 Use the following docker compose file to start your containers. This solution uses ipvlan to assign each container an IPv4 Address. You don't have to assign the IPs to your OSes NIC.
 
 Change the passwords and secrets to your needs. 
@@ -450,7 +451,7 @@ volumes:
   influxdb_data: {}
 ```
 
-## Container Setup
+
 
 **Start Containers**
 
