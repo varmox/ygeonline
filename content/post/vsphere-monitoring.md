@@ -37,7 +37,8 @@ https://github.com/varmox/vsphere-monitoring.git
 
 - RHEL based Linux 
 - Docker & Docker Compose (or Podman with Docker Compose. In this tutorial we are using docker & docker compose) installed
-
+- 3 internal IPs for telegraf, grafana and influxdb containers.
+- Access to vSphere API (read-only is sufficient)
 
 ***Environment Variables***
 
