@@ -24,15 +24,16 @@ tags:
   - TIG Stack
 # comment: false # Disable comment if false.
 ---
-**Intro**
+
+# Intro
 This blog post describes a solution for monitoring your SDDC Infrastructure with Telegraf, InfluxDB and Grafana. The solution is based on docker and will present graphs and metrics through grafana.
 
-**vSphere Monitoring with TIG (Telegraf, InfluxDB, Grafana)**
+## vSphere Monitoring with TIG (Telegraf, InfluxDB, Grafana)
 
 TL;DR:
 https://github.com/varmox/vsphere-monitoring.git 
 
-**Prerequiries**
+## Prerequiries
 
 - RHEL based Linux 
 - Docker & Docker Compose (or Podman with Docker Compose. In this tutorial we are using docker & docker compose) installed
@@ -49,9 +50,11 @@ Filesystem structure:
 /srv/tig
 
 ├── docker-compose.yml
+
 └── telegraf.conf
 
-**Create Telegraf Config**
+## Create Telegraf Config
+
 Edit your telegraf.conf file with a editor of choice and paste overwrite your telegraf.conf File. 
 This config skips tls certificate checking so can be used for self-signed certificates.
 
@@ -446,6 +449,8 @@ volumes:
   influxdb_data: {}
 ```
 
+## Container Setup
+
 **Start Containers**
 
 In the directory where the docker compose file is located:
@@ -461,12 +466,13 @@ docker ps -a
 
 The containers should all have a running state.
 
-**Create TIG Config**
+## Create TIG Config
 
 Head to your influxDB container ip with port 8086. In my case it is '172.29.31.3:8086'
 With help of the webinterface create your buckets according to the naming in your "telegraf.conf" file.
 
-**Import Grafana Dashboards**
+## Import Grafana Dashboards
+
 Access your grafana dashboard at your IP with port 3000 (in my case https://172.29.31.4:3000)
 
 The grafana dashboards can be access via github: https://github.com/jorgedlcruz/vmware-grafana/tree/master (Cudos to Jorge de la Cruz)
