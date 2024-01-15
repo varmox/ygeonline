@@ -1,7 +1,7 @@
 ---
 title: "VMware Tanzu Kubernetes Grid -  getting started"
 date: 2023-11-29T22:04:40+01:00
-draft: false
+draft: true
 featured: true # Sets if post is a featured post, making appear on the home page side bar.
 toc: false # Controls if a table of contents should be generated for first-level links automatically.
 # menu: main
@@ -45,3 +45,5 @@ TKG has no integration in vSphere UI. If you wan't to integrate Tanzu with vCent
 See [this blog] (https://ygerber.online/post/tanzu-kubernetes-grid-workstation-setup/) post to create a Bootstrap Machine based on Fedora
 
 ## Create Management Cluster 
+
+Create the Management Cluster on your Machine:
