@@ -7,6 +7,147 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2022-2023, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Sun, 04 Dec 2022 15:11:13 +0100</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Dec 2023 15:28:45 +0200</lastBuildDate>
+    <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hardware</title>
+      <link>/tags/hardware/</link>
+      <pubDate>Tue, 26 Dec 2023 15:28:45 +0200</pubDate>
+      <guid>/tags/hardware/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>HPE</title>
+      <link>/tags/hpe/</link>
+      <pubDate>Tue, 26 Dec 2023 15:28:45 +0200</pubDate>
+      <guid>/tags/hpe/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kubernetes</title>
+      <link>/tags/kubernetes/</link>
+      <pubDate>Wed, 29 Nov 2023 22:04:40 +0100</pubDate>
+      <guid>/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>VMware Tanzu</title>
+      <link>/tags/vmware-tanzu/</link>
+      <pubDate>Wed, 29 Nov 2023 22:04:40 +0100</pubDate>
+      <guid>/tags/vmware-tanzu/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>VMware Tanzu Kubernetes Grid</title>
+      <link>/tags/vmware-tanzu-kubernetes-grid/</link>
+      <pubDate>Wed, 29 Nov 2023 22:04:40 +0100</pubDate>
+      <guid>/tags/vmware-tanzu-kubernetes-grid/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>/tags/docker/</link>
+      <pubDate>Sun, 08 Oct 2023 20:43:03 +0200</pubDate>
+      <guid>/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fedora</title>
+      <link>/tags/fedora/</link>
+      <pubDate>Sun, 08 Oct 2023 20:43:03 +0200</pubDate>
+      <guid>/tags/fedora/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tanzu Kubernetes Grid</title>
+      <link>/tags/tanzu-kubernetes-grid/</link>
+      <pubDate>Sun, 08 Oct 2023 20:43:03 +0200</pubDate>
+      <guid>/tags/tanzu-kubernetes-grid/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>VMware</title>
+      <link>/tags/vmware/</link>
+      <pubDate>Wed, 23 Aug 2023 23:13:14 +0200</pubDate>
+      <guid>/tags/vmware/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>vSAN</title>
+      <link>/tags/vsan/</link>
+      <pubDate>Wed, 23 Aug 2023 23:13:14 +0200</pubDate>
+      <guid>/tags/vsan/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>vSAN over RoCE</title>
+      <link>/tags/vsan-over-roce/</link>
+      <pubDate>Wed, 23 Aug 2023 23:13:14 +0200</pubDate>
+      <guid>/tags/vsan-over-roce/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Monitoring</title>
+      <link>/tags/monitoring/</link>
+      <pubDate>Tue, 08 Aug 2023 20:43:03 +0200</pubDate>
+      <guid>/tags/monitoring/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>TIG Stack</title>
+      <link>/tags/tig-stack/</link>
+      <pubDate>Tue, 08 Aug 2023 20:43:03 +0200</pubDate>
+      <guid>/tags/tig-stack/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>vSphere</title>
+      <link>/tags/vsphere/</link>
+      <pubDate>Tue, 08 Aug 2023 20:43:03 +0200</pubDate>
+      <guid>/tags/vsphere/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tanzu Kubernetes Clusters</title>
+      <link>/tags/tanzu-kubernetes-clusters/</link>
+      <pubDate>Fri, 23 Jun 2023 23:13:14 +0200</pubDate>
+      <guid>/tags/tanzu-kubernetes-clusters/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>yaml</title>
+      <link>/tags/yaml/</link>
+      <pubDate>Fri, 23 Jun 2023 23:13:14 +0200</pubDate>
+      <guid>/tags/yaml/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cheat Sheet</title>
+      <link>/tags/cheat-sheet/</link>
+      <pubDate>Sun, 04 Dec 2022 23:16:50 +0100</pubDate>
+      <guid>/tags/cheat-sheet/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Huawei</title>
+      <link>/tags/huawei/</link>
+      <pubDate>Sun, 04 Dec 2022 15:11:13 +0100</pubDate>
+      <guid>/tags/huawei/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Networking</title>
+      <link>/tags/networking/</link>
+      <pubDate>Sun, 04 Dec 2022 15:11:13 +0100</pubDate>
+      <guid>/tags/networking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>index</title>
+      <link>/tags/index/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/tags/index/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

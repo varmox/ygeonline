@@ -158,4 +158,6 @@ spec:
 Do not use this in a production environment
 After a successfull deployment of the cluster run the following commands to allow the Control Nodes to run User Workloads:
 
+```
 kubectl taint nodes --all node-role.kubernetes.io/master-
+```

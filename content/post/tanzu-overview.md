@@ -30,7 +30,12 @@ tags:
 Lately, we've been having lots conversations internally and with customers about Tanzu.
 There appears to be some confusion about Tanzu's portfolio and which Tanzu products are best suited for specific use cases.
 
+## Kubernetes Runtimes
 
+To actually run Kubernetes Clusters with Tanzu, the following Products are available:
+
+- Tanzu Kubernetes Grid
+- vSphere with Tanzu
 
 ## Tanzu Kubernetes Grid (TKG) ##
 
@@ -66,11 +71,17 @@ User workloads then are running inside a Tanzu Kubernetes Cluster.
 
 - vSphere Cluster with DRS
 - 3 Supervisor VMs
-    - small nodes: 
 - NSX-T or vSphere Distributed Switches
 -   vDS must use NSX-ALB or HA-Proxy as an external Load Balancer - NSX-ALB is recommended.
 
+## Tanzu Mission Control 
 
+Tanzu Mission Control is a Tool to operate your Tanzu Kubernetes Clusters. Besides Tanzu Kubernetes Cluster it can also managed Azure Kubernetes Service (AKS) and Elasic Kubernetes Service (EKS) from Amazon. It either can be deployed on-prem (TMC self-hosted) with some limitations or consumed as a SaaS Service.
 
+**TMC self-hosted Requirements**
 
-## Tanzu Mission Control ##
+- vSphere with Tanzu
+- Supervisor Services:
+  - Contour
+  - Harbor Image Registry
+
