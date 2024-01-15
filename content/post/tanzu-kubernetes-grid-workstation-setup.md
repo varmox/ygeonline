@@ -31,13 +31,13 @@ Tanzu Kubernetes Grid needs a workstation to bootstrap your Kubernetes Cluster. 
 
 **Requirements**
 
-- Docker
-- Tanzu CLI
+- Ability to run Docker
+- Access to download Tanzu CLI (via Customer Connect Portal)
 - dedicated admin user in the wheel-group
 
 **Install Docker**
 
-Docker on modern RHEL systems can  be confusing because the latest versions of RHEL replace Docker with Podman (dnf install docker will install podman). I should work with podman, but we explicity are going to install docker-ce.
+Docker on modern RHEL systems can  be confusing because the latest versions of RHEL replace Docker with Podman (dnf install docker will install podman). I should work with podman, but we explicity are going to install Docker Container Engine.
 
 Login to your system (via ssh) with the admin user.
 
@@ -51,7 +51,6 @@ sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin dock
 Start & enable Docker
 ```
 sudo systemctl start docker && sudo systemctl enable docker
-
 ```
 
 Set Docker Socket context to current user. This step is crucial, to allow the current user to access the docker socket.
@@ -130,5 +129,11 @@ If presented with "Got permission denied" try this:
 ```
 sudo usermod -aG wheel $USER
 ```
+
+Add current user to the wheel (local admin group) group
+```
+sudo usermod -aG wheel $USER
+```
+
 Then try again to create your tanzu management cluster.
 

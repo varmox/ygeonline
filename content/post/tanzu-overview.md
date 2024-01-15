@@ -25,13 +25,24 @@ tags:
 
 # comment: false # Disable comment if false.
 ---
-# Tanzu Kubernetes Grid vs vSphere with Tanzu #
+# Tanzu Portfolio explained #
 
-Lately had I has internal and discussion with customers about Tanzu. There seems to be some confusing about the Tanzu Portfolio and what Tanzu Product is best for specific use cases.
+Lately, we've been having lots conversations internally and with customers about Tanzu.
+There appears to be some confusion about Tanzu's portfolio and which Tanzu products are best suited for specific use cases.
+
+## Kubernetes Runtimes
+
+To actually run Kubernetes Clusters with Tanzu, the following Products are available:
+
+- Tanzu Kubernetes Grid
+- vSphere with Tanzu
 
 ## Tanzu Kubernetes Grid (TKG) ##
 
-TKG is a solution that bootstraps kubernetes clusters to diffrent cloud providers. First a management cluster (based on docker and kind) will be created from a bootstrap workstation which then itself provides a Webinterface and additional CLI Tools to create your kubernetes cluster to:
+TKG is a solution for routing Kubernetes clusters to different cloud providers.
+First, a management cluster (based on Docker and kind) is created from a Bootstrap Workstation, which itself then  provides its web interface and additional CLI tools to create a Kubernetes cluster.
+
+The following providers are supported:
 
 - vSphere
 - AWS
@@ -39,17 +50,38 @@ TKG is a solution that bootstraps kubernetes clusters to diffrent cloud provider
 
 The management cluster will provision the VMs on the target and install & configure kubernetes within those VMs.
 
-When vSphere is used as a Target there is no integration of TKG with vSphere UI. Just a bunch of VMs. 
+When vSphere is used as a Target there is no integration of TKG with vSphere UI. Just a bunch of VMs will be provisioned.
+
+If you want to deploy your Kubernetes Cluster and Integration with vCenter and other vSphere Services. Look at vSphere with Tanzu. It has also been built with the vSphere Administrator in mind.
+
+If you want to deploy your Kubernetes Cluster to Azure or Amazon Webservices, use Tanzu Kubernetes Grid.
 
 ## vSphere with Tanzu aka Workload Management ##
 
-In newer version of vCenter there is the option of "Workload Management" within the vSphere Burger Menu. Workload Management is nothing other than vSphere with Tanzu. With vSphere with Tanzu obviously only works with vSphere. Kubernetes Ressources are provisioned on a vSphere Cluster. The first step is to create a Supervisor Cluster, which consists of three VMs in vSphere. Kubernetes itself is then provisioned with kubeadm - so it isn't a specialized version of kubernetes - plain vanilla kubernetes will be provided.
+In newer version of vCenter there is the option of "Workload Management" within the vSphere Burger Menu. Workload Management is the same as vSphere with Tanzu. With vSphere with Tanzu obviously only works with vSphere. Kubernetes Ressources are provisioned on a vSphere Cluster. 
 
-If the supervisor cluster then is created, additional vSphere Namespaces need to be provisioned (vSphere Name Space isn't the same as a Kubernetes Namespace!) Within that Namespace then finally a Tanzu Kubernetes Cluster (inofficially TKC) can be created. The Tanzu Kubernetes Cluster itself consist of a minimum of 1 Master VM and 1 Worker VM - Best Practise is of course 3 Master VMs and 2 or more Worker VMs.
+The first step is to create a Supervisor Cluster, which consists of three VMs in vSphere. Kubernetes itself is then provisioned via the TKG Service running on the Supervisor Cluster.
+
+
+If the supervisor cluster then is created, additional vSphere Namespaces need to be provisioned (vSphere Namespace isn't the same as a Kubernetes Namespace!) Within that Namespace then a Tanzu Kubernetes Cluster can be created with the TKG Service. The Tanzu Kubernetes Cluster (TKC) are upstream aligned, fully conformant Kubernetes Cluster. It is also possible to provision VMs withing a vSphere Namespace. The Idea is, that a vSphere Administrator isolates Workloads through vSphere Namespaces that then can be used by DevOps/Platform Operators to provision their Kubernetes Clusters.
+
+User workloads then are running inside a Tanzu Kubernetes Cluster.
 
 **vSphere with Tanzu minimum Ressources**
 
+- vSphere Cluster with DRS
 - 3 Supervisor VMs
-    - small nodes: 
+- NSX-T or vSphere Distributed Switches
+-   vDS must use NSX-ALB or HA-Proxy as an external Load Balancer - NSX-ALB is recommended.
 
+## Tanzu Mission Control 
+
+Tanzu Mission Control is a Tool to operate your Tanzu Kubernetes Clusters. Besides Tanzu Kubernetes Cluster it can also managed Azure Kubernetes Service (AKS) and Elasic Kubernetes Service (EKS) from Amazon. It either can be deployed on-prem (TMC self-hosted) with some limitations or consumed as a SaaS Service.
+
+**TMC self-hosted Requirements**
+
+- vSphere with Tanzu
+- Supervisor Services:
+  - Contour
+  - Harbor Image Registry
 

@@ -7,26 +7,91 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2022-2023, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Sun, 04 Dec 2022 15:11:13 +0100</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Dec 2023 15:28:45 +0200</lastBuildDate>
+    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reformatting enterprise storage drives to 512 bytes</title>
+      <link>/post/reformatting-drives/</link>
+      <pubDate>Tue, 26 Dec 2023 15:28:45 +0200</pubDate>
+      <guid>/post/reformatting-drives/</guid>
+      <description>Problem&#xA;Recently I got my hands on some old HPE 3PAR 1.92TB SAS SSDs (Samsung PM1633a). I though they would be perfect for my SDDC home lab - sadly they did not work as intended with my HPE DL360 server. The SmartArray P420i was regocnizing the disks but was giving the error &amp;quot;This physical drive does not support RAID and is not exposed to OS. It cannot be used for configuration on this controller&amp;quot;.</description>
+    </item>
+    <item>
+      <title>VMware Tanzu Kubernetes Grid -  getting started</title>
+      <link>/post/lan-party-infrastructure/</link>
+      <pubDate>Wed, 29 Nov 2023 22:04:40 +0100</pubDate>
+      <guid>/post/lan-party-infrastructure/</guid>
+      <description>Intro This blog post is about getting started with VMware Tanzu Kubernetes Grid (TKG). TKG is used to deploy Tanzu Kubernetes Cluster to various Cloud Providers including vSphere, AWS and Azure. First, a management cluster (based on Docker and kind) is created from a Bootstrap Workstation, which itself then provides its web interface and additional CLI tools to create a Kubernetes cluster.&#xA;TKG has no integration in vSphere UI. If you wan&#39;t to integrate Tanzu with vCenter/vSphere UI - use vSphere with Tanzu instead.</description>
+    </item>
+    <item>
+      <title>Tanzu Kubernetes Grid - Linux Workstation Setup</title>
+      <link>/post/tanzu-kubernetes-grid-workstation-setup/</link>
+      <pubDate>Sun, 08 Oct 2023 20:43:03 +0200</pubDate>
+      <guid>/post/tanzu-kubernetes-grid-workstation-setup/</guid>
+      <description>TKG Bootstrap Machine on Fedora Tanzu Kubernetes Grid needs a workstation to bootstrap your Kubernetes Cluster. This is a short guide for a Fedora based bootstrap Machine:&#xA;Requirements&#xA;Ability to run Docker Access to download Tanzu CLI (via Customer Connect Portal) dedicated admin user in the wheel-group Install Docker&#xA;Docker on modern RHEL systems can be confusing because the latest versions of RHEL replace Docker with Podman (dnf install docker will install podman).</description>
+    </item>
+    <item>
+      <title>VMware vSAN Network Considerations</title>
+      <link>/post/vmware-vsan-network-requirements/</link>
+      <pubDate>Wed, 23 Aug 2023 23:13:14 +0200</pubDate>
+      <guid>/post/vmware-vsan-network-requirements/</guid>
+      <description>Intro VMware vSAN is a Hyperconverged Infrastructure Solution from VMware. It basically turns your servers direct attached disks into a storage cluster.&#xA;General Requirements 10 GbE network switches are the minimum requirement for all-flash vSAN Clusters 25 GBE network switches are recommended Switches that support higher port speeds are designed with higher Network Processor Unit (NPU) buffers. An NPU shared switch buffer of at least 16 MB is recommended for 10 GbE network connectivity.</description>
+    </item>
+    <item>
+      <title>vSphere Monitoring with Grafana</title>
+      <link>/post/vsphere-monitoring/</link>
+      <pubDate>Tue, 08 Aug 2023 20:43:03 +0200</pubDate>
+      <guid>/post/vsphere-monitoring/</guid>
+      <description>Intro This blog post describes a solution for monitoring your SDDC Infrastructure with Telegraf, InfluxDB and Grafana. The solution is based on docker and will present graphs and metrics through grafana.&#xA;vSphere Monitoring with TIG (Telegraf, InfluxDB, Grafana) TL;DR: https://github.com/varmox/vsphere-monitoring.git&#xA;Prerequiries RHEL based Linux Docker &amp;amp; Docker Compose (or Podman with Docker Compose. In this tutorial we are using docker &amp;amp; docker compose) installed 3 internal IPs for telegraf, grafana and influxdb containers.</description>
+    </item>
+    <item>
+      <title>Tanzu Kubernetes Cluster Example Deployments</title>
+      <link>/post/tanzu-kubernetes-cluster-examples/</link>
+      <pubDate>Fri, 23 Jun 2023 23:13:14 +0200</pubDate>
+      <guid>/post/tanzu-kubernetes-cluster-examples/</guid>
+      <description>Intro This post gives a few examples of Tanzu Kubernetes Cluster Manifests and how to deploy them.&#xA;Prerequiries Successfull Installation of vSphere with Tanzu Supervisor vSphere Namespace created Already existing VM Classes, Storages Policies and Tanzu Kubernetes Releases assigned to the Namespace. Login via kubectl You will find the IP to your Kubernetes API on the Namespace Option &amp;quot;Link to CLI Tools&amp;quot;&#xA;1kubectl vsphere login --server=10.40.80.20 1kubectl config get-contexts 1kubectl config use-context &amp;lt;&amp;gt; Get Parameters of your vSphere Namespace VM Class Storagge Policy Tanzu Releases 1kubectl get vmclass 1kubectl get storageclass 1kubectl get tanzukubernetesrelease Cluster with 3 Control and 6 Worker Nodes 1apiVersion: run.</description>
+    </item>
+    <item>
+      <title>Quicktip: Tanzu &amp; HA-Proxy</title>
+      <link>/post/tanzu-ha-proxy/</link>
+      <pubDate>Wed, 08 Mar 2023 20:43:03 +0200</pubDate>
+      <guid>/post/tanzu-ha-proxy/</guid>
+      <description>Quick Tip: vSphere with Tanzu an HA-Proxy This is a short article with tips and tricks I experienced when deploying vSphere with Tanzu and HA-Proxy as a Load Balancer.&#xA;Deploying Ha-Proxy OVA Network&#xA;Alwasys use three NICs when deploying in a production environment. It is very important that these IP addresses do not overlap with the address ranges of your workloads and load balancers, or with the gateway itself.&#xA;At first it can be somewhat confusing what networks are needed and which services will be deployed in each network.</description>
+    </item>
+    <item>
+      <title>K8 Cheat Sheet</title>
+      <link>/post/kubernetes/k8-cheat-sheet/</link>
+      <pubDate>Sun, 04 Dec 2022 23:16:50 +0100</pubDate>
+      <guid>/post/kubernetes/k8-cheat-sheet/</guid>
+      <description>Kubernetes Cheat Sheet&#xA;Cheat Sheet for kubectl, kubeadm and general k8s related commands.&#xA;kubectl Interacting with clusters kubectl command description Comment kubectl config view View Kubectl Configuration Display the current Kubectl configuration kubectl config get-contexts List available contexts See the available Kubernetes clusters and their associated contexts kubectl config current-context Display the current context Show the active Kubernetes cluster and context kubectl config use-context &amp;lt;context_name&amp;gt; Switch to another context Change the active context to the specified one kubectl config set-context &amp;lt;context_name&amp;gt; --namespace=&amp;lt;namespace_name&amp;gt; Set default namespace for a context Specify the default namespace for a specific context kubectl config unset current-context Unset the current context Remove the association with the current context kubectl config set-cluster &amp;lt;cluster_name&amp;gt; --server=&amp;lt;api_server_url&amp;gt; Add a new cluster to the configuration Define a new Kubernetes cluster with its API server URL kubectl config set-credentials &amp;lt;user_name&amp;gt; --token=&amp;lt;access_token&amp;gt; Add user credentials to the configuration Specify user credentials, typically an access token kubectl config set-context &amp;lt;context_name&amp;gt; --cluster=&amp;lt;cluster_name&amp;gt; --user=&amp;lt;user_name&amp;gt; Create a new context Combine a cluster and user to create a context kubectl config delete-context &amp;lt;context_name&amp;gt; Delete a context Remove a specific context from the configuration kubectl config delete-cluster &amp;lt;cluster_name&amp;gt; Delete a cluster Remove a cluster from the configuration kubectl config delete-user &amp;lt;user_name&amp;gt; Delete user credentials Remove user credentials from the configuration kubectl config use-context &amp;lt;context_name&amp;gt; Switch to another context Change the active context to the specified one kubectl config rename-context &amp;lt;old_name&amp;gt; &amp;lt;new_name&amp;gt; Rename a context Change the name of an existing context kubectl config set preferences.</description>
+    </item>
     <item>
       <title>Huawei VRP</title>
       <link>/post/networking/huawei-vrp/</link>
       <pubDate>Sun, 04 Dec 2022 15:11:13 +0100</pubDate>
-      
       <guid>/post/networking/huawei-vrp/</guid>
-      <description>
-        
-          
-            Huawei Versatile Routing Platform (VRP) Overview
-This post gives an overview about the network operating system for huawei network devices - VRP.
-General
-Task Command Comment Enter System View &amp;lt; Huawei &amp;gt; sys Enter Interface View [R1] int GigabitEthernet0/0/1 Enter Protocol View [R1] ospf 1 Display Running Config in current View [R1- GigabitEthernet0/0/3] display this Display current configuration of the System [R1] dis current-config System Configuration
-Task Command Comment Set hostname [Huawei] sysname R1 Interface Configuration
-          
-          
-        
-      </description>
+      <description>Huawei Versatile Routing Platform (VRP) Overview&#xA;This post gives an overview about the network operating system for huawei network devices - VRP.&#xA;General&#xA;Task Command Comment Enter System View &amp;lt; Huawei &amp;gt; sys Enter Interface View [R1] int GigabitEthernet0/0/1 Enter Protocol View [R1] ospf 1 Display Running Config in current View [R1- GigabitEthernet0/0/3] display this Display current configuration of the System [R1] dis current-config System Configuration&#xA;Task Command Comment Set hostname [Huawei] sysname R1 Interface Configuration</description>
     </item>
-    
+    <item>
+      <title>About this blog</title>
+      <link>/about/</link>
+      <pubDate>Tue, 10 May 2022 00:00:00 +0000</pubDate>
+      <guid>/about/</guid>
+      <description>A blog about networking, virtualization and general IT related stuff. Opinions are my own.&#xA;about me: System Engineer based in central Switzerland -</description>
+    </item>
+    <item>
+      <title></title>
+      <link>/archives/</link>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      <guid>/archives/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Search</title>
+      <link>/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/search/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

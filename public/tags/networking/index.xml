@@ -7,26 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2022-2023, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Sun, 04 Dec 2022 15:11:13 +0100</lastBuildDate><atom:link href="/tags/networking/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Dec 2022 15:11:13 +0100</lastBuildDate>
+    <atom:link href="/tags/networking/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Huawei VRP</title>
       <link>/post/networking/huawei-vrp/</link>
       <pubDate>Sun, 04 Dec 2022 15:11:13 +0100</pubDate>
-      
       <guid>/post/networking/huawei-vrp/</guid>
-      <description>
-        
-          
-            Huawei Versatile Routing Platform (VRP) Overview
-This post gives an overview about the network operating system for huawei network devices - VRP.
-General
-Task Command Comment Enter System View &amp;lt; Huawei &amp;gt; sys Enter Interface View [R1] int GigabitEthernet0/0/1 Enter Protocol View [R1] ospf 1 Display Running Config in current View [R1- GigabitEthernet0/0/3] display this Display current configuration of the System [R1] dis current-config System Configuration
-Task Command Comment Set hostname [Huawei] sysname R1 Interface Configuration
-          
-          
-        
-      </description>
+      <description>Huawei Versatile Routing Platform (VRP) Overview&#xA;This post gives an overview about the network operating system for huawei network devices - VRP.&#xA;General&#xA;Task Command Comment Enter System View &amp;lt; Huawei &amp;gt; sys Enter Interface View [R1] int GigabitEthernet0/0/1 Enter Protocol View [R1] ospf 1 Display Running Config in current View [R1- GigabitEthernet0/0/3] display this Display current configuration of the System [R1] dis current-config System Configuration&#xA;Task Command Comment Set hostname [Huawei] sysname R1 Interface Configuration</description>
     </item>
-    
   </channel>
 </rss>

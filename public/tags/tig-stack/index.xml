@@ -7,29 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2022-2023, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Tue, 08 Aug 2023 20:43:03 +0200</lastBuildDate><atom:link href="/tags/tig-stack/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Aug 2023 20:43:03 +0200</lastBuildDate>
+    <atom:link href="/tags/tig-stack/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Vsphere Monitoring</title>
+      <title>vSphere Monitoring with Grafana</title>
       <link>/post/vsphere-monitoring/</link>
       <pubDate>Tue, 08 Aug 2023 20:43:03 +0200</pubDate>
-      
       <guid>/post/vsphere-monitoring/</guid>
-      <description>
-        
-          
-            vSphere Monitoring with TIG (Telegraf, InfluxDB, Grafana).
-*** Prerequiries ***
-RHEL based Linux Docker &amp;amp; Docker Compose (or Podman with Docker Compose. In this tutorial wer are using docker &amp;amp; docker compose) installed *** Environment Variables ***
-In this tutorial we&#39;re using the following varibales, change them according to your setup:
-subnet 172.29.30.0/23 Filesystem structure:
-/srv/tig ├── docker-compose.yml
-└── telegraf.conf
-*** Create Docker Networks ***
-          
-          
-        
-      </description>
+      <description>Intro This blog post describes a solution for monitoring your SDDC Infrastructure with Telegraf, InfluxDB and Grafana. The solution is based on docker and will present graphs and metrics through grafana.&#xA;vSphere Monitoring with TIG (Telegraf, InfluxDB, Grafana) TL;DR: https://github.com/varmox/vsphere-monitoring.git&#xA;Prerequiries RHEL based Linux Docker &amp;amp; Docker Compose (or Podman with Docker Compose. In this tutorial we are using docker &amp;amp; docker compose) installed 3 internal IPs for telegraf, grafana and influxdb containers.</description>
     </item>
-    
   </channel>
 </rss>
