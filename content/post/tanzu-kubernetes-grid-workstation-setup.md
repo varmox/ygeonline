@@ -25,19 +25,19 @@ tags:
 # comment: false # Disable comment if false.
 ---
 
-**TKG Bootstrap Machine on Fedora**
+## TKG Bootstrap Machine on Fedora ##
 
 Tanzu Kubernetes Grid needs a workstation to bootstrap your Kubernetes Cluster. This is a short guide for a Fedora based bootstrap Machine:
 
 **Requirements**
 
-- Docker
-- Tanzu CLI
+- Ability to run Docker
+- Access to download Tanzu CLI (via Customer Connect Portal)
 - dedicated admin user in the wheel-group
 
 **Install Docker**
 
-Docker in newest RHEL system can sometimes be confusing due to the confusing about docker and podman. I should work with podman, but we explicity are going to install docker-ce.
+Docker on modern RHEL systems can  be confusing because the latest versions of RHEL replace Docker with Podman (dnf install docker will install podman). I should work with podman, but we explicity are going to install Docker Container Engine.
 
 Login to your system (via ssh) with the admin user.
 
@@ -96,7 +96,11 @@ Install
 sudo install kubectl-linux-v1.27.5+vmware.1 /usr/local/bin/kubectl
 ```
 
-**Test the setup**
+
+
+
+## Test the setup ##
+
 If everything worked you should be able to run the following commands without any issues:
 
 List your Tanzu CLI plugins
@@ -109,7 +113,7 @@ Create a Tanzu Management Cluster to boostrap TKG
 tanzu management-cluster create --ui
 ```
 
-**Troubleshooting**
+## Troubleshooting ##
 
 ***Error*** "Docker prerequiries not met"
 
@@ -123,7 +127,7 @@ docker ps -a
 If presented with "Got permission denied" try this:
 
 ```
-docker ps -a
+sudo usermod -aG wheel $USER
 ```
 
 Add current user to the wheel (local admin group) group
@@ -131,4 +135,5 @@ Add current user to the wheel (local admin group) group
 sudo usermod -aG wheel $USER
 ```
 
+Then try again to create your tanzu management cluster.
 
