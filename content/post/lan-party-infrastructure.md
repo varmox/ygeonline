@@ -20,6 +20,7 @@ categories:
   - Kubernetes
 tags:
   - Kubernetes 
+  - VMware
   - VMware Tanzu
   - VMware Tanzu Kubernetes Grid
 # comment: false # Disable comment if false.
