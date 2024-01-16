@@ -124,13 +124,7 @@ In the current User Session run:
 docker ps -a
 ```
 
-If presented with "Got permission denied" try this:
-
-```
-sudo usermod -aG wheel $USER
-```
-
-Add current user to the wheel (local admin group) group
+If presented with "Got permission denied" try adding current user to the wheel (local admin group) group
 ```
 sudo usermod -aG wheel $USER
 ```
