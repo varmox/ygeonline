@@ -25,10 +25,12 @@ tags:
 # comment: false # Disable comment if false.
 ---
 
-# Intro
-This blog post describes a solution for monitoring your SDDC Infrastructure with Telegraf, InfluxDB and Grafana. The solution is based on docker and will present graphs and metrics through grafana.
-
 ## vSphere Monitoring with TIG (Telegraf, InfluxDB, Grafana)
+
+This blog post describes a solution for monitoring  SDDC infrastructure using Telegraf, InfluxDB, and Grafana. This solution is based on Docker and displays graphs and metrics via Grafana. All metrics are described in the ***telegraf.conf*** file.
+
+
+
 
 TL;DR:
 https://github.com/varmox/vsphere-monitoring.git 
