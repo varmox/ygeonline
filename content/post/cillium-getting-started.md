@@ -1,5 +1,5 @@
 ---
-title: "Cillium Getting Started" # Title of the blog post.
+title: "Cillium Gateway API - Getting Started" # Title of the blog post.
 date: 2023-10-14T18:18:26+02:00 # Date of post creation.
 description: "Article description." # Description used for search engine.
 featured: true # Sets if post is a featured post, making appear on the home page side bar.
@@ -23,4 +23,6 @@ tags:
 # comment: false # Disable comment if false.
 ---
 
-**Insert Lead paragraph here.**
+**Cillium Gateway API**
+The Cilium Gateway API is a Kubernetes API that provides a more powerful and flexible way to manage traffic routing than the traditional Ingress API of (vanilla) Kubernetes. It is a set of resources that model service networking in Kubernetes, and is designed to be role-oriented, portable, expressive, and extensible.
+The Cilium Service Mesh Gateway API Controller requires the ability to create LoadBalancer Kubernetes services.
