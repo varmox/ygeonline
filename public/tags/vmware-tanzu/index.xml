@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VMware Tanzu on ygerber</title>
+    <link>/tags/vmware-tanzu/</link>
+    <description>Recent content in VMware Tanzu on ygerber</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2022-2023, Y.Gerber &amp; Authors</copyright>
+    <lastBuildDate>Wed, 29 Nov 2023 22:04:40 +0100</lastBuildDate>
+    <atom:link href="/tags/vmware-tanzu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VMware Tanzu Kubernetes Grid -  getting started</title>
+      <link>/post/lan-party-infrastructure/</link>
+      <pubDate>Wed, 29 Nov 2023 22:04:40 +0100</pubDate>
+      <guid>/post/lan-party-infrastructure/</guid>
+      <description>Intro This blog post is about getting started with VMware Tanzu Kubernetes Grid (TKG). TKG is used to deploy Tanzu Kubernetes Cluster to various Cloud Providers including vSphere, AWS and Azure. First, a management cluster (based on Docker and kind) is created from a Bootstrap Workstation, which itself then provides its web interface and additional CLI tools to create a Kubernetes cluster.&#xA;TKG has no integration in vSphere UI. If you wan&#39;t to integrate Tanzu with vCenter/vSphere UI - use vSphere with Tanzu instead.</description>
+    </item>
+    <item>
+      <title>Tanzu Kubernetes Grid - Linux Workstation Setup</title>
+      <link>/post/tanzu-kubernetes-grid-workstation-setup/</link>
+      <pubDate>Sun, 08 Oct 2023 20:43:03 +0200</pubDate>
+      <guid>/post/tanzu-kubernetes-grid-workstation-setup/</guid>
+      <description>TKG Bootstrap Machine on Fedora Tanzu Kubernetes Grid needs a workstation to bootstrap your Kubernetes Cluster. This is a short guide for a Fedora based bootstrap Machine:&#xA;Requirements&#xA;Ability to run Docker Access to download Tanzu CLI (via Customer Connect Portal) dedicated admin user in the wheel-group Install Docker&#xA;Docker on modern RHEL systems can be confusing because the latest versions of RHEL replace Docker with Podman (dnf install docker will install podman).</description>
+    </item>
+    <item>
+      <title>Tanzu Kubernetes Cluster Example Deployments</title>
+      <link>/post/tanzu-kubernetes-cluster-examples/</link>
+      <pubDate>Fri, 23 Jun 2023 23:13:14 +0200</pubDate>
+      <guid>/post/tanzu-kubernetes-cluster-examples/</guid>
+      <description>Intro This post gives a few examples of Tanzu Kubernetes Cluster Manifests and how to deploy them.&#xA;Prerequiries Successfull Installation of vSphere with Tanzu Supervisor vSphere Namespace created Already existing VM Classes, Storages Policies and Tanzu Kubernetes Releases assigned to the Namespace. Login via kubectl You will find the IP to your Kubernetes API on the Namespace Option &amp;quot;Link to CLI Tools&amp;quot;&#xA;1kubectl vsphere login --server=10.40.80.20 1kubectl config get-contexts 1kubectl config use-context &amp;lt;&amp;gt; Get Parameters of your vSphere Namespace VM Class Storagge Policy Tanzu Releases 1kubectl get vmclass 1kubectl get storageclass 1kubectl get tanzukubernetesrelease Cluster with 3 Control and 6 Worker Nodes 1apiVersion: run.</description>
+    </item>
+    <item>
+      <title>Quicktip: Tanzu &amp; HA-Proxy</title>
+      <link>/post/tanzu-ha-proxy/</link>
+      <pubDate>Wed, 08 Mar 2023 20:43:03 +0200</pubDate>
+      <guid>/post/tanzu-ha-proxy/</guid>
+      <description>Quick Tip: vSphere with Tanzu an HA-Proxy This is a short article with tips and tricks I experienced when deploying vSphere with Tanzu and HA-Proxy as a Load Balancer.&#xA;Deploying Ha-Proxy OVA Network&#xA;Alwasys use three NICs when deploying in a production environment. It is very important that these IP addresses do not overlap with the address ranges of your workloads and load balancers, or with the gateway itself.&#xA;At first it can be somewhat confusing what networks are needed and which services will be deployed in each network.</description>
+    </item>
+  </channel>
+</rss>

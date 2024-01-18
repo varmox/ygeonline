@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>yaml on ygerber</title>
+    <link>/tags/yaml/</link>
+    <description>Recent content in yaml on ygerber</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2022-2023, Y.Gerber &amp; Authors</copyright>
+    <lastBuildDate>Fri, 23 Jun 2023 23:13:14 +0200</lastBuildDate>
+    <atom:link href="/tags/yaml/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tanzu Kubernetes Cluster Example Deployments</title>
+      <link>/post/tanzu-kubernetes-cluster-examples/</link>
+      <pubDate>Fri, 23 Jun 2023 23:13:14 +0200</pubDate>
+      <guid>/post/tanzu-kubernetes-cluster-examples/</guid>
+      <description>Intro This post gives a few examples of Tanzu Kubernetes Cluster Manifests and how to deploy them.&#xA;Prerequiries Successfull Installation of vSphere with Tanzu Supervisor vSphere Namespace created Already existing VM Classes, Storages Policies and Tanzu Kubernetes Releases assigned to the Namespace. Login via kubectl You will find the IP to your Kubernetes API on the Namespace Option &amp;quot;Link to CLI Tools&amp;quot;&#xA;1kubectl vsphere login --server=10.40.80.20 1kubectl config get-contexts 1kubectl config use-context &amp;lt;&amp;gt; Get Parameters of your vSphere Namespace VM Class Storagge Policy Tanzu Releases 1kubectl get vmclass 1kubectl get storageclass 1kubectl get tanzukubernetesrelease Cluster with 3 Control and 6 Worker Nodes 1apiVersion: run.</description>
+    </item>
+  </channel>
+</rss>
