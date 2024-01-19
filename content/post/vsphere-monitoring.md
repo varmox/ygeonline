@@ -31,7 +31,7 @@ This blog post describes a solution for monitoring  SDDC infrastructure using Te
 
 
 
-![Grafana Dashboard](https://camo.githubusercontent.com/80479d89dd0cdf21b99df0b8a1bb4da48888a4bdd0c683d4c4f451cefc873e3d/68747470733a2f2f7777772e6a6f72676564656c616372757a2e65732f77702d636f6e74656e742f75706c6f6164732f323031382f31302f767370686572652d64617368626f6172642d67726166616e61372e706e67 "Grafana Dashboard")
+![Grafana - vSphere Overview](/vsphere-tig.png)
 
 TL;DR:
 https://github.com/varmox/vsphere-monitoring.git 
