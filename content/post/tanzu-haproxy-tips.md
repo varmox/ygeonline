@@ -40,6 +40,8 @@ At first it can be somewhat confusing what networks are needed and which service
 - Workload: This is the workload IP address for the HA Proxy server. This subnet will be used to for virtual servers created by HA-Proxy. 
 - Frontend: This is the frontend IP address for the HA Proxy server. From this network clients will access resources.
 
+For a simple PoC you can safely use two NIC. Management is seperate and Workload/Frontend will be shared.
+
 **Certificate**
 
 Just leave it blank it will be generated for you.
