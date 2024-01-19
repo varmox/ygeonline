@@ -56,6 +56,12 @@ If you want to deploy your Kubernetes Cluster and Integration with vCenter and o
 
 If you want to deploy your Kubernetes Cluster to Azure or Amazon Webservices, use Tanzu Kubernetes Grid.
 
+
+### TKGm
+
+### TKGI
+
+
 ## vSphere with Tanzu aka Workload Management ##
 
 In newer version of vCenter there is the option of "Workload Management" within the vSphere Burger Menu. Workload Management is the same as vSphere with Tanzu. With vSphere with Tanzu obviously only works with vSphere. Kubernetes Ressources are provisioned on a vSphere Cluster. 
