@@ -488,8 +488,10 @@ Import the grafana dashboards:
 - Click New and select Import in the dropdown menu.
 - Paste dashboard JSON text directly into the text area
 
-
-
-
-
 https://jorgedelacruz.uk/
+
+
+## Build your own Grafana Dashboard
+
+If you want to build your own dashboard and use the metrics you need, here are some examples to help you:
+
