@@ -491,7 +491,5 @@ Import the grafana dashboards:
 https://jorgedelacruz.uk/
 
 
-## Build your own Grafana Dashboard
 
-If you want to build your own dashboard and use the metrics you need, here are some examples to help you:
 
