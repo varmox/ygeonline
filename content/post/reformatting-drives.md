@@ -25,9 +25,9 @@ tags:
 
 **Problem**
 
-Recently I got my hands on some old HPE 3PAR 1.92TB SAS SSDs (Samsung PM1633a). I though they would be perfect for my SDDC home lab - sadly they did not work as intended with my HPE DL360 server. The SmartArray P420i was regocnizing the disks but was giving the error "This physical drive does not support RAID and is not exposed to OS. It cannot be used for configuration on this controller". But hopefully there is a solution to the problem we are facing:
+Recently I got my hands on some old HPE 3PAR 1.92TB SAS SSDs (Samsung PM1633a). I though they would be perfect for my SDDC home lab - sadly they did not work as intended with my HPE DL360 server. The SmartArray P420i was recognizing the disks but was giving the error "This physical drive does not support RAID and is not exposed to OS. It cannot be used for configuration on this controller". But hopefully there is a solution to the problem we are facing:
 
-Basically the drives in a 3PAR Storage System use 520Bytes blocks as a low-level formatting. We need 512 Bytes (520 Bytes does enable T10 DIF CRC error checking - the extra 8 Bytes are designated for data integrity/protection [1])
+Basically the drives in a 3PAR Storage System use 520Bytes blocks as a low-level formatting. We need 512 Bytes for standard Operating Systems like Linux (520 Bytes does enable T10 DIF CRC error checking - the extra 8 Bytes are designated for data integrity/protection [1])
 
 
 **Solution**
@@ -35,7 +35,7 @@ Basically the drives in a 3PAR Storage System use 520Bytes blocks as a low-level
 ***TL;DR:***
 
 - connect to SAS Drives to a HBA or RAID-Controller in HBA Mode
-- Install a OS (Windows or Linux) on a seperate, already working drive
+- Install a OS (Windows or Linux) on a seperate, already working drive - or just use a live version
 - install sg3_utils package [2]
 - run 𝙨𝙜_𝙨𝙘𝙖𝙣 and 𝒔𝒈_𝒇𝒐𝒓𝒎𝒂𝒕 --𝒇𝒐𝒓𝒎𝒂𝒕 --𝒔𝒊𝒛𝒆 512 𝑷𝑫𝒙  to reformat the disks to 512 Byte blocks
 

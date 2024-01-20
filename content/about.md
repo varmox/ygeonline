@@ -8,5 +8,6 @@ author = "YannickGerber"
 
 A blog about networking, virtualization and general IT related stuff. Opinions are my own.
 
-#### about me:
+#### >_    about me
+
 System Engineer based in central Switzerland - 
