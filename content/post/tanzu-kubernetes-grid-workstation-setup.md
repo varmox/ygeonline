@@ -113,6 +113,10 @@ Create a Tanzu Management Cluster to boostrap TKG
 tanzu management-cluster create --ui
 ```
 
+![Grafana - vSphere Overview](images/tgk-community-mgmt-cluster.png)
+
+
+
 ## Troubleshooting ##
 
 ***Error*** "Docker prerequiries not met"
