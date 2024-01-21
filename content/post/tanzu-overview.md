@@ -82,7 +82,7 @@ User workloads then are running inside a Tanzu Kubernetes Cluster.
 
 ## Tanzu Mission Control 
 
-Tanzu Mission Control is a Tool to operate your Tanzu Kubernetes Clusters. Besides Tanzu Kubernetes Cluster it can also managed Azure Kubernetes Service (AKS) and Elasic Kubernetes Service (EKS) from Amazon. It either can be deployed on-prem (TMC self-hosted) with some limitations or consumed as a SaaS Service.
+Tanzu Mission Control is a Tool to operate your Tanzu Kubernetes Clusters. Besides Tanzu Kubernetes Cluster it can also managed Azure Kubernetes Service (AKS) and Elasic Kubernetes Service (EKS) from Amazon. TMC was a SaaS only Service but now also always a self-hosted version with some limitations .
 
 **TMC self-hosted Requirements**
 
