@@ -43,7 +43,7 @@ TKG has no integration in vSphere UI. If you wan't to integrate Tanzu with vCent
 
 ## TKG Bootstrap Machine on Fedora ##
 
-See [this blog] (https://ygerber.online/post/tanzu-kubernetes-grid-workstation-setup/) post to create a Bootstrap Machine based on Fedora
+See [this blog](https://ygerber.online/post/tanzu-kubernetes-grid-workstation-setup/) post to create a Bootstrap Machine based on Fedora
 
 ## Create Management Cluster 
 

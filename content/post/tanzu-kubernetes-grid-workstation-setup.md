@@ -53,11 +53,13 @@ Start & enable Docker
 sudo systemctl start docker && sudo systemctl enable docker
 ```
 
-Set Docker Socket context to current user. This step is crucial, to allow the current user to access the docker socket.
+Set Docker Socket context to current user. This step is crucial, to allow the current user to access the docker socket as tanzu cli should run with the current user contexts not sudo. 
 
 ```
 sudo chown $USER:docker /var/run/docker.sock
 ```
+
+You can also install docker-desktop if you want to have a GUI.
 
 ***Install Tanzu CLI and Plugin***
 
@@ -113,7 +115,7 @@ Create a Tanzu Management Cluster to boostrap TKG
 tanzu management-cluster create --ui
 ```
 
-![Grafana - vSphere Overview](https://imgur.com/QkKwou2.png)
+![TKG Management Cluster](https://imgur.com/QkKwou2.png)
 
 
 
