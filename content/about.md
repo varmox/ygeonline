@@ -10,4 +10,6 @@ A blog about networking, virtualization and general IT related stuff. Opinions a
 
 #### >_    about me
 
-System Engineer based in central Switzerland - 
+System Engineer based in central Switzerland 
+
+![](https://vexpert.vmware.com/directory/11762/vexpert-badge-year.png
