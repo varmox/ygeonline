@@ -1,5 +1,5 @@
 ---
-title: "VCF 5.2"
+title: "VMware Cloud Foundation - 5.2"
 date: 2024-06-25T20:48:30+02:00
 draft: false
 description: "VMware Cloud Foundation 5.2" # Description used for search engine.
