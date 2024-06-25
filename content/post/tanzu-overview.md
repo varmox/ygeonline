@@ -30,6 +30,8 @@ tags:
 Lately, we've been having lots conversations internally and with customers about Tanzu.
 There appears to be some confusion about Tanzu's portfolio and which Tanzu products are best suited for specific use cases.
 
+Tanzu consists is basically packages open-source tools
+
 ## Kubernetes Runtimes
 
 To actually run Kubernetes Clusters with Tanzu, the following Products are available:
@@ -58,9 +60,10 @@ If you want to deploy your Kubernetes Cluster to Azure or Amazon Webservices, us
 
 
 ### TKGm
+TKGm is the multi-cloud version of TKG. It can be deployed ontop of VMware Cloud on AWS (VMConAWS) and other VMware Hyperscaler Solutions.
 
 ### TKGI
-
+TKG Integrated edition has deep integration with NSX-T. It uses BOSH and Ops Manager to manage operations. It was an offering mainly for Telcos at Pivotal (Enterprise PKS). Although Integrated in the name, it's not as tighly integrated was vSphere with Tanzu. 
 
 ## vSphere with Tanzu aka Workload Management ##
 
@@ -90,4 +93,17 @@ Tanzu Mission Control is a Tool to operate your Tanzu Kubernetes Clusters. Besid
 - Supervisor Services:
   - Contour
   - Harbor Image Registry
+
+# DevSecOps Tools
+
+Where in my opinion Tanzu really shines are the tools for day 2 operations and the whole DevSecOps lifecycle. 
+
+## Tanzu Application Platform (TAP)
+
+## Tanzu Application Catalog
+
+Tanzu Application Catalog came from the aquisition of Bitnami. TAC is the enterprise version of Bitnami Application Catalog.
+Bitnami was very well known for their prepackaded virtual machine Images (Drupal, Wordpress, Gitlab to name a few). Bitnami also provided prepackaked Applications on docker or kubernetes. 
+
+Look at the VMware Marketplace for Solutions: https://marketplace.cloud.vmware.com/ 
 

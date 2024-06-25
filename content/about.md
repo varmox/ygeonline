@@ -12,4 +12,4 @@ A blog about networking, virtualization and general IT related stuff. Opinions a
 
 System Engineer based in central Switzerland 
 
-![vExpert 2024](https://vexpert.vmware.com/directory/11762/vexpert-badge-year.png)
+<img src="https://vexpert.vmware.com/directory/11762/vexpert-badge-year.png" width="256" alt="vExpert Badge" title="vExpert Badge" />

@@ -48,3 +48,10 @@ See [this blog](https://ygerber.online/post/tanzu-kubernetes-grid-workstation-se
 ## Create Management Cluster 
 
 Create the Management Cluster on your Machine:
+
+Create a Tanzu Management Cluster to boostrap TKG
+```
+tanzu management-cluster create --ui
+```
+
+![TKG Management Cluster](https://imgur.com/QkKwou2.png)
