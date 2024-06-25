@@ -42,6 +42,9 @@ With the new Local Consumption Interface within vSphere UI you can deploy Tanzu 
 
 Surely some of you already knew the Cloud Consumption Interface (CCI) within Aria - Local Cloud Consumption Interface is a built in UI within vSphere UI (no need to deploy Aria)
 
+
+![vSphere LCI](https://github.com/varmox/ygeonline/blob/main/static/images/vcf5.2-lci.png?raw=true)
+
 ## Tanzu Kubernetes Cluster Autoscaling
 
 As the name already suggest: Autoscaling of Tanzu Kubernetes Workers Nodes (VMs)! Only requirements is to have TKR Relase 1.25.
