@@ -36,6 +36,8 @@ The naming already suggest - not only Kubernetes Cluster can be deployed, also V
 
 Deployment of Windows Server within a ArgoCD Pipeline is possible (if you would want that ;))
 
+Now also the Backup via vSphere Storage APIs for Data Protection (VADP) for VMs deployed via vm-operator are supportet (as "normal" VMs) - within Veeam you can just backup the whole vSphere Namespace (with is basically a advanced vSphere Ressource Pool)
+
 ## LCI - Local consumption Interface
 
 With the new Local Consumption Interface within vSphere UI you can deploy Tanzu Kubernetes Clusters or VMs - both via IaaS Control Plane with a GUI!
