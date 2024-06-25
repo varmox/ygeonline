@@ -1,5 +1,5 @@
 ---
-title: "VMware Cloud Foundation 5.2"
+title: "VMware Cloud Foundation 5.2 - Part 1"
 date: 2024-06-25T20:48:30+02:00
 draft: false
 description: "VMware Cloud Foundation Updates for Tanzu" # Description used for search engine.
