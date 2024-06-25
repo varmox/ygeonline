@@ -1,8 +1,8 @@
 ---
-title: "VMware Cloud Foundation - 5.2"
+title: "VMware Cloud Foundation 5.2"
 date: 2024-06-25T20:48:30+02:00
 draft: false
-description: "VMware Cloud Foundation 5.2" # Description used for search engine.
+description: "VMware Cloud Foundation Updates for Tanzu" # Description used for search engine.
 featured: true # Sets if post is a featured post, making appear on the home page side bar.
 toc: false # Controls if a table of contents should be generated for first-level links automatically.
 # menu: main
@@ -24,7 +24,7 @@ tags:
 # comment: false # Disable comment if false.
 ---
 
-# VCF 5.2 Updates for Tanzu
+
 
 The new VCF 5.2 Update delivers quite a few interesting updates. This blog post covers expecially the updates and improvements for Tanzu.
 
