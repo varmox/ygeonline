@@ -61,9 +61,6 @@ With vSphere 8 Update 3 TKGS now supports vSAN streched Clusters. Interesting is
 
 As the name already suggest: Autoscaling of Tanzu Kubernetes Workers Nodes (VMs)! Only requirements is to have TKR Relase 1.25
 
-# Conclusion
-
-With
 
 #### Links
 
