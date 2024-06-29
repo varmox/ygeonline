@@ -28,7 +28,7 @@ tags:
 
 The new VCF 5.2 Update delivers quite a few interesting updates. This blog post covers expecially the updates and improvements for Tanzu.
 
-Part 1 covers new Feature within vSphere 8 Update 3.
+Part 1 covers new Feature within Tanzu on vSphere 8 Update 3.
 
 ## vSphere with Tanzu Update -> vSphere IaaS Control Plane
 
