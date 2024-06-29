@@ -28,9 +28,11 @@ tags:
 
 The new VCF 5.2 Update delivers quite a few interesting updates. This blog post covers expecially the updates and improvements for Tanzu.
 
+Part 1 covers new Feature within vSphere 8 Update 3.
+
 ## vSphere with Tanzu Update -> vSphere IaaS Control Plane
 
-vSphere with Tanzu is passé - the new naming is vSphere IaaS Control Plane.
+vSphere with Tanzu is passé - the new naming is vSphere IaaS Control Plane. [2]
 
 The naming already suggest - not only Kubernetes Cluster can be deployed, also VMs (this was possible a long time but with the new naming the focus is not only on k8s). Via the vm-operator you can deploy VMs alongside Tanzu Kubernetes Cluster. The IaaS Control Plane is really interesting as you can deploy VMs with Code. A YAML File will describe your VM. It is even possible to deploy Windows Workloads via VM-Operator with sysprep! (blog to follow)
 
@@ -47,6 +49,24 @@ Surely some of you already knew the Cloud Consumption Interface (CCI) within Ari
 
 ![vSphere LCI](https://github.com/varmox/ygeonline/blob/main/static/images/vcf5.2-lci.png?raw=true)
 
+## vSAN streched Cluster support for Tanzu Kubernetes Grid Service (TKGs)
+
+With vSphere 8 Update 3 TKGS now supports vSAN streched Clusters. Interesting is that Kubernetes Control Plane Nodes and the Supervisor Control Plane Nodes should be kept at one site within a vSAN streched Clusters. This is due to etcd. etcd  requires more than half of the replicas to be available at any time.
+
+- The 3 Supervisor Control Plane VMs should be placed in the same site
+- All the Control Plane VMs of any given TKGs cluster should be placed in the same site
+- Worker Nodes can be streched acroos two sites
+
 ## Tanzu Kubernetes Cluster Autoscaling
 
-As the name already suggest: Autoscaling of Tanzu Kubernetes Workers Nodes (VMs)! Only requirements is to have TKR Relase 1.25.
+As the name already suggest: Autoscaling of Tanzu Kubernetes Workers Nodes (VMs)! Only requirements is to have TKR Relase 1.25
+
+# Conclusion
+
+With
+
+#### Links
+
+[1] https://blogs.vmware.com/cloud-foundation/2024/06/25/vmware-cloud-foundation-launch/
+
+[2] https://core.vmware.com/resource/whats-new-vsphere-update-3-vsphere-iaas-control-plane
