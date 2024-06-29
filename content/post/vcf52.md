@@ -32,7 +32,7 @@ Part 1 covers new Feature within vSphere 8 Update 3.
 
 ## vSphere with Tanzu Update -> vSphere IaaS Control Plane
 
-vSphere with Tanzu is passé - the new naming is vSphere IaaS Control Plane. [2]
+vSphere with Tanzu is passé - the new naming is vSphere IaaS Control Plane. 
 
 The naming already suggest - not only Kubernetes Cluster can be deployed, also VMs (this was possible a long time but with the new naming the focus is not only on k8s). Via the vm-operator you can deploy VMs alongside Tanzu Kubernetes Cluster. The IaaS Control Plane is really interesting as you can deploy VMs with Code. A YAML File will describe your VM. It is even possible to deploy Windows Workloads via VM-Operator with sysprep! (blog to follow)
 
@@ -70,3 +70,5 @@ With
 [1] https://blogs.vmware.com/cloud-foundation/2024/06/25/vmware-cloud-foundation-launch/
 
 [2] https://core.vmware.com/resource/whats-new-vsphere-update-3-vsphere-iaas-control-plane
+
+[3] https://docs.vmware.com/en/VMware-vSphere/8.0/rn/vmware-vsphere-with-tanzu-80-release-notes/index.html
