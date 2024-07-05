@@ -21,6 +21,7 @@ categories:
 tags:
   - VMware
   - VCF
+  - VMware Tanzu
 # comment: false # Disable comment if false.
 ---
 
