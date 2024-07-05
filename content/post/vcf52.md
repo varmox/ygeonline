@@ -49,6 +49,15 @@ Surely some of you already knew the Cloud Consumption Interface (CCI) within Ari
 
 ![vSphere LCI](https://github.com/varmox/ygeonline/blob/main/static/images/vcf5.2-lci.png?raw=true)
 
+#### LCI Installation
+
+LCI is a supervisor Service. Supervisor Services are deployed directly to the Supervisor instead of deploying to a TKGS Cluster.
+
+- https://docs.vmware.com/en/VMware-vSphere/8.0/vsphere-with-tanzu-services-workloads/GUID-4843E6C6-747E-43B1-AC55-8F02299CC10E.html
+- https://vsphere-tmm.github.io/Supervisor-Services/#consumption-interface
+
+Download Link of LCI YAML: https://vmwaresaas.jfrog.io/ui/native/supervisor-services/cci-supervisor-service/v1.0.0/cci-supervisor-service.yml 
+
 ## vSAN streched Cluster support for Tanzu Kubernetes Grid Service (TKGs)
 
 With vSphere 8 Update 3 TKGS now supports vSAN streched Clusters. Interesting is that Kubernetes Control Plane Nodes and the Supervisor Control Plane Nodes should be kept at one site within a vSAN streched Clusters. This is due to etcd. etcd  requires more than half of the replicas to be available at any time.
