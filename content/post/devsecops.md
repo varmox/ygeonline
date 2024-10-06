@@ -40,9 +40,9 @@ The main Goal for DevOps Practises is to shorten time of the SDLC (Systems Devel
 
 # Problems
 
-## DevSecOps is not a person
+## DevSecOps is not a person nor a role
 
-DevSecOps covers a whole lot of topics. Tooo much to handle for a single person.
+DevSecOps covers a whole lot of topics. Tooo much to handle for a single person. DevOps are practises.
 
  
 
