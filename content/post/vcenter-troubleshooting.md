@@ -28,7 +28,39 @@ tags:
 
 The following Troubleshooting Guide applies to vCenter 8 and above. 
 
-Create a VM Snapshot of your vCenter before proceeding with any step!
+> #### Caution!
+>  Create a VM Snapshot of your vCenter before proceeding with any step!
+
+
+## General Troubleshooting
+
+Log files can be accesses trough ssh or bash. SSH login works with the root user or your SSO Admi User (commonly administrator@vsphere.local)
+
+**SSH not working**
+
+If SSH does not work (eg. due to a networki misconfiguration) you can access the vCenter via bash (VM Remote Console).
+
+At the VM Remote Console press F2 to access your vCenter or press ALT + F1 to access the bash shell.
+
+## Services
+
+If you have trouble starting services and the GUI is not working, use service-control with ssh to get all the running services:
+
+```
+service-control --status
+```
+
+To stop all services
+
+```
+service-control --stop --all
+```
+
+To start all services:
+```
+service-control --start --all
+```
+
 
 ## Log Files
 
@@ -36,6 +68,7 @@ All vCenter Log Files are stored under:
 
 ```
 /var/log/vmware/
+/var/log/vmware/<service_name> 
 ```
 
 vCenter logs are grouped by component and purpose:
@@ -50,12 +83,20 @@ Some key log files and directories include:
 - /var/log/vmware/vpxd/vpxd.log - The main vCenter Server log
 - /var/log/vmware/vsphere-ui/ - vSphere UI logs
 - /var/log/vmware/eam/eam.log - ESX Agent Manager log
+- /var/log/vmware/eam/applmgmt.log - Appliance Management Service
 
 Additional Important Logs
 - /var/log/vmware/vpostgres/ - VMware Postgres service logs
 - /var/log/vmware/vcha/ - vCenter High Availability service logs
 - /var/log/vmware/rhttpproxy/ - VMware HTTP Reverse Proxy service logs
 - /var/log/vmware/content-library/ - VMware Content Library Service logs
+- /var/log/vmware/applmgmt/backup.log - VCSA Backup Log
+
+**GUI**
+
+vCenter Server logs can be viewed from:
+
+ - Home > Administration > System Logs.
 
 ## Networking
 
@@ -123,17 +164,18 @@ To get the vCenter PNID:
 ```
 /usr/lib/vmware-vmafd/bin/vmafd-cli get-pnid --server-name localhost
 ```
+## vSphere HA
+
+Log File: /var/log/fdm.log
+
+## vSphere Lifecycle Manager (vLCM)
 
 
-# vLCM
+Log File: /var/log/vmware/vmware-updatemgr/vum-server/vmware-vum-server.log
 
-***Cannot sync depot***
 
-```
+**Error cannot sync depot**
 
-/var/log/vmware/vmware-updatemgr/vum-server/vmware-vum-server.log
-
-```
 A usual error is that vCenter is unable to reach vmwaredepot. Check DNS, Firewall and HTTP Proxy Settings. The log file indicated it the following:
 
 ```
@@ -150,7 +192,18 @@ A usual error is that vCenter is unable to reach vmwaredepot. Check DNS, Firewal
 ```
 Also check your connected depots. Maybe there is a old depot still configured (like a old HPE OneView Instance).
 
-# Restore 
+# Backup and Restore
+
+## Backup
+
+Log files:
+- /var/log/vmware/applmgmt/backup.log
+- /var/log/vmware/applmgmt/backupscheduler.log
+- /var/log/vmware/applmgmt/backupschedulercron.log
+
+## vCenter Appliance File-Restore 
+
+See: [VMware Docs](https://docs.vmware.com/en/VMware-vSphere/8.0/vsphere-vcenter-installation/GUID-F02AF073-7CFD-45B2-ACC8-DE3B6ED28022.html)
 
 If during a File Level Restore something went run, check your logs at:
 
