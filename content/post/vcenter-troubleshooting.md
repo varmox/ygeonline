@@ -207,7 +207,7 @@ See: [VMware Docs](https://docs.vmware.com/en/VMware-vSphere/8.0/vsphere-vcenter
 
 If during a File Level Restore something went run, check your logs at:
 
-
+/var/log/vmware/applmgmt/restore.log 
 
 # vCenter and ESXi 
 
