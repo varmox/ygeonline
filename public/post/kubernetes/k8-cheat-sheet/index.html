@@ -114,7 +114,7 @@
 </svg>
 
   </a>
-  <a href="https://www.linkedin.com/in/#">
+  <a href="https://www.linkedin.com/in/yannick-gerber-2807921a9/">
     <svg class="icon">
   <title>linkedin</title>
   <use xlink:href="#linkedin"></use>
@@ -144,7 +144,7 @@
 </span>
     <span class="post_date">
       Dec 4, 2022</span>
-    <span class="post_time"> · 1 min read</span><span>&nbsp;· <a href='/tags/cheat-sheet/' title="Cheat Sheet" class="post_tag button button_translucent">Cheat Sheet
+    <span class="post_time"> · 7 min read</span><span>&nbsp;· <a href='/tags/cheat-sheet/' title="Cheat Sheet" class="post_tag button button_translucent">Cheat Sheet
         </a><a href='/tags/kubernetes/' title="Kubernetes" class="post_tag button button_translucent">Kubernetes
         </a>
     </span>
@@ -185,8 +185,468 @@
 
     <div class="post_body"><p><strong>Kubernetes Cheat Sheet</strong></p>
 <p>Cheat Sheet for kubectl, kubeadm and general k8s related commands.</p>
-<h3 id="troubleshooting">Troubleshooting</h3>
-<h3 id="configuration">Configuration</h3>
+<h3 id="kubectl-interacting-with-clusters">kubectl Interacting with clusters</h3>
+<table>
+<thead>
+<tr>
+<th>kubectl command</th>
+<th>description</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kubectl config view</td>
+<td>View Kubectl Configuration</td>
+<td>Display the current Kubectl configuration</td>
+</tr>
+<tr>
+<td>kubectl config get-contexts</td>
+<td>List available contexts</td>
+<td>See the available Kubernetes clusters and their associated contexts</td>
+</tr>
+<tr>
+<td>kubectl config current-context</td>
+<td>Display the current context</td>
+<td>Show the active Kubernetes cluster and context</td>
+</tr>
+<tr>
+<td>kubectl config use-context &lt;context_name&gt;</td>
+<td>Switch to another context</td>
+<td>Change the active context to the specified one</td>
+</tr>
+<tr>
+<td>kubectl config set-context &lt;context_name&gt; --namespace=&lt;namespace_name&gt;</td>
+<td>Set default namespace for a context</td>
+<td>Specify the default namespace for a specific context</td>
+</tr>
+<tr>
+<td>kubectl config unset current-context</td>
+<td>Unset the current context</td>
+<td>Remove the association with the current context</td>
+</tr>
+<tr>
+<td>kubectl config set-cluster &lt;cluster_name&gt; --server=&lt;api_server_url&gt;</td>
+<td>Add a new cluster to the configuration</td>
+<td>Define a new Kubernetes cluster with its API server URL</td>
+</tr>
+<tr>
+<td>kubectl config set-credentials &lt;user_name&gt; --token=&lt;access_token&gt;</td>
+<td>Add user credentials to the configuration</td>
+<td>Specify user credentials, typically an access token</td>
+</tr>
+<tr>
+<td>kubectl config set-context &lt;context_name&gt; --cluster=&lt;cluster_name&gt; --user=&lt;user_name&gt;</td>
+<td>Create a new context</td>
+<td>Combine a cluster and user to create a context</td>
+</tr>
+<tr>
+<td>kubectl config delete-context &lt;context_name&gt;</td>
+<td>Delete a context</td>
+<td>Remove a specific context from the configuration</td>
+</tr>
+<tr>
+<td>kubectl config delete-cluster &lt;cluster_name&gt;</td>
+<td>Delete a cluster</td>
+<td>Remove a cluster from the configuration</td>
+</tr>
+<tr>
+<td>kubectl config delete-user &lt;user_name&gt;</td>
+<td>Delete user credentials</td>
+<td>Remove user credentials from the configuration</td>
+</tr>
+<tr>
+<td>kubectl config use-context &lt;context_name&gt;</td>
+<td>Switch to another context</td>
+<td>Change the active context to the specified one</td>
+</tr>
+<tr>
+<td>kubectl config rename-context &lt;old_name&gt; &lt;new_name&gt;</td>
+<td>Rename a context</td>
+<td>Change the name of an existing context</td>
+</tr>
+<tr>
+<td>kubectl config set preferences.colors true</td>
+<td>Enable colorized output</td>
+<td>Enhance readability with colorized command output</td>
+</tr>
+</tbody>
+</table>
+<h3 id="general-troubleshooting">General Troubleshooting</h3>
+<table>
+<thead>
+<tr>
+<th>kubectl command</th>
+<th>description</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kubectl get events</td>
+<td>Check events for resources</td>
+<td>View events for debugging and troubleshooting</td>
+</tr>
+<tr>
+<td>kubectl describe node &lt;node_name&gt;</td>
+<td>Run diagnostics on a specific node</td>
+<td>Replace <code>&lt;node_name&gt;</code> with the actual node name</td>
+</tr>
+<tr>
+<td>kubectl get componentstatuses</td>
+<td>Check the health of cluster components</td>
+<td>Verify the status of essential components in the cluster</td>
+</tr>
+<tr>
+<td>kubectl get pods --all-namespaces</td>
+<td>List all pods in all namespaces</td>
+<td>Useful for identifying pods in any namespace</td>
+</tr>
+<tr>
+<td>kubectl describe pod &lt;pod_name&gt;</td>
+<td>Get detailed information about a specific pod</td>
+<td>Replace <code>&lt;pod_name&gt;</code> with the actual pod name</td>
+</tr>
+<tr>
+<td>kubectl logs &lt;pod_name&gt;</td>
+<td>Retrieve the logs from a specific pod</td>
+<td>Replace <code>&lt;pod_name&gt;</code> with the actual pod name</td>
+</tr>
+<tr>
+<td>kubectl top nodes</td>
+<td>Display resource usage statistics for nodes</td>
+<td>View CPU and memory usage for all nodes</td>
+</tr>
+<tr>
+<td>kubectl top pods</td>
+<td>Display resource usage statistics for pods</td>
+<td>View CPU and memory usage for all pods</td>
+</tr>
+</tbody>
+</table>
+<h3 id="nodes">Nodes</h3>
+<table>
+<thead>
+<tr>
+<th>kubectl command</th>
+<th>description</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kubectl get nodes</td>
+<td>List all nodes in the cluster</td>
+<td>Display a list of nodes and their status</td>
+</tr>
+<tr>
+<td>kubectl describe node &lt;node_name&gt;</td>
+<td>Get detailed information about a node</td>
+<td>Replace <code>&lt;node_name&gt;</code> with the actual node name</td>
+</tr>
+<tr>
+<td>kubectl get nodes -o wide</td>
+<td>Display additional details about nodes</td>
+<td>View IP addresses and other information about nodes</td>
+</tr>
+<tr>
+<td>kubectl get nodes --show-labels</td>
+<td>Show labels assigned to nodes</td>
+<td>Display labels associated with each node</td>
+</tr>
+<tr>
+<td>kubectl get nodes -o json</td>
+<td>Display node information in JSON format</td>
+<td>View detailed node information in JSON</td>
+</tr>
+<tr>
+<td>kubectl cordon &lt;node_name&gt;</td>
+<td>Mark a node as unschedulable</td>
+<td>Prevent new pods from being scheduled on the specified node</td>
+</tr>
+<tr>
+<td>kubectl uncordon &lt;node_name&gt;</td>
+<td>Mark a node as schedulable</td>
+<td>Allow new pods to be scheduled on the specified node</td>
+</tr>
+<tr>
+<td>kubectl drain &lt;node_name&gt;</td>
+<td>Safely evict all pods from a node</td>
+<td>Evacuate a node for maintenance</td>
+</tr>
+<tr>
+<td>kubectl top nodes</td>
+<td>Display resource usage statistics for nodes</td>
+<td>View CPU and memory usage for all nodes</td>
+</tr>
+<tr>
+<td>kubectl get nodes --sort-by=.status.capacity.cpu</td>
+<td>Sort nodes by CPU capacity</td>
+<td>Sort nodes based on CPU capacity in ascending order</td>
+</tr>
+<tr>
+<td>kubectl label nodes &lt;node_name&gt; &lt;label_key&gt;=&lt;label_value&gt;</td>
+<td>Label a node</td>
+<td>Assign a label to a specific node</td>
+</tr>
+<tr>
+<td>kubectl taint nodes &lt;node_name&gt; &lt;taint_key&gt;=&lt;taint_value&gt;:<effect></td>
+<td>Taint a node</td>
+<td>Apply a taint to a node for node affinity or tolerations</td>
+</tr>
+<tr>
+<td>kubectl describe nodes</td>
+<td>Get detailed information about all nodes</td>
+<td>View detailed information about all nodes in the cluster</td>
+</tr>
+<tr>
+<td>kubectl get componentstatuses</td>
+<td>Check the health of cluster components</td>
+<td>Verify the status of essential components in the cluster</td>
+</tr>
+<tr>
+<td>kubectl get nodes -o custom-columns=NAME:.metadata.name,STATUS:.status.phase</td>
+<td>Display custom columns for nodes</td>
+<td>Define custom output columns for nodes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pods">Pods</h3>
+<table>
+<thead>
+<tr>
+<th>kubectl command</th>
+<th>description</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kubectl get pods</td>
+<td>List all pods in the current namespace</td>
+<td>Display a list of pods and their status</td>
+</tr>
+<tr>
+<td>kubectl get pods -n <namespace></td>
+<td>List pods in a specific namespace</td>
+<td>Replace <code>&lt;namespace&gt;</code> with the desired namespace</td>
+</tr>
+<tr>
+<td>kubectl describe pod &lt;pod_name&gt;</td>
+<td>Get detailed information about a pod</td>
+<td>Replace <code>&lt;pod_name&gt;</code> with the actual pod name</td>
+</tr>
+<tr>
+<td>kubectl logs &lt;pod_name&gt;</td>
+<td>Retrieve the logs from a specific pod</td>
+<td>Replace <code>&lt;pod_name&gt;</code> with the actual pod name</td>
+</tr>
+<tr>
+<td>kubectl exec -it &lt;pod_name&gt; -- <command></td>
+<td>Execute a command in a running pod</td>
+<td>Replace <code>&lt;pod_name&gt;</code> with the actual pod name and <code>&lt;command&gt;</code> with the desired command</td>
+</tr>
+<tr>
+<td>kubectl port-forward &lt;pod_name&gt; &lt;local_port&gt;:&lt;pod_port&gt;</td>
+<td>Forward a pod's port to the local machine</td>
+<td>Replace <code>&lt;pod_name&gt;</code>, <code>&lt;local_port&gt;</code>, and <code>&lt;pod_port&gt;</code> with the actual values</td>
+</tr>
+<tr>
+<td>kubectl delete pod &lt;pod_name&gt;</td>
+<td>Delete a specific pod</td>
+<td>Replace <code>&lt;pod_name&gt;</code> with the actual pod name</td>
+</tr>
+<tr>
+<td>kubectl delete pods --all</td>
+<td>Delete all pods in the current namespace</td>
+<td>Be cautious when using this command</td>
+</tr>
+<tr>
+<td>kubectl apply -f &lt;pod_manifest.yaml&gt;</td>
+<td>Create or update a pod using a manifest file</td>
+<td>Replace <code>&lt;pod_manifest.yaml&gt;</code> with the path to the pod's YAML manifest</td>
+</tr>
+<tr>
+<td>kubectl get pod &lt;pod_name&gt; -o yaml</td>
+<td>Get the YAML definition of a pod</td>
+<td>Replace <code>&lt;pod_name&gt;</code> with the actual pod name</td>
+</tr>
+<tr>
+<td>kubectl exec -it &lt;pod_name&gt; -- /bin/bash</td>
+<td>Open a shell in a running pod for debugging</td>
+<td>Replace <code>&lt;pod_name&gt;</code> with the actual pod name</td>
+</tr>
+<tr>
+<td>kubectl describe pod &lt;pod_name&gt; | grep Image</td>
+<td>Get the container image version running in a pod</td>
+<td>Replace <code>&lt;pod_name&gt;</code> with the actual pod name</td>
+</tr>
+</tbody>
+</table>
+<h3 id="storage">Storage</h3>
+<table>
+<thead>
+<tr>
+<th>kubectl command</th>
+<th>description</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kubectl get storageclass</td>
+<td>List available storage classes</td>
+<td>Check the available storage classes in the cluster</td>
+</tr>
+<tr>
+<td>kubectl describe storageclass &lt;storageclass_name&gt;</td>
+<td>Get detailed information about a storage class</td>
+<td>Replace <code>&lt;storageclass_name&gt;</code> with the actual storage class name</td>
+</tr>
+<tr>
+<td>kubectl get persistentvolumes</td>
+<td>Display information about persistent volumes</td>
+<td>View details of persistent volumes in the cluster</td>
+</tr>
+<tr>
+<td>kubectl describe persistentvolume &lt;pv_name&gt;</td>
+<td>Get detailed information about a persistent volume</td>
+<td>Replace <code>&lt;pv_name&gt;</code> with the actual persistent volume name</td>
+</tr>
+<tr>
+<td>kubectl get persistentvolumeclaims</td>
+<td>List persistent volume claims</td>
+<td>View information about persistent volume claims in the current namespace</td>
+</tr>
+<tr>
+<td>kubectl describe persistentvolumeclaim &lt;pvc_name&gt;</td>
+<td>Get detailed information about a persistent volume claim</td>
+<td>Replace <code>&lt;pvc_name&gt;</code> with the actual persistent volume claim name</td>
+</tr>
+<tr>
+<td>kubectl get pv,pvc</td>
+<td>List both persistent volumes and claims</td>
+<td>Display a combined list of persistent volumes and claims</td>
+</tr>
+<tr>
+<td>kubectl apply -f &lt;storage_manifest.yaml&gt;</td>
+<td>Create or update storage using a manifest file</td>
+<td>Replace <code>&lt;storage_manifest.yaml&gt;</code> with the path to the storage YAML manifest</td>
+</tr>
+<tr>
+<td>kubectl delete persistentvolume &lt;pv_name&gt;</td>
+<td>Delete a specific persistent volume</td>
+<td>Replace <code>&lt;pv_name&gt;</code> with the actual persistent volume name</td>
+</tr>
+<tr>
+<td>kubectl delete persistentvolumeclaims --all</td>
+<td>Delete all persistent volume claims in the current namespace</td>
+<td>Be cautious when using this command</td>
+</tr>
+<tr>
+<td>kubectl get storageclass -o yaml</td>
+<td>Get the YAML definition of a storage class</td>
+<td>Replace <code>&lt;storageclass_name&gt;</code> with the actual storage class name</td>
+</tr>
+<tr>
+<td>kubectl get persistentvolume -o yaml</td>
+<td>Get the YAML definition of a persistent volume</td>
+<td>Replace <code>&lt;pv_name&gt;</code> with the actual persistent volume name</td>
+</tr>
+<tr>
+<td>kubectl get persistentvolumeclaim -o yaml</td>
+<td>Get the YAML definition of a persistent volume claim</td>
+<td>Replace <code>&lt;pvc_name&gt;</code> with the actual persistent volume claim name</td>
+</tr>
+<tr>
+<td>kubectl exec -it &lt;pod_name&gt; -- df -h</td>
+<td>Check storage usage inside a pod</td>
+<td>Replace <code>&lt;pod_name&gt;</code> with the actual pod name and <code>df -h</code> with the desired command</td>
+</tr>
+<tr>
+<td>kubectl describe storageclass &lt;storageclass_name&gt; | grep Provisioner</td>
+<td>Get the provisioner information for a storage class</td>
+<td>Replace <code>&lt;storageclass_name&gt;</code> with the actual storage class name</td>
+</tr>
+</tbody>
+</table>
+<h3 id="services">Services</h3>
+<table>
+<thead>
+<tr>
+<th>kubectl command</th>
+<th>description</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kubectl get services</td>
+<td>List all services in the current namespace</td>
+<td>Display a list of services and their types</td>
+</tr>
+<tr>
+<td>kubectl get services -o wide</td>
+<td>Display additional details about services</td>
+<td>View IP addresses and ports of services</td>
+</tr>
+<tr>
+<td>kubectl describe service &lt;service_name&gt;</td>
+<td>Get detailed information about a service</td>
+<td>Replace <code>&lt;service_name&gt;</code> with the actual service name</td>
+</tr>
+<tr>
+<td>kubectl get service &lt;service_name&gt; -o yaml</td>
+<td>Get the YAML definition of a service</td>
+<td>Replace <code>&lt;service_name&gt;</code> with the actual service name</td>
+</tr>
+<tr>
+<td>kubectl expose deployment &lt;deployment_name&gt; --port=&lt;port_number&gt; --target-port=&lt;target_port&gt; --name=&lt;service_name&gt; --type=&lt;service_type&gt;</td>
+<td>Expose a deployment as a service</td>
+<td>Replace <code>&lt;deployment_name&gt;</code>, <code>&lt;port_number&gt;</code>, <code>&lt;target_port&gt;</code>, <code>&lt;service_name&gt;</code>, and <code>&lt;service_type&gt;</code> with the actual values</td>
+</tr>
+<tr>
+<td>kubectl apply -f &lt;service_manifest.yaml&gt;</td>
+<td>Create or update a service using a manifest file</td>
+<td>Replace <code>&lt;service_manifest.yaml&gt;</code> with the path to the service YAML manifest</td>
+</tr>
+<tr>
+<td>kubectl delete service &lt;service_name&gt;</td>
+<td>Delete a specific service</td>
+<td>Replace <code>&lt;service_name&gt;</code> with the actual service name</td>
+</tr>
+<tr>
+<td>kubectl get services --sort-by=.spec.ports[0].nodePort</td>
+<td>Sort services by NodePort</td>
+<td>Sort services based on NodePort value in ascending order</td>
+</tr>
+<tr>
+<td>kubectl get services -o custom-columns=NAME:.metadata.name,TYPE:.spec.type,CLUSTER-IP:.spec.clusterIP,EXTERNAL-IP:.status.loadBalancer.ingress[0].ip,PORT(S).:.spec.ports[*].nodePort</td>
+<td>Display custom columns for services</td>
+<td>Define custom output columns for services</td>
+</tr>
+<tr>
+<td>kubectl get services -n <namespace></td>
+<td>List services in a specific namespace</td>
+<td>Replace <code>&lt;namespace&gt;</code> with the desired namespace</td>
+</tr>
+<tr>
+<td>kubectl get endpoints &lt;service_name&gt;</td>
+<td>Display endpoints for a service</td>
+<td>View the IP addresses and ports of pods backing a service</td>
+</tr>
+<tr>
+<td>kubectl describe ingress &lt;ingress_name&gt;</td>
+<td>Get detailed information about an ingress</td>
+<td>Replace <code>&lt;ingress_name&gt;</code> with the actual ingress name</td>
+</tr>
+<tr>
+<td>kubectl get svc &lt;service_name&gt; -o=jsonpath='{.spec.ports[0].nodePort}'</td>
+<td>Get the NodePort of a service using JSONPath</td>
+<td>Replace <code>&lt;service_name&gt;</code> with the actual service name</td>
+</tr>
+</tbody>
+</table>
 <h3 id="operations">Operations</h3>
 <p>Run kubectl as non-root user <br>
 <code>non-root@cp: ̃$ mkdir -p $HOME/.kube</code> <br>
@@ -238,34 +698,59 @@
     <h2 class="mt-4">Featured Posts</h2>
     <ul>
       <li>
-        <a href="/post/vsphere-monitoring/" class="nav-link" title="Vsphere Monitoring">Vsphere Monitoring</a>
+        <a href="/post/vcenter-troubleshooting/" class="nav-link" title="VMware vCenter Troubleshooting Guide">VMware vCenter Troubleshooting Guide</a>
       </li>
       <li>
-        <a href="/post/leadership/" class="nav-link" title="Leadership">Leadership</a>
+        <a href="/post/vcf52/" class="nav-link" title="VMware Cloud Foundation 5.2 - Part 1">VMware Cloud Foundation 5.2 - Part 1</a>
       </li>
       <li>
-        <a href="/post/state-of-enterprise-itsecurity/" class="nav-link" title="State of Enterprise IT-Security">State of Enterprise IT-Security</a>
+        <a href="/post/devsecops/" class="nav-link" title="DevSecOps">DevSecOps</a>
       </li>
       <li>
-        <a href="/post/kubernetes/k8-cheat-sheet/" class="nav-link" title="K8 Cheat Sheet">K8 Cheat Sheet</a>
+        <a href="/post/reformatting-drives/" class="nav-link" title="Reformatting enterprise storage drives to 512 bytes">Reformatting enterprise storage drives to 512 bytes</a>
       </li>
       <li>
-        <a href="/post/networking/huawei-vrp/" class="nav-link" title="Huawei VRP">Huawei VRP</a>
+        <a href="/post/tanzu-cluster-creation/" class="nav-link" title="Tanzu with vSphere and Antrea: Cluster Creation">Tanzu with vSphere and Antrea: Cluster Creation</a>
+      </li>
+      <li>
+        <a href="/post/tkg-getting-started/" class="nav-link" title="VMware Tanzu Kubernetes Grid -  getting started">VMware Tanzu Kubernetes Grid -  getting started</a>
+      </li>
+      <li>
+        <a href="/post/cillium-getting-started/" class="nav-link" title="Cillium Gateway API - Getting Started">Cillium Gateway API - Getting Started</a>
+      </li>
+      <li>
+        <a href="/post/tanzu-kubernetes-grid-workstation-setup/" class="nav-link" title="Tanzu Kubernetes Grid - Linux Workstation Setup">Tanzu Kubernetes Grid - Linux Workstation Setup</a>
       </li>
     </ul>
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
+      <li>
+        <a href="/post/tanzu-mission-control-self-managed/" class="nav-link" title="Tanzu Mission Control Self Managed">Tanzu Mission Control Self Managed</a>
+      </li>
+      <li>
+        <a href="/post/tanzu-kubernetes-grid-workstation-setup/" class="nav-link" title="Tanzu Kubernetes Grid - Linux Workstation Setup">Tanzu Kubernetes Grid - Linux Workstation Setup</a>
+      </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">Categories</h2>
       <nav class="tags_nav">
+        <a href='/categories/vmware/' class="post_tag button button_translucent" title="vmware">
+          VMWARE
+          <span class="button_tally">9</span>
+        </a>
+        
         <a href='/categories/technology/' class="post_tag button button_translucent" title="technology">
           TECHNOLOGY
-          <span class="button_tally">2</span>
+          <span class="button_tally">5</span>
         </a>
         
         <a href='/categories/kubernetes/' class="post_tag button button_translucent" title="kubernetes">
           KUBERNETES
+          <span class="button_tally">3</span>
+        </a>
+        
+        <a href='/categories/it/' class="post_tag button button_translucent" title="it">
+          IT
           <span class="button_tally">1</span>
         </a>
         
@@ -274,8 +759,8 @@
           <span class="button_tally">1</span>
         </a>
         
-        <a href='/categories/vmware-vsphere/' class="post_tag button button_translucent" title="vmware-vsphere">
-          VMWARE-VSPHERE
+        <a href='/categories/vcf/' class="post_tag button button_translucent" title="vcf">
+          VCF
           <span class="button_tally">1</span>
         </a>
         
@@ -285,8 +770,63 @@
     <div>
       <h2 class="mt-4 taxonomy" id="tags-section">Tags</h2>
       <nav class="tags_nav">
+        <a href='/tags/vmware/' class="post_tag button button_translucent" title="vmware">
+          VMWARE
+          <span class="button_tally">7</span>
+        </a>
+        
+        <a href='/tags/vmware-tanzu/' class="post_tag button button_translucent" title="vmware-tanzu">
+          VMWARE-TANZU
+          <span class="button_tally">7</span>
+        </a>
+        
+        <a href='/tags/kubernetes/' class="post_tag button button_translucent" title="kubernetes">
+          KUBERNETES
+          <span class="button_tally">4</span>
+        </a>
+        
+        <a href='/tags/vsphere/' class="post_tag button button_translucent" title="vsphere">
+          VSPHERE
+          <span class="button_tally">3</span>
+        </a>
+        
+        <a href='/tags/vcf/' class="post_tag button button_translucent" title="vcf">
+          VCF
+          <span class="button_tally">2</span>
+        </a>
+        
         <a href='/tags/cheat-sheet/' class="post_tag button button_translucent" title="cheat-sheet">
           CHEAT-SHEET
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/tags/cni/' class="post_tag button button_translucent" title="cni">
+          CNI
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/tags/devsecops/' class="post_tag button button_translucent" title="devsecops">
+          DEVSECOPS
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/tags/docker/' class="post_tag button button_translucent" title="docker">
+          DOCKER
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/tags/fedora/' class="post_tag button button_translucent" title="fedora">
+          FEDORA
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/tags/hardware/' class="post_tag button button_translucent" title="hardware">
+          HARDWARE
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/tags/hpe/' class="post_tag button button_translucent" title="hpe">
+          HPE
           <span class="button_tally">1</span>
         </a>
         
@@ -300,52 +840,126 @@
           <span class="button_tally">1</span>
         </a>
         
-        <a href='/tags/it-security/' class="post_tag button button_translucent" title="it-security">
-          IT-SECURITY
-          <span class="button_tally">1</span>
-        </a>
         
-        <a href='/tags/kubernetes/' class="post_tag button button_translucent" title="kubernetes">
-          KUBERNETES
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/tags/monitoring/' class="post_tag button button_translucent" title="monitoring">
-          MONITORING
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/tags/networking/' class="post_tag button button_translucent" title="networking">
-          NETWORKING
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/tags/opinion/' class="post_tag button button_translucent" title="opinion">
-          OPINION
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/tags/tag_name1/' class="post_tag button button_translucent" title="tag_name1">
-          TAG_NAME1
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/tags/tag_name2/' class="post_tag button button_translucent" title="tag_name2">
-          TAG_NAME2
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/tags/tig-stack/' class="post_tag button button_translucent" title="tig-stack">
-          TIG-STACK
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/tags/vmware-vsphere/' class="post_tag button button_translucent" title="vmware-vsphere">
-          VMWARE-VSPHERE
-          <span class="button_tally">1</span>
-        </a>
-        
-        
+        <br>
+        <div class="post_tags_toggle button">All Tags</div>
+        <div class="post_tags">
+          <div class="tags_list">
+            
+            <a href='/tags/cheat-sheet/' class=" post_tag button button_translucent" data-position=1 title="cheat-sheet">CHEAT-SHEET<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/cni/' class=" post_tag button button_translucent" data-position=1 title="cni">CNI<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/devsecops/' class=" post_tag button button_translucent" data-position=1 title="devsecops">DEVSECOPS<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/docker/' class=" post_tag button button_translucent" data-position=1 title="docker">DOCKER<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/fedora/' class=" post_tag button button_translucent" data-position=1 title="fedora">FEDORA<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/hardware/' class=" post_tag button button_translucent" data-position=1 title="hardware">HARDWARE<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/hpe/' class=" post_tag button button_translucent" data-position=1 title="hpe">HPE<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/huawei/' class=" post_tag button button_translucent" data-position=1 title="huawei">HUAWEI<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/index/' class=" post_tag button button_translucent" data-position=1 title="index">INDEX<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/it-security/' class=" post_tag button button_translucent" data-position=1 title="it-security">IT-SECURITY<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/kubernetes/' class=" post_tag button button_translucent" data-position=4 title="kubernetes">KUBERNETES<span class="button_tally">4</span>
+            </a>
+            
+            
+            <a href='/tags/kubernetes-cillium/' class=" post_tag button button_translucent" data-position=1 title="kubernetes-cillium">KUBERNETES-CILLIUM<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/monitoring/' class=" post_tag button button_translucent" data-position=1 title="monitoring">MONITORING<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/networking/' class=" post_tag button button_translucent" data-position=1 title="networking">NETWORKING<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/opinion/' class=" post_tag button button_translucent" data-position=1 title="opinion">OPINION<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/tanzu-kubernetes-clusters/' class=" post_tag button button_translucent" data-position=1 title="tanzu-kubernetes-clusters">TANZU-KUBERNETES-CLUSTERS<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/tanzu-kubernetes-grid/' class=" post_tag button button_translucent" data-position=1 title="tanzu-kubernetes-grid">TANZU-KUBERNETES-GRID<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/tig-stack/' class=" post_tag button button_translucent" data-position=1 title="tig-stack">TIG-STACK<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/vcenter/' class=" post_tag button button_translucent" data-position=1 title="vcenter">VCENTER<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/vcf/' class=" post_tag button button_translucent" data-position=2 title="vcf">VCF<span class="button_tally">2</span>
+            </a>
+            
+            
+            <a href='/tags/vmware/' class=" post_tag button button_translucent" data-position=7 title="vmware">VMWARE<span class="button_tally">7</span>
+            </a>
+            
+            
+            <a href='/tags/vmware-tanzu/' class=" post_tag button button_translucent" data-position=7 title="vmware-tanzu">VMWARE-TANZU<span class="button_tally">7</span>
+            </a>
+            
+            
+            <a href='/tags/vmware-tanzu-kubernetes-grid/' class=" post_tag button button_translucent" data-position=1 title="vmware-tanzu-kubernetes-grid">VMWARE-TANZU-KUBERNETES-GRID<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/vsan/' class=" post_tag button button_translucent" data-position=1 title="vsan">VSAN<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/vsan-over-roce/' class=" post_tag button button_translucent" data-position=1 title="vsan-over-roce">VSAN-OVER-ROCE<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/vsphere/' class=" post_tag button button_translucent" data-position=3 title="vsphere">VSPHERE<span class="button_tally">3</span>
+            </a>
+            
+            
+            <a href='/tags/yaml/' class=" post_tag button button_translucent" data-position=1 title="yaml">YAML<span class="button_tally">1</span>
+            </a>
+            
+            <div class="tags_sort"><span title="sort alphabetically">[A~Z]</span><span title="sort by count">[0~9]</span>
+            </div>
+            <span class="tags_hide"><svg class="icon">
+            <use xlink:href="#closeme"></use>
+          </svg></span>
+          </div>
+        </div>
       </nav>
     </div>
   </section>
@@ -431,8 +1045,8 @@
 
 <footer class="footer">
   <div class="footer_inner wrap pale">
-    <img src='/icons/apple-touch-icon.png' class="icon icon_2 transparent" alt="Copyright © 2022-2023, Y.Gerber &amp; Authors">
-    <p>Copyright&nbsp;2022-&nbsp;<span class="year"></span>&nbsp;COPYRIGHT © 2022-2023, Y.GERBER &amp; AUTHORS. All Rights Reserved</p><a class="to_top" href="#documentTop">
+    <img src='/icons/apple-touch-icon.png' class="icon icon_2 transparent" alt="Copyright © 2022-2024, Y.Gerber &amp; Authors">
+    <p>Copyright&nbsp;2022-&nbsp;<span class="year"></span>&nbsp;COPYRIGHT © 2022-2024, Y.GERBER &amp; AUTHORS. All Rights Reserved</p><a class="to_top" href="#documentTop">
   <svg class="icon">
   <title>to-top</title>
   <use xlink:href="#to-top"></use>

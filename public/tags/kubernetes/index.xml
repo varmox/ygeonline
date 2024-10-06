@@ -6,22 +6,75 @@
     <description>Recent content in Kubernetes on ygerber</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Copyright © 2022-2023, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Wed, 29 Nov 2023 22:04:40 +0100</lastBuildDate>
-    <atom:link href="/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
+    <lastBuildDate>Fri, 08 Dec 2023 20:43:03 +0200</lastBuildDate><atom:link href="/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tanzu with vSphere and Antrea: Cluster Creation</title>
+      <link>/post/tanzu-cluster-creation/</link>
+      <pubDate>Fri, 08 Dec 2023 20:43:03 +0200</pubDate>
+      
+      <guid>/post/tanzu-cluster-creation/</guid>
+      <description>
+        
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>VMware Tanzu Kubernetes Grid -  getting started</title>
-      <link>/post/lan-party-infrastructure/</link>
+      <link>/post/tkg-getting-started/</link>
       <pubDate>Wed, 29 Nov 2023 22:04:40 +0100</pubDate>
-      <guid>/post/lan-party-infrastructure/</guid>
-      <description>Intro This blog post is about getting started with VMware Tanzu Kubernetes Grid (TKG). TKG is used to deploy Tanzu Kubernetes Cluster to various Cloud Providers including vSphere, AWS and Azure. First, a management cluster (based on Docker and kind) is created from a Bootstrap Workstation, which itself then provides its web interface and additional CLI tools to create a Kubernetes cluster.&#xA;TKG has no integration in vSphere UI. If you wan&#39;t to integrate Tanzu with vCenter/vSphere UI - use vSphere with Tanzu instead.</description>
+      
+      <guid>/post/tkg-getting-started/</guid>
+      <description>
+        
+          
+            Intro This blog post is about getting started with VMware Tanzu Kubernetes Grid (TKG). TKG is used to deploy Tanzu Kubernetes Cluster to various Cloud Providers including vSphere, AWS and Azure. First, a management cluster (based on Docker and kind) is created from a Bootstrap Workstation, which itself then provides its web interface and additional CLI tools to create a Kubernetes cluster.
+TKG has no integration in vSphere UI. If you wan&#39;t to integrate Tanzu with vCenter/vSphere UI - use vSphere with Tanzu instead.
+          
+          
+        
+      </description>
     </item>
+    
+    <item>
+      <title>VMware Tanzu - Overview</title>
+      <link>/post/tanzu-overview/</link>
+      <pubDate>Wed, 08 Feb 2023 20:43:03 +0200</pubDate>
+      
+      <guid>/post/tanzu-overview/</guid>
+      <description>
+        
+          
+            Tanzu Portfolio explained Lately, we&#39;ve been having lots conversations internally and with customers about Tanzu. There appears to be some confusion about Tanzu&#39;s portfolio and which Tanzu products are best suited for specific use cases.
+Tanzu consists is basically packages open-source tools
+Kubernetes Runtimes To actually run Kubernetes Clusters with Tanzu, the following Products are available:
+Tanzu Kubernetes Grid vSphere with Tanzu Tanzu Kubernetes Grid (TKG) TKG is a solution for routing Kubernetes clusters to different cloud providers.
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>K8 Cheat Sheet</title>
       <link>/post/kubernetes/k8-cheat-sheet/</link>
       <pubDate>Sun, 04 Dec 2022 23:16:50 +0100</pubDate>
+      
       <guid>/post/kubernetes/k8-cheat-sheet/</guid>
-      <description>Kubernetes Cheat Sheet&#xA;Cheat Sheet for kubectl, kubeadm and general k8s related commands.&#xA;kubectl Interacting with clusters kubectl command description Comment kubectl config view View Kubectl Configuration Display the current Kubectl configuration kubectl config get-contexts List available contexts See the available Kubernetes clusters and their associated contexts kubectl config current-context Display the current context Show the active Kubernetes cluster and context kubectl config use-context &amp;lt;context_name&amp;gt; Switch to another context Change the active context to the specified one kubectl config set-context &amp;lt;context_name&amp;gt; --namespace=&amp;lt;namespace_name&amp;gt; Set default namespace for a context Specify the default namespace for a specific context kubectl config unset current-context Unset the current context Remove the association with the current context kubectl config set-cluster &amp;lt;cluster_name&amp;gt; --server=&amp;lt;api_server_url&amp;gt; Add a new cluster to the configuration Define a new Kubernetes cluster with its API server URL kubectl config set-credentials &amp;lt;user_name&amp;gt; --token=&amp;lt;access_token&amp;gt; Add user credentials to the configuration Specify user credentials, typically an access token kubectl config set-context &amp;lt;context_name&amp;gt; --cluster=&amp;lt;cluster_name&amp;gt; --user=&amp;lt;user_name&amp;gt; Create a new context Combine a cluster and user to create a context kubectl config delete-context &amp;lt;context_name&amp;gt; Delete a context Remove a specific context from the configuration kubectl config delete-cluster &amp;lt;cluster_name&amp;gt; Delete a cluster Remove a cluster from the configuration kubectl config delete-user &amp;lt;user_name&amp;gt; Delete user credentials Remove user credentials from the configuration kubectl config use-context &amp;lt;context_name&amp;gt; Switch to another context Change the active context to the specified one kubectl config rename-context &amp;lt;old_name&amp;gt; &amp;lt;new_name&amp;gt; Rename a context Change the name of an existing context kubectl config set preferences.</description>
+      <description>
+        
+          
+            Kubernetes Cheat Sheet
+Cheat Sheet for kubectl, kubeadm and general k8s related commands.
+kubectl Interacting with clusters kubectl command description Comment kubectl config view View Kubectl Configuration Display the current Kubectl configuration kubectl config get-contexts List available contexts See the available Kubernetes clusters and their associated contexts kubectl config current-context Display the current context Show the active Kubernetes cluster and context kubectl config use-context &amp;lt;context_name&amp;gt; Switch to another context Change the active context to the specified one kubectl config set-context &amp;lt;context_name&amp;gt; --namespace=&amp;lt;namespace_name&amp;gt; Set default namespace for a context Specify the default namespace for a specific context kubectl config unset current-context Unset the current context Remove the association with the current context kubectl config set-cluster &amp;lt;cluster_name&amp;gt; --server=&amp;lt;api_server_url&amp;gt; Add a new cluster to the configuration Define a new Kubernetes cluster with its API server URL kubectl config set-credentials &amp;lt;user_name&amp;gt; --token=&amp;lt;access_token&amp;gt; Add user credentials to the configuration Specify user credentials, typically an access token kubectl config set-context &amp;lt;context_name&amp;gt; --cluster=&amp;lt;cluster_name&amp;gt; --user=&amp;lt;user_name&amp;gt; Create a new context Combine a cluster and user to create a context kubectl config delete-context &amp;lt;context_name&amp;gt; Delete a context Remove a specific context from the configuration kubectl config delete-cluster &amp;lt;cluster_name&amp;gt; Delete a cluster Remove a cluster from the configuration kubectl config delete-user &amp;lt;user_name&amp;gt; Delete user credentials Remove user credentials from the configuration kubectl config use-context &amp;lt;context_name&amp;gt; Switch to another context Change the active context to the specified one kubectl config rename-context &amp;lt;old_name&amp;gt; &amp;lt;new_name&amp;gt; Rename a context Change the name of an existing context kubectl config set preferences.
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

@@ -6,15 +6,24 @@
     <description>Recent content in Hardware on ygerber</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Copyright © 2022-2023, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Tue, 26 Dec 2023 15:28:45 +0200</lastBuildDate>
-    <atom:link href="/tags/hardware/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
+    <lastBuildDate>Tue, 26 Dec 2023 15:28:45 +0200</lastBuildDate><atom:link href="/tags/hardware/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Reformatting enterprise storage drives to 512 bytes</title>
       <link>/post/reformatting-drives/</link>
       <pubDate>Tue, 26 Dec 2023 15:28:45 +0200</pubDate>
+      
       <guid>/post/reformatting-drives/</guid>
-      <description>Problem&#xA;Recently I got my hands on some old HPE 3PAR 1.92TB SAS SSDs (Samsung PM1633a). I though they would be perfect for my SDDC home lab - sadly they did not work as intended with my HPE DL360 server. The SmartArray P420i was regocnizing the disks but was giving the error &amp;quot;This physical drive does not support RAID and is not exposed to OS. It cannot be used for configuration on this controller&amp;quot;.</description>
+      <description>
+        
+          
+            Problem
+Recently I got my hands on some old HPE 3PAR 1.92TB SAS SSDs (Samsung PM1633a). I though they would be perfect for my SDDC home lab - sadly they did not work as intended with my HPE DL360 server. The SmartArray P420i was recognizing the disks but was giving the error &amp;quot;This physical drive does not support RAID and is not exposed to OS. It cannot be used for configuration on this controller&amp;quot;.
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

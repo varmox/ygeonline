@@ -6,29 +6,98 @@
     <description>Recent content in Technology on ygerber</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Copyright © 2022-2023, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Tue, 26 Dec 2023 15:28:45 +0200</lastBuildDate>
-    <atom:link href="/categories/technology/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
+    <lastBuildDate>Tue, 26 Dec 2023 15:28:45 +0200</lastBuildDate><atom:link href="/categories/technology/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Reformatting enterprise storage drives to 512 bytes</title>
       <link>/post/reformatting-drives/</link>
       <pubDate>Tue, 26 Dec 2023 15:28:45 +0200</pubDate>
+      
       <guid>/post/reformatting-drives/</guid>
-      <description>Problem&#xA;Recently I got my hands on some old HPE 3PAR 1.92TB SAS SSDs (Samsung PM1633a). I though they would be perfect for my SDDC home lab - sadly they did not work as intended with my HPE DL360 server. The SmartArray P420i was regocnizing the disks but was giving the error &amp;quot;This physical drive does not support RAID and is not exposed to OS. It cannot be used for configuration on this controller&amp;quot;.</description>
+      <description>
+        
+          
+            Problem
+Recently I got my hands on some old HPE 3PAR 1.92TB SAS SSDs (Samsung PM1633a). I though they would be perfect for my SDDC home lab - sadly they did not work as intended with my HPE DL360 server. The SmartArray P420i was recognizing the disks but was giving the error &amp;quot;This physical drive does not support RAID and is not exposed to OS. It cannot be used for configuration on this controller&amp;quot;.
+          
+          
+        
+      </description>
     </item>
+    
+    <item>
+      <title>Cillium Gateway API - Getting Started</title>
+      <link>/post/cillium-getting-started/</link>
+      <pubDate>Sat, 14 Oct 2023 18:18:26 +0200</pubDate>
+      
+      <guid>/post/cillium-getting-started/</guid>
+      <description>
+        
+          
+            Cillium Gateway API The Cilium Gateway API is a Kubernetes API that provides a more powerful and flexible way to manage traffic routing than the traditional Ingress API of (vanilla) Kubernetes. It is a set of resources that model service networking in Kubernetes, and is designed to be role-oriented, portable, expressive, and extensible. The Cilium Service Mesh Gateway API Controller requires the ability to create LoadBalancer Kubernetes services.
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>VMware vSAN Network Considerations</title>
       <link>/post/vmware-vsan-network-requirements/</link>
       <pubDate>Wed, 23 Aug 2023 23:13:14 +0200</pubDate>
+      
       <guid>/post/vmware-vsan-network-requirements/</guid>
-      <description>Intro VMware vSAN is a Hyperconverged Infrastructure Solution from VMware. It basically turns your servers direct attached disks into a storage cluster.&#xA;General Requirements 10 GbE network switches are the minimum requirement for all-flash vSAN Clusters 25 GBE network switches are recommended Switches that support higher port speeds are designed with higher Network Processor Unit (NPU) buffers. An NPU shared switch buffer of at least 16 MB is recommended for 10 GbE network connectivity.</description>
+      <description>
+        
+          
+            Intro VMware vSAN is a Hyperconverged Infrastructure Solution from VMware. It basically turns your servers direct attached disks into a storage cluster.
+General Requirements 10 GbE network switches are the minimum requirement for all-flash vSAN Clusters 25 GBE network switches are recommended Switches that support higher port speeds are designed with higher Network Processor Unit (NPU) buffers. An NPU shared switch buffer of at least 16 MB is recommended for 10 GbE network connectivity.
+          
+          
+        
+      </description>
     </item>
+    
+    <item>
+      <title>State of Enterprise IT-Security</title>
+      <link>/post/state-of-enterprise-itsecurity/</link>
+      <pubDate>Sun, 09 Jul 2023 15:28:45 +0200</pubDate>
+      
+      <guid>/post/state-of-enterprise-itsecurity/</guid>
+      <description>
+        
+          
+            Why current Enterprise IT-Security is s shipwreck.
+The state of enterprise IT-Security is pretty bad and I don&#39;t think the current strategy to better it is any good. And here&#39;s the why:
+status quo
+But firstly, what are the security concerns of businesses regarding IT-Security?
+If we take the CIA triad for help:
+Ransomware that disrups availability and integrity Data Leaks that violences confidentiality malware/virus that disrups integrity .. and more
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>Huawei VRP</title>
       <link>/post/networking/huawei-vrp/</link>
       <pubDate>Sun, 04 Dec 2022 15:11:13 +0100</pubDate>
+      
       <guid>/post/networking/huawei-vrp/</guid>
-      <description>Huawei Versatile Routing Platform (VRP) Overview&#xA;This post gives an overview about the network operating system for huawei network devices - VRP.&#xA;General&#xA;Task Command Comment Enter System View &amp;lt; Huawei &amp;gt; sys Enter Interface View [R1] int GigabitEthernet0/0/1 Enter Protocol View [R1] ospf 1 Display Running Config in current View [R1- GigabitEthernet0/0/3] display this Display current configuration of the System [R1] dis current-config System Configuration&#xA;Task Command Comment Set hostname [Huawei] sysname R1 Interface Configuration</description>
+      <description>
+        
+          
+            Huawei Versatile Routing Platform (VRP) Overview
+This post gives an overview about the network operating system for huawei network devices - VRP.
+General
+Task Command Comment Enter System View &amp;lt; Huawei &amp;gt; sys Enter Interface View [R1] int GigabitEthernet0/0/1 Enter Protocol View [R1] ospf 1 Display Running Config in current View [R1- GigabitEthernet0/0/3] display this Display current configuration of the System [R1] dis current-config System Configuration
+Task Command Comment Set hostname [Huawei] sysname R1 Interface Configuration
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

@@ -6,71 +6,313 @@
     <description>Recent content in Posts on ygerber</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Copyright © 2022-2023, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Tue, 26 Dec 2023 15:28:45 +0200</lastBuildDate>
-    <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
+    <lastBuildDate>Fri, 23 Aug 2024 22:24:18 +0200</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VMware vCenter Troubleshooting Guide</title>
+      <link>/post/vcenter-troubleshooting/</link>
+      <pubDate>Fri, 23 Aug 2024 22:24:18 +0200</pubDate>
+      
+      <guid>/post/vcenter-troubleshooting/</guid>
+      <description>
+        
+          
+            vCenter Troubleshooting Guide Log Files Networking Manual Network Config DNS *** Flush DNS ***
+1 2systemctl restart systemd–resolved.service 3 4systemctl restart dnsmasq HTTP Proxy Certificate Management Renew all vCenter Machine Certificates vLCM *** Cannot sync depot ***
+1 2/var/log/vmware/vmware-updatemgr/vum-server/vmware-vum-server.log 
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>VMware Cloud Foundation 5.2 - Part 1</title>
+      <link>/post/vcf52/</link>
+      <pubDate>Tue, 25 Jun 2024 20:48:30 +0200</pubDate>
+      
+      <guid>/post/vcf52/</guid>
+      <description>
+        
+          
+            The new VCF 5.2 Update delivers quite a few interesting updates. This blog post covers expecially the updates and improvements for Tanzu.
+Part 1 covers new Feature within Tanzu on vSphere 8 Update 3.
+vSphere with Tanzu Update -&amp;gt; vSphere IaaS Control Plane vSphere with Tanzu is passé - the new naming is vSphere IaaS Control Plane.
+The naming already suggest - not only Kubernetes Cluster can be deployed, also VMs (this was possible a long time but with the new naming the focus is not only on k8s).
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>DevSecOps</title>
+      <link>/post/devsecops/</link>
+      <pubDate>Tue, 25 Jun 2024 08:30:38 +0200</pubDate>
+      
+      <guid>/post/devsecops/</guid>
+      <description>
+        
+          
+            Introduction Due to the rise of containerized applications the new word DevOps or DevSecOps.
+So what is DevOps?
+Basically the developer should also build &amp;amp; operate the infrastructure on which is code runs on.
+And DevSecOps?
+We need Security, so adapt DevOps Practises also for Security. Devs should also be resonsible to securing their infrastructure.
+What are the goals?
+The main Goal for DevOps Practises is to shorten time of the SDLC (Systems Develoopment Lifecyle).
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>Reformatting enterprise storage drives to 512 bytes</title>
       <link>/post/reformatting-drives/</link>
       <pubDate>Tue, 26 Dec 2023 15:28:45 +0200</pubDate>
+      
       <guid>/post/reformatting-drives/</guid>
-      <description>Problem&#xA;Recently I got my hands on some old HPE 3PAR 1.92TB SAS SSDs (Samsung PM1633a). I though they would be perfect for my SDDC home lab - sadly they did not work as intended with my HPE DL360 server. The SmartArray P420i was regocnizing the disks but was giving the error &amp;quot;This physical drive does not support RAID and is not exposed to OS. It cannot be used for configuration on this controller&amp;quot;.</description>
+      <description>
+        
+          
+            Problem
+Recently I got my hands on some old HPE 3PAR 1.92TB SAS SSDs (Samsung PM1633a). I though they would be perfect for my SDDC home lab - sadly they did not work as intended with my HPE DL360 server. The SmartArray P420i was recognizing the disks but was giving the error &amp;quot;This physical drive does not support RAID and is not exposed to OS. It cannot be used for configuration on this controller&amp;quot;.
+          
+          
+        
+      </description>
     </item>
+    
+    <item>
+      <title>Tanzu Mission Control Self Managed</title>
+      <link>/post/tanzu-mission-control-self-managed/</link>
+      <pubDate>Sat, 09 Dec 2023 13:57:09 +0100</pubDate>
+      
+      <guid>/post/tanzu-mission-control-self-managed/</guid>
+      <description>
+        
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Tanzu with vSphere and Antrea: Cluster Creation</title>
+      <link>/post/tanzu-cluster-creation/</link>
+      <pubDate>Fri, 08 Dec 2023 20:43:03 +0200</pubDate>
+      
+      <guid>/post/tanzu-cluster-creation/</guid>
+      <description>
+        
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>VMware Tanzu Kubernetes Grid -  getting started</title>
-      <link>/post/lan-party-infrastructure/</link>
+      <link>/post/tkg-getting-started/</link>
       <pubDate>Wed, 29 Nov 2023 22:04:40 +0100</pubDate>
-      <guid>/post/lan-party-infrastructure/</guid>
-      <description>Intro This blog post is about getting started with VMware Tanzu Kubernetes Grid (TKG). TKG is used to deploy Tanzu Kubernetes Cluster to various Cloud Providers including vSphere, AWS and Azure. First, a management cluster (based on Docker and kind) is created from a Bootstrap Workstation, which itself then provides its web interface and additional CLI tools to create a Kubernetes cluster.&#xA;TKG has no integration in vSphere UI. If you wan&#39;t to integrate Tanzu with vCenter/vSphere UI - use vSphere with Tanzu instead.</description>
+      
+      <guid>/post/tkg-getting-started/</guid>
+      <description>
+        
+          
+            Intro This blog post is about getting started with VMware Tanzu Kubernetes Grid (TKG). TKG is used to deploy Tanzu Kubernetes Cluster to various Cloud Providers including vSphere, AWS and Azure. First, a management cluster (based on Docker and kind) is created from a Bootstrap Workstation, which itself then provides its web interface and additional CLI tools to create a Kubernetes cluster.
+TKG has no integration in vSphere UI. If you wan&#39;t to integrate Tanzu with vCenter/vSphere UI - use vSphere with Tanzu instead.
+          
+          
+        
+      </description>
     </item>
+    
+    <item>
+      <title>Cillium Gateway API - Getting Started</title>
+      <link>/post/cillium-getting-started/</link>
+      <pubDate>Sat, 14 Oct 2023 18:18:26 +0200</pubDate>
+      
+      <guid>/post/cillium-getting-started/</guid>
+      <description>
+        
+          
+            Cillium Gateway API The Cilium Gateway API is a Kubernetes API that provides a more powerful and flexible way to manage traffic routing than the traditional Ingress API of (vanilla) Kubernetes. It is a set of resources that model service networking in Kubernetes, and is designed to be role-oriented, portable, expressive, and extensible. The Cilium Service Mesh Gateway API Controller requires the ability to create LoadBalancer Kubernetes services.
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>Tanzu Kubernetes Grid - Linux Workstation Setup</title>
       <link>/post/tanzu-kubernetes-grid-workstation-setup/</link>
       <pubDate>Sun, 08 Oct 2023 20:43:03 +0200</pubDate>
+      
       <guid>/post/tanzu-kubernetes-grid-workstation-setup/</guid>
-      <description>TKG Bootstrap Machine on Fedora Tanzu Kubernetes Grid needs a workstation to bootstrap your Kubernetes Cluster. This is a short guide for a Fedora based bootstrap Machine:&#xA;Requirements&#xA;Ability to run Docker Access to download Tanzu CLI (via Customer Connect Portal) dedicated admin user in the wheel-group Install Docker&#xA;Docker on modern RHEL systems can be confusing because the latest versions of RHEL replace Docker with Podman (dnf install docker will install podman).</description>
+      <description>
+        
+          
+            TKG Bootstrap Machine on Fedora Tanzu Kubernetes Grid needs a workstation to bootstrap your Kubernetes Cluster. This is a short guide for a Fedora based bootstrap Machine:
+Requirements
+Ability to run Docker Access to download Tanzu CLI (via Customer Connect Portal) dedicated admin user in the wheel-group Install Docker
+Docker on modern RHEL systems can be confusing because the latest versions of RHEL replace Docker with Podman (dnf install docker will install podman).
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>VMware vSAN Network Considerations</title>
       <link>/post/vmware-vsan-network-requirements/</link>
       <pubDate>Wed, 23 Aug 2023 23:13:14 +0200</pubDate>
+      
       <guid>/post/vmware-vsan-network-requirements/</guid>
-      <description>Intro VMware vSAN is a Hyperconverged Infrastructure Solution from VMware. It basically turns your servers direct attached disks into a storage cluster.&#xA;General Requirements 10 GbE network switches are the minimum requirement for all-flash vSAN Clusters 25 GBE network switches are recommended Switches that support higher port speeds are designed with higher Network Processor Unit (NPU) buffers. An NPU shared switch buffer of at least 16 MB is recommended for 10 GbE network connectivity.</description>
+      <description>
+        
+          
+            Intro VMware vSAN is a Hyperconverged Infrastructure Solution from VMware. It basically turns your servers direct attached disks into a storage cluster.
+General Requirements 10 GbE network switches are the minimum requirement for all-flash vSAN Clusters 25 GBE network switches are recommended Switches that support higher port speeds are designed with higher Network Processor Unit (NPU) buffers. An NPU shared switch buffer of at least 16 MB is recommended for 10 GbE network connectivity.
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>vSphere Monitoring with Grafana</title>
       <link>/post/vsphere-monitoring/</link>
       <pubDate>Tue, 08 Aug 2023 20:43:03 +0200</pubDate>
+      
       <guid>/post/vsphere-monitoring/</guid>
-      <description>Intro This blog post describes a solution for monitoring your SDDC Infrastructure with Telegraf, InfluxDB and Grafana. The solution is based on docker and will present graphs and metrics through grafana.&#xA;vSphere Monitoring with TIG (Telegraf, InfluxDB, Grafana) TL;DR: https://github.com/varmox/vsphere-monitoring.git&#xA;Prerequiries RHEL based Linux Docker &amp;amp; Docker Compose (or Podman with Docker Compose. In this tutorial we are using docker &amp;amp; docker compose) installed 3 internal IPs for telegraf, grafana and influxdb containers.</description>
+      <description>
+        
+          
+            vSphere Monitoring with TIG (Telegraf, InfluxDB, Grafana) This blog post describes a solution for monitoring SDDC infrastructure using Telegraf, InfluxDB, and Grafana. This solution is based on Docker and displays graphs and metrics via Grafana. All metrics are described in the telegraf.conf file.
+TL;DR: https://github.com/varmox/vsphere-monitoring.git
+Prerequiries RHEL based Linux Docker &amp;amp; Docker Compose (or Podman with Docker Compose. In this tutorial we are using docker &amp;amp; docker compose) installed 3 internal IPs for telegraf, grafana and influxdb containers.
+          
+          
+        
+      </description>
     </item>
+    
+    <item>
+      <title>State of Enterprise IT-Security</title>
+      <link>/post/state-of-enterprise-itsecurity/</link>
+      <pubDate>Sun, 09 Jul 2023 15:28:45 +0200</pubDate>
+      
+      <guid>/post/state-of-enterprise-itsecurity/</guid>
+      <description>
+        
+          
+            Why current Enterprise IT-Security is s shipwreck.
+The state of enterprise IT-Security is pretty bad and I don&#39;t think the current strategy to better it is any good. And here&#39;s the why:
+status quo
+But firstly, what are the security concerns of businesses regarding IT-Security?
+If we take the CIA triad for help:
+Ransomware that disrups availability and integrity Data Leaks that violences confidentiality malware/virus that disrups integrity .. and more
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>Tanzu Kubernetes Cluster Example Deployments</title>
       <link>/post/tanzu-kubernetes-cluster-examples/</link>
       <pubDate>Fri, 23 Jun 2023 23:13:14 +0200</pubDate>
+      
       <guid>/post/tanzu-kubernetes-cluster-examples/</guid>
-      <description>Intro This post gives a few examples of Tanzu Kubernetes Cluster Manifests and how to deploy them.&#xA;Prerequiries Successfull Installation of vSphere with Tanzu Supervisor vSphere Namespace created Already existing VM Classes, Storages Policies and Tanzu Kubernetes Releases assigned to the Namespace. Login via kubectl You will find the IP to your Kubernetes API on the Namespace Option &amp;quot;Link to CLI Tools&amp;quot;&#xA;1kubectl vsphere login --server=10.40.80.20 1kubectl config get-contexts 1kubectl config use-context &amp;lt;&amp;gt; Get Parameters of your vSphere Namespace VM Class Storagge Policy Tanzu Releases 1kubectl get vmclass 1kubectl get storageclass 1kubectl get tanzukubernetesrelease Cluster with 3 Control and 6 Worker Nodes 1apiVersion: run.</description>
+      <description>
+        
+          
+            Intro This post gives a few examples of Tanzu Kubernetes Cluster Manifests and how to deploy them.
+Prerequiries Successfull Installation of vSphere with Tanzu Supervisor vSphere Namespace created Already existing VM Classes, Storages Policies and Tanzu Kubernetes Releases assigned to the Namespace. Login via kubectl You will find the IP to your Kubernetes API on the Namespace Option &amp;quot;Link to CLI Tools&amp;quot;
+1kubectl vsphere login --server=10.40.80.20 1kubectl config get-contexts 1kubectl config use-context &amp;lt;&amp;gt; Get Parameters of your vSphere Namespace VM Class Storagge Policy Tanzu Releases 1kubectl get vmclass 1kubectl get storageclass 1kubectl get tanzukubernetesrelease Cluster with 3 Control and 6 Worker Nodes 1apiVersion: run.
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>Quicktip: Tanzu &amp; HA-Proxy</title>
-      <link>/post/tanzu-ha-proxy/</link>
+      <link>/post/tanzu-haproxy-tips/</link>
       <pubDate>Wed, 08 Mar 2023 20:43:03 +0200</pubDate>
-      <guid>/post/tanzu-ha-proxy/</guid>
-      <description>Quick Tip: vSphere with Tanzu an HA-Proxy This is a short article with tips and tricks I experienced when deploying vSphere with Tanzu and HA-Proxy as a Load Balancer.&#xA;Deploying Ha-Proxy OVA Network&#xA;Alwasys use three NICs when deploying in a production environment. It is very important that these IP addresses do not overlap with the address ranges of your workloads and load balancers, or with the gateway itself.&#xA;At first it can be somewhat confusing what networks are needed and which services will be deployed in each network.</description>
+      
+      <guid>/post/tanzu-haproxy-tips/</guid>
+      <description>
+        
+          
+            Quick Tip: vSphere with Tanzu an HA-Proxy This is a short article with tips and tricks I experienced when deploying vSphere with Tanzu and HA-Proxy as a Load Balancer.
+Deploying Ha-Proxy OVA Network
+Alwasys use three NICs when deploying in a production environment. It is very important that these IP addresses do not overlap with the address ranges of your workloads and load balancers, or with the gateway itself.
+At first it can be somewhat confusing what networks are needed and which services will be deployed in each network.
+          
+          
+        
+      </description>
     </item>
+    
+    <item>
+      <title>VMware Tanzu - Overview</title>
+      <link>/post/tanzu-overview/</link>
+      <pubDate>Wed, 08 Feb 2023 20:43:03 +0200</pubDate>
+      
+      <guid>/post/tanzu-overview/</guid>
+      <description>
+        
+          
+            Tanzu Portfolio explained Lately, we&#39;ve been having lots conversations internally and with customers about Tanzu. There appears to be some confusion about Tanzu&#39;s portfolio and which Tanzu products are best suited for specific use cases.
+Tanzu consists is basically packages open-source tools
+Kubernetes Runtimes To actually run Kubernetes Clusters with Tanzu, the following Products are available:
+Tanzu Kubernetes Grid vSphere with Tanzu Tanzu Kubernetes Grid (TKG) TKG is a solution for routing Kubernetes clusters to different cloud providers.
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>K8 Cheat Sheet</title>
       <link>/post/kubernetes/k8-cheat-sheet/</link>
       <pubDate>Sun, 04 Dec 2022 23:16:50 +0100</pubDate>
+      
       <guid>/post/kubernetes/k8-cheat-sheet/</guid>
-      <description>Kubernetes Cheat Sheet&#xA;Cheat Sheet for kubectl, kubeadm and general k8s related commands.&#xA;kubectl Interacting with clusters kubectl command description Comment kubectl config view View Kubectl Configuration Display the current Kubectl configuration kubectl config get-contexts List available contexts See the available Kubernetes clusters and their associated contexts kubectl config current-context Display the current context Show the active Kubernetes cluster and context kubectl config use-context &amp;lt;context_name&amp;gt; Switch to another context Change the active context to the specified one kubectl config set-context &amp;lt;context_name&amp;gt; --namespace=&amp;lt;namespace_name&amp;gt; Set default namespace for a context Specify the default namespace for a specific context kubectl config unset current-context Unset the current context Remove the association with the current context kubectl config set-cluster &amp;lt;cluster_name&amp;gt; --server=&amp;lt;api_server_url&amp;gt; Add a new cluster to the configuration Define a new Kubernetes cluster with its API server URL kubectl config set-credentials &amp;lt;user_name&amp;gt; --token=&amp;lt;access_token&amp;gt; Add user credentials to the configuration Specify user credentials, typically an access token kubectl config set-context &amp;lt;context_name&amp;gt; --cluster=&amp;lt;cluster_name&amp;gt; --user=&amp;lt;user_name&amp;gt; Create a new context Combine a cluster and user to create a context kubectl config delete-context &amp;lt;context_name&amp;gt; Delete a context Remove a specific context from the configuration kubectl config delete-cluster &amp;lt;cluster_name&amp;gt; Delete a cluster Remove a cluster from the configuration kubectl config delete-user &amp;lt;user_name&amp;gt; Delete user credentials Remove user credentials from the configuration kubectl config use-context &amp;lt;context_name&amp;gt; Switch to another context Change the active context to the specified one kubectl config rename-context &amp;lt;old_name&amp;gt; &amp;lt;new_name&amp;gt; Rename a context Change the name of an existing context kubectl config set preferences.</description>
+      <description>
+        
+          
+            Kubernetes Cheat Sheet
+Cheat Sheet for kubectl, kubeadm and general k8s related commands.
+kubectl Interacting with clusters kubectl command description Comment kubectl config view View Kubectl Configuration Display the current Kubectl configuration kubectl config get-contexts List available contexts See the available Kubernetes clusters and their associated contexts kubectl config current-context Display the current context Show the active Kubernetes cluster and context kubectl config use-context &amp;lt;context_name&amp;gt; Switch to another context Change the active context to the specified one kubectl config set-context &amp;lt;context_name&amp;gt; --namespace=&amp;lt;namespace_name&amp;gt; Set default namespace for a context Specify the default namespace for a specific context kubectl config unset current-context Unset the current context Remove the association with the current context kubectl config set-cluster &amp;lt;cluster_name&amp;gt; --server=&amp;lt;api_server_url&amp;gt; Add a new cluster to the configuration Define a new Kubernetes cluster with its API server URL kubectl config set-credentials &amp;lt;user_name&amp;gt; --token=&amp;lt;access_token&amp;gt; Add user credentials to the configuration Specify user credentials, typically an access token kubectl config set-context &amp;lt;context_name&amp;gt; --cluster=&amp;lt;cluster_name&amp;gt; --user=&amp;lt;user_name&amp;gt; Create a new context Combine a cluster and user to create a context kubectl config delete-context &amp;lt;context_name&amp;gt; Delete a context Remove a specific context from the configuration kubectl config delete-cluster &amp;lt;cluster_name&amp;gt; Delete a cluster Remove a cluster from the configuration kubectl config delete-user &amp;lt;user_name&amp;gt; Delete user credentials Remove user credentials from the configuration kubectl config use-context &amp;lt;context_name&amp;gt; Switch to another context Change the active context to the specified one kubectl config rename-context &amp;lt;old_name&amp;gt; &amp;lt;new_name&amp;gt; Rename a context Change the name of an existing context kubectl config set preferences.
+          
+          
+        
+      </description>
     </item>
+    
     <item>
       <title>Huawei VRP</title>
       <link>/post/networking/huawei-vrp/</link>
       <pubDate>Sun, 04 Dec 2022 15:11:13 +0100</pubDate>
+      
       <guid>/post/networking/huawei-vrp/</guid>
-      <description>Huawei Versatile Routing Platform (VRP) Overview&#xA;This post gives an overview about the network operating system for huawei network devices - VRP.&#xA;General&#xA;Task Command Comment Enter System View &amp;lt; Huawei &amp;gt; sys Enter Interface View [R1] int GigabitEthernet0/0/1 Enter Protocol View [R1] ospf 1 Display Running Config in current View [R1- GigabitEthernet0/0/3] display this Display current configuration of the System [R1] dis current-config System Configuration&#xA;Task Command Comment Set hostname [Huawei] sysname R1 Interface Configuration</description>
+      <description>
+        
+          
+            Huawei Versatile Routing Platform (VRP) Overview
+This post gives an overview about the network operating system for huawei network devices - VRP.
+General
+Task Command Comment Enter System View &amp;lt; Huawei &amp;gt; sys Enter Interface View [R1] int GigabitEthernet0/0/1 Enter Protocol View [R1] ospf 1 Display Running Config in current View [R1- GigabitEthernet0/0/3] display this Display current configuration of the System [R1] dis current-config System Configuration
+Task Command Comment Set hostname [Huawei] sysname R1 Interface Configuration
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

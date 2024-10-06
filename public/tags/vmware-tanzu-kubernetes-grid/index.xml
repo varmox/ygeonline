@@ -6,15 +6,24 @@
     <description>Recent content in VMware Tanzu Kubernetes Grid on ygerber</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Copyright © 2022-2023, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Wed, 29 Nov 2023 22:04:40 +0100</lastBuildDate>
-    <atom:link href="/tags/vmware-tanzu-kubernetes-grid/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
+    <lastBuildDate>Wed, 29 Nov 2023 22:04:40 +0100</lastBuildDate><atom:link href="/tags/vmware-tanzu-kubernetes-grid/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VMware Tanzu Kubernetes Grid -  getting started</title>
-      <link>/post/lan-party-infrastructure/</link>
+      <link>/post/tkg-getting-started/</link>
       <pubDate>Wed, 29 Nov 2023 22:04:40 +0100</pubDate>
-      <guid>/post/lan-party-infrastructure/</guid>
-      <description>Intro This blog post is about getting started with VMware Tanzu Kubernetes Grid (TKG). TKG is used to deploy Tanzu Kubernetes Cluster to various Cloud Providers including vSphere, AWS and Azure. First, a management cluster (based on Docker and kind) is created from a Bootstrap Workstation, which itself then provides its web interface and additional CLI tools to create a Kubernetes cluster.&#xA;TKG has no integration in vSphere UI. If you wan&#39;t to integrate Tanzu with vCenter/vSphere UI - use vSphere with Tanzu instead.</description>
+      
+      <guid>/post/tkg-getting-started/</guid>
+      <description>
+        
+          
+            Intro This blog post is about getting started with VMware Tanzu Kubernetes Grid (TKG). TKG is used to deploy Tanzu Kubernetes Cluster to various Cloud Providers including vSphere, AWS and Azure. First, a management cluster (based on Docker and kind) is created from a Bootstrap Workstation, which itself then provides its web interface and additional CLI tools to create a Kubernetes cluster.
+TKG has no integration in vSphere UI. If you wan&#39;t to integrate Tanzu with vCenter/vSphere UI - use vSphere with Tanzu instead.
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

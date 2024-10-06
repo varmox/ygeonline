@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vCenter on ygerber</title>
+    <link>/tags/vcenter/</link>
+    <description>Recent content in vCenter on ygerber</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
+    <lastBuildDate>Fri, 23 Aug 2024 22:24:18 +0200</lastBuildDate><atom:link href="/tags/vcenter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VMware vCenter Troubleshooting Guide</title>
+      <link>/post/vcenter-troubleshooting/</link>
+      <pubDate>Fri, 23 Aug 2024 22:24:18 +0200</pubDate>
+      
+      <guid>/post/vcenter-troubleshooting/</guid>
+      <description>
+        
+          
+            vCenter Troubleshooting Guide Log Files Networking Manual Network Config DNS *** Flush DNS ***
+1 2systemctl restart systemd–resolved.service 3 4systemctl restart dnsmasq HTTP Proxy Certificate Management Renew all vCenter Machine Certificates vLCM *** Cannot sync depot ***
+1 2/var/log/vmware/vmware-updatemgr/vum-server/vmware-vum-server.log 
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,10 +3,49 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/</loc>
-    <lastmod>2023-12-26T15:28:45+02:00</lastmod>
+    <lastmod>2024-08-23T22:24:18+02:00</lastmod>
   </url><url>
     <loc>/categories/</loc>
-    <lastmod>2023-12-26T15:28:45+02:00</lastmod>
+    <lastmod>2024-08-23T22:24:18+02:00</lastmod>
+  </url><url>
+    <loc>/post/</loc>
+    <lastmod>2024-08-23T22:24:18+02:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2024-08-23T22:24:18+02:00</lastmod>
+  </url><url>
+    <loc>/tags/vcenter/</loc>
+    <lastmod>2024-08-23T22:24:18+02:00</lastmod>
+  </url><url>
+    <loc>/tags/vcf/</loc>
+    <lastmod>2024-08-23T22:24:18+02:00</lastmod>
+  </url><url>
+    <loc>/categories/vmware/</loc>
+    <lastmod>2024-08-23T22:24:18+02:00</lastmod>
+  </url><url>
+    <loc>/post/vcenter-troubleshooting/</loc>
+    <lastmod>2024-08-23T22:24:18+02:00</lastmod>
+  </url><url>
+    <loc>/categories/vcf/</loc>
+    <lastmod>2024-06-25T20:48:30+02:00</lastmod>
+  </url><url>
+    <loc>/tags/vmware/</loc>
+    <lastmod>2024-06-25T20:48:30+02:00</lastmod>
+  </url><url>
+    <loc>/post/vcf52/</loc>
+    <lastmod>2024-06-25T20:48:30+02:00</lastmod>
+  </url><url>
+    <loc>/tags/vmware-tanzu/</loc>
+    <lastmod>2024-06-25T20:48:30+02:00</lastmod>
+  </url><url>
+    <loc>/tags/devsecops/</loc>
+    <lastmod>2024-06-25T08:30:38+02:00</lastmod>
+  </url><url>
+    <loc>/post/devsecops/</loc>
+    <lastmod>2024-06-25T08:30:38+02:00</lastmod>
+  </url><url>
+    <loc>/categories/my-2-cents/</loc>
+    <lastmod>2024-06-25T08:30:38+02:00</lastmod>
   </url><url>
     <loc>/tags/hardware/</loc>
     <lastmod>2023-12-26T15:28:45+02:00</lastmod>
@@ -14,38 +53,44 @@
     <loc>/tags/hpe/</loc>
     <lastmod>2023-12-26T15:28:45+02:00</lastmod>
   </url><url>
-    <loc>/post/</loc>
-    <lastmod>2023-12-26T15:28:45+02:00</lastmod>
-  </url><url>
     <loc>/post/reformatting-drives/</loc>
-    <lastmod>2023-12-26T15:28:45+02:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
     <lastmod>2023-12-26T15:28:45+02:00</lastmod>
   </url><url>
     <loc>/categories/technology/</loc>
     <lastmod>2023-12-26T15:28:45+02:00</lastmod>
   </url><url>
-    <loc>/categories/it/</loc>
-    <lastmod>2023-11-29T22:04:40+01:00</lastmod>
+    <loc>/post/tanzu-mission-control-self-managed/</loc>
+    <lastmod>2023-12-09T13:57:09+01:00</lastmod>
   </url><url>
     <loc>/tags/kubernetes/</loc>
+    <lastmod>2023-12-08T20:43:03+02:00</lastmod>
+  </url><url>
+    <loc>/post/tanzu-cluster-creation/</loc>
+    <lastmod>2023-12-08T20:43:03+02:00</lastmod>
+  </url><url>
+    <loc>/tags/vsphere/</loc>
+    <lastmod>2023-12-08T20:43:03+02:00</lastmod>
+  </url><url>
+    <loc>/categories/it/</loc>
     <lastmod>2023-11-29T22:04:40+01:00</lastmod>
   </url><url>
     <loc>/categories/kubernetes/</loc>
     <lastmod>2023-11-29T22:04:40+01:00</lastmod>
   </url><url>
-    <loc>/categories/vmware/</loc>
-    <lastmod>2023-11-29T22:04:40+01:00</lastmod>
-  </url><url>
-    <loc>/tags/vmware-tanzu/</loc>
-    <lastmod>2023-11-29T22:04:40+01:00</lastmod>
-  </url><url>
     <loc>/tags/vmware-tanzu-kubernetes-grid/</loc>
     <lastmod>2023-11-29T22:04:40+01:00</lastmod>
   </url><url>
-    <loc>/post/lan-party-infrastructure/</loc>
+    <loc>/post/tkg-getting-started/</loc>
     <lastmod>2023-11-29T22:04:40+01:00</lastmod>
+  </url><url>
+    <loc>/post/cillium-getting-started/</loc>
+    <lastmod>2023-10-14T18:18:26+02:00</lastmod>
+  </url><url>
+    <loc>/tags/cni/</loc>
+    <lastmod>2023-10-14T18:18:26+02:00</lastmod>
+  </url><url>
+    <loc>/tags/kubernetes-cillium/</loc>
+    <lastmod>2023-10-14T18:18:26+02:00</lastmod>
   </url><url>
     <loc>/tags/docker/</loc>
     <lastmod>2023-10-08T20:43:03+02:00</lastmod>
@@ -58,9 +103,6 @@
   </url><url>
     <loc>/post/tanzu-kubernetes-grid-workstation-setup/</loc>
     <lastmod>2023-10-08T20:43:03+02:00</lastmod>
-  </url><url>
-    <loc>/tags/vmware/</loc>
-    <lastmod>2023-08-23T23:13:14+02:00</lastmod>
   </url><url>
     <loc>/post/vmware-vsan-network-requirements/</loc>
     <lastmod>2023-08-23T23:13:14+02:00</lastmod>
@@ -77,11 +119,17 @@
     <loc>/tags/tig-stack/</loc>
     <lastmod>2023-08-08T20:43:03+02:00</lastmod>
   </url><url>
-    <loc>/tags/vsphere/</loc>
-    <lastmod>2023-08-08T20:43:03+02:00</lastmod>
-  </url><url>
     <loc>/post/vsphere-monitoring/</loc>
     <lastmod>2023-08-08T20:43:03+02:00</lastmod>
+  </url><url>
+    <loc>/tags/it-security/</loc>
+    <lastmod>2023-07-09T15:28:45+02:00</lastmod>
+  </url><url>
+    <loc>/tags/opinion/</loc>
+    <lastmod>2023-07-09T15:28:45+02:00</lastmod>
+  </url><url>
+    <loc>/post/state-of-enterprise-itsecurity/</loc>
+    <lastmod>2023-07-09T15:28:45+02:00</lastmod>
   </url><url>
     <loc>/post/tanzu-kubernetes-cluster-examples/</loc>
     <lastmod>2023-06-23T23:13:14+02:00</lastmod>
@@ -92,8 +140,11 @@
     <loc>/tags/yaml/</loc>
     <lastmod>2023-06-23T23:13:14+02:00</lastmod>
   </url><url>
-    <loc>/post/tanzu-ha-proxy/</loc>
+    <loc>/post/tanzu-haproxy-tips/</loc>
     <lastmod>2023-03-08T20:43:03+02:00</lastmod>
+  </url><url>
+    <loc>/post/tanzu-overview/</loc>
+    <lastmod>2023-02-08T20:43:03+02:00</lastmod>
   </url><url>
     <loc>/tags/cheat-sheet/</loc>
     <lastmod>2022-12-04T23:16:50+01:00</lastmod>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VCF on ygerber</title>
+    <link>/categories/vcf/</link>
+    <description>Recent content in VCF on ygerber</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
+    <lastBuildDate>Tue, 25 Jun 2024 20:48:30 +0200</lastBuildDate><atom:link href="/categories/vcf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VMware Cloud Foundation 5.2 - Part 1</title>
+      <link>/post/vcf52/</link>
+      <pubDate>Tue, 25 Jun 2024 20:48:30 +0200</pubDate>
+      
+      <guid>/post/vcf52/</guid>
+      <description>
+        
+          
+            The new VCF 5.2 Update delivers quite a few interesting updates. This blog post covers expecially the updates and improvements for Tanzu.
+Part 1 covers new Feature within Tanzu on vSphere 8 Update 3.
+vSphere with Tanzu Update -&amp;gt; vSphere IaaS Control Plane vSphere with Tanzu is passé - the new naming is vSphere IaaS Control Plane.
+The naming already suggest - not only Kubernetes Cluster can be deployed, also VMs (this was possible a long time but with the new naming the focus is not only on k8s).
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,20 +6,24 @@
     <description>Recent content in my 2 cents on ygerber</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Copyright © 2022-2023, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Sun, 23 Jul 2023 22:24:18 +0200</lastBuildDate><atom:link href="/categories/my-2-cents/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
+    <lastBuildDate>Tue, 25 Jun 2024 08:30:38 +0200</lastBuildDate><atom:link href="/categories/my-2-cents/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Leadership</title>
-      <link>/post/leadership/</link>
-      <pubDate>Sun, 23 Jul 2023 22:24:18 +0200</pubDate>
+      <title>DevSecOps</title>
+      <link>/post/devsecops/</link>
+      <pubDate>Tue, 25 Jun 2024 08:30:38 +0200</pubDate>
       
-      <guid>/post/leadership/</guid>
+      <guid>/post/devsecops/</guid>
       <description>
         
           
-            Fundamentals of Leadership.
-What Why How
-Challenge the status quo. They buy why you do it Authenticity Extreme Ownership Values &amp;amp; belives
+            Introduction Due to the rise of containerized applications the new word DevOps or DevSecOps.
+So what is DevOps?
+Basically the developer should also build &amp;amp; operate the infrastructure on which is code runs on.
+And DevSecOps?
+We need Security, so adapt DevOps Practises also for Security. Devs should also be resonsible to securing their infrastructure.
+What are the goals?
+The main Goal for DevOps Practises is to shorten time of the SDLC (Systems Develoopment Lifecyle).
           
           
         

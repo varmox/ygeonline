@@ -6,15 +6,24 @@
     <description>Recent content in vSAN on ygerber</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Copyright © 2022-2023, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Wed, 23 Aug 2023 23:13:14 +0200</lastBuildDate>
-    <atom:link href="/tags/vsan/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
+    <lastBuildDate>Wed, 23 Aug 2023 23:13:14 +0200</lastBuildDate><atom:link href="/tags/vsan/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VMware vSAN Network Considerations</title>
       <link>/post/vmware-vsan-network-requirements/</link>
       <pubDate>Wed, 23 Aug 2023 23:13:14 +0200</pubDate>
+      
       <guid>/post/vmware-vsan-network-requirements/</guid>
-      <description>Intro VMware vSAN is a Hyperconverged Infrastructure Solution from VMware. It basically turns your servers direct attached disks into a storage cluster.&#xA;General Requirements 10 GbE network switches are the minimum requirement for all-flash vSAN Clusters 25 GBE network switches are recommended Switches that support higher port speeds are designed with higher Network Processor Unit (NPU) buffers. An NPU shared switch buffer of at least 16 MB is recommended for 10 GbE network connectivity.</description>
+      <description>
+        
+          
+            Intro VMware vSAN is a Hyperconverged Infrastructure Solution from VMware. It basically turns your servers direct attached disks into a storage cluster.
+General Requirements 10 GbE network switches are the minimum requirement for all-flash vSAN Clusters 25 GBE network switches are recommended Switches that support higher port speeds are designed with higher Network Processor Unit (NPU) buffers. An NPU shared switch buffer of at least 16 MB is recommended for 10 GbE network connectivity.
+          
+          
+        
+      </description>
     </item>
+    
   </channel>
 </rss>

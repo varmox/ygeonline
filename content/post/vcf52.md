@@ -35,7 +35,9 @@ Part 1 covers new Feature within Tanzu on vSphere 8 Update 3.
 
 vSphere with Tanzu is passé - the new naming is vSphere IaaS Control Plane. 
 
-The naming already suggest - not only Kubernetes Cluster can be deployed, also VMs (this was possible a long time but with the new naming the focus is not only on k8s). Via the vm-operator you can deploy VMs alongside Tanzu Kubernetes Cluster. The IaaS Control Plane is really interesting as you can deploy VMs with Code. A YAML File will describe your VM. It is even possible to deploy Windows Workloads via VM-Operator with sysprep! (blog to follow)
+The naming already suggest - not only Kubernetes Cluster can be deployed, also VMs (this was possible a long time but with the new naming the focus is not only on k8s). Via the vm-operator you can deploy VMs alongside Tanzu Kubernetes Cluster. The IaaS Control Plane is really interesting as you can deploy VMs with Code. A YAML File will describe your VM. For that the VM Class now support much more configuration, it handled like a normal VM provisioned through vSphere UI.
+
+It is even possible to deploy Windows Workloads via VM-Operator with sysprep! (blog to follow)
 
 Deployment of Windows Server within a ArgoCD Pipeline is possible (if you would want that ;))
 

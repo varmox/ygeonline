@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VCF on ygerber</title>
+    <link>/tags/vcf/</link>
+    <description>Recent content in VCF on ygerber</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
+    <lastBuildDate>Fri, 23 Aug 2024 22:24:18 +0200</lastBuildDate><atom:link href="/tags/vcf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VMware vCenter Troubleshooting Guide</title>
+      <link>/post/vcenter-troubleshooting/</link>
+      <pubDate>Fri, 23 Aug 2024 22:24:18 +0200</pubDate>
+      
+      <guid>/post/vcenter-troubleshooting/</guid>
+      <description>
+        
+          
+            vCenter Troubleshooting Guide Log Files Networking Manual Network Config DNS *** Flush DNS ***
+1 2systemctl restart systemd–resolved.service 3 4systemctl restart dnsmasq HTTP Proxy Certificate Management Renew all vCenter Machine Certificates vLCM *** Cannot sync depot ***
+1 2/var/log/vmware/vmware-updatemgr/vum-server/vmware-vum-server.log 
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>VMware Cloud Foundation 5.2 - Part 1</title>
+      <link>/post/vcf52/</link>
+      <pubDate>Tue, 25 Jun 2024 20:48:30 +0200</pubDate>
+      
+      <guid>/post/vcf52/</guid>
+      <description>
+        
+          
+            The new VCF 5.2 Update delivers quite a few interesting updates. This blog post covers expecially the updates and improvements for Tanzu.
+Part 1 covers new Feature within Tanzu on vSphere 8 Update 3.
+vSphere with Tanzu Update -&amp;gt; vSphere IaaS Control Plane vSphere with Tanzu is passé - the new naming is vSphere IaaS Control Plane.
+The naming already suggest - not only Kubernetes Cluster can be deployed, also VMs (this was possible a long time but with the new naming the focus is not only on k8s).
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
