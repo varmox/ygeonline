@@ -108,10 +108,32 @@ Run the following command to change Networking Settings from BASH
 /opt/vmware/share/vami/vami_config_net
 ```
 
+or use the builtin DCUI from the bash shell
+
+```
+dcui
+```
+
 ### DNS
 
 ***Manual DNS Config***
 
+```
+vi etc/systemd/resolved.conf
+```
+
+```
+[Resolve] 
+DNS=10.10.10.125
+FallbackDNS=10.10.10.126
+Domains=yourdomain.local
+```
+
+or use the builtin DCUI from the bash shell
+
+```
+dcui
+```
 
 ***Flush DNS***
 
