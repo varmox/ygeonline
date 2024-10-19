@@ -98,7 +98,7 @@ vCenter Server logs can be viewed from:
 
  - Home > Administration > System Logs.
 
-## Ways to configure your vcenter
+## Ways to access your vcenter
 
 ***GUI (VAMI)***
 
@@ -125,7 +125,7 @@ If you need to enable bash shell, do the following first:
 
 ***Bash shell (Emergency Boot)***
 
-Look at [here](# vCenter Emergency Boot - Edit GRUB Bootloader)
+Look at [here](#-vCenter-Emergency-Boot---Edit-GRUB-Bootloader)
 
 ## Networking
 
@@ -260,6 +260,10 @@ If during a File Level Restore something went run, check your logs at:
 
 /var/log/vmware/applmgmt/restore.log 
 
+### Restore fails - unable to ssh into machine
+
+If your vCenter Restore has failed and you aren't able to ssh into the machine. Try all the ways to access your vCenter as described in [here](##-Ways-to-access-your-vcenter)
+
 # vCenter and ESXi 
 
 **Disconnect ESXi if vCener no longer exists**
@@ -280,7 +284,7 @@ sudo passwd root
 
 ## Advanced root password restore
 
-- Emergency boot the vCenter described  [below](# vCenter Emergency Boot - Edit GRUB Bootloader)
+- Emergency boot the vCenter described  [below](#-vCenter-Emergency-Boot---Edit-GRUB-Bootloader)
 - unlock the root account
 
 ```
