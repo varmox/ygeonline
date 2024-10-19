@@ -102,7 +102,7 @@ vCenter Server logs can be viewed from:
 
 ***GUI (VAMI)***
 
-'https://<vcenterfqdn>:5480'
+'https:// vcenterfqdn :5480'
 
 ***SSH***
 
@@ -125,7 +125,7 @@ If you need to enable bash shell, do the following first:
 
 ***Bash shell (Emergency Boot)***
 
-Look at [here](# vCenter Emergency Boot (Edit GRUB Bootloader)
+Look at [here](# vCenter Emergency Boot - Edit GRUB Bootloader)
 
 ## Networking
 
@@ -280,7 +280,7 @@ sudo passwd root
 
 ## Advanced root password restore
 
-- Emergency boot the vCenter described  [below](# vCenter Emergency Boot (Edit GRUB Bootloader)
+- Emergency boot the vCenter described  [below](# vCenter Emergency Boot - Edit GRUB Bootloader)
 - unlock the root account
 
 ```
@@ -300,7 +300,7 @@ umount /
 reboot -f
 ```
 
-# vCenter Emergency Boot (Edit GRUB Bootloader)
+# vCenter Emergency Boot - Edit GRUB Bootloader
 
 If you cannot SSH into or open DCUI/Bash Shell (via VM Remote Console) to your vCenter you can access the vCenter without a password the following:
 
