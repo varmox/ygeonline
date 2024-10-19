@@ -304,7 +304,7 @@ umount /
 reboot -f
 ```
 
-# vCenter Emergency Boot Edit GRUB Bootloader
+# Emergency Boot Edit GRUB Bootloader
 
 If you cannot SSH into or open DCUI/Bash Shell (via VM Remote Console) to your vCenter you can access the vCenter without a password the following:
 
