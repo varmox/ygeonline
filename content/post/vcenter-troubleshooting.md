@@ -262,7 +262,7 @@ If during a File Level Restore something went run, check your logs at:
 
 ### Restore fails - unable to ssh into machine
 
-If your vCenter Restore has failed and you aren't able to ssh into the machine. Try all the ways to access your vCenter as described in [here](##-Ways-to-access-your-vcenter)
+If your vCenter Restore has failed and you aren't able to ssh into the machine. Try all the ways to access your vCenter as described in [here](#ways-to-access-your-vcenter)
 
 # vCenter and ESXi 
 
@@ -304,7 +304,7 @@ umount /
 reboot -f
 ```
 
-# vCenter Emergency Boot - Edit GRUB Bootloader
+# vCenter Emergency Boot Edit GRUB Bootloader
 
 If you cannot SSH into or open DCUI/Bash Shell (via VM Remote Console) to your vCenter you can access the vCenter without a password the following:
 
