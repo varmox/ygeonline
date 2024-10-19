@@ -98,6 +98,35 @@ vCenter Server logs can be viewed from:
 
  - Home > Administration > System Logs.
 
+## Ways to configure your vcenter
+
+***GUI (VAMI)***
+
+'https://<vcenterfqdn>:5480'
+
+***SSH***
+
+Login via SSH (root user or SSO User)
+
+***DCUI***
+
+Open the VM Remote Console of the vCenter VM (via ESXi) and Press F2. After a successfull login you will be able to edit the config via DCUI.
+
+DCUI can also be opened from ssh.
+
+***Bash shell***
+
+To Access the Bash Shell:
+Open the VM Remote Console of the vCenter VM (via ESXi) and Press ALT+F1.
+
+If you need to enable bash shell, do the following first:
+
+- Open the VM Remote Console of the vCenter VM (via ESXi) and Press F2. After a successfull login go to troubleshooting options and enable bash or ssh
+
+***Bash shell (Emergency Boot)***
+
+Look at [here](# vCenter Emergency Boot (Edit GRUB Bootloader)
+
 ## Networking
 
 ### Manual Network Config
@@ -237,4 +266,61 @@ If during a File Level Restore something went run, check your logs at:
 
 ```
 cmsso-util unregister --node-pnid vcenter.domain.com --username [administrator@vsphere.local](mailto:administrator@vsphere.local) --passwd pw
+```
+
+# Forgot Root Password
+
+## Simple Method: Login with SSO User
+
+If you forgot your root password or it is expired you can still access the vCenter via GUI or SSH with the SSO Admin User (usually administrator@vsphere.local)
+
+```
+sudo passwd root
+```
+
+## Advanced root password restore
+
+- Emergency boot the vCenter described  [below](# vCenter Emergency Boot (Edit GRUB Bootloader)
+- unlock the root account
+
+```
+/usr/sbin/faillock --user root --reset
+```
+
+After that you can set a new password
+
+```
+passwd
+```
+
+Then unmount the filesystem and reboot
+
+```
+umount / 
+reboot -f
+```
+
+# vCenter Emergency Boot (Edit GRUB Bootloader)
+
+If you cannot SSH into or open DCUI/Bash Shell (via VM Remote Console) to your vCenter you can access the vCenter without a password the following:
+
+- Access VM Remote Console of the vCenter VM
+- Reboot the VM
+- press 'e' for emergency mode
+- GRUB Bootloader will appear, edit the boot loader the following:
+  - Append these entries to the end of the line of '...consoleblank=0' with: - 'rw init=/bin/bash'
+- Proceed to boot the vCenter VM with pressing F10
+- After booting you should be presented with a shell
+- run:
+```
+mount -o remount,rw / 
+```
+
+After that you can edit configuartion files as needed (in /etc/sysconfig for example)
+
+Make sure you unmount the filesystem and reboot after you have done your configuration
+
+```
+umount / 
+reboot -f
 ```
