@@ -32,7 +32,7 @@ Key features of the vSphere REST API include:
 - RESTful architecture: It follows REST principles, using standard HTTP methods (GET, POST, PUT, DELETE) for operations.
 - JSON-based: Requests and responses use JSON format, making it easier to parse and work with data.
 - Simplified interaction: The API is designed to be more intuitive and easier to use than the older SOAP-based API.
-- Focus on automation: It caters to DevOps practices and modern automation workflows.
+
 
 To get started with the vSphere REST API, you can use the built-in API Explorer in vCenter Server, accessible at https://< vcenter.example.com >/apiexplorer. This tool provides interactive documentation and allows you to test API calls directly from your browser.
 
