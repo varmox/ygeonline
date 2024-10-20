@@ -77,7 +77,7 @@ Or Directly via: https://< vcenter.example.com >/apiexplorer
 
 Ansible can interact with vSphere via Module (mostly the Community.Vmware' module is used). But not all Automation Tasks can be done via this module. Sometimes direct API Calls via the 'uri' module have to be made for certain tasks.
 
-### Example Ansible Call to vSphere REST API
+### Example Ansible vSphere REST API Call
 
 ```
 - name: Basic vSphere API REST Call
