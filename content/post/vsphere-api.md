@@ -179,3 +179,63 @@ To get those MOIDs here is an example:
 
 
 This approach using the uri module gives you more direct control over the API calls and allows you to customize the requests and responses as needed. It's particularly useful when you need to perform actions that aren't covered by existing Ansible modules or when you want to work directly with the vSphere REST API.
+
+## Powershell
+
+If PowerCLI does not have the function you are looking for, you could also you native Powershell to interact with the vSphere API.
+
+This script does the following:
+- Sets up the vCenter server details.
+- Adds a function to ignore SSL certificate errors (remove this in production environments).
+- Authenticates with the vCenter server to get a session token.
+- Uses the session token to make an API call to retrieve a list of VMs.
+- Displays the results in a table format.
+
+
+```
+# vCenter server details
+$vcServer = "vcenter.example.com"
+$vcUser = "administrator@vsphere.local"
+$vcPass = "YourPassword"
+
+# Ignore SSL certificate errors (remove in production)
+if (-not ([System.Management.Automation.PSTypeName]'ServerCertificateValidationCallback').Type) {
+    add-type @"
+    using System.Net;
+    using System.Security.Cryptography.X509Certificates;
+    public class ServerCertificateValidationCallback {
+        public static void Ignore() {
+            ServicePointManager.ServerCertificateValidationCallback += 
+                delegate (
+                    Object obj, 
+                    X509Certificate certificate, 
+                    X509Chain chain, 
+                    SslPolicyErrors errors
+                ) { return true; };
+        }
+    }
+"@
+}
+[ServerCertificateValidationCallback]::Ignore()
+
+# Authenticate and get session token
+$auth = [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($vcUser + ':' + $vcPass))
+$headers = @{
+    'Authorization' = "Basic $auth"
+}
+$sessionUrl = "https://$vcServer/rest/com/vmware/cis/session"
+$response = Invoke-RestMethod -Uri $sessionUrl -Method Post -Headers $headers
+$sessionId = $response.value
+
+# Set up headers for subsequent requests
+$headers = @{
+    'vmware-api-session-id' = $sessionId
+}
+
+# Make an API call (e.g., get list of VMs)
+$vmsUrl = "https://$vcServer/rest/vcenter/vm"
+$vms = Invoke-RestMethod -Uri $vmsUrl -Method Get -Headers $headers
+
+# Display results
+$vms.value | Format-Table
+```
