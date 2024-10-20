@@ -40,20 +40,14 @@ To get started with the vSphere REST API, you can use the built-in API Explorer 
 
 The vSphere API provides several key endpoints for interacting with different aspects of the vSphere environment:
 
-vSphere Automation API (REST):
-Base URL: https://< vcenter.example.com >/api
+| API  |  Endpoint |   |   |   |
+|---|---|---|---|---|
+|  vSphere Automation API (REST) | https://< vcenter.example.com >/api  |  
+|  VIM JSON API (New in vSphere 8.0 Update 1) | http://< vcenter.example.com >/sdk/vim25/8.0.1.0  |   
+|  vSphere Web Services API (SOAP) - deprecated | https://< vcenter.example.com >/sdk  |  
+|  vCenter Server Appliance Management API | https://< vcenter.example.com >:5480/rest  |  
+|  API Explorer: | https://< vcenter.example.com >/apiexplorer  |  
 
-VIM JSON API (New in vSphere 8.0 Update 1):
-Endpoint: http://< vcenter.example.com >/sdk/vim25/8.0.1.0
-
-vSphere Web Services API (SOAP):
-Endpoint: https://< vcenter.example.com >/sdk
-
-vCenter Server Appliance Management API:
-Endpoint: https://< vcenter.example.com >:5480/rest
-
-API Explorer:
-Accessible at: https://< vcenter.example.com >/apiexplorer
 
 ![vSphere API Endpoints Overview](https://i.imgur.com/iP0EE4h.png)
 
