@@ -34,7 +34,28 @@ Key features of the vSphere REST API include:
 - Simplified interaction: The API is designed to be more intuitive and easier to use than the older SOAP-based API.
 - Focus on automation: It caters to DevOps practices and modern automation workflows.
 
-To get started with the vSphere REST API, you can use the built-in API Explorer in vCenter Server, accessible at https://vcenter.example.com/apiexplorer. This tool provides interactive documentation and allows you to test API calls directly from your browser.
+To get started with the vSphere REST API, you can use the built-in API Explorer in vCenter Server, accessible at https://< vcenter.example.com >/apiexplorer. This tool provides interactive documentation and allows you to test API calls directly from your browser.
+
+## Endpoints
+
+The vSphere API provides several key endpoints for interacting with different aspects of the vSphere environment:
+
+vSphere Automation API (REST):
+Base URL: https://< vcenter.example.com >/api
+
+VIM JSON API (New in vSphere 8.0 Update 1):
+Endpoint: http://< vcenter.example.com >/sdk/vim25/8.0.1.0
+
+vSphere Web Services API (SOAP):
+Endpoint: https://< vcenter.example.com >/sdk
+
+vCenter Server Appliance Management API:
+Endpoint: https://< vcenter.example.com >:5480/rest
+
+API Explorer:
+Accessible at: https://< vcenter.example.com >/apiexplorer
+
+![vSphere API Endpoints Overview](https://i.imgur.com/iP0EE4h.png)
 
 ## vSphere Developer Center
 
@@ -55,6 +76,8 @@ While the recording is in progress, do your things in the GUI (like edit a VM, a
 
 To explore the vSphere APIs, you can access the API Explorer directly in your vCenter.
 From the burger menu, click Developer Center and select the API Explorer tab.
+
+Or Directly via: https://< vcenter.example.com >/apiexplorer
 
 ## Ansible
 
@@ -90,7 +113,7 @@ MOIDs typically consist of a prefix indicating the object type, followed by a nu
 
 A lot of times you will need to interact with the MOIDs. You can browse them in your vCenter:
 
-- https://vcenter.example.com/mob
+- https://< vcenter.example.com >/mob
 
 
 To get those MOIDs here is an example:
