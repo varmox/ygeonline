@@ -51,7 +51,7 @@ After the successful deployment you with be presented with the Stage 2 Process. 
 
 # Stage 1.5 - Clear misconfigurations
 
-Grab you desired the whole backupfolder from your desired date and safe it somewhere. As a better unterstanding of the folder Naming convention:
+Grab the whole backupfolder from your desired date and safe it somewhere. As a better unterstanding of the folder Naming convention:
 
 ```
 [M/S]_[VCSA version]_[Date YYYYMMDD]_[Time HHMMSS]_[Unique identifier]
