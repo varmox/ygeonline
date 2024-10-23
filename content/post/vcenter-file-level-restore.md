@@ -45,7 +45,7 @@ The Basic vCenter File-level Restore Process looks like the following:
 Before deploying a fresh vCenter, have a look at you VCSA Backup folder. In the root of each backupfolder there is a file 'backup-metadata.json' - within there grab the details before deploying a fresh VCSA:
 
 - "Build" (Use the exact same buildnumber)
-- "
+
 
 After the successful deployment you with be presented with the Stage 2 Process. ('https://vcenterfqdn:5480/stage2')
 
@@ -57,8 +57,7 @@ Grab you desired the whole backupfolder from your desired date and safe it somew
 [M/S]_[VCSA version]_[Date YYYYMMDD]_[Time HHMMSS]_[Unique identifier]
 ```
 
-M: Manual backup
-S: Scheduled backup
+M: Manual backup / S: Scheduled backup
 
 file structure:
 
@@ -80,7 +79,7 @@ It's important to note that the specific location of the backup files depends on
 
 The 'config_files' holds all the configuration files. You can safely edit those files "offline" from your workstation.
 
-#### Example - Edit HTTP Proxy
+### Example - Edit HTTP Proxy
 
 Unpack the archive:
 
@@ -130,4 +129,4 @@ openssl aes-256-cbc -a -salt -pbkdf2 -in config_files.tar.gz -out config_files.t
 
 Now go back to 'https://vcenterfqdn:5480/stage2' and Start the Stage 2 Process. Provide the folder with the new edits.
 
-Tip: If you are unable to change the folder (Server, Location etc) at stage 2 - open 'https://vcenterfqdn:5480/stage2' in a private/incognito Windows in your Browser. Then you should be able to edit Stage 2 Restore Parameters.
+Tipp: If you are unable to change the folder (Server, Location etc) at stage 2 - open 'https://vcenterfqdn:5480/stage2' in a private/incognito Windows in your Browser. Then you should be able to edit Stage 2 Restore Parameters.
