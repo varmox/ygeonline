@@ -137,6 +137,43 @@ Run the following command to change Networking Settings from BASH
 /opt/vmware/share/vami/vami_config_net
 ```
 
+Alternatively edit the configuration files directly, to change network settings like IP address and netmask
+
+```
+/etc/systemd/network/10-eth0.network 
+```
+Example:
+
+```
+[Match]
+Name=eth0
+
+[Network]
+Address=192.168.1.100/24
+Gateway=192.168.1.1
+DNS=8.8.8.8
+DNS=8.8.4.4
+
+[Route]
+Destination=10.0.0.0/24
+Gateway=192.168.1.254
+```
+
+to modify routing information
+
+```
+/etc/sysconfig/network/routes 
+```
+Example
+```
+default 192.168.1.1
+10.0.0.0/24 192.168.1.254
+172.16.0.0/16 192.168.1.253
+```
+
+Each line follows this format:
+'<TargetNetwork> <GatewayAddress> <Netmask> <Interface>'
+
 or use the builtin DCUI from the bash shell
 
 ```
