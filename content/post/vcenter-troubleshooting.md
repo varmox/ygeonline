@@ -227,11 +227,30 @@ It is also possible to edit the file directly:
 vi /etc/sysconfig/proxy
 ```
 
+Example:
+
+```
+PROXY_ENABLED="yes"
+
+HTTP_PROXY="http://proxy.example.com:8080"
+HTTPS_PROXY="http://proxy.example.com:8080"
+
+NO_PROXY="localhost, 127.0.0.1, .*.example.com, 192.168.0.0/24, 192.168.1.55"
+```
+
 ## Certificate Management
 
 
 Log File: /var/log/vmware/vmcad/certificate-manager.log
 
+Run this command to check certificate expiration dates:
+
+```
+for store in $(/usr/lib/vmware-vmafd/bin/vecs-cli store list | grep -v TRUSTED_ROOT_CRLS); do 
+  echo "[*] Store :" $store
+  /usr/lib/vmware-vmafd/bin/vecs-cli entry list --store $store --text | grep -ie "Alias" -ie "Not After"
+done
+```
 
 ### Renew all vCenter Machine Certificates
 
@@ -252,6 +271,30 @@ To get the vCenter PNID:
 ```
 /usr/lib/vmware-vmafd/bin/vmafd-cli get-pnid --server-name localhost
 ```
+
+### VMware Security Token Service (STS) certificate
+
+https://knowledge.broadcom.com/external/article?legacyId=79248
+
+### Fix trust issues - lsdoctor
+
+Use the lsdoctor tool from VMware:
+https://knowledge.broadcom.com/external/article?legacyId=80469
+
+Upload and unzip lsdoctor on vCenter
+
+Check for issues
+
+```
+python lsdoctor.py -l 
+```
+
+to fix trust mismatches
+
+```
+python lsdoctor.py -t 
+```
+
 ## vSphere HA
 
 Log File: /var/log/fdm.log
