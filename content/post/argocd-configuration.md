@@ -1,7 +1,7 @@
 ---
-title: "Argocd Configuration" # Title of the blog post.
+title: "ArgoCD Deployment & Configuration" # Title of the blog post.
 date: 2024-09-13T23:48:15+01:00 # Date of post creation.
-description: "Article description." # Description used for search engine.
+description: "HowTo - ArgoCD Deployment on TKGS" # Description used for search engine.
 featured: false # Sets if post is a featured post, making appear on the home page side bar.
 draft: false # Sets whether to render this page. Draft of true will not be rendered.
 toc: false # Controls if a table of contents should be generated for first-level links automatically.
@@ -137,4 +137,157 @@ Get the Initial Admin Password:
 export ARGO_PWD=$(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d)```
 ```
 
-# ArgoCD Configuration
+Now go ahead on Login to your ArgoCD UI for the first time.
+
+# ArgoCD Configuration - TLS Certificates
+
+To use your own Certificates for the ArgoCD UI:
+
+```
+kubectl create -n argocd secret tls argocd-server-tls \
+  --cert=/path/to/cert.pem \
+  --key=/path/to/key.pem
+```
+
+## Custom Root CA
+Edit the argocd-cm ConfigMap:
+
+```
+kubectl edit configmap argocd-cm -n argocd
+```
+
+Add the Root CA certificate to the ConfigMap under the tls.certs key. The format should be:
+
+```
+data:
+  tls.certs: |
+    -----BEGIN CERTIFICATE-----
+    <Your Root CA certificate content here>
+    -----END CERTIFICATE-----
+```
+
+After updating the ConfigMap, you need to restart the Argo CD server pod for the changes to take effect:
+
+```
+kubectl rollout restart deployment argocd-server -n argocd
+```
+
+# ArgoCD Configuration - SSO
+
+ArgoCD can use OpenID Connect (OIDC) Providers for SSO-Logins. In this example we use GitLab.
+
+Configure GitLab:
+
+Register a new application in GitLab:
+- Go to Settings > Applications > New Application
+- Set the Redirect URI to: https://argocd-domain.com/auth/callback
+- Enable the scopes: API and read_user
+- Save and note down the Application ID and Secret
+
+```
+kubectl edit configmap argocd-cm -n argocd
+```
+
+```
+data:
+  url: https://argocd.example.com
+  dex.config: |
+    connectors:
+      - type: gitlab
+        id: gitlab
+        name: GitLab
+        config:
+          baseURL: https://gitlab.com
+          clientID: $GITLAB_APPLICATION_ID
+          clientSecret: $GITLAB_CLIENT_SECRET
+          redirectURI: https://argocd.example.com/api/dex/callback
+  users.anonymous.enabled: "false"
+```
+
+Restart the deployment:
+
+```
+kubectl rollout restart deployment argocd-server -n argocd
+```
+
+Now a new Login Button appears on the ArgoCD UI.
+
+# ArgoCD Configuration - Forward Proxy
+
+If you run ArgoCD behind a Forward Proxy and want to use external Git-Repositories, adjust your deployment the following:
+
+```
+kubectl edit configmap argocd-cm -n argocd
+```
+
+```
+
+data:
+   HTTP_PROXY: "http://your-proxy-server:port"
+  HTTPS_PROXY: "http://your-proxy-server:port"
+  NO_PROXY: |
+    argocd-repo-server,
+    argocd-application-controller,
+    argocd-applicationset-controller,
+    argocd-metrics,
+    argocd-server,
+    argocd-server-metrics,
+    argocd-redis,
+    argocd-redis-ha-haproxy,
+    argocd-dex-server,
+    localhost,
+    127.0.0.1,
+    kubernetes.default.svc,
+    .svc.cluster.local,
+    10.0.0.0/8 - use your own internal CIDR here!
+
+```
+
+# ArgoCD Complete Config:
+
+Your whole ConfigMap (argocd-cm) should now look like:
+
+```
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cm
+  namespace: argocd
+  labels:
+    app.kubernetes.io/name: argocd-cm
+    app.kubernetes.io/part-of: argocd
+data:
+  url: https://argocd.example.com
+  dex.config: |
+    connectors:
+      - type: gitlab
+        id: gitlab
+        name: GitLab
+        config:
+          baseURL: https://gitlab.com
+          clientID: $GITLAB_APPLICATION_ID
+          clientSecret: $GITLAB_CLIENT_SECRET
+          redirectURI: https://argocd.example.com/api/dex/callback
+  users.anonymous.enabled: "false"
+  HTTP_PROXY: "http://your-proxy-server:port"
+  HTTPS_PROXY: "http://your-proxy-server:port"
+  NO_PROXY: |
+    argocd-repo-server,
+    argocd-application-controller,
+    argocd-applicationset-controller,
+    argocd-metrics,
+    argocd-server,
+    argocd-server-metrics,
+    argocd-redis,
+    argocd-redis-ha-haproxy,
+    argocd-dex-server,
+    localhost,
+    127.0.0.1,
+    kubernetes.default.svc,
+    .svc.cluster.local,
+    10.0.0.0/8
+  tls.certs: |
+    -----BEGIN CERTIFICATE-----
+    <Your Root CA certificate content here>
+    -----END CERTIFICATE-----
+```
