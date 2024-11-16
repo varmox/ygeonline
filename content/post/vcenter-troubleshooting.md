@@ -1,5 +1,5 @@
 ---
-title: "VMware vCenter Troubleshooting Guide" # Title of the blog post.
+title: "[Guide] VMware vCenter Troubleshooting Guide" # Title of the blog post.
 date: 2024-08-23T22:24:18+02:00 # Date of post creation.
 description: "A Troubleshooting Guide for variuos vCenter Problems" # Description used for search engine.
 featured: true # Sets if post is a featured post, making appear on the home page side bar.

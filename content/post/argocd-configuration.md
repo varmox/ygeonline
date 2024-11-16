@@ -1,5 +1,5 @@
 ---
-title: "ArgoCD Deployment & Configuration" # Title of the blog post.
+title: "[HowTo] ArgoCD Deployment & Configuration" # Title of the blog post.
 date: 2024-09-13T23:48:15+01:00 # Date of post creation.
 description: "HowTo - ArgoCD Deployment on TKGS" # Description used for search engine.
 featured: false # Sets if post is a featured post, making appear on the home page side bar.

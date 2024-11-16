@@ -1,5 +1,5 @@
 ---
-title: "Tanzu Kubernetes Cluster Example Deployments" # Title of the blog post.
+title: "[Guide] Tanzu Kubernetes Cluster Example Deployments" # Title of the blog post.
 date: 2023-06-23T23:13:14+02:00 # Date of post creation.
 description: "Article description." # Description used for search engine.
 featured: true # Sets if post is a featured post, making appear on the home page side bar.

@@ -1,5 +1,5 @@
 ---
-title: "Quicktip: Tanzu & HA-Proxy" # Title of the blog post.
+title: "[HowTo] Quicktip: Tanzu & HA-Proxy" # Title of the blog post.
 date: 2023-03-08T20:43:03+02:00 # Date of post creation.
 description: "Quicktip: Tanzu & HA-Proxy." # Description used for search engine.
 featured: true # Sets if post is a featured post, making appear on the home page side bar.

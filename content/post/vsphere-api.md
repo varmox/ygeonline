@@ -1,5 +1,5 @@
 ---
-title: "vSphere REST API - Intro" # Title of the blog post.
+title: "[Guide] vSphere REST API - Intro" # Title of the blog post.
 date: 2024-06-20T22:22:08+02:00 # Date of post creation.
 description: "Introduction to the vSphere REST API" # Description used for search engine.
 featured: false # Sets if post is a featured post, making appear on the home page side bar.

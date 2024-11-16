@@ -1,5 +1,5 @@
 ---
-title: "Reformatting enterprise storage drives to 512 bytes" # Title of the blog post.
+title: "[HowTo] Reformatting enterprise storage drives to 512 bytes" # Title of the blog post.
 date: 2023-12-26T15:28:45+02:00 # Date of post creation.
 description: "use enterprise storage drives elsewhere." # Description used for search engine.
 featured: true # Sets if post is a featured post, making appear on the home page side bar.

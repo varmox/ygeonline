@@ -1,5 +1,5 @@
 ---
-title: "VMware Tanzu - Overview" # Title of the blog post.
+title: "[Intro] VMware Tanzu - Overview" # Title of the blog post.
 date: 2023-02-08T20:43:03+02:00 # Date of post creation.
 description: "Article description." # Description used for search engine.
 featured: true # Sets if post is a featured post, making appear on the home page side bar.

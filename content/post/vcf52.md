@@ -1,5 +1,5 @@
 ---
-title: "VMware Cloud Foundation 5.2 - Part 1"
+title: "[WhatsNew] VMware Cloud Foundation 5.2"
 date: 2024-06-25T20:48:30+02:00
 draft: false
 description: "VMware Cloud Foundation Updates for Tanzu" # Description used for search engine.
@@ -16,7 +16,7 @@ codeMaxLines: 10 # Override global value for how many lines within a code block 
 codeLineNumbers: false # Override global value for showing of line numbers within code block.
 figurePositionShow: true # Override global value for showing the figure label.
 categories:
-  - VMWarecd p
+  - VMware
   - VCF
 tags:
   - VMware
