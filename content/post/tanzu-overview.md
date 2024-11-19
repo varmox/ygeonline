@@ -30,7 +30,6 @@ tags:
 Lately, we've been having lots conversations internally and with customers about Tanzu.
 There appears to be some confusion about Tanzu's portfolio and which Tanzu products are best suited for specific use cases.
 
-Tanzu consists is basically packages open-source tools
 
 ## Kubernetes Runtimes
 
@@ -38,6 +37,30 @@ To actually run Kubernetes Clusters with Tanzu, the following Products are avail
 
 - Tanzu Kubernetes Grid
 - vSphere with Tanzu
+
+**Update November 2024**
+
+With the VMware aquisition by Broadcom, the are some changes in the Naming and Product Bundles.
+
+The new naming for vSphere with Tanzu is vSphere Kubernetes Service. The Kubernetes Runtime itself is part of VMware Cloud Foundation (VCF).
+Add-on's, Management Tools are now part of the Tanzu Business Unit (BU). Tanzu Products include:
+
+- Tanzu Platform
+  - Tanzu Application Catalog
+  - Tanzu Spring
+  - Tanzu Salt
+- Tanzu Data Services
+ - Tanzu RabbitMQ
+ - Tanzu for MySQL
+ - Postgres
+ - Redis
+
+
+More about recent Tanzu announcements:
+
+- https://news.broadcom.com/releases/vmware-explore-2024-tanzu
+- https://docs.vmware.com/en/VMware-Tanzu-Platform/index.html 
+
 
 ## Tanzu Kubernetes Grid (TKG) ##
 
