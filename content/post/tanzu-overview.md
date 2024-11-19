@@ -39,17 +39,17 @@ There appears to be some confusion about Tanzu's portfolio and which Tanzu produ
 The new naming for vSphere with Tanzu is IaaS Control Plane. The Kubernetes Runtime itself is part of VMware Cloud Foundation (VCF).
 Add-on's, Management Tools are now part of the Tanzu Business Unit (BU). Tanzu Products include:
 
-- Tanzu Platform
+- **Tanzu Platform**
   - Tanzu Platform for Kubernetes
   - Tanzu Platform for Cloud Foundry
   - Tanzu Application Catalog
   - Tanzu Spring
   - Tanzu Salt
-- Tanzu Data Services
- - Tanzu RabbitMQ
- - Tanzu for MySQL
- - Postgres
- - Redis
+- **Tanzu Data Services**
+  - Tanzu RabbitMQ
+  - Tanzu for MySQL
+  - Postgres
+  - Redis
 
 If you look for Tanzu Application Platform, Tanzu Mission Control etc. Their are now Standalone Components:
 
