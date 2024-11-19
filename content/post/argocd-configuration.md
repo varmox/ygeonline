@@ -47,11 +47,6 @@ Create a namespace for ArgoCD
 kubectl create namespace argocd
 ```
 
-Apply the Argo CD installation manifest
-
-```
-kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
-```
 
 *** if you are in a restricted environment, where you can pull images from the internet ***
 
@@ -86,6 +81,12 @@ curl -o argocd-install.yaml https://raw.githubusercontent.com/argoproj/argo-cd/v
 
 # Update image references in the YAML file
 sed -i 's|quay.io/argoproj/argocd|local-registry.example.com/argoproj/argocd|g' argocd-install.yaml
+```
+
+Apply the Argo CD installation manifest
+
+```
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 ```
 
 Expose ArgoCD via nginx Ingress (Example):
