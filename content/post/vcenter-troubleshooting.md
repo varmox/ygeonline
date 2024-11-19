@@ -348,7 +348,7 @@ Also check your connected depots. Maybe there is a old depot still configured (l
 Check
 
 ```
-cat /var/log/vmware/envoy/envoy-access.log| grep "hpe"
+cat /var/log/vmware/envoy/envoy-access.log | grep "hpe"
 ```
 
 If you see some SSL Errors like:
@@ -359,7 +359,7 @@ failed: cURL Error: SSL peer certificate or SSH remote key was not OK, SSL certi
 
 Verify if the required certs for HPE OneView for vCenter are valid.
 
-[Further Information](https://support.hpe.com/hpesc/public/docDisplay?docId=sd00002167en_us&docLocale=en_US&page=GUID-ACF7270C-14CD-41A6-B02A-2FA0EE0C4723.html)
+[Further Troubleshooting Information](https://support.hpe.com/hpesc/public/docDisplay?docId=sd00002167en_us&docLocale=en_US&page=GUID-ACF7270C-14CD-41A6-B02A-2FA0EE0C4723.html)
 
 # Backup and Restore
 
