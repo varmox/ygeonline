@@ -59,30 +59,30 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 - Mirror all required ArgoCD images to your local registry.
 
 ```
-docker pull quay.io/argoproj/argocd:v2.7.0
-docker pull quay.io/argoproj/argocd-repo-server:v2.7.0
-docker pull quay.io/argoproj/argocd-applicationset-controller:v2.7.0
+docker pull quay.io/argoproj/argocd:v2.13.0
+docker pull quay.io/argoproj/argocd-repo-server:v2.13.0
+docker pull quay.io/argoproj/argocd-applicationset-controller:v2.13.0
 ```
 
 ```
 Tag images for your local registry
-docker tag quay.io/argoproj/argocd:v2.7.0 local-registry.example.com/argoproj/argocd:v2.7.0
-docker tag quay.io/argoproj/argocd-repo-server:v2.7.0 local-registry.example.com/argoproj/argocd-repo-server:v2.7.0
-docker tag quay.io/argoproj/argocd-applicationset-controller:v2.7.0 local-registry.example.com/argoproj/argocd-applicationset-controller:v2.7.0
+docker tag quay.io/argoproj/argocd:v2.13.0 local-registry.example.com/argoproj/argocd:v2.13.0
+docker tag quay.io/argoproj/argocd-repo-server:v2.13.0 local-registry.example.com/argoproj/argocd-repo-server:v2.13.0
+docker tag quay.io/argoproj/argocd-applicationset-controller:v2.13.0 local-registry.example.com/argoproj/argocd-applicationset-controller:v2.13.0
 ```
 
 Push images to your local registry
 
 ```
-docker push local-registry.example.com/argoproj/argocd:v2.7.0
-docker push local-registry.example.com/argoproj/argocd-repo-server:v2.7.0
-docker push local-registry.example.com/argoproj/argocd-applicationset-controller:v2.7.0
+docker push local-registry.example.com/argoproj/argocd:v2.13.0
+docker push local-registry.example.com/argoproj/argocd-repo-server:v2.13.0
+docker push local-registry.example.com/argoproj/argocd-applicationset-controller:v2.13.0
 ```
 
 Download the ArgoCD installation manifests and modify them to use your local registry:
 
 ```
-curl -o argocd-install.yaml https://raw.githubusercontent.com/argoproj/argo-cd/v2.7.0/manifests/install.yaml
+curl -o argocd-install.yaml https://raw.githubusercontent.com/argoproj/argo-cd/v2.13.0/manifests/install.yaml
 
 # Update image references in the YAML file
 sed -i 's|quay.io/argoproj/argocd|local-registry.example.com/argoproj/argocd|g' argocd-install.yaml
