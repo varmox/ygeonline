@@ -343,6 +343,22 @@ If not, check with your Firewall Team if they do TLS Intercepts.
 
 Also check your connected depots. Maybe there is a old depot still configured (like a old HPE OneView Instance).
 
+**HPE OneView for vCenter**
+
+Check
+
+```
+cat /var/log/vmware/envoy/envoy-access.log| grep "hpe"
+```
+
+If you see some SSL Errors like:
+
+```
+failed: cURL Error: SSL peer certificate or SSH remote key was not OK, SSL certificate problem: certificate has expired
+```
+
+Verify if the required certs for HPE OneView for vCenter are valid.
+
 # Backup and Restore
 
 ## Backup
