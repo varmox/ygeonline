@@ -30,10 +30,11 @@ tags:
 Lately, we've been having lots conversations internally and with customers about Tanzu.
 There appears to be some confusion about Tanzu's portfolio and which Tanzu products are best suited for specific use cases.
 
+> #### **Update November 2024**
+> With the VMware aquisition by Broadcom, the are some changes in the Naming and Product Bundles.
 
-**Update November 2024**
 
-With the VMware aquisition by Broadcom, the are some changes in the Naming and Product Bundles.
+
 
 The new naming for vSphere with Tanzu is IaaS Control Plane. The Kubernetes Runtime itself is part of VMware Cloud Foundation (VCF).
 Add-on's, Management Tools are now part of the Tanzu Business Unit (BU). Tanzu Products include:
