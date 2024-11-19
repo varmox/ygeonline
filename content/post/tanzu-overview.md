@@ -169,6 +169,18 @@ Where in my opinion Tanzu really shines are the tools for day 2 operations and t
 
 ## Tanzu Application Platform (TAP)
 
+VMware Tanzu Application Platform (TAP) is a comprehensive application development platform designed to streamline the building, deployment, and management of applications on Kubernetes. It provides developers with a paved path to production, enabling them to rapidly develop software while ensuring security and compliance across various environments, whether on public clouds or on-premises Kubernetes clusters
+
+TAP comprises several key components that enhance its functionality:
+
+**Tanzu Build Service (TBS)**: Automates the creation of production-ready container images using Cloud Native Buildpacks, ensuring efficient image building and deployment.
+
+**Application Live View:** A monitoring tool that provides insights into running applications, assisting developers and operators in troubleshooting issues effectively.
+
+**API Portal:** Facilitates API discovery for consumers, enabling easier integration of services within applications.
+
+**Tanzu Application Platform GUI:** Built on the Backstage project, this graphical interface allows developers to view dependencies and manage applications centrally
+
 ## Tanzu Application Catalog
 
 Tanzu Application Catalog came from the aquisition of Bitnami. TAC is the enterprise version of Bitnami Application Catalog.
