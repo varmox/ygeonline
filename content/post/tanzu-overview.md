@@ -31,21 +31,16 @@ Lately, we've been having lots conversations internally and with customers about
 There appears to be some confusion about Tanzu's portfolio and which Tanzu products are best suited for specific use cases.
 
 
-## Kubernetes Runtimes
-
-To actually run Kubernetes Clusters with Tanzu, the following Products are available:
-
-- Tanzu Kubernetes Grid
-- vSphere with Tanzu
-
 **Update November 2024**
 
 With the VMware aquisition by Broadcom, the are some changes in the Naming and Product Bundles.
 
-The new naming for vSphere with Tanzu is vSphere Kubernetes Service. The Kubernetes Runtime itself is part of VMware Cloud Foundation (VCF).
+The new naming for vSphere with Tanzu is IaaS Control Plane. The Kubernetes Runtime itself is part of VMware Cloud Foundation (VCF).
 Add-on's, Management Tools are now part of the Tanzu Business Unit (BU). Tanzu Products include:
 
 - Tanzu Platform
+  - Tanzu Platform for Kubernetes
+  - Tanzu Platform for Cloud Foundry
   - Tanzu Application Catalog
   - Tanzu Spring
   - Tanzu Salt
@@ -61,6 +56,38 @@ More about recent Tanzu announcements:
 - https://news.broadcom.com/releases/vmware-explore-2024-tanzu
 - https://docs.vmware.com/en/VMware-Tanzu-Platform/index.html 
 
+## IaaS Control Plane and vSphere Kubernetes Service (VKS)
+
+New Naming:
+- vSphere with Tanzu = IaaS Control Plane
+- Tanzu Kubernetes Grid Cluster (TKGS) = vSphere Kubernetes Service
+
+vSphere clusters enabled with vSphere IaaS control plane are called Supervisors. Supervisor enable you to deploy Virtual Machines and Kubernetes Clusters (via vSphere Kubernetes Service).
+Both are managed by a Kubernetes API.  
+
+
+Additional Information:
+- [VMware Docs](https://docs.vmware.com/en/VMware-vSphere/8.0/vsphere-with-tanzu-concepts-planning/GUID-28B0AEA2-2947-4FDD-AA71-51E46E24BF53.html)
+
+## Tanzu Platform for Kubernetes
+
+
+
+
+
+Additional Information:
+- VMware Docs](https://docs.vmware.com/en/VMware-Tanzu-Platform/SaaS/create-manage-apps-tanzu-platform-k8s/overview.html)
+
+-----------
+
+**Older Information:**
+
+## Kubernetes Runtimes
+
+To actually run Kubernetes Clusters with Tanzu, the following Products are available:
+
+- Tanzu Kubernetes Grid
+- vSphere with Tanzu
 
 ## Tanzu Kubernetes Grid (TKG) ##
 
