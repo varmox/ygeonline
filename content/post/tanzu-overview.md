@@ -61,7 +61,7 @@ If you look for Tanzu Application Platform, Tanzu Mission Control etc. Their are
 - Cluster Essentials for Tanzu
 - Application Configuration Service for Tanzu
 
-![Tanzu Platform](https://imgur.com/a/sTs8zvL)
+![Tanzu Platform](https://i.imgur.com/6XvoxJP.png)
 
 
 Additional Information
@@ -87,7 +87,7 @@ Additional Information:
 
 Tanzu Platform for Kubernetes is a SaaS Solution that provides lots of functionality. The Main Goal of Tanzu Platform for Kubernetes is to give the Developers a really easy experience. They should write Software, not Kubernetes Manifests.
 
-![Tanzu Platform](https://imgur.com/a/NsiWRRk)
+![Tanzu Platform](https://i.imgur.com/LlWD7Ac.png)
 
 
 
@@ -95,6 +95,7 @@ Tanzu Platform for Kubernetes is a SaaS Solution that provides lots of functiona
 Additional Information:
 - [VMware Docs](https://docs.vmware.com/en/VMware-Tanzu-Platform/SaaS/create-manage-apps-tanzu-platform-k8s/overview.html)
 - [Intro Video](https://www.youtube.com/watch?v=CIhiEdtMGy0) 
+- [Tanzu Platform hub](https://www.mgmt.cloud.vmware.com/aria/)
 
 -----------
 
