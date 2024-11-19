@@ -304,6 +304,10 @@ Log File: /var/log/fdm.log
 
 Log File: /var/log/vmware/vmware-updatemgr/vum-server/vmware-vum-server.log
 
+```
+cat /var/log/vmware/vmware-updatemgr/vum-server/vmware-vum-server.log | grep "error"
+```
+
 
 **Error cannot sync depot**
 
@@ -321,6 +325,22 @@ A usual error is that vCenter is unable to reach vmwaredepot. Check DNS, Firewal
 --> }"
 --> }
 ```
+
+Check if you can access VMware Online Depots, from vCenter run:
+
+```
+ curl -vvv https://hostupdate.vmware.com
+```
+
+You should see a DigiCert Certificate printed:
+
+```
+*  issuer: C=US; O=DigiCert Inc; CN=DigiCert TLS RSA SHA256 2020 CA1
+```
+
+If not, check with your Firewall Team if they do TLS Intercepts.
+
+
 Also check your connected depots. Maybe there is a old depot still configured (like a old HPE OneView Instance).
 
 # Backup and Restore
