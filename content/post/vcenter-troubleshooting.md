@@ -359,6 +359,8 @@ failed: cURL Error: SSL peer certificate or SSH remote key was not OK, SSL certi
 
 Verify if the required certs for HPE OneView for vCenter are valid.
 
+[Further Information](https://support.hpe.com/hpesc/public/docDisplay?docId=sd00002167en_us&docLocale=en_US&page=GUID-ACF7270C-14CD-41A6-B02A-2FA0EE0C4723.html)
+
 # Backup and Restore
 
 ## Backup
