@@ -50,11 +50,25 @@ Add-on's, Management Tools are now part of the Tanzu Business Unit (BU). Tanzu P
  - Postgres
  - Redis
 
+If you look for Tanzu Application Platform, Tanzu Mission Control etc. Their are now Standalone Components:
 
-More about recent Tanzu announcements:
+- Tanzu Mission Control
+- Tanzu Kubernetes Grid (TKG)
+- Tanzu Kubernetes Grid Integrated Edition (TKGI)
+- Tanzu Application Platform
+- Tanzu Build Service
+- Tanzu Buildpacks
+- Cluster Essentials for Tanzu
+- Application Configuration Service for Tanzu
 
-- https://news.broadcom.com/releases/vmware-explore-2024-tanzu
-- https://docs.vmware.com/en/VMware-Tanzu-Platform/index.html 
+![Tanzu Platform](https://imgur.com/a/sTs8zvL)
+
+
+Additional Information
+
+- [Announcement](https://news.broadcom.com/releases/vmware-explore-2024-tanzu)
+- [Tanzu Platform Docs](https://docs.vmware.com/en/VMware-Tanzu-Platform/index.html)
+- [Tanzu Docs](https://techdocs.broadcom.com/us/en/vmware-tanzu.html)
 
 ## IaaS Control Plane and vSphere Kubernetes Service (VKS)
 
@@ -71,12 +85,16 @@ Additional Information:
 
 ## Tanzu Platform for Kubernetes
 
+Tanzu Platform for Kubernetes is a SaaS Solution that provides lots of functionality. The Main Goal of Tanzu Platform for Kubernetes is to give the Developers a really easy experience. They should write Software, not Kubernetes Manifests.
+
+![Tanzu Platform](https://imgur.com/a/NsiWRRk)
 
 
 
 
 Additional Information:
-- VMware Docs](https://docs.vmware.com/en/VMware-Tanzu-Platform/SaaS/create-manage-apps-tanzu-platform-k8s/overview.html)
+- [VMware Docs](https://docs.vmware.com/en/VMware-Tanzu-Platform/SaaS/create-manage-apps-tanzu-platform-k8s/overview.html)
+- [Intro Video](https://www.youtube.com/watch?v=CIhiEdtMGy0) 
 
 -----------
 
