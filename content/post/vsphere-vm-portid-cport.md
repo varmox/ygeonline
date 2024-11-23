@@ -172,4 +172,4 @@ if ($confirmation -eq "yes") {
     Write-Host "Operation cancelled. No changes were made."
 }
 ```
-Hpe this helps fixing the Issue.
+Hope this helps fixing the Issue.
