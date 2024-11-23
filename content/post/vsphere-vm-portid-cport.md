@@ -25,7 +25,7 @@ tags:
 
 # VMs with conflicted PortIDs
 
-In certain scenarios it can happend that the Ports tan f a vDS Show Port IDs with the prefix "-c" (eg c-245)
+In certain scenarios it can happend that the Ports  of a VM show Port IDs with the prefix "-c" (eg c-245).
 vCenter Server creates a conflict port if multiple virtual machine's point to the same port. 
 It does not automatically reconfigure the virtual machine to connect to a regular port if the conflict remains and the virtual machine stays connected to the conflict port.
 
