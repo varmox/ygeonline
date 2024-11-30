@@ -17,10 +17,9 @@ codeLineNumbers: false # Override global value for showing of line numbers withi
 figurePositionShow: true # Override global value for showing the figure label.
 categories:
   - VMware
-  - VCF
 tags:
   - VMware
-  - VCF
+  - VMware Cloud Foundation
   - VMware Tanzu
 # comment: false # Disable comment if false.
 ---

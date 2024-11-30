@@ -50,7 +50,7 @@ cat /var/log/vmware/envoy/envoy-access.log | grep "hpe"
 
 ### Cannot sync software depots
 
-To verify that the online depot registration was successful, navigate to Menu > Lifecycle Manager > Settings > Administration > Patch Setup. The values in the Enabled and Connectivity Status columns should be Yes and Connected respectively. If the Connectivity Status is Not Connected, verify the proper settings for the vCenter proxy configuration and perform a manual sync of the updates.
+To verify that the online depot registration was successful, navigate to *Menu > Lifecycle Manager > Settings > Administration > Patch Setup*. The values in the Enabled and Connectivity Status columns should be *Yes* and *Connected* respectively. If the Connectivity Status is Not Connected, verify the proper settings for the vCenter proxy configuration and perform a manual sync of the updates.
 
 
 Also get the log file:
