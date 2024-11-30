@@ -113,7 +113,7 @@ So we need to set the HPE OneView in the NO_Proxy settings of the vCenter:
  ```
 
  ```
-# Example: NO_PROXY="www.me.de, do.main, localhost"
+# Example: NO_PROXY="internal.domain, internal-subnet , localhost"
 NO_PROXY="localhost, 127.0.0.1, oneviewforvcenter.domain.example, IP of the HPE-OneView"
  ```
 
