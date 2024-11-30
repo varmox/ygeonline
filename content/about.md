@@ -6,7 +6,7 @@ aliases = ["about-us", "about-hugo", "contact"]
 author = "Yannick Gerber"
 +++
 
-A blog about virtualization, networking, kubernetes and general IT related stuff. Opinions are my own.
+A blog about virtualization, networking, kubernetes and general IT related topics. Opinions are my own.
 
 #### >_    about me
 
