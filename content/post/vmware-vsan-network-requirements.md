@@ -27,13 +27,29 @@ tags:
 # Intro 
 VMware vSAN is a Hyperconverged Infrastructure Solution from VMware. It basically turns your servers direct attached disks into a storage cluster.
 
-## General Requirements 
+## Minimum Bandwidth Requirements vSAN ESA
 
-- 10 GbE network switches are the minimum requirement for all-flash vSAN Clusters
-- 25 GBE network switches are recommended
+- A minimum bandwidth of 25 Gbps is required, 10Gbit works but is only supported for the AF0 Config.
+- For larger clusters or environments with high-capacity NVMe disks, even 25 Gbps may be insufficient. If you can do 100Gbps, the Performance gain will be massive.
+- vSAN MAX Requires 100 Gbps
+
 - Switches that support higher port speeds are designed with higher Network Processor Unit (NPU) buffers. An NPU shared switch buffer of at least 16 MB is recommended for 10 GbE network connectivity. An NPU buffer of at least 32 MB is recommended for more demanding 25 GbE network connectivity.
 
-With vSAN ESA 25GbE is a must. (In ESA-AF-0 vSAN Ready Nodes the network bandwidth has been mentioned as 10 GbE - so probalby 10GbE will work for smaller ESA Deployments)
+
+
+## Network Configuration
+
+- All hosts in the vSAN cluster must be connected to a vSAN Layer 2 or Layer 3 network
+- LACP can be used, active/passive connection is recommended due to operational complexity.
+
+## Latency Requirements
+
+- Single Site vSAN Cluster Requires less than 1 ms RTT (Round Trip Time) inter-node latency
+- For vSAN streched Clusters RTT must be below 5ms for the inter-site communication and less than 1 ms RTT within each site
+
+### vSAN Strechted Cluster - Witness
+
+- 2 Mbps per 1000 components (Maximum of 100 Mbps with 45k components) bandwidth between nodes and vSAN Witness Hosts
 
 ## General Considerations
 
@@ -41,6 +57,7 @@ With vSAN ESA 25GbE is a must. (In ESA-AF-0 vSAN Ready Nodes the network bandwid
 - Use two physical Uplinks for vSAN Traffic, do not mix with VM Workload traffic. 
 - Use a dedicated virtual Distributed Switch for vSphere Backend Services (vSAN, vMotion, FT)
 - Use Network I/O Control 
+
 ## vSAN over RoCE
 
 With vSphere 7.0 U2 vSAN with RDMA is supported. RDMA typically has lower CPU utilization and less I/O latency. 
