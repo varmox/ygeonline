@@ -1,7 +1,7 @@
 ---
-title: "Vsan 2 Node" # Title of the blog post.
+title: "[Guide] 2-Node vSAN Cluster" # Title of the blog post.
 date: 2024-12-10T20:20:23+01:00 # Date of post creation.
-description: "Article description." # Description used for search engine.
+description: "Examples and Design Considerations for a 2-Node vSAN Cluster" # Description used for search engine.
 featured: true # Sets if post is a featured post, making appear on the home page side bar.
 draft: false # Sets whether to render this page. Draft of true will not be rendered.
 toc: false # Controls if a table of contents should be generated for first-level links automatically.
