@@ -23,9 +23,7 @@ tags:
 # comment: false # Disable comment if false.
 ---
 
-# OpenShift Cluster on vSphere - Roles and Permissions
-
-## Deployment Mode: Installed Provisioned Infrastructure
+# Deployment Mode: Installed Provisioned Infrastructure
 
  OpenShift Installer-Provisioned Infrastructure (IPI) is a deployment method for OpenShift Container Platform that provides a full-stack automated installation and setup process.
 
