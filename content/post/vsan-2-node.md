@@ -7,12 +7,12 @@ draft: false # Sets whether to render this page. Draft of true will not be rende
 toc: false # Controls if a table of contents should be generated for first-level links automatically.
 # menu: main
 usePageBundles: false # Set to true to group assets like images in the same folder as this post.
-featureImage: "/images/path/file.jpg" # Sets featured image on blog post.
-featureImageAlt: 'Description of image' # Alternative text for featured image.
-featureImageCap: 'This is the featured image.' # Caption (optional).
-thumbnail: "/images/path/thumbnail.png" # Sets thumbnail image appearing inside card on homepage.
-shareImage: "/images/path/share.png" # Designate a separate image for social media sharing.
-codeMaxLines: 10 # Override global value for how many lines within a code block before auto-collapsing.
+#featureImage: "/images/path/file.jpg" # Sets featured image on blog post.
+#featureImageAlt: 'Description of image' # Alternative text for featured image.
+#featureImageCap: 'This is the featured image.' # Caption (optional).
+#thumbnail: "/images/path/thumbnail.png" # Sets thumbnail image appearing inside card on homepage.
+#shareImage: "/images/path/share.png" # Designate a separate image for social media sharing.
+codeMaxLines: 50 # Override global value for how many lines within a code block before auto-collapsing.
 codeLineNumbers: false # Override global value for showing of line numbers within code block.
 figurePositionShow: true # Override global value for showing the figure label.
 categories:
@@ -59,24 +59,27 @@ Just consider the following:
 If you go directed attached you need a addtional vmk that handels the traffic to the vSAN Witness Appliance.
 
 - vSAN Witness Appliance should NOT run inside the 2-Node vSAN Cluster
-- Have a L3 or L2 Network
+- Have a L3 or L2 Network for vSAN Witness traffic to your vSphere Cluster which hosts the vSAN Witness Appliance.
+- If you have a dedicated vCenter for your 2-Node vSAN Cluster: the Witness Appliance is added to a seperate Cluster (Witness Cluster) to the 2-Node vSAN vCenter.
 
 ## Network: Physical and vmkernel Adapter Example
 
 The following graphics is an example of a 2-Node vSAN Cluster:
 
+```
 Physical NICs    VDS Switches    VMkernel Interfaces
 +----------+     +-----------+   +----------------------+
 | vmnic0   |-----| FRONTEND  |---| vmk0 (Management)    |
-+----------+    /| VDS       |  | vmk1 (vSAN Witness)  |
++----------+    /| VDS       |   | vmk1 (vSAN Witness)  |
 | vmnic2   |---/ +-----------+  +----------------------+
-+----------+
-
++----------+                    
+                                 
 +----------+     +-----------+    +----------------------+
 | vmnic1   |-----| BACKEND   |-----| vmk2 (vSAN Data)     |
 +----------+    /| VDS       |\    | vmk3 (vMotion)       |
 | vmnic3   |---/ +-----------+ \   +----------------------+
 +----------+
+```
 
 Per Hosts we have four physical Network Adapter:
 
