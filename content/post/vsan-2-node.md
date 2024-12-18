@@ -25,7 +25,7 @@ tags:
 
 # vSAN 2-Node Cluster Guide and Recommendations
 
-This Guide
+This Guide will help you in your Design Considerations and during the Deployment of a 2-Node vSAN Cluster. 
 
 ## Assumptions
 
@@ -93,6 +93,7 @@ Per Hosts we have four physical Network Adapter:
 | -------- | -------- |-------- |-------- |
 | vpg_management  | Management   | 1500 | Route based on physical NIC load |
 | vpg_vsan-witness | vSAN Witness   | 1500 | Route based on physical NIC load |
+
 
 **BACKEND VDS**
 
