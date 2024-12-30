@@ -128,7 +128,7 @@ With Kubernetes RBAC you have way more granular control over the permission:
 Choosing between vSphere Namespace Permissions and K8s RBAC can be simplified to the following:
 
 - Full Access to the all VKS/TKGS Cluster within a vSphere Namespace -> vSphere Namespace Permissions
-- Granular Access to VKS/TKGS Cluster or even just s K8s Namespace -> K8s RBAC
+- Granular Access to VKS/TKGS Cluster or even just K8s Namespace -> K8s RBAC
 
 ## K8s RBAC on VKS with pinniped
 
@@ -139,7 +139,7 @@ Scenario Intro:
 - Your companies Dev-Team that needs *kubectl* access to a K8s Namespace on a shared VKS/TKGS Cluster.
 - You (Infra Admin) have vSphere Namespace Permissions of Edit or Owner, also rights admin Rights to the vSphere Supervisor
 - You have a OIDC Provider (GitLab, WorkspaceONE Access, etc) already in place
-- 
+
 
 We will configure the infrastructure that the following is possible:
 
@@ -152,19 +152,19 @@ We will configure the infrastructure that the following is possible:
 
 First we will configure the vSphere Supervisor to use GitLab as a Identity Provider. For that we need to create a OIDC Application in GitLab:
 
-- Got to your GitLab Admin Panel (eg. *https://gitlab.yourdomain.tld/admin/applications*)
-- Create a Application
-- Example:
-  - Name: my-supervisor.yourdomain.tld
-  - Redirect URI: *https://supervisor-fqdn/wcp/pinniped/callback*
-  - Scopes:
-      - read_user
-      - openid
-      - profile
-      - email
+- Go to your GitLab Admin Panel (eg. *https://gitlab.yourdomain.tld/admin/applications* )
+  - Create a Application
+    - Example:
+      - Name: my-supervisor.yourdomain.tld
+      - Redirect URI: *https://supervisor-fqdn/wcp/pinniped/callback*
+      - Scopes:
+          - read_user
+          - openid
+          - profile
+          - email
 
 
-[GitLab Docs](https://docs.gitlab.com/ee/integration/openid_connect_provider.html)
+[> GitLab Docs](https://docs.gitlab.com/ee/integration/openid_connect_provider.html)
 
 
 Then configure GitLab as a Identity Provider in the vSphere Supervisor:
@@ -173,21 +173,21 @@ Then configure GitLab as a Identity Provider in the vSphere Supervisor:
 
 Example:
 
-Provider Name: *gitlab-oidc*
+  - Provider Name: *gitlab-oidc*
 
-Issuer URL: *https://gitlab.mydomain.local*
+  - Issuer URL: *https://gitlab.mydomain.local*
 
-Username Claim: *nickname*
+   - Username Claim: *nickname*
 
-Groups Claim: *groups*
+  - Groups Claim: *groups*
 
-Client ID: *the ID from your GitLab Application*
+  - Client ID: *the ID from your GitLab Application*
 
-Client Secret: *the Secret from your GitLab Application*
+  - Client Secret: *the Secret from your GitLab Application*
 
-Additional Scopes: *openid*
+  - Additional Scopes: *openid*
 
-Certififacte Authority Data: *PEM Formatted Cert*
+  - Certififacte Authority Data: *PEM Formatted Cert*
 
 
 The configuration of a Idendity Provider will install pinniped supervisor on the vSphere Namespace. Pinniped is used for OIDC.
@@ -327,3 +327,12 @@ subjects:
   kind: Group
   name: my-gitlab-group
   ```
+
+
+## Further Thoughts
+
+Now you have all the Tools ready, be aware: If you have lots of ClusterRoles and Roles the whole K8s RBAC can get very confusing. So GitOps your K8s RBAC!
+
+- Define a default ClusterRole (for K8s-Cluster-Access)
+- Define a default Role (for K8s-Namespace Access)
+- Use ArgoCD or FluxCD!
