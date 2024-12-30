@@ -136,8 +136,10 @@ Choosing between vSphere Namespace Permissions and K8s RBAC can be simplified to
 
 Scenario Intro:
 
-- You have a Dev-Team that needs *kubectl* access to a K8s Namespace on a shared VKS/TKGS Cluster.
-- You have a OIDC Provider (GitLab, WorkspaceONE Access, etc) 
+- Your companies Dev-Team that needs *kubectl* access to a K8s Namespace on a shared VKS/TKGS Cluster.
+- You (Infra Admin) have vSphere Namespace Permissions of Edit or Owner, also rights admin Rights to the vSphere Supervisor
+- You have a OIDC Provider (GitLab, WorkspaceONE Access, etc) already in place
+- 
 
 We will configure the infrastructure that the following is possible:
 
@@ -145,8 +147,183 @@ We will configure the infrastructure that the following is possible:
 - GitLab will act as a SSO Provider
 - Role and RoleBindings are applied to the VKS-Cluster to grant permissions to the K8s-Namespace.
 
+
 ### Configure SSO with vSphere Supervisor
 
-First we will configure the vSphere Supervisor to use GitLab as a Identity Provider.
+First we will configure the vSphere Supervisor to use GitLab as a Identity Provider. For that we need to create a OIDC Application in GitLab:
+
+- Got to your GitLab Admin Panel (eg. *https://gitlab.yourdomain.tld/admin/applications*)
+- Create a Application
+- Example:
+  - Name: my-supervisor.yourdomain.tld
+  - Redirect URI: *https://supervisor-fqdn/wcp/pinniped/callback*
+  - Scopes:
+      - read_user
+      - openid
+      - profile
+      - email
+
+
+[GitLab Docs](https://docs.gitlab.com/ee/integration/openid_connect_provider.html)
+
+
+Then configure GitLab as a Identity Provider in the vSphere Supervisor:
 
 ![vSphere Supervisor Identity Provider](https://i.imgur.com/rRTQ38N.png)
+
+Example:
+
+Provider Name: *gitlab-oidc*
+
+Issuer URL: *https://gitlab.mydomain.local*
+
+Username Claim: *nickname*
+
+Groups Claim: *groups*
+
+Client ID: *the ID from your GitLab Application*
+
+Client Secret: *the Secret from your GitLab Application*
+
+Additional Scopes: *openid*
+
+Certififacte Authority Data: *PEM Formatted Cert*
+
+
+The configuration of a Idendity Provider will install pinniped supervisor on the vSphere Namespace. Pinniped is used for OIDC.
+
+
+### Role and RoleBinding
+
+> #### **Permissions**
+> Use your Account that has "Edit" or "Owner" Permissions on the vSphere Namespace, where the VKS-Cluster is residing in.
+
+Further we need a *Role* and a *RoleBinding*. Apply those on the actual Kubernetes Cluster.
+
+**RoleBinding**
+```
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: rbac-defaul-developer-rolebinding
+  namespace: NAMESPACE_NAME
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: rbac-defaul-developer-role
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: Group
+  name: ecp-rbac-test-group
+```
+
+
+**Role**
+```
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: rbac-defaul-developer-role
+  namespace: my-k8s-namespace
+rules:
+- apiGroups: ["*"]
+  resources: ["*"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["", "apps", "batch"]
+  resources: ["pods", "services", "deployments", "replicasets", "statefulsets", "jobs", "cronjobs", "pods/exec"]
+  verbs: ["create", "get", "list", "watch", "update", "patch", "delete"]
+- apiGroups: [""]
+  resources: ["configmaps", "secrets", "persistentvolumeclaims"]
+  verbs: ["get", "list", "watch", "patch", "delete", "create","update"]
+- apiGroups: ["networking.k8s.io"]
+  resources: ["ingresses"]
+  verbs: ["create", "get", "list", "watch", "update", "patch", "delete"]
+- apiGroups: ["*"]
+  resources: ["*"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["cluster.x-k8s.io"]
+  resources: ["*"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: [""]
+  resources: ["namespaces"]
+  verbs: ["get", "list", "watch"]
+```
+
+
+
+
+### Create the kubeconfig File
+
+> #### **Permissions**
+> Use your Account that has "Edit" or "Owner" Permissions on the vSphere Namespace, where the VKS-Cluster is residing in.
+
+To create a kubeconfig file run the following commands:
+
+```
+tanzu context create my-kubernetes-cluster --endpoint https://SupervisorVIP
+```
+
+```
+tanzu cluster kubeconfig get my-kubernetes-cluster -n my-vSphere-Namespace --export-file my-kubeconfig
+```
+
+**Note**: The kubeconfig File does not store any personalized credentials, so can safely be shared with your devs. The kubeconfig also isn't specific to a K8s-Namespace. The kubeconfig is specific to a Kubernetes Cluster (kubeapi-server IP).
+
+
+You could also use the Local Consumption Interface to download the kubeconfig:
+
+![Local Consumption Interface - LCI](https://i.imgur.com/rZ7yMXW.png)
+
+
+### Test the Access
+
+Either let the user test or you can use the following command with your administrator account on the k8s cluster:
+
+```
+kubectl auth can-i get pods -n namespace --as=user
+```
+
+
+**Scenario: Developer Access to a K8s Cluster, but not will full permission**
+
+Basically the same as above, but now you will use a K8s *ClusterRole* and a *ClusterRoleBinding* instead of a *Role* & *RoleBinding*.
+
+**ClusterRole**
+```
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: rbac-default-cluster-operator-clusterrole
+aggregationRule:
+  clusterRoleSelectors:
+  - matchLabels:
+rules:
+- apiGroups: ["*"]
+  resources: ["*"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: [""]
+  resources: ["namespaces", "configmaps", "pods", "secrets", "persistentvolumeclaims", "persistentvolumes", "services"]
+  verbs: ["create", "patch", "delete"]
+- apiGroups: ["apps"]
+  resources: ["deployments", "replicasets", "statefulsets"]
+  verbs: ["create", "patch", "delete"]
+- apiGroups: ["networking.k8s.io"]
+  resources: ["ingressclasses", "ingresses","networkpolicies"]
+  verbs: ["create", "patch", "delete"]
+```
+
+**ClusterRoleBinding**
+```
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: rbac-default-cluster-operator-clusterrolebinding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: rbac-default-cluster-operator-clusterrole
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: Group
+  name: my-gitlab-group
+  ```
