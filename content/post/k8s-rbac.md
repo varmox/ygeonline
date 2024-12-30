@@ -26,6 +26,7 @@ tags:
   
 # comment: false # Disable comment if false.
 ---
+
 # Intro
 
 This Blogpost explains RBAC on vSphere Kubernetes Service (VKS), formely known as Tanzu Kubernetes Grid Service (TKGS). It also shows how to give access via *kubectl* with granular permissions, leveraging OIDC Auth with pinniped on VKS-Clusters.
@@ -174,23 +175,18 @@ Then configure GitLab as a Identity Provider in the vSphere Supervisor:
 Example:
 
   - Provider Name: *gitlab-oidc*
-
   - Issuer URL: *https://gitlab.mydomain.local*
-
-   - Username Claim: *nickname*
-
+  - Username Claim: *nickname*
   - Groups Claim: *groups*
-
   - Client ID: *the ID from your GitLab Application*
-
   - Client Secret: *the Secret from your GitLab Application*
-
   - Additional Scopes: *openid*
-
   - Certififacte Authority Data: *PEM Formatted Cert*
 
 
+
 The configuration of a Idendity Provider will install pinniped supervisor on the vSphere Namespace. Pinniped is used for OIDC.
+
 
 
 ### Role and RoleBinding
