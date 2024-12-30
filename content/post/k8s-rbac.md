@@ -297,6 +297,9 @@ Overwrite or create the default kubeconfig file with ours
 cp my-kubeconfig ~/.kube/config
 ```
 
+
+
+
 **Scenario: Developer Access to a K8s Cluster, but not will full permission**
 
 Basically the same as above, but now you will use a K8s *ClusterRole* and a *ClusterRoleBinding* instead of a *Role* & *RoleBinding*.
@@ -344,8 +347,8 @@ subjects:
 
 ## Further Thoughts
 
-Now you have all the Tools ready, be aware: If you have lots of ClusterRoles and Roles the whole K8s RBAC can get very confusing. So GitOps your K8s RBAC!
+GitOps your K8s RBAC!
 
 - Define a default ClusterRole (for K8s-Cluster-Access)
 - Define a default Role (for K8s-Namespace Access)
-- Use ArgoCD or FluxCD!
+- Use ArgoCD or FluxCD to roll-out your RBAC Config
