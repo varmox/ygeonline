@@ -201,12 +201,12 @@ Further we need a *Role* and a *RoleBinding*. Apply those on the actual Kubernet
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: rbac-defaul-developer-rolebinding
+  name: rbac-default-developer-rolebinding
   namespace: NAMESPACE_NAME
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
-  name: rbac-defaul-developer-role
+  name: rbac-default-developer-role
 subjects:
 - apiGroup: rbac.authorization.k8s.io
   kind: Group
@@ -219,7 +219,7 @@ subjects:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  name: rbac-defaul-developer-role
+  name: rbac-default-developer-role
   namespace: my-k8s-namespace
 rules:
 - apiGroups: ["*"]
