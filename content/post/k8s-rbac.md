@@ -280,6 +280,23 @@ kubectl auth can-i get pods -n namespace --as=user
 ```
 
 
+**From a Dev's point of view, do the following:**
+
+Install Tanzu CLI and the pinniped auth Plugin:
+```
+tanzu plugin install pinniped-auth
+```
+
+Run kubectl with a the created kubeconfig file.
+```
+kubectl --kubeconfig ./my-kubeconfig get ns
+```
+
+Overwrite or create the default kubeconfig file with ours
+```
+cp my-kubeconfig ~/.kube/config
+```
+
 **Scenario: Developer Access to a K8s Cluster, but not will full permission**
 
 Basically the same as above, but now you will use a K8s *ClusterRole* and a *ClusterRoleBinding* instead of a *Role* & *RoleBinding*.
