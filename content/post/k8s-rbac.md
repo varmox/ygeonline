@@ -12,20 +12,27 @@ usePageBundles: false # Set to true to group assets like images in the same fold
 #featureImageCap: 'This is the featured image.' # Caption (optional).
 #thumbnail: "/images/path/thumbnail.png" # Sets thumbnail image appearing inside card on homepage.
 #shareImage: "/images/path/share.png" # Designate a separate image for social media sharing.
-codeMaxLines: 10 # Override global value for how many lines within a code block before auto-collapsing.
+codeMaxLines: 80 # Override global value for how many lines within a code block before auto-collapsing.
 codeLineNumbers: false # Override global value for showing of line numbers within code block.
 figurePositionShow: true # Override global value for showing the figure label.
 categories:
   - Kubernetes
   - VMware
 tags:
-  - vShere Kubernetes Service
+  - vSphere Kubernetes Service
   - Tanzu Kubernetes
+  - vSphere with Tanzu
+  - Tanzu Kubernetes Grid
+  
 # comment: false # Disable comment if false.
 ---
 # Intro
 
 This Blogpost explains RBAC on vSphere Kubernetes Service (VKS), formely known as Tanzu Kubernetes Grid Service (TKGS). It also shows how to give access via *kubectl* with granular permissions, leveraging OIDC Auth with pinniped on VKS-Clusters.
+
+> #### **Naming**
+> I use VKS-, TKGS- and K8s Clusters in this Blog Post. All have the same meaning - simply a Kubernetes Cluster :)
+
 
 # RBAC on vSphere Kubernetes Service
 
@@ -104,10 +111,15 @@ With Kubernetes RBAC you have way more granular control over the permission:
     +-------------+
 ```
 1.) The process starts with a user attempting to access the cluster.
+
 2.) Authentication verifies the user's identity.
+
 3.) Authorization (RBAC) determines what actions the user can perform.
+
 4.) Roles and ClusterRoles define permissions for resources.
+
 5.) RoleBindings and ClusterRoleBindings associate users with roles.
+
 6.) Finally, access is granted or denied to the requested resources based on the RBAC configuration.
 
 
@@ -120,7 +132,9 @@ Choosing between vSphere Namespace Permissions and K8s RBAC can be simplified to
 
 ## K8s RBAC on VKS with pinniped
 
-### Scenario: Developer Access to a K8s Namespace
+**Scenario: Developer Access to a K8s Namespace**
+
+Scenario Intro:
 
 - You have a Dev-Team that needs *kubectl* access to a K8s Namespace on a shared VKS/TKGS Cluster.
 - You have a OIDC Provider (GitLab, WorkspaceONE Access, etc) 
@@ -129,10 +143,10 @@ We will configure the infrastructure that the following is possible:
 
 - Devs Team will have a kubeconfig File, which they can use to logon via *kubectl*
 - GitLab will act as a SSO Provider
-- Role and RoleBindings are applied to the VKS/TKGS-Cluster to grant permissions to the K8s-Namespace.
+- Role and RoleBindings are applied to the VKS-Cluster to grant permissions to the K8s-Namespace.
 
 ### Configure SSO with vSphere Supervisor
 
 First we will configure the vSphere Supervisor to use GitLab as a Identity Provider.
 
-!(vSphere Supervisor Identity Provider)[https://i.imgur.com/rRTQ38N.png]
+![vSphere Supervisor Identity Provider](https://i.imgur.com/rRTQ38N.png)
