@@ -210,7 +210,7 @@ roleRef:
 subjects:
 - apiGroup: rbac.authorization.k8s.io
   kind: Group
-  name: ecp-rbac-test-group
+  name: my-gitlab-group
 ```
 
 
