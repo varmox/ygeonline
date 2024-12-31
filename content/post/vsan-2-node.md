@@ -140,5 +140,5 @@ Setup:
 - 25Gbit DAC between the Hosts
 - 7x7,68Tb Samsung PM9A3 SSD
 
-[vSAN 2 Node direct attached Cluster(]https://i.imgur.com/ZfPSSSN.png)
+[vSAN 2 Node direct attached Cluster](https://i.imgur.com/ZfPSSSN.png)
 
