@@ -241,6 +241,7 @@ subjects:
 
 
 **Role**
+*Adjust the permissions as needed*
 ```
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
@@ -321,13 +322,27 @@ kubectl --kubeconfig ./my-kubeconfig get ns
 
 Now you will be given a link (to the pinniped Service running on the vSphere Supervisor). Copy this link into your browser, GitLab will open (if not already logged in) and authenticate you. Afterwards you will be presented with a Token. Copy this token back in to your terminal to get access to your kubernetes cluster or namespace.
 
+```
+$ kubectl --kubeconfig ./my-kubeconfig get pods
+
+Optionally, paste your authorization code: G2TcS145Q4e6A1YKf743n3BJlfQAQ_UdjXy38TtEEIo.ju4QV3PTsUvOigVUtQllZ7AJFU0YnjuLHTRVoNxvdZc
+
+✔ successfully logged in to management cluster using the kubeconfig 
+Checking for required plugins...
+All required plugins are already installed and up-to-date
+
+NAME                           READY   STATUS    RESTARTS   AGE
+nginx-deployment-66b6c48dd5-7tzxb   1/1     Running   0          3d
+nginx-deployment-66b6c48dd5-8p4vk   1/1     Running   0          3d
+nginx-deployment-66b6c48dd5-f8t5r   1/1     Running   0          3d
+```
 
 Optional: Overwrite or create the default kubeconfig file:
 ```
 cp my-kubeconfig ~/.kube/config
 ```
 
-
+Et voila, now your Developer has access via *kubectl*.
 
 
 **Scenario: Developer Access to a K8s Cluster, but not will full permission**
@@ -335,6 +350,7 @@ cp my-kubeconfig ~/.kube/config
 Basically the same as above, but now you will use a K8s *ClusterRole* and a *ClusterRoleBinding* instead of a *Role* & *RoleBinding*.
 
 **ClusterRole**
+*Adjust the permissions as needed*
 ```
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
