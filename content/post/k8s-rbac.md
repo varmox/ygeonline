@@ -298,7 +298,7 @@ kubectl --kubeconfig ./my-kubeconfig get ns
 Now you will be given a link (to the pinniped Service running on the vSphere Supervisor). Copy this link into your browser, GitLab will open (if not already logged in) and authenticate you. Afterwards you will be presented with a Token. Copy this token back in to your terminal to get access to your kubernetes cluster or namespace.
 
 
-Overwrite or create the default kubeconfig file with ours
+Optional: Overwrite or create the default kubeconfig file:
 ```
 cp my-kubeconfig ~/.kube/config
 ```
