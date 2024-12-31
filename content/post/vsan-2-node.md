@@ -120,3 +120,11 @@ To perform maintenance on a 2-node vSAN cluster:
 - Manually vMotion VMs to the other host.
 - Put the host into maintenance mode using "Ensure accessibility" option.
 - Perform the required maintenance
+
+## Performance
+
+
+**Example**
+
+[vSAN 2 Node direct attached Cluster(]https://i.imgur.com/ZfPSSSN.png)
+
