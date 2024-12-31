@@ -43,6 +43,9 @@ Role-based Access Control on vSphere Kubernetes Cluster has a few Keypoint which
 
 With vSphere Namespace Permissions ([Select Permissions > Add Permissions](https://docs.vmware.com/en/VMware-vSphere/8.0/vsphere-with-tanzu-tkg/GUID-223D91FB-C4CB-4DA7-8B3F-24721ABDFBC7.html)) you grant access directly on the vSphere Namespace via vCenter.
 
+![vSphere Namespace Permissions](https://i.imgur.com/k3ARB75.png)
+
+
 | Option   | Description                                                                                                                                  |
 |----------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | Can View | Can read TKG cluster objects in the vSphere Namespace. No permissions mapped to Kubernetes roles. See Role Permissions and Bindings.         |
@@ -165,7 +168,7 @@ First we will configure the vSphere Supervisor to use GitLab as a Identity Provi
           - email
 
 
-[> GitLab Docs](https://docs.gitlab.com/ee/integration/openid_connect_provider.html)
+[Futher Information: GitLab Docs](https://docs.gitlab.com/ee/integration/openid_connect_provider.html)
 
 
 Then configure GitLab as a Identity Provider in the vSphere Supervisor:
