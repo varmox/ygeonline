@@ -17,6 +17,7 @@ codeLineNumbers: false # Override global value for showing of line numbers withi
 figurePositionShow: true # Override global value for showing the figure label.
 categories:
   - VMware
+  - Kubernetes
 tags:
   - vSphere
   - OpenShift
