@@ -217,8 +217,8 @@ The configuration of a Idendity Provider will install pinniped supervisor on the
 
 ### Role and RoleBinding
 
-> #### **Permissions**
-> Use your Account that has "Edit" or "Owner" Permissions on the vSphere Namespace, where the VKS-Cluster is residing in.
+> #### **GitLab Configuration**
+> Be careful with the "name: my-gitlab-group". It really depends on how the GitLab Group was created. I personally had problems with > nested groups or groups created on projects. I always created the GitLab Groups with a Admin, didn't use the Group froma project.
 
 Further we need a *Role* and a *RoleBinding*. Apply those on the actual Kubernetes Cluster.
 
@@ -238,6 +238,8 @@ subjects:
   kind: Group
   name: my-gitlab-group
 ```
+
+
 
 
 **Role**
@@ -393,7 +395,7 @@ subjects:
 
 ## Further Thoughts
 
-GitOps your K8s RBAC!
+**GitOps your K8s RBAC!**
 
 - Define a default ClusterRole (for K8s-Cluster-Access)
 - Define a default Role (for K8s-Namespace Access)
