@@ -244,7 +244,9 @@ subjects:
 
 
 **Role**
+
 *Adjust the permissions as needed*
+
 ```
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
@@ -353,7 +355,9 @@ Et voila, now your Developer has access via *kubectl*.
 Basically the same as above, but now you will use a K8s *ClusterRole* and a *ClusterRoleBinding* instead of a *Role* & *RoleBinding*.
 
 **ClusterRole**
+
 *Adjust the permissions as needed*
+
 ```
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
