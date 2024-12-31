@@ -151,6 +151,29 @@ We will configure the infrastructure that the following is possible:
 - GitLab will act as a SSO Provider
 - Role and RoleBindings are applied to the VKS-Cluster to grant permissions to the K8s-Namespace.
 
+```
++------------------+
+|      User        |
++--------+---------+
+         |
+         v
++------------------+    +--------------------------------------------------------+
+| Identity Provider|<-->|Pinniped Supervisor - running on the vSphere Supervisor |
++------------------+    +--------------------------------------------------------+
+                               ^
+                               |
+                        +------+------+
+                        |   Pinniped  |
+                        |  Concierge  |
+                        +------+------+
+                               |
+                               v
++------------------+    +------------------+
+|    vSphere       |    | Tanzu Kubernetes |
+|    Namespace     |    |     Cluster      |
++------------------+    +------------------+
+```
+
 
 ### Configure SSO with vSphere Supervisor
 
@@ -286,6 +309,7 @@ kubectl auth can-i get pods -n namespace --as=user
 **From a Dev's point of view, do the following:**
 
 Install Tanzu CLI and the pinniped auth Plugin:
+
 ```
 tanzu plugin install pinniped-auth
 ```
