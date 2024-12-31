@@ -218,7 +218,7 @@ The configuration of a Idendity Provider will install pinniped supervisor on the
 ### Role and RoleBinding
 
 > #### **GitLab Configuration**
-> Be careful with the "name: my-gitlab-group". It really depends on how the GitLab Group was created. I personally had problems with > nested groups or groups created on projects. I always created the GitLab Groups with a Admin, didn't use the Group froma project.
+> Be careful with the "name: my-gitlab-group" within your Kubernetes Role. It really depends on how the GitLab Group was created. I > personally had problems with  nested groups or groups created on projects. I always created the GitLab Groups with a Admin, didn't > use the Group froma project.
 
 Further we need a *Role* and a *RoleBinding*. Apply those on the actual Kubernetes Cluster.
 
