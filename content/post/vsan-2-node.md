@@ -23,7 +23,7 @@ tags:
 # comment: false # Disable comment if false.
 ---
 
-# vSAN 2-Node Cluster Guide and Recommendations
+# vSAN ESA 2-Node Cluster Guide and Recommendations
 
 This Guide will help you in your Design Considerations and during the Deployment of a 2-Node vSAN Cluster. 
 
@@ -36,12 +36,20 @@ The following assumptions where made when creating this blog post.
 - Phyiscal Network Adapter for vSAN have a Bandwith of 25Gbits or above
 - General Knowledge of vSAN and vSphere
 
-# Design Considerations
+# Design 
 
-## General 
+## Constraints
+
+- Only one host failure can be tolerated at a time (FTT1)
+- Adding nodes beyond two would require reconfiguration to a standard vSAN cluster.
+- Requires a witness host, which needs two IP addresses - one for management and one for vSAN traffic
+- Managing multiple 2-node clusters can increase operational complexity
+
+## General Considerations
 
 - Do you have a dedicated vCenter for your 2-Node Cluster?
 - Where do you run the vCenter VM? On the 2-Node Cluster itself or outside?
+- Does the two physical Server run on the same physical site?
 
 
 
@@ -52,7 +60,7 @@ With a 2-Node Cluster you have the possibility to run vSAN (and vMotion) traffic
 Just consider the following:
 
 - Expanding your vSAN 2-Node Cluster to a 3-Node Cluster can be a little bit tricky.
-- If your setup vMotion vmk on the direct attached links, plan you migration path. If you want to migrate from other vSphere Clusters, additional vMotion vmks should be created.
+- If your setup vMotion vmk on the direct attached links, plan you migration path. If you want to migrate from other vSphere Clusters, additional vMotion vmks should be created (which have a L3 Uplink to your network).
 
 #### vSAN Witness
 
@@ -106,7 +114,7 @@ For IP and VLAN assigned I suggest you reserve the VLAN + IP-Ranges within your 
 
 ## Maintenance Scenario
 
-When you want to Update your ESXi Hosts there are a few specialities in 2 2-Node vSAN Cluster Setup:
+When you want to Update your ESXi Hosts there are a few specialities in 2-Node vSAN Cluster Setup:
 
 - Full data migration is not possible when entering maintenance mode.
 - You must use the "Ensure accessibility" option when putting a host into maintenance mode
