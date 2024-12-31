@@ -398,3 +398,8 @@ GitOps your K8s RBAC!
 - Define a default ClusterRole (for K8s-Cluster-Access)
 - Define a default Role (for K8s-Namespace Access)
 - Use ArgoCD or FluxCD to roll-out your RBAC Config
+
+***Token Lifetime**
+
+Depending on your IdP, the Token TTL defines how many times the Dev have to re-authenticate.
+GitLab isn't really configurabe as a "real" IdP. Look at WorkspaceONE Access, Zitadel for further configurations. 
