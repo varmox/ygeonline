@@ -123,8 +123,14 @@ To perform maintenance on a 2-node vSAN cluster:
 
 ## Performance
 
+Performance Benchmarking should be done with [HCIBench](https://github.com/vmware-labs/hci-benchmark-appliance).
 
 **Example**
+
+Setup:
+- 2x HPE DL365 Gen11
+- 25Gbit DAC between the Hosts
+- 7x7,68Tb Samsung PM9A3 SSD
 
 [vSAN 2 Node direct attached Cluster(]https://i.imgur.com/ZfPSSSN.png)
 
