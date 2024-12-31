@@ -38,7 +38,9 @@ Control Plane Components are always residing on the Edge Site, so you do not nee
 
 ECS Hosts (a modified Version of ESXi, but with full ESXi Capabilities) can be even [consumer Hardware](https://compatibilityguide.broadcom.com/detail?program=cpu&productId=150&persona=live&column=cpuSeries&order=desc&activeDelta=100&redirectFrom=AMD%20Ryzen%20Embedded%20V1000%20Series) with very small energy consumption. Like Barebones, NUCs, etc. You do not need beefy enterprise servers.
 
-Just follow the VMware VGC for [supported Hardware](https://compatibilityguide.broadcom.com/search?program=cpu&persona=live&column=cpuSeries&order=desc&activeDelta=100).
+You can even have [USB to RJ45 Network Adapters](https://github.com/alanrenouf/ECSExample/blob/main/edge-host-config/usb-nic-scan-on-boot.yaml) with the [VMware USB Network Driver Fling](https://community.broadcom.com/flings/home)!
+
+Just follow the VMware VGC for [supported Hardware](https://compatibilityguide.broadcom.com/).
 
 ## GitOps Approach
 
@@ -116,4 +118,21 @@ Workloads on ECS can either be classical VMs or Kubernetes Workloads.
 
 ## Networking
 
+LAN Connectivity will rely on vSwitches, NSX isn't designed for ECS as the footprint is too big.
+But for the WAN Connectivty, well there is a really good solution: VeloCloud SD-WAN
 
+## SD-WAN
+
+VeloCloud SD-WAN can either be deployed as a Virtual Appliance or Hardware.
+VeloCloud allows for SD-WAN Connectivity, L3+L4+L7 Firewall and VPN Services as well as a lot of other features. VeloCloud SD-WAN deploys so called "Edges", the Appliance that will handle the traffic (Data Plane). The Management will be done from the SD-WAN Orchestrator Appliance, either running onpremises or as a SaaS (running on Google Cloud).
+
+
+
+## Clusters
+
+As of now two topologies are supported in a Edge Site:
+
+- One Node 
+- Two Node
+
+I heard some rumors that three Nodes ESC Setup (event with vSAN) is comming ;)

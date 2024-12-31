@@ -140,8 +140,8 @@ Choosing between vSphere Namespace Permissions and K8s RBAC can be simplified to
 
 Scenario Intro:
 
-- Your companies Dev-Team that needs *kubectl* access to a K8s Namespace on a shared VKS/TKGS Cluster.
-- You (Infra Admin) have vSphere Namespace Permissions of Edit or Owner, also rights admin Rights to the vSphere Supervisor
+- Your companies Dev-Team  needs *kubectl* access to a K8s Namespace on a shared VKS/TKGS Cluster.
+- You (Infra Admin) have vSphere Namespace Permissions of "Edit" or "Owner", also admin rights to the vSphere Supervisor
 - You have a OIDC Provider (GitLab, WorkspaceONE Access, etc) already in place
 
 
