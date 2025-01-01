@@ -1,5 +1,5 @@
 ---
-title: "VMware Edge Compute Stack" # Title of the blog post.
+title: "[Intro] VMware Edge Compute Stack" # Title of the blog post.
 date: 2024-12-30T18:52:03+01:00 # Date of post creation.
 description: "Intro to VMware Edge Compute Stack (ECS)." # Description used for search engine.
 featured: true # Sets if post is a featured post, making appear on the home page side bar.
@@ -24,7 +24,6 @@ tags:
 # comment: false # Disable comment if false.
 ---
 
-# Intro
 
 VMware Edge Cloud Compute Stack is a Solution for running workloads on the Edge - "Edge" in this case means running a modified Version of ESXi on really small compute footprint. Management is done from a central Appliane called VECO (VMware Edge Cloud Orchestrator).
 
