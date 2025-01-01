@@ -54,7 +54,7 @@ Each ESC Host has to be booted from a custom ISO, which can be downloaded from V
 
 The unique thing about ECS is you manage the ECS Hosts and the Workloads with a GitOps approach. The configuration of the ECS Hosts like Networking, vSwitch Config is defined via yaml and stored in a Git Repository. The ECS Hosts has FluxCD installed on will check within the GitRepo for new yaml Manifests. FluxCD has a pull based approach - the destination (the ECS Host) will pull the config (yaml Files) themselves. With this approach it isn't a big Problem if the Edge Site does not have constant connectivity.
 
-[VMware ECS Big Picture - Copyright by VMware by Broadcom](https://docs.vmware.com/en/VMware-Edge-Compute-Stack/3.5/vmware-edge-compute-stack-administration-guide/images/GUID-AA9E8222-83DA-4169-A4DB-D39D84191682-low.png)
+![VMware ECS Big Picture - Copyright by VMware by Broadcom](https://docs.vmware.com/en/VMware-Edge-Compute-Stack/3.5/vmware-edge-compute-stack-administration-guide/images/GUID-AA9E8222-83DA-4169-A4DB-D39D84191682-low.png)
 
 You cannot modify anything manually, the ECS Hosts will only have the GitRepo as a Configuration Source. 
 
@@ -168,9 +168,9 @@ data:
 ```
 
 
-[VMware Docs](https://docs.vmware.com/en/VMware-Edge-Compute-Stack/3.5/vmware-edge-compute-stack-administration-guide/GUID-7EB4FCAE-60CA-4E6C-8A36-978FF95D205A.html)
+- [VMware Docs](https://docs.vmware.com/en/VMware-Edge-Compute-Stack/3.5/vmware-edge-compute-stack-administration-guide/GUID-7EB4FCAE-60CA-4E6C-8A36-978FF95D205A.html)
 
-[More Example Manifests for ESC](https://github.com/alanrenouf/ECSExample/tree/main)
+- [More Example Manifests for ESC](https://github.com/alanrenouf/ECSExample/tree/main)
 
 ### Kubernetes
 
