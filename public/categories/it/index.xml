@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>IT on ygerber</title>
-    <link>/categories/it/</link>
-    <description>Recent content in IT on ygerber</description>
+    <title>IT on vBünzli</title>
+    <link>//localhost:1313/categories/it/</link>
+    <description>Recent content in IT on vBünzli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Wed, 29 Nov 2023 22:04:40 +0100</lastBuildDate><atom:link href="/categories/it/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Nov 2023 22:04:40 +0100</lastBuildDate><atom:link href="//localhost:1313/categories/it/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VMware Tanzu Kubernetes Grid -  getting started</title>
-      <link>/post/tkg-getting-started/</link>
+      <link>//localhost:1313/post/tkg-getting-started/</link>
       <pubDate>Wed, 29 Nov 2023 22:04:40 +0100</pubDate>
       
-      <guid>/post/tkg-getting-started/</guid>
+      <guid>//localhost:1313/post/tkg-getting-started/</guid>
       <description>
         
           
-            Intro This blog post is about getting started with VMware Tanzu Kubernetes Grid (TKG). TKG is used to deploy Tanzu Kubernetes Cluster to various Cloud Providers including vSphere, AWS and Azure. First, a management cluster (based on Docker and kind) is created from a Bootstrap Workstation, which itself then provides its web interface and additional CLI tools to create a Kubernetes cluster.
-TKG has no integration in vSphere UI. If you wan&#39;t to integrate Tanzu with vCenter/vSphere UI - use vSphere with Tanzu instead.
+            &lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;This blog post is about getting started with VMware Tanzu Kubernetes Grid (TKG). TKG is used to deploy Tanzu Kubernetes Cluster to various Cloud Providers including vSphere, AWS and Azure.
+First, a management cluster (based on Docker and kind) is created from a Bootstrap Workstation, which itself then  provides its web interface and additional CLI tools to create a Kubernetes cluster.&lt;/p&gt;
+&lt;p&gt;TKG has no integration in vSphere UI. If you wan&#39;t to integrate Tanzu with vCenter/vSphere UI - use vSphere with Tanzu instead.&lt;/p&gt;
           
           
         

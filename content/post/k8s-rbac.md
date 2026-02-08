@@ -1,5 +1,6 @@
 ---
-title: "[Guide] RBAC on VKS" # Title of the blog post.
+title: "RBAC on VKS" # Title of the blog post.
+postType: "Guide"
 date: 2024-12-08T12:29:05+01:00 # Date of post creation.
 description: "RBAC on vSphere Kubernetes Service" # Description used for search engine.
 featured: true # Sets if post is a featured post, making appear on the home page side bar.

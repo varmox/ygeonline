@@ -1,5 +1,6 @@
 ---
-title: "[Guide] vSphere Lifecycle Manager and HPE OneView for vCenter - Troubleshooting" # Title of the blog post.
+title: "vSphere Lifecycle Manager and HPE OneView for vCenter - Troubleshooting" # Title of the blog post.
+postType: "Guide"
 date: 2024-11-20T09:25:35+01:00 # Date of post creation.
 description: "vLCM & HPE OneView" # Description used for search engine.
 featured: true # Sets if post is a featured post, making appear on the home page side bar.

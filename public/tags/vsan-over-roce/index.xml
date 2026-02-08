@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>vSAN over RoCE on ygerber</title>
+    <title>VSAN Over RoCE on vBünzli</title>
     <link>/tags/vsan-over-roce/</link>
-    <description>Recent content in vSAN over RoCE on ygerber</description>
+    <description>Recent content in VSAN Over RoCE on vBünzli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
@@ -17,8 +17,15 @@
       <description>
         
           
-            Intro VMware vSAN is a Hyperconverged Infrastructure Solution from VMware. It basically turns your servers direct attached disks into a storage cluster.
-General Requirements 10 GbE network switches are the minimum requirement for all-flash vSAN Clusters 25 GBE network switches are recommended Switches that support higher port speeds are designed with higher Network Processor Unit (NPU) buffers. An NPU shared switch buffer of at least 16 MB is recommended for 10 GbE network connectivity.
+            &lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;VMware vSAN is a Hyperconverged Infrastructure Solution from VMware. It basically turns your servers direct attached disks into a storage cluster.&lt;/p&gt;
+&lt;h2 id=&#34;minimum-bandwidth-requirements-vsan-esa&#34;&gt;Minimum Bandwidth Requirements vSAN ESA&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;A minimum bandwidth of 25 Gbps is required, 10Gbit works but is only supported for the AF0 Config.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;For larger clusters or environments with high-capacity NVMe disks, even 25 Gbps may be insufficient. If you can do 100Gbps, the Performance gain will be massive.&lt;/p&gt;
           
           
         

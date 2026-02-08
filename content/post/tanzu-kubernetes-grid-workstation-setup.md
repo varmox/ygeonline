@@ -1,5 +1,6 @@
 ---
-title: "[HowTo] Tanzu Kubernetes Grid - Linux Workstation Setup" # Title of the blog post.
+title: "Tanzu Kubernetes Grid - Linux Workstation Setup" # Title of the blog post.
+postType: "HowTo"
 date: 2023-10-08T20:43:03+02:00 # Date of post creation.
 description: "TKG Bootstrap Machine Setup." # Description used for search engine.
 featured: true # Sets if post is a featured post, making appear on the home page side bar.

@@ -9,8 +9,9 @@
   
   >
   <head>
-<title>vSphere Monitoring with Grafana | ygerber</title>
+<title>vSphere Monitoring with Grafana | vBünzli</title>
 <meta charset="utf-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <script async src="https://www.googletagmanager.com/gtag/js?id=XXXXXXXXXX"></script>
@@ -38,6 +39,7 @@
 <meta property="og:title" content="vSphere Monitoring with Grafana" />
 <meta property="og:description" content="Article description." />
 <meta property="og:image" content="/images/thumbnail.png" />
+  <meta name="keywords" content="VMware,vSphere,Monitoring,TIG Stack" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
@@ -47,15 +49,15 @@
 
 
 
-<link rel="preload" href="/css/styles.42e2c5f6d8cf9c52872666f8d8b2678ad0c426978b9d78aff3c33b7a1e7f6f97f54bcdaf0518a25fb0fe26367d04f8b07c683b3b38b331cb098daadee06b1f3e.css" integrity = "sha512-QuLF9tjPnFKHJmb42LJnitDEJpeLnXiv88M7eh5/b5f1S82vBRiiX7D&#43;JjZ9BPiwfGg7OzizMcsJjare4GsfPg==" as="style" crossorigin="anonymous">
+<link rel="preload" href="/css/styles.28e3156792a33b97ba888e7acd6332e65e0a04431094fa89d055987a4f000423510faa3c85534428d91f2e64c74d2c2a9e1d907fcdc2d32699e38506a03abda1.css" integrity = "sha512-KOMVZ5KjO5e6iI56zWMy5l4KBEMQlPqJ0FWYek8ABCNRD6o8hVNEKNkfLmTHTSwqnh2Qf83C0yaZ44UGoDq9oQ==" as="style" crossorigin="anonymous">
 
 
 
-<link rel="preload" href="/en/js/bundle.b37e6fff3826bb034b60c13370656fe73f202be5c0b4d0eb7d1925bce85cba1bb054eda5b17cbd6bd38a1376cf3b4a8579fe0818ca6e10d5f29a57298d487cb0.js" as="script" integrity=
-"sha512-s35v/zgmuwNLYMEzcGVv5z8gK&#43;XAtNDrfRklvOhcuhuwVO2lsXy9a9OKE3bPO0qFef4IGMpuENXymlcpjUh8sA==" crossorigin="anonymous">
+<link rel="preload" href="/en/js/bundle.2f36309c77205efd88cc637205808237375d2c3883c7404d70c6e50f948c8a48439e14353a335d3dd0468c438df1699de307b97d64f10c5612be666a18f66ee6.js" as="script" integrity=
+"sha512-LzYwnHcgXv2IzGNyBYCCNzddLDiDx0BNcMblD5SMikhDnhQ1OjNdPdBGjEON8Wmd4we5fWTxDFYSvmZqGPZu5g==" crossorigin="anonymous">
 
 
-<link rel="stylesheet" type="text/css" href="/css/styles.42e2c5f6d8cf9c52872666f8d8b2678ad0c426978b9d78aff3c33b7a1e7f6f97f54bcdaf0518a25fb0fe26367d04f8b07c683b3b38b331cb098daadee06b1f3e.css" integrity="sha512-QuLF9tjPnFKHJmb42LJnitDEJpeLnXiv88M7eh5/b5f1S82vBRiiX7D&#43;JjZ9BPiwfGg7OzizMcsJjare4GsfPg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="/css/styles.28e3156792a33b97ba888e7acd6332e65e0a04431094fa89d055987a4f000423510faa3c85534428d91f2e64c74d2c2a9e1d907fcdc2d32699e38506a03abda1.css" integrity="sha512-KOMVZ5KjO5e6iI56zWMy5l4KBEMQlPqJ0FWYek8ABCNRD6o8hVNEKNkfLmTHTSwqnh2Qf83C0yaZ44UGoDq9oQ==" crossorigin="anonymous">
 
   </head>
   <body
@@ -66,7 +68,7 @@
   >
 
 <header class="nav_header" >
-  <nav class="nav"><a href='/' class="nav_brand nav_item" title="ygerber">ygerber
+  <nav class="nav"><a href='/' class="nav_brand nav_item" title="vBünzli"><span class="logo-prompt">&gt;_</span>&nbsp;vBünzli
   <div class="nav_close">
     <div><svg class="icon">
   <title>open-menu</title>
@@ -87,7 +89,15 @@
         
 
   <div class="nav_parent">
-    <a href="/tags/vmware" class="nav_item" title="VMware">VMware </a>
+    <a href="/tags/vmware" class="nav_item" title="VMware">VMware <img src='/icons/caret-icon.svg' alt="icon" class="nav_icon"></a>
+    <div class="nav_sub">
+      <span class="nav_child"></span>
+        <a href="/tags/vsphere" class="nav_child nav_item" title="vSphere">vSphere</a>
+        <a href="/tags/vsan" class="nav_child nav_item" title="vSAN">vSAN</a>
+        <a href="/tags/vsphere-kubernetes-service" class="nav_child nav_item" title="VKS">VKS</a>
+        <a href="/tags/vcf" class="nav_child nav_item" title="VCF">VCF</a>
+        <a href="/tags/vcenter" class="nav_child nav_item" title="vCenter">vCenter</a>
+    </div>
   </div>
   <div class="nav_parent">
     <a href="/tags/kubernetes" class="nav_item" title="K8s">K8s </a>
@@ -135,7 +145,7 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">vSphere Monitoring with Grafana</h1>
+    <h1 class="post_title"><span class="post-type-badge post-type-howto">HowTo</span>vSphere Monitoring with Grafana</h1>
   <div class="post_meta">
     <span><svg class="icon">
   <title>calendar</title>
@@ -143,8 +153,9 @@
 </svg>
 </span>
     <span class="post_date">
-      Aug 8, 2023</span>
-    <span class="post_time"> · 12 min read</span><span>&nbsp;· <a href='/tags/vmware/' title="VMware" class="post_tag button button_translucent">VMware
+      Aug 8, 2023	  
+    </span>
+    <span class="post_time"> · 10 min read</span><span>&nbsp;· <a href='/tags/vmware/' title="VMware" class="post_tag button button_translucent">VMware
         </a><a href='/tags/vsphere/' title="vSphere" class="post_tag button button_translucent">vSphere
         </a><a href='/tags/monitoring/' title="Monitoring" class="post_tag button button_translucent">Monitoring
         </a><a href='/tags/tig-stack/' title="TIG Stack" class="post_tag button button_translucent">TIG Stack
@@ -206,7 +217,7 @@
         class="image_figure image_external image_processed"
         width="3338"
         height="1334"
-        src="/images/QbfN11Q_18141840476528208460.png"
+        src="/images/QbfN11Q_17788218198938191418.png"
       
       
     />
@@ -235,393 +246,393 @@
 <h2 id="create-telegraf-config">Create Telegraf Config</h2>
 <p>Edit your telegraf.conf file with a editor of choice and paste overwrite your telegraf.conf File.
 This config skips tls certificate checking so can be used for self-signed certificates.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">  1</span><span class="cl">[agent]
-</span></span><span class="line"><span class="ln">  2</span><span class="cl">  ## Default data collection interval for all inputs
-</span></span><span class="line"><span class="ln">  3</span><span class="cl">  interval = &#34;10s&#34;
-</span></span><span class="line"><span class="ln">  4</span><span class="cl">  ## Rounds collection interval to &#39;interval&#39;
-</span></span><span class="line"><span class="ln">  5</span><span class="cl">  ## ie, if interval=&#34;10s&#34; then always collect on :00, :10, :20, etc.
-</span></span><span class="line"><span class="ln">  6</span><span class="cl">  round_interval = true
-</span></span><span class="line"><span class="ln">  7</span><span class="cl">
-</span></span><span class="line"><span class="ln">  8</span><span class="cl">  ## Telegraf will send metrics to outputs in batches of at most
-</span></span><span class="line"><span class="ln">  9</span><span class="cl">  ## metric_batch_size metrics.
-</span></span><span class="line"><span class="ln"> 10</span><span class="cl">  ## This controls the size of writes that Telegraf sends to output plugins.
-</span></span><span class="line"><span class="ln"> 11</span><span class="cl">  metric_batch_size = 1000
-</span></span><span class="line"><span class="ln"> 12</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 13</span><span class="cl">  ## Maximum number of unwritten metrics per output.  Increasing this value
-</span></span><span class="line"><span class="ln"> 14</span><span class="cl">  ## allows for longer periods of output downtime without dropping metrics at the
-</span></span><span class="line"><span class="ln"> 15</span><span class="cl">  ## cost of higher maximum memory usage.
-</span></span><span class="line"><span class="ln"> 16</span><span class="cl">  metric_buffer_limit = 10000
-</span></span><span class="line"><span class="ln"> 17</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 18</span><span class="cl">  ## Collection jitter is used to jitter the collection by a random amount.
-</span></span><span class="line"><span class="ln"> 19</span><span class="cl">  ## Each plugin will sleep for a random time within jitter before collecting.
-</span></span><span class="line"><span class="ln"> 20</span><span class="cl">  ## This can be used to avoid many plugins querying things like sysfs at the
-</span></span><span class="line"><span class="ln"> 21</span><span class="cl">  ## same time, which can have a measurable effect on the system.
-</span></span><span class="line"><span class="ln"> 22</span><span class="cl">  collection_jitter = &#34;0s&#34;
-</span></span><span class="line"><span class="ln"> 23</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 24</span><span class="cl">  ## Default flushing interval for all outputs. Maximum flush_interval will be
-</span></span><span class="line"><span class="ln"> 25</span><span class="cl">  ## flush_interval + flush_jitter
-</span></span><span class="line"><span class="ln"> 26</span><span class="cl">  flush_interval = &#34;10s&#34;
-</span></span><span class="line"><span class="ln"> 27</span><span class="cl">  ## Jitter the flush interval by a random amount. This is primarily to avoid
-</span></span><span class="line"><span class="ln"> 28</span><span class="cl">  ## large write spikes for users running a large number of telegraf instances.
-</span></span><span class="line"><span class="ln"> 29</span><span class="cl">  ## ie, a jitter of 5s and interval 10s means flushes will happen every 10-15s
-</span></span><span class="line"><span class="ln"> 30</span><span class="cl">  flush_jitter = &#34;0s&#34;
-</span></span><span class="line"><span class="ln"> 31</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 32</span><span class="cl">  ## By default or when set to &#34;0s&#34;, precision will be set to the same
-</span></span><span class="line"><span class="ln"> 33</span><span class="cl">  ## timestamp order as the collection interval, with the maximum being 1s.
-</span></span><span class="line"><span class="ln"> 34</span><span class="cl">  ##   ie, when interval = &#34;10s&#34;, precision will be &#34;1s&#34;
-</span></span><span class="line"><span class="ln"> 35</span><span class="cl">  ##       when interval = &#34;250ms&#34;, precision will be &#34;1ms&#34;
-</span></span><span class="line"><span class="ln"> 36</span><span class="cl">  ## Precision will NOT be used for service inputs. It is up to each individual
-</span></span><span class="line"><span class="ln"> 37</span><span class="cl">  ## service input to set the timestamp at the appropriate precision.
-</span></span><span class="line"><span class="ln"> 38</span><span class="cl">  ## Valid time units are &#34;ns&#34;, &#34;us&#34; (or &#34;µs&#34;), &#34;ms&#34;, &#34;s&#34;.
-</span></span><span class="line"><span class="ln"> 39</span><span class="cl">  precision = &#34;&#34;
-</span></span><span class="line"><span class="ln"> 40</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 41</span><span class="cl">  ## Log at debug level.
-</span></span><span class="line"><span class="ln"> 42</span><span class="cl">  # debug = false
-</span></span><span class="line"><span class="ln"> 43</span><span class="cl">  ## Log only error level messages.
-</span></span><span class="line"><span class="ln"> 44</span><span class="cl">  # quiet = false
-</span></span><span class="line"><span class="ln"> 45</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 46</span><span class="cl">  ## Log target controls the destination for logs and can be one of &#34;file&#34;,
-</span></span><span class="line"><span class="ln"> 47</span><span class="cl">  ## &#34;stderr&#34; or, on Windows, &#34;eventlog&#34;.  When set to &#34;file&#34;, the output file
-</span></span><span class="line"><span class="ln"> 48</span><span class="cl">  ## is determined by the &#34;logfile&#34; setting.
-</span></span><span class="line"><span class="ln"> 49</span><span class="cl">  # logtarget = &#34;file&#34;
-</span></span><span class="line"><span class="ln"> 50</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 51</span><span class="cl">  ## Name of the file to be logged to when using the &#34;file&#34; logtarget.  If set to
-</span></span><span class="line"><span class="ln"> 52</span><span class="cl">  ## the empty string then logs are written to stderr.
-</span></span><span class="line"><span class="ln"> 53</span><span class="cl">  # logfile = &#34;&#34;
-</span></span><span class="line"><span class="ln"> 54</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 55</span><span class="cl">  ## The logfile will be rotated after the time interval specified.  When set
-</span></span><span class="line"><span class="ln"> 56</span><span class="cl">  ## to 0 no time based rotation is performed.  Logs are rotated only when
-</span></span><span class="line"><span class="ln"> 57</span><span class="cl">  ## written to, if there is no log activity rotation may be delayed.
-</span></span><span class="line"><span class="ln"> 58</span><span class="cl">  # logfile_rotation_interval = &#34;0d&#34;
-</span></span><span class="line"><span class="ln"> 59</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 60</span><span class="cl">  ## The logfile will be rotated when it becomes larger than the specified
-</span></span><span class="line"><span class="ln"> 61</span><span class="cl">  ## size.  When set to 0 no size based rotation is performed.
-</span></span><span class="line"><span class="ln"> 62</span><span class="cl">  # logfile_rotation_max_size = &#34;0MB&#34;
-</span></span><span class="line"><span class="ln"> 63</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 64</span><span class="cl">  ## Maximum number of rotated archives to keep, any older logs are deleted.
-</span></span><span class="line"><span class="ln"> 65</span><span class="cl">  ## If set to -1, no archives are removed.
-</span></span><span class="line"><span class="ln"> 66</span><span class="cl">  # logfile_rotation_max_archives = 5
-</span></span><span class="line"><span class="ln"> 67</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 68</span><span class="cl">  ## Pick a timezone to use when logging or type &#39;local&#39; for local time.
-</span></span><span class="line"><span class="ln"> 69</span><span class="cl">  ## Example: America/Chicago
-</span></span><span class="line"><span class="ln"> 70</span><span class="cl">  # log_with_timezone = &#34;&#34;
-</span></span><span class="line"><span class="ln"> 71</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 72</span><span class="cl">  ## Override default hostname, if empty use os.Hostname()
-</span></span><span class="line"><span class="ln"> 73</span><span class="cl">  hostname = &#34;&#34;
-</span></span><span class="line"><span class="ln"> 74</span><span class="cl">  ## If set to true, do no set the &#34;host&#34; tag in the telegraf agent.
-</span></span><span class="line"><span class="ln"> 75</span><span class="cl">  omit_hostname = false
-</span></span><span class="line"><span class="ln"> 76</span><span class="cl">[[outputs.influxdb_v2]]
-</span></span><span class="line"><span class="ln"> 77</span><span class="cl">  ## The URLs of the InfluxDB cluster nodes.
-</span></span><span class="line"><span class="ln"> 78</span><span class="cl">  ##
-</span></span><span class="line"><span class="ln"> 79</span><span class="cl">  ## Multiple URLs can be specified for a single cluster, only ONE of the
-</span></span><span class="line"><span class="ln"> 80</span><span class="cl">  ## urls will be written to each interval.
-</span></span><span class="line"><span class="ln"> 81</span><span class="cl">  ##   ex: urls = [&#34;https://us-west-2-1.aws.cloud2.influxdata.com&#34;]
-</span></span><span class="line"><span class="ln"> 82</span><span class="cl">  urls = [&#34;http://172.29.31.3:8086&#34;]
-</span></span><span class="line"><span class="ln"> 83</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 84</span><span class="cl">  ## Token for authentication.
-</span></span><span class="line"><span class="ln"> 85</span><span class="cl">  token = &#34;sFYmFqizqj8oJyJxuMc7l4PEztLIPOWfe0Aae_QwQiJXA-obkKo_AHCEgXRwMCEXXyYsq6mqRayan3Ylh_Dy0g==&#34;
-</span></span><span class="line"><span class="ln"> 86</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 87</span><span class="cl">  ## Organization is the name of the organization you wish to write to; must exist.
-</span></span><span class="line"><span class="ln"> 88</span><span class="cl">  organization = &#34;sddc&#34;
-</span></span><span class="line"><span class="ln"> 89</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 90</span><span class="cl">  ## Destination bucket to write into.
-</span></span><span class="line"><span class="ln"> 91</span><span class="cl">  bucket = &#34;vsphere&#34;
-</span></span><span class="line"><span class="ln"> 92</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 93</span><span class="cl">  ## The value of this tag will be used to determine the bucket.  If this
-</span></span><span class="line"><span class="ln"> 94</span><span class="cl">  ## tag is not set the &#39;bucket&#39; option is used as the default.
-</span></span><span class="line"><span class="ln"> 95</span><span class="cl">  # bucket_tag = &#34;&#34;
-</span></span><span class="line"><span class="ln"> 96</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 97</span><span class="cl">  ## If true, the bucket tag will not be added to the metric.
-</span></span><span class="line"><span class="ln"> 98</span><span class="cl">  # exclude_bucket_tag = false
-</span></span><span class="line"><span class="ln"> 99</span><span class="cl">
-</span></span><span class="line"><span class="ln">100</span><span class="cl">  ## Timeout for HTTP messages.
-</span></span><span class="line"><span class="ln">101</span><span class="cl">  # timeout = &#34;5s&#34;
-</span></span><span class="line"><span class="ln">102</span><span class="cl">
-</span></span><span class="line"><span class="ln">103</span><span class="cl">  ## Additional HTTP headers
-</span></span><span class="line"><span class="ln">104</span><span class="cl">  # http_headers = {&#34;X-Special-Header&#34; = &#34;Special-Value&#34;}
-</span></span><span class="line"><span class="ln">105</span><span class="cl">
-</span></span><span class="line"><span class="ln">106</span><span class="cl">  ## HTTP Proxy override, if unset values the standard proxy environment
-</span></span><span class="line"><span class="ln">107</span><span class="cl">  ## variables are consulted to determine which proxy, if any, should be used.
-</span></span><span class="line"><span class="ln">108</span><span class="cl">  # http_proxy = &#34;http://corporate.proxy:3128&#34;
-</span></span><span class="line"><span class="ln">109</span><span class="cl">
-</span></span><span class="line"><span class="ln">110</span><span class="cl">  ## HTTP User-Agent
-</span></span><span class="line"><span class="ln">111</span><span class="cl">  # user_agent = &#34;telegraf&#34;
-</span></span><span class="line"><span class="ln">112</span><span class="cl">
-</span></span><span class="line"><span class="ln">113</span><span class="cl">  ## Content-Encoding for write request body, can be set to &#34;gzip&#34; to
-</span></span><span class="line"><span class="ln">114</span><span class="cl">  ## compress body or &#34;identity&#34; to apply no encoding.
-</span></span><span class="line"><span class="ln">115</span><span class="cl">  # content_encoding = &#34;gzip&#34;
-</span></span><span class="line"><span class="ln">116</span><span class="cl">
-</span></span><span class="line"><span class="ln">117</span><span class="cl">  ## Enable or disable uint support for writing uints influxdb 2.0.
-</span></span><span class="line"><span class="ln">118</span><span class="cl">  # influx_uint_support = false
-</span></span><span class="line"><span class="ln">119</span><span class="cl">
-</span></span><span class="line"><span class="ln">120</span><span class="cl">  ## Optional TLS Config for use on HTTP connections.
-</span></span><span class="line"><span class="ln">121</span><span class="cl">  # tls_ca = &#34;/etc/telegraf/ca.pem&#34;
-</span></span><span class="line"><span class="ln">122</span><span class="cl">  # tls_cert = &#34;/etc/telegraf/cert.pem&#34;
-</span></span><span class="line"><span class="ln">123</span><span class="cl">  # tls_key = &#34;/etc/telegraf/key.pem&#34;
-</span></span><span class="line"><span class="ln">124</span><span class="cl">  ## Use TLS but skip chain &amp; host verification
-</span></span><span class="line"><span class="ln">125</span><span class="cl">  # insecure_skip_verify = false
-</span></span><span class="line"><span class="ln">126</span><span class="cl"># Read metrics from VMware vCenter
-</span></span><span class="line"><span class="ln">127</span><span class="cl">[[inputs.vsphere]]
-</span></span><span class="line"><span class="ln">128</span><span class="cl">  ## List of vCenter URLs to be monitored. These three lines must be uncommented
-</span></span><span class="line"><span class="ln">129</span><span class="cl">  ## and edited for the plugin to work.
-</span></span><span class="line"><span class="ln">130</span><span class="cl">  vcenters = [ &#34;https://vcenter-fqdn/sdk&#34; ]
-</span></span><span class="line"><span class="ln">131</span><span class="cl">  username = &#34;serviceaccount@sso.vsphere.local&#34;
-</span></span><span class="line"><span class="ln">132</span><span class="cl">  password = &#34;secret&#34;
-</span></span><span class="line"><span class="ln">133</span><span class="cl">
-</span></span><span class="line"><span class="ln">134</span><span class="cl">  ## VMs
-</span></span><span class="line"><span class="ln">135</span><span class="cl">  ## Typical VM metrics (if omitted or empty, all metrics are collected)
-</span></span><span class="line"><span class="ln">136</span><span class="cl">  # vm_include = [ &#34;/*/vm/**&#34;] # Inventory path to VMs to collect (by default all are collected)
-</span></span><span class="line"><span class="ln">137</span><span class="cl">  # vm_exclude = [] # Inventory paths to exclude
-</span></span><span class="line"><span class="ln">138</span><span class="cl">  vm_metric_include = [
-</span></span><span class="line"><span class="ln">139</span><span class="cl">    &#34;cpu.demand.average&#34;,
-</span></span><span class="line"><span class="ln">140</span><span class="cl">    &#34;cpu.idle.summation&#34;,
-</span></span><span class="line"><span class="ln">141</span><span class="cl">    &#34;cpu.latency.average&#34;,
-</span></span><span class="line"><span class="ln">142</span><span class="cl">    &#34;cpu.readiness.average&#34;,
-</span></span><span class="line"><span class="ln">143</span><span class="cl">    &#34;cpu.ready.summation&#34;,
-</span></span><span class="line"><span class="ln">144</span><span class="cl">    &#34;cpu.run.summation&#34;,
-</span></span><span class="line"><span class="ln">145</span><span class="cl">    &#34;cpu.usagemhz.average&#34;,
-</span></span><span class="line"><span class="ln">146</span><span class="cl">    &#34;cpu.used.summation&#34;,
-</span></span><span class="line"><span class="ln">147</span><span class="cl">    &#34;cpu.wait.summation&#34;,
-</span></span><span class="line"><span class="ln">148</span><span class="cl">    &#34;mem.active.average&#34;,
-</span></span><span class="line"><span class="ln">149</span><span class="cl">    &#34;mem.granted.average&#34;,
-</span></span><span class="line"><span class="ln">150</span><span class="cl">    &#34;mem.latency.average&#34;,
-</span></span><span class="line"><span class="ln">151</span><span class="cl">    &#34;mem.swapin.average&#34;,
-</span></span><span class="line"><span class="ln">152</span><span class="cl">    &#34;mem.swapinRate.average&#34;,
-</span></span><span class="line"><span class="ln">153</span><span class="cl">    &#34;mem.swapout.average&#34;,
-</span></span><span class="line"><span class="ln">154</span><span class="cl">    &#34;mem.swapoutRate.average&#34;,
-</span></span><span class="line"><span class="ln">155</span><span class="cl">    &#34;mem.usage.average&#34;,
-</span></span><span class="line"><span class="ln">156</span><span class="cl">    &#34;mem.vmmemctl.average&#34;,
-</span></span><span class="line"><span class="ln">157</span><span class="cl">    &#34;net.bytesRx.average&#34;,
-</span></span><span class="line"><span class="ln">158</span><span class="cl">    &#34;net.bytesTx.average&#34;,
-</span></span><span class="line"><span class="ln">159</span><span class="cl">    &#34;net.droppedRx.summation&#34;,
-</span></span><span class="line"><span class="ln">160</span><span class="cl">    &#34;net.droppedTx.summation&#34;,
-</span></span><span class="line"><span class="ln">161</span><span class="cl">    &#34;net.usage.average&#34;,
-</span></span><span class="line"><span class="ln">162</span><span class="cl">    &#34;power.power.average&#34;,
-</span></span><span class="line"><span class="ln">163</span><span class="cl">    &#34;virtualDisk.numberReadAveraged.average&#34;,
-</span></span><span class="line"><span class="ln">164</span><span class="cl">    &#34;virtualDisk.numberWriteAveraged.average&#34;,
-</span></span><span class="line"><span class="ln">165</span><span class="cl">    &#34;virtualDisk.read.average&#34;,
-</span></span><span class="line"><span class="ln">166</span><span class="cl">    &#34;virtualDisk.readOIO.latest&#34;,
-</span></span><span class="line"><span class="ln">167</span><span class="cl">    &#34;virtualDisk.throughput.usage.average&#34;,
-</span></span><span class="line"><span class="ln">168</span><span class="cl">    &#34;virtualDisk.totalReadLatency.average&#34;,
-</span></span><span class="line"><span class="ln">169</span><span class="cl">    &#34;virtualDisk.totalWriteLatency.average&#34;,
-</span></span><span class="line"><span class="ln">170</span><span class="cl">    &#34;virtualDisk.write.average&#34;,
-</span></span><span class="line"><span class="ln">171</span><span class="cl">    &#34;virtualDisk.writeOIO.latest&#34;,
-</span></span><span class="line"><span class="ln">172</span><span class="cl">    &#34;sys.uptime.latest&#34;,
-</span></span><span class="line"><span class="ln">173</span><span class="cl">  ]
-</span></span><span class="line"><span class="ln">174</span><span class="cl">  # vm_metric_exclude = [] ## Nothing is excluded by default
-</span></span><span class="line"><span class="ln">175</span><span class="cl">  # vm_instances = true ## true by default
-</span></span><span class="line"><span class="ln">176</span><span class="cl">
-</span></span><span class="line"><span class="ln">177</span><span class="cl">  ## Hosts
-</span></span><span class="line"><span class="ln">178</span><span class="cl">  ## Typical host metrics (if omitted or empty, all metrics are collected)
-</span></span><span class="line"><span class="ln">179</span><span class="cl">  # host_include = [ &#34;/*/host/**&#34;] # Inventory path to hosts to collect (by default all are collected)
-</span></span><span class="line"><span class="ln">180</span><span class="cl">  # host_exclude [] # Inventory paths to exclude
-</span></span><span class="line"><span class="ln">181</span><span class="cl">  host_metric_include = [
-</span></span><span class="line"><span class="ln">182</span><span class="cl">    &#34;cpu.coreUtilization.average&#34;,
-</span></span><span class="line"><span class="ln">183</span><span class="cl">    &#34;cpu.costop.summation&#34;,
-</span></span><span class="line"><span class="ln">184</span><span class="cl">    &#34;cpu.demand.average&#34;,
-</span></span><span class="line"><span class="ln">185</span><span class="cl">    &#34;cpu.idle.summation&#34;,
-</span></span><span class="line"><span class="ln">186</span><span class="cl">    &#34;cpu.latency.average&#34;,
-</span></span><span class="line"><span class="ln">187</span><span class="cl">    &#34;cpu.readiness.average&#34;,
-</span></span><span class="line"><span class="ln">188</span><span class="cl">    &#34;cpu.ready.summation&#34;,
-</span></span><span class="line"><span class="ln">189</span><span class="cl">    &#34;cpu.swapwait.summation&#34;,
-</span></span><span class="line"><span class="ln">190</span><span class="cl">    &#34;cpu.usage.average&#34;,
-</span></span><span class="line"><span class="ln">191</span><span class="cl">    &#34;cpu.usagemhz.average&#34;,
-</span></span><span class="line"><span class="ln">192</span><span class="cl">    &#34;cpu.used.summation&#34;,
-</span></span><span class="line"><span class="ln">193</span><span class="cl">    &#34;cpu.utilization.average&#34;,
-</span></span><span class="line"><span class="ln">194</span><span class="cl">    &#34;cpu.wait.summation&#34;,
-</span></span><span class="line"><span class="ln">195</span><span class="cl">    &#34;disk.deviceReadLatency.average&#34;,
-</span></span><span class="line"><span class="ln">196</span><span class="cl">    &#34;disk.deviceWriteLatency.average&#34;,
-</span></span><span class="line"><span class="ln">197</span><span class="cl">    &#34;disk.kernelReadLatency.average&#34;,
-</span></span><span class="line"><span class="ln">198</span><span class="cl">    &#34;disk.kernelWriteLatency.average&#34;,
-</span></span><span class="line"><span class="ln">199</span><span class="cl">    &#34;disk.numberReadAveraged.average&#34;,
-</span></span><span class="line"><span class="ln">200</span><span class="cl">    &#34;disk.numberWriteAveraged.average&#34;,
-</span></span><span class="line"><span class="ln">201</span><span class="cl">    &#34;disk.read.average&#34;,
-</span></span><span class="line"><span class="ln">202</span><span class="cl">    &#34;disk.totalReadLatency.average&#34;,
-</span></span><span class="line"><span class="ln">203</span><span class="cl">    &#34;disk.totalWriteLatency.average&#34;,
-</span></span><span class="line"><span class="ln">204</span><span class="cl">    &#34;disk.write.average&#34;,
-</span></span><span class="line"><span class="ln">205</span><span class="cl">    &#34;mem.active.average&#34;,
-</span></span><span class="line"><span class="ln">206</span><span class="cl">    &#34;mem.latency.average&#34;,
-</span></span><span class="line"><span class="ln">207</span><span class="cl">    &#34;mem.state.latest&#34;,
-</span></span><span class="line"><span class="ln">208</span><span class="cl">    &#34;mem.swapin.average&#34;,
-</span></span><span class="line"><span class="ln">209</span><span class="cl">    &#34;mem.swapinRate.average&#34;,
-</span></span><span class="line"><span class="ln">210</span><span class="cl">    &#34;mem.swapout.average&#34;,
-</span></span><span class="line"><span class="ln">211</span><span class="cl">    &#34;mem.swapoutRate.average&#34;,
-</span></span><span class="line"><span class="ln">212</span><span class="cl">    &#34;mem.totalCapacity.average&#34;,
-</span></span><span class="line"><span class="ln">213</span><span class="cl">    &#34;mem.usage.average&#34;,
-</span></span><span class="line"><span class="ln">214</span><span class="cl">    &#34;mem.vmmemctl.average&#34;,
-</span></span><span class="line"><span class="ln">215</span><span class="cl">    &#34;net.bytesRx.average&#34;,
-</span></span><span class="line"><span class="ln">216</span><span class="cl">    &#34;net.bytesTx.average&#34;,
-</span></span><span class="line"><span class="ln">217</span><span class="cl">    &#34;net.droppedRx.summation&#34;,
-</span></span><span class="line"><span class="ln">218</span><span class="cl">    &#34;net.droppedTx.summation&#34;,
-</span></span><span class="line"><span class="ln">219</span><span class="cl">    &#34;net.errorsRx.summation&#34;,
-</span></span><span class="line"><span class="ln">220</span><span class="cl">    &#34;net.errorsTx.summation&#34;,
-</span></span><span class="line"><span class="ln">221</span><span class="cl">    &#34;net.usage.average&#34;,
-</span></span><span class="line"><span class="ln">222</span><span class="cl">    &#34;power.power.average&#34;,
-</span></span><span class="line"><span class="ln">223</span><span class="cl">    &#34;storageAdapter.numberReadAveraged.average&#34;,
-</span></span><span class="line"><span class="ln">224</span><span class="cl">    &#34;storageAdapter.numberWriteAveraged.average&#34;,
-</span></span><span class="line"><span class="ln">225</span><span class="cl">    &#34;storageAdapter.read.average&#34;,
-</span></span><span class="line"><span class="ln">226</span><span class="cl">    &#34;storageAdapter.write.average&#34;,
-</span></span><span class="line"><span class="ln">227</span><span class="cl">    &#34;sys.uptime.latest&#34;,
-</span></span><span class="line"><span class="ln">228</span><span class="cl">  ]
-</span></span><span class="line"><span class="ln">229</span><span class="cl">    ## Collect IP addresses? Valid values are &#34;ipv4&#34; and &#34;ipv6&#34;
-</span></span><span class="line"><span class="ln">230</span><span class="cl">  # ip_addresses = [&#34;ipv6&#34;, &#34;ipv4&#34; ]
-</span></span><span class="line"><span class="ln">231</span><span class="cl">
-</span></span><span class="line"><span class="ln">232</span><span class="cl">  # host_metric_exclude = [] ## Nothing excluded by default
-</span></span><span class="line"><span class="ln">233</span><span class="cl">  # host_instances = true ## true by default
-</span></span><span class="line"><span class="ln">234</span><span class="cl">
-</span></span><span class="line"><span class="ln">235</span><span class="cl">
-</span></span><span class="line"><span class="ln">236</span><span class="cl">  ## Clusters
-</span></span><span class="line"><span class="ln">237</span><span class="cl">  # cluster_include = [ &#34;/*/host/**&#34;] # Inventory path to clusters to collect (by default all are collected)
-</span></span><span class="line"><span class="ln">238</span><span class="cl">  # cluster_exclude = [] # Inventory paths to exclude
-</span></span><span class="line"><span class="ln">239</span><span class="cl">  # cluster_metric_include = [] ## if omitted or empty, all metrics are collected
-</span></span><span class="line"><span class="ln">240</span><span class="cl">  # cluster_metric_exclude = [] ## Nothing excluded by default
-</span></span><span class="line"><span class="ln">241</span><span class="cl">  # cluster_instances = false ## false by default
-</span></span><span class="line"><span class="ln">242</span><span class="cl">
-</span></span><span class="line"><span class="ln">243</span><span class="cl">  ## Datastores
-</span></span><span class="line"><span class="ln">244</span><span class="cl">  # datastore_include = [ &#34;/*/datastore/**&#34;] # Inventory path to datastores to collect (by default all are collected)
-</span></span><span class="line"><span class="ln">245</span><span class="cl">  # datastore_exclude = [] # Inventory paths to exclude
-</span></span><span class="line"><span class="ln">246</span><span class="cl">  # datastore_metric_include = [] ## if omitted or empty, all metrics are collected
-</span></span><span class="line"><span class="ln">247</span><span class="cl">  # datastore_metric_exclude = [] ## Nothing excluded by default
-</span></span><span class="line"><span class="ln">248</span><span class="cl">  # datastore_instances = false ## false by default
-</span></span><span class="line"><span class="ln">249</span><span class="cl">
-</span></span><span class="line"><span class="ln">250</span><span class="cl">  ## Datacenters
-</span></span><span class="line"><span class="ln">251</span><span class="cl">  # datacenter_include = [ &#34;/*/host/**&#34;] # Inventory path to clusters to collect (by default all are collected)
-</span></span><span class="line"><span class="ln">252</span><span class="cl">  # datacenter_exclude = [] # Inventory paths to exclude
-</span></span><span class="line"><span class="ln">253</span><span class="cl">  datacenter_metric_include = [] ## if omitted or empty, all metrics are collected
-</span></span><span class="line"><span class="ln">254</span><span class="cl">  datacenter_metric_exclude = [ &#34;*&#34; ] ## Datacenters are not collected by default.
-</span></span><span class="line"><span class="ln">255</span><span class="cl">  # datacenter_instances = false ## false by default
-</span></span><span class="line"><span class="ln">256</span><span class="cl">
-</span></span><span class="line"><span class="ln">257</span><span class="cl">  ## Plugin Settings
-</span></span><span class="line"><span class="ln">258</span><span class="cl">  ## separator character to use for measurement and field names (default: &#34;_&#34;)
-</span></span><span class="line"><span class="ln">259</span><span class="cl">  # separator = &#34;_&#34;
-</span></span><span class="line"><span class="ln">260</span><span class="cl">
-</span></span><span class="line"><span class="ln">261</span><span class="cl">  ## number of objects to retrieve per query for realtime resources (vms and hosts)
-</span></span><span class="line"><span class="ln">262</span><span class="cl">  ## set to 64 for vCenter 5.5 and 6.0 (default: 256)
-</span></span><span class="line"><span class="ln">263</span><span class="cl">  # max_query_objects = 256
-</span></span><span class="line"><span class="ln">264</span><span class="cl">
-</span></span><span class="line"><span class="ln">265</span><span class="cl">  ## number of metrics to retrieve per query for non-realtime resources (clusters and datastores)
-</span></span><span class="line"><span class="ln">266</span><span class="cl">  ## set to 64 for vCenter 5.5 and 6.0 (default: 256)
-</span></span><span class="line"><span class="ln">267</span><span class="cl">  # max_query_metrics = 256
-</span></span><span class="line"><span class="ln">268</span><span class="cl">
-</span></span><span class="line"><span class="ln">269</span><span class="cl">  ## number of go routines to use for collection and discovery of objects and metrics
-</span></span><span class="line"><span class="ln">270</span><span class="cl">  # collect_concurrency = 1
-</span></span><span class="line"><span class="ln">271</span><span class="cl">  # discover_concurrency = 1
-</span></span><span class="line"><span class="ln">272</span><span class="cl">
-</span></span><span class="line"><span class="ln">273</span><span class="cl">  ## the interval before (re)discovering objects subject to metrics collection (default: 300s)
-</span></span><span class="line"><span class="ln">274</span><span class="cl">  # object_discovery_interval = &#34;300s&#34;
-</span></span><span class="line"><span class="ln">275</span><span class="cl">
-</span></span><span class="line"><span class="ln">276</span><span class="cl">  ## timeout applies to any of the api request made to vcenter
-</span></span><span class="line"><span class="ln">277</span><span class="cl">  # timeout = &#34;60s&#34;
-</span></span><span class="line"><span class="ln">278</span><span class="cl">
-</span></span><span class="line"><span class="ln">279</span><span class="cl">  ## When set to true, all samples are sent as integers. This makes the output
-</span></span><span class="line"><span class="ln">280</span><span class="cl">  ## data types backwards compatible with Telegraf 1.9 or lower. Normally all
-</span></span><span class="line"><span class="ln">281</span><span class="cl">  ## samples from vCenter, with the exception of percentages, are integer
-</span></span><span class="line"><span class="ln">282</span><span class="cl">  ## values, but under some conditions, some averaging takes place internally in
-</span></span><span class="line"><span class="ln">283</span><span class="cl">  ## the plugin. Setting this flag to &#34;false&#34; will send values as floats to
-</span></span><span class="line"><span class="ln">284</span><span class="cl">  ## preserve the full precision when averaging takes place.
-</span></span><span class="line"><span class="ln">285</span><span class="cl">  # use_int_samples = true
-</span></span><span class="line"><span class="ln">286</span><span class="cl">
-</span></span><span class="line"><span class="ln">287</span><span class="cl">  ## Custom attributes from vCenter can be very useful for queries in order to slice the
-</span></span><span class="line"><span class="ln">288</span><span class="cl">  ## metrics along different dimension and for forming ad-hoc relationships. They are disabled
-</span></span><span class="line"><span class="ln">289</span><span class="cl">  ## by default, since they can add a considerable amount of tags to the resulting metrics. To
-</span></span><span class="line"><span class="ln">290</span><span class="cl">  ## enable, simply set custom_attribute_exclude to [] (empty set) and use custom_attribute_include
-</span></span><span class="line"><span class="ln">291</span><span class="cl">  ## to select the attributes you want to include.
-</span></span><span class="line"><span class="ln">292</span><span class="cl">  ## By default, since they can add a considerable amount of tags to the resulting metrics. To
-</span></span><span class="line"><span class="ln">293</span><span class="cl">  ## enable, simply set custom_attribute_exclude to [] (empty set) and use custom_attribute_include
-</span></span><span class="line"><span class="ln">294</span><span class="cl">  ## to select the attributes you want to include.
-</span></span><span class="line"><span class="ln">295</span><span class="cl">  # custom_attribute_include = []
-</span></span><span class="line"><span class="ln">296</span><span class="cl">  # custom_attribute_exclude = [&#34;*&#34;]
-</span></span><span class="line"><span class="ln">297</span><span class="cl">
-</span></span><span class="line"><span class="ln">298</span><span class="cl">  ## The number of vSphere 5 minute metric collection cycles to look back for non-realtime metrics. In
-</span></span><span class="line"><span class="ln">299</span><span class="cl">  ## some versions (6.7, 7.0 and possible more), certain metrics, such as cluster metrics, may be reported
-</span></span><span class="line"><span class="ln">300</span><span class="cl">  ## with a significant delay (&gt;30min). If this happens, try increasing this number. Please note that increasing
-</span></span><span class="line"><span class="ln">301</span><span class="cl">  ## it too much may cause performance issues.
-</span></span><span class="line"><span class="ln">302</span><span class="cl">  # metric_lookback = 3
-</span></span><span class="line"><span class="ln">303</span><span class="cl">
-</span></span><span class="line"><span class="ln">304</span><span class="cl">  ## Optional SSL Config
-</span></span><span class="line"><span class="ln">305</span><span class="cl">  # ssl_ca = &#34;/path/to/cafile&#34;
-</span></span><span class="line"><span class="ln">306</span><span class="cl">  # ssl_cert = &#34;/path/to/certfile&#34;
-</span></span><span class="line"><span class="ln">307</span><span class="cl">  # ssl_key = &#34;/path/to/keyfile&#34;
-</span></span><span class="line"><span class="ln">308</span><span class="cl">  ## Use SSL but skip chain &amp; host verification
-</span></span><span class="line"><span class="ln">309</span><span class="cl">  insecure_skip_verify = true
-</span></span><span class="line"><span class="ln">310</span><span class="cl">
-</span></span><span class="line"><span class="ln">311</span><span class="cl">  ## The Historical Interval value must match EXACTLY the interval in the daily
-</span></span><span class="line"><span class="ln">312</span><span class="cl">  # &#34;Interval Duration&#34; found on the VCenter server under Configure &gt; General &gt; Statistics &gt; Statistic intervals
-</span></span><span class="line"><span class="ln">313</span><span class="cl">  # historical_interval = &#34;5m&#34;
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="p">[</span><span class="n">agent</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## Default data collection interval for all inputs</span>
+</span></span><span class="line"><span class="cl">  <span class="n">interval</span> <span class="o">=</span> <span class="s2">&#34;10s&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## Rounds collection interval to &#39;interval&#39;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## ie, if interval=&#34;10s&#34; then always collect on :00, :10, :20, etc.</span>
+</span></span><span class="line"><span class="cl">  <span class="n">round_interval</span> <span class="o">=</span> <span class="bp">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## Telegraf will send metrics to outputs in batches of at most</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## metric_batch_size metrics.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## This controls the size of writes that Telegraf sends to output plugins.</span>
+</span></span><span class="line"><span class="cl">  <span class="n">metric_batch_size</span> <span class="o">=</span> <span class="mi">1000</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## Maximum number of unwritten metrics per output.  Increasing this value</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## allows for longer periods of output downtime without dropping metrics at the</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## cost of higher maximum memory usage.</span>
+</span></span><span class="line"><span class="cl">  <span class="n">metric_buffer_limit</span> <span class="o">=</span> <span class="mi">10000</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## Collection jitter is used to jitter the collection by a random amount.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## Each plugin will sleep for a random time within jitter before collecting.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## This can be used to avoid many plugins querying things like sysfs at the</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## same time, which can have a measurable effect on the system.</span>
+</span></span><span class="line"><span class="cl">  <span class="n">collection_jitter</span> <span class="o">=</span> <span class="s2">&#34;0s&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## Default flushing interval for all outputs. Maximum flush_interval will be</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## flush_interval + flush_jitter</span>
+</span></span><span class="line"><span class="cl">  <span class="n">flush_interval</span> <span class="o">=</span> <span class="s2">&#34;10s&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## Jitter the flush interval by a random amount. This is primarily to avoid</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## large write spikes for users running a large number of telegraf instances.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## ie, a jitter of 5s and interval 10s means flushes will happen every 10-15s</span>
+</span></span><span class="line"><span class="cl">  <span class="n">flush_jitter</span> <span class="o">=</span> <span class="s2">&#34;0s&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## By default or when set to &#34;0s&#34;, precision will be set to the same</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## timestamp order as the collection interval, with the maximum being 1s.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">##   ie, when interval = &#34;10s&#34;, precision will be &#34;1s&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">##       when interval = &#34;250ms&#34;, precision will be &#34;1ms&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## Precision will NOT be used for service inputs. It is up to each individual</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## service input to set the timestamp at the appropriate precision.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## Valid time units are &#34;ns&#34;, &#34;us&#34; (or &#34;µs&#34;), &#34;ms&#34;, &#34;s&#34;.</span>
+</span></span><span class="line"><span class="cl">  <span class="n">precision</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## Log at debug level.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># debug = false</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## Log only error level messages.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># quiet = false</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## Log target controls the destination for logs and can be one of &#34;file&#34;,</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## &#34;stderr&#34; or, on Windows, &#34;eventlog&#34;.  When set to &#34;file&#34;, the output file</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## is determined by the &#34;logfile&#34; setting.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># logtarget = &#34;file&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## Name of the file to be logged to when using the &#34;file&#34; logtarget.  If set to</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## the empty string then logs are written to stderr.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># logfile = &#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## The logfile will be rotated after the time interval specified.  When set</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## to 0 no time based rotation is performed.  Logs are rotated only when</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## written to, if there is no log activity rotation may be delayed.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># logfile_rotation_interval = &#34;0d&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## The logfile will be rotated when it becomes larger than the specified</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## size.  When set to 0 no size based rotation is performed.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># logfile_rotation_max_size = &#34;0MB&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## Maximum number of rotated archives to keep, any older logs are deleted.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## If set to -1, no archives are removed.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># logfile_rotation_max_archives = 5</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## Pick a timezone to use when logging or type &#39;local&#39; for local time.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## Example: America/Chicago</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># log_with_timezone = &#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## Override default hostname, if empty use os.Hostname()</span>
+</span></span><span class="line"><span class="cl">  <span class="n">hostname</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## If set to true, do no set the &#34;host&#34; tag in the telegraf agent.</span>
+</span></span><span class="line"><span class="cl">  <span class="n">omit_hostname</span> <span class="o">=</span> <span class="bp">false</span>
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="n">outputs</span><span class="o">.</span><span class="n">influxdb_v2</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## The URLs of the InfluxDB cluster nodes.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">##</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## Multiple URLs can be specified for a single cluster, only ONE of the</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## urls will be written to each interval.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">##   ex: urls = [&#34;https://us-west-2-1.aws.cloud2.influxdata.com&#34;]</span>
+</span></span><span class="line"><span class="cl">  <span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;http://172.29.31.3:8086&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## Token for authentication.</span>
+</span></span><span class="line"><span class="cl">  <span class="n">token</span> <span class="o">=</span> <span class="s2">&#34;sFYmFqizqj8oJyJxuMc7l4PEztLIPOWfe0Aae_QwQiJXA-obkKo_AHCEgXRwMCEXXyYsq6mqRayan3Ylh_Dy0g==&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## Organization is the name of the organization you wish to write to; must exist.</span>
+</span></span><span class="line"><span class="cl">  <span class="n">organization</span> <span class="o">=</span> <span class="s2">&#34;sddc&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## Destination bucket to write into.</span>
+</span></span><span class="line"><span class="cl">  <span class="n">bucket</span> <span class="o">=</span> <span class="s2">&#34;vsphere&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## The value of this tag will be used to determine the bucket.  If this</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## tag is not set the &#39;bucket&#39; option is used as the default.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># bucket_tag = &#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## If true, the bucket tag will not be added to the metric.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># exclude_bucket_tag = false</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## Timeout for HTTP messages.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># timeout = &#34;5s&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## Additional HTTP headers</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># http_headers = {&#34;X-Special-Header&#34; = &#34;Special-Value&#34;}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## HTTP Proxy override, if unset values the standard proxy environment</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## variables are consulted to determine which proxy, if any, should be used.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># http_proxy = &#34;http://corporate.proxy:3128&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## HTTP User-Agent</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># user_agent = &#34;telegraf&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## Content-Encoding for write request body, can be set to &#34;gzip&#34; to</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## compress body or &#34;identity&#34; to apply no encoding.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># content_encoding = &#34;gzip&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## Enable or disable uint support for writing uints influxdb 2.0.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># influx_uint_support = false</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## Optional TLS Config for use on HTTP connections.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># tls_ca = &#34;/etc/telegraf/ca.pem&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># tls_cert = &#34;/etc/telegraf/cert.pem&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># tls_key = &#34;/etc/telegraf/key.pem&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## Use TLS but skip chain &amp; host verification</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># insecure_skip_verify = false</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Read metrics from VMware vCenter</span>
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="n">inputs</span><span class="o">.</span><span class="n">vsphere</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## List of vCenter URLs to be monitored. These three lines must be uncommented</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## and edited for the plugin to work.</span>
+</span></span><span class="line"><span class="cl">  <span class="n">vcenters</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&#34;https://vcenter-fqdn/sdk&#34;</span> <span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="n">username</span> <span class="o">=</span> <span class="s2">&#34;serviceaccount@sso.vsphere.local&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">password</span> <span class="o">=</span> <span class="s2">&#34;secret&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## VMs</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## Typical VM metrics (if omitted or empty, all metrics are collected)</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># vm_include = [ &#34;/*/vm/**&#34;] # Inventory path to VMs to collect (by default all are collected)</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># vm_exclude = [] # Inventory paths to exclude</span>
+</span></span><span class="line"><span class="cl">  <span class="n">vm_metric_include</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;cpu.demand.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;cpu.idle.summation&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;cpu.latency.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;cpu.readiness.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;cpu.ready.summation&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;cpu.run.summation&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;cpu.usagemhz.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;cpu.used.summation&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;cpu.wait.summation&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;mem.active.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;mem.granted.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;mem.latency.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;mem.swapin.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;mem.swapinRate.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;mem.swapout.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;mem.swapoutRate.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;mem.usage.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;mem.vmmemctl.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;net.bytesRx.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;net.bytesTx.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;net.droppedRx.summation&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;net.droppedTx.summation&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;net.usage.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;power.power.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;virtualDisk.numberReadAveraged.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;virtualDisk.numberWriteAveraged.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;virtualDisk.read.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;virtualDisk.readOIO.latest&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;virtualDisk.throughput.usage.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;virtualDisk.totalReadLatency.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;virtualDisk.totalWriteLatency.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;virtualDisk.write.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;virtualDisk.writeOIO.latest&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;sys.uptime.latest&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># vm_metric_exclude = [] ## Nothing is excluded by default</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># vm_instances = true ## true by default</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## Hosts</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## Typical host metrics (if omitted or empty, all metrics are collected)</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># host_include = [ &#34;/*/host/**&#34;] # Inventory path to hosts to collect (by default all are collected)</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># host_exclude [] # Inventory paths to exclude</span>
+</span></span><span class="line"><span class="cl">  <span class="n">host_metric_include</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;cpu.coreUtilization.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;cpu.costop.summation&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;cpu.demand.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;cpu.idle.summation&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;cpu.latency.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;cpu.readiness.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;cpu.ready.summation&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;cpu.swapwait.summation&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;cpu.usage.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;cpu.usagemhz.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;cpu.used.summation&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;cpu.utilization.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;cpu.wait.summation&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;disk.deviceReadLatency.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;disk.deviceWriteLatency.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;disk.kernelReadLatency.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;disk.kernelWriteLatency.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;disk.numberReadAveraged.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;disk.numberWriteAveraged.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;disk.read.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;disk.totalReadLatency.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;disk.totalWriteLatency.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;disk.write.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;mem.active.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;mem.latency.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;mem.state.latest&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;mem.swapin.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;mem.swapinRate.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;mem.swapout.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;mem.swapoutRate.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;mem.totalCapacity.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;mem.usage.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;mem.vmmemctl.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;net.bytesRx.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;net.bytesTx.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;net.droppedRx.summation&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;net.droppedTx.summation&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;net.errorsRx.summation&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;net.errorsTx.summation&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;net.usage.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;power.power.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;storageAdapter.numberReadAveraged.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;storageAdapter.numberWriteAveraged.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;storageAdapter.read.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;storageAdapter.write.average&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;sys.uptime.latest&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">## Collect IP addresses? Valid values are &#34;ipv4&#34; and &#34;ipv6&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># ip_addresses = [&#34;ipv6&#34;, &#34;ipv4&#34; ]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1"># host_metric_exclude = [] ## Nothing excluded by default</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># host_instances = true ## true by default</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## Clusters</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># cluster_include = [ &#34;/*/host/**&#34;] # Inventory path to clusters to collect (by default all are collected)</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># cluster_exclude = [] # Inventory paths to exclude</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># cluster_metric_include = [] ## if omitted or empty, all metrics are collected</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># cluster_metric_exclude = [] ## Nothing excluded by default</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># cluster_instances = false ## false by default</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## Datastores</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># datastore_include = [ &#34;/*/datastore/**&#34;] # Inventory path to datastores to collect (by default all are collected)</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># datastore_exclude = [] # Inventory paths to exclude</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># datastore_metric_include = [] ## if omitted or empty, all metrics are collected</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># datastore_metric_exclude = [] ## Nothing excluded by default</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># datastore_instances = false ## false by default</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## Datacenters</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># datacenter_include = [ &#34;/*/host/**&#34;] # Inventory path to clusters to collect (by default all are collected)</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># datacenter_exclude = [] # Inventory paths to exclude</span>
+</span></span><span class="line"><span class="cl">  <span class="n">datacenter_metric_include</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">## if omitted or empty, all metrics are collected</span>
+</span></span><span class="line"><span class="cl">  <span class="n">datacenter_metric_exclude</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&#34;*&#34;</span> <span class="p">]</span> <span class="c1">## Datacenters are not collected by default.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># datacenter_instances = false ## false by default</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## Plugin Settings</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## separator character to use for measurement and field names (default: &#34;_&#34;)</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># separator = &#34;_&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## number of objects to retrieve per query for realtime resources (vms and hosts)</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## set to 64 for vCenter 5.5 and 6.0 (default: 256)</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># max_query_objects = 256</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## number of metrics to retrieve per query for non-realtime resources (clusters and datastores)</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## set to 64 for vCenter 5.5 and 6.0 (default: 256)</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># max_query_metrics = 256</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## number of go routines to use for collection and discovery of objects and metrics</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># collect_concurrency = 1</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># discover_concurrency = 1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## the interval before (re)discovering objects subject to metrics collection (default: 300s)</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># object_discovery_interval = &#34;300s&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## timeout applies to any of the api request made to vcenter</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># timeout = &#34;60s&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## When set to true, all samples are sent as integers. This makes the output</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## data types backwards compatible with Telegraf 1.9 or lower. Normally all</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## samples from vCenter, with the exception of percentages, are integer</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## values, but under some conditions, some averaging takes place internally in</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## the plugin. Setting this flag to &#34;false&#34; will send values as floats to</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## preserve the full precision when averaging takes place.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># use_int_samples = true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## Custom attributes from vCenter can be very useful for queries in order to slice the</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## metrics along different dimension and for forming ad-hoc relationships. They are disabled</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## by default, since they can add a considerable amount of tags to the resulting metrics. To</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## enable, simply set custom_attribute_exclude to [] (empty set) and use custom_attribute_include</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## to select the attributes you want to include.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## By default, since they can add a considerable amount of tags to the resulting metrics. To</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## enable, simply set custom_attribute_exclude to [] (empty set) and use custom_attribute_include</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## to select the attributes you want to include.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># custom_attribute_include = []</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># custom_attribute_exclude = [&#34;*&#34;]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## The number of vSphere 5 minute metric collection cycles to look back for non-realtime metrics. In</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## some versions (6.7, 7.0 and possible more), certain metrics, such as cluster metrics, may be reported</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## with a significant delay (&gt;30min). If this happens, try increasing this number. Please note that increasing</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## it too much may cause performance issues.</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># metric_lookback = 3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## Optional SSL Config</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># ssl_ca = &#34;/path/to/cafile&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># ssl_cert = &#34;/path/to/certfile&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># ssl_key = &#34;/path/to/keyfile&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## Use SSL but skip chain &amp; host verification</span>
+</span></span><span class="line"><span class="cl">  <span class="n">insecure_skip_verify</span> <span class="o">=</span> <span class="bp">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">## The Historical Interval value must match EXACTLY the interval in the daily</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># &#34;Interval Duration&#34; found on the VCenter server under Configure &gt; General &gt; Statistics &gt; Statistic intervals</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># historical_interval = &#34;5m&#34;</span>
 </span></span></code></pre></div><h2 id="container-setup">Container Setup</h2>
 <p>Use the following docker compose file to start your containers. This solution uses ipvlan to assign each container an IPv4 Address. You don't have to assign the IPs to your OSes NIC.</p>
 <p>Change the passwords and secrets to your needs.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln"> 1</span><span class="cl">version: &#39;3.6&#39;
-</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 3</span><span class="cl">networks:
-</span></span><span class="line"><span class="ln"> 4</span><span class="cl">  ipvlan0:
-</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    driver: ipvlan
-</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    driver_opts:
-</span></span><span class="line"><span class="ln"> 7</span><span class="cl">      parent: ens192
-</span></span><span class="line"><span class="ln"> 8</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 9</span><span class="cl">
-</span></span><span class="line"><span class="ln">10</span><span class="cl">services:
-</span></span><span class="line"><span class="ln">11</span><span class="cl">  telegraf:
-</span></span><span class="line"><span class="ln">12</span><span class="cl">    image: telegraf
-</span></span><span class="line"><span class="ln">13</span><span class="cl">    container_name: telegraf
-</span></span><span class="line"><span class="ln">14</span><span class="cl">    restart: always
-</span></span><span class="line"><span class="ln">15</span><span class="cl">    volumes:
-</span></span><span class="line"><span class="ln">16</span><span class="cl">    - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
-</span></span><span class="line"><span class="ln">17</span><span class="cl">    depends_on:
-</span></span><span class="line"><span class="ln">18</span><span class="cl">      - influxdb
-</span></span><span class="line"><span class="ln">19</span><span class="cl">    links:
-</span></span><span class="line"><span class="ln">20</span><span class="cl">      - influxdb
-</span></span><span class="line"><span class="ln">21</span><span class="cl">    ports:
-</span></span><span class="line"><span class="ln">22</span><span class="cl">    - &#39;8125:8125&#39;
-</span></span><span class="line"><span class="ln">23</span><span class="cl">    networks:
-</span></span><span class="line"><span class="ln">24</span><span class="cl">      ipvlan0:
-</span></span><span class="line"><span class="ln">25</span><span class="cl">        ipv4_address: 172.29.31.2
-</span></span><span class="line"><span class="ln">26</span><span class="cl">
-</span></span><span class="line"><span class="ln">27</span><span class="cl">  influxdb:
-</span></span><span class="line"><span class="ln">28</span><span class="cl">    image: influxdb:2.6-alpine
-</span></span><span class="line"><span class="ln">29</span><span class="cl">    container_name: influxdb
-</span></span><span class="line"><span class="ln">30</span><span class="cl">    restart: always
-</span></span><span class="line"><span class="ln">31</span><span class="cl">    environment:
-</span></span><span class="line"><span class="ln">32</span><span class="cl">      - INFLUXDB_DB=influx
-</span></span><span class="line"><span class="ln">33</span><span class="cl">      - INFLUXDB_ADMIN_USER=admin
-</span></span><span class="line"><span class="ln">34</span><span class="cl">      - INFLUXDB_ADMIN_PASSWORD=admin
-</span></span><span class="line"><span class="ln">35</span><span class="cl">    networks:
-</span></span><span class="line"><span class="ln">36</span><span class="cl">      ipvlan0:
-</span></span><span class="line"><span class="ln">37</span><span class="cl">        ipv4_address: 172.29.31.3
-</span></span><span class="line"><span class="ln">38</span><span class="cl">
-</span></span><span class="line"><span class="ln">39</span><span class="cl">    ports:
-</span></span><span class="line"><span class="ln">40</span><span class="cl">      - &#39;8086:8086&#39;
-</span></span><span class="line"><span class="ln">41</span><span class="cl">    volumes:
-</span></span><span class="line"><span class="ln">42</span><span class="cl">      - influxdb_data:/var/lib/influxdb
-</span></span><span class="line"><span class="ln">43</span><span class="cl">
-</span></span><span class="line"><span class="ln">44</span><span class="cl">  grafana:
-</span></span><span class="line"><span class="ln">45</span><span class="cl">    image: grafana/grafana
-</span></span><span class="line"><span class="ln">46</span><span class="cl">    container_name: grafana-server
-</span></span><span class="line"><span class="ln">47</span><span class="cl">    restart: always
-</span></span><span class="line"><span class="ln">48</span><span class="cl">    depends_on:
-</span></span><span class="line"><span class="ln">49</span><span class="cl">      - influxdb
-</span></span><span class="line"><span class="ln">50</span><span class="cl">    environment:
-</span></span><span class="line"><span class="ln">51</span><span class="cl">      - GF_SECURITY_ADMIN_USER=admin
-</span></span><span class="line"><span class="ln">52</span><span class="cl">      - GF_SECURITY_ADMIN_PASSWORD=admin
-</span></span><span class="line"><span class="ln">53</span><span class="cl">      - GF_INSTALL_PLUGINS=
-</span></span><span class="line"><span class="ln">54</span><span class="cl">    links:
-</span></span><span class="line"><span class="ln">55</span><span class="cl">      - influxdb
-</span></span><span class="line"><span class="ln">56</span><span class="cl">    networks:
-</span></span><span class="line"><span class="ln">57</span><span class="cl">      ipvlan0:
-</span></span><span class="line"><span class="ln">58</span><span class="cl">        ipv4_address: 172.29.31.4
-</span></span><span class="line"><span class="ln">59</span><span class="cl">    ports:
-</span></span><span class="line"><span class="ln">60</span><span class="cl">      - &#39;3000:3000&#39;
-</span></span><span class="line"><span class="ln">61</span><span class="cl">    volumes:
-</span></span><span class="line"><span class="ln">62</span><span class="cl">      - grafana_data:/var/lib/grafana
-</span></span><span class="line"><span class="ln">63</span><span class="cl">
-</span></span><span class="line"><span class="ln">64</span><span class="cl">volumes:
-</span></span><span class="line"><span class="ln">65</span><span class="cl">  grafana_data: {}
-</span></span><span class="line"><span class="ln">66</span><span class="cl">  influxdb_data: {}
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">version</span><span class="p">:</span> <span class="s1">&#39;3.6&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">networks</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ipvlan0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">driver</span><span class="p">:</span> <span class="n">ipvlan</span>
+</span></span><span class="line"><span class="cl">    <span class="n">driver_opts</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="n">parent</span><span class="p">:</span> <span class="n">ens192</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">services</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">telegraf</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">image</span><span class="p">:</span> <span class="n">telegraf</span>
+</span></span><span class="line"><span class="cl">    <span class="n">container_name</span><span class="p">:</span> <span class="n">telegraf</span>
+</span></span><span class="line"><span class="cl">    <span class="n">restart</span><span class="p">:</span> <span class="n">always</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volumes</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="o">-</span> <span class="o">./</span><span class="n">telegraf</span><span class="o">.</span><span class="n">conf</span><span class="p">:</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">telegraf</span><span class="o">/</span><span class="n">telegraf</span><span class="o">.</span><span class="n">conf</span><span class="p">:</span><span class="n">ro</span>
+</span></span><span class="line"><span class="cl">    <span class="n">depends_on</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span> <span class="n">influxdb</span>
+</span></span><span class="line"><span class="cl">    <span class="n">links</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span> <span class="n">influxdb</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ports</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="o">-</span> <span class="s1">&#39;8125:8125&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">networks</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="n">ipvlan0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ipv4_address</span><span class="p">:</span> <span class="mf">172.29</span><span class="o">.</span><span class="mf">31.2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">influxdb</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">image</span><span class="p">:</span> <span class="n">influxdb</span><span class="p">:</span><span class="mf">2.6</span><span class="o">-</span><span class="n">alpine</span>
+</span></span><span class="line"><span class="cl">    <span class="n">container_name</span><span class="p">:</span> <span class="n">influxdb</span>
+</span></span><span class="line"><span class="cl">    <span class="n">restart</span><span class="p">:</span> <span class="n">always</span>
+</span></span><span class="line"><span class="cl">    <span class="n">environment</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span> <span class="n">INFLUXDB_DB</span><span class="o">=</span><span class="n">influx</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span> <span class="n">INFLUXDB_ADMIN_USER</span><span class="o">=</span><span class="n">admin</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span> <span class="n">INFLUXDB_ADMIN_PASSWORD</span><span class="o">=</span><span class="n">admin</span>
+</span></span><span class="line"><span class="cl">    <span class="n">networks</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="n">ipvlan0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ipv4_address</span><span class="p">:</span> <span class="mf">172.29</span><span class="o">.</span><span class="mf">31.3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">ports</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span> <span class="s1">&#39;8086:8086&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volumes</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span> <span class="n">influxdb_data</span><span class="p">:</span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">influxdb</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">grafana</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">image</span><span class="p">:</span> <span class="n">grafana</span><span class="o">/</span><span class="n">grafana</span>
+</span></span><span class="line"><span class="cl">    <span class="n">container_name</span><span class="p">:</span> <span class="n">grafana</span><span class="o">-</span><span class="n">server</span>
+</span></span><span class="line"><span class="cl">    <span class="n">restart</span><span class="p">:</span> <span class="n">always</span>
+</span></span><span class="line"><span class="cl">    <span class="n">depends_on</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span> <span class="n">influxdb</span>
+</span></span><span class="line"><span class="cl">    <span class="n">environment</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span> <span class="n">GF_SECURITY_ADMIN_USER</span><span class="o">=</span><span class="n">admin</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span> <span class="n">GF_SECURITY_ADMIN_PASSWORD</span><span class="o">=</span><span class="n">admin</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span> <span class="n">GF_INSTALL_PLUGINS</span><span class="o">=</span>
+</span></span><span class="line"><span class="cl">    <span class="n">links</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span> <span class="n">influxdb</span>
+</span></span><span class="line"><span class="cl">    <span class="n">networks</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="n">ipvlan0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ipv4_address</span><span class="p">:</span> <span class="mf">172.29</span><span class="o">.</span><span class="mf">31.4</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ports</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span> <span class="s1">&#39;3000:3000&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volumes</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span> <span class="n">grafana_data</span><span class="p">:</span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">grafana</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">volumes</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">grafana_data</span><span class="p">:</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">  <span class="n">influxdb_data</span><span class="p">:</span> <span class="p">{}</span>
 </span></span></code></pre></div><p><strong>Start Containers</strong></p>
 <p>In the directory where the docker compose file is located:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">docker compose up -d
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">docker compose up -d
 </span></span></code></pre></div><p><strong>Check Containers</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">docker ps -a
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">docker ps -a
 </span></span></code></pre></div><p>The containers should all have a running state.</p>
 <h2 id="create-tig-config">Create TIG Config</h2>
 <p>Head to your influxDB container ip with port 8086. In my case it is '172.29.31.3:8086'
@@ -637,8 +648,8 @@ With help of the webinterface create your buckets according to the naming in you
 </ul>
 <p><a href="https://jorgedelacruz.uk/">https://jorgedelacruz.uk/</a></p>
 
-    </div>
-<div class="post_comments">
+    </div><div class="post_comments">
+  
   
   
   
@@ -665,9 +676,12 @@ With help of the webinterface create your buckets according to the naming in you
     <div class="search_results results"></div>
   </div>
 
-        <h2>Yannick Gerber</h2>
+    <br>
       <div class="author_bio">
-        Technologist, perpetual student - continual incremental improvement.
+        A blog about stuff from a System Engineer based in Switzerland.
+      </div>
+      <div class="author_badge">
+        <img src="/images/vexpert-badge_Years-4.png" width="140" alt="vExpert Badge" title="vExpert Badge" />
       </div>
       <a href='/about/' class="button mt-1" role="button" title='Read More'>Read More</a>
 
@@ -677,41 +691,58 @@ With help of the webinterface create your buckets according to the naming in you
         The opinions expressed on this site are my own personal opinions and do not represent my employer’s view in any way.
       </div>
     
-    
     <h2 class="mt-4">Featured Posts</h2>
     <ul>
+      <li>
+        <a href="/post/vmware-edge-compute-stack/" class="nav-link" title="VMware Edge Compute Stack">VMware Edge Compute Stack</a>
+      </li>
+      <li>
+        <a href="/post/vsan-2-node/" class="nav-link" title="2-Node vSAN Cluster">2-Node vSAN Cluster</a>
+      </li>
+      <li>
+        <a href="/post/k8s-rbac/" class="nav-link" title="RBAC on VKS">RBAC on VKS</a>
+      </li>
+      <li>
+        <a href="/post/vsphere-vm-portid-cport/" class="nav-link" title="vSphere VM - conflicted PortID">vSphere VM - conflicted PortID</a>
+      </li>
+      <li>
+        <a href="/post/vclm-hpe-oneview/" class="nav-link" title="vSphere Lifecycle Manager and HPE OneView for vCenter - Troubleshooting">vSphere Lifecycle Manager and HPE OneView for vCenter - Troubleshooting</a>
+      </li>
       <li>
         <a href="/post/vcenter-troubleshooting/" class="nav-link" title="VMware vCenter Troubleshooting Guide">VMware vCenter Troubleshooting Guide</a>
       </li>
       <li>
-        <a href="/post/vcf52/" class="nav-link" title="VMware Cloud Foundation 5.2 - Part 1">VMware Cloud Foundation 5.2 - Part 1</a>
+        <a href="/post/vcf52/" class="nav-link" title="VMware Cloud Foundation 5.2">VMware Cloud Foundation 5.2</a>
       </li>
       <li>
-        <a href="/post/devsecops/" class="nav-link" title="DevSecOps">DevSecOps</a>
-      </li>
-      <li>
-        <a href="/post/reformatting-drives/" class="nav-link" title="Reformatting enterprise storage drives to 512 bytes">Reformatting enterprise storage drives to 512 bytes</a>
-      </li>
-      <li>
-        <a href="/post/tanzu-cluster-creation/" class="nav-link" title="Tanzu with vSphere and Antrea: Cluster Creation">Tanzu with vSphere and Antrea: Cluster Creation</a>
-      </li>
-      <li>
-        <a href="/post/tkg-getting-started/" class="nav-link" title="VMware Tanzu Kubernetes Grid -  getting started">VMware Tanzu Kubernetes Grid -  getting started</a>
-      </li>
-      <li>
-        <a href="/post/cillium-getting-started/" class="nav-link" title="Cillium Gateway API - Getting Started">Cillium Gateway API - Getting Started</a>
-      </li>
-      <li>
-        <a href="/post/tanzu-kubernetes-grid-workstation-setup/" class="nav-link" title="Tanzu Kubernetes Grid - Linux Workstation Setup">Tanzu Kubernetes Grid - Linux Workstation Setup</a>
+        <a href="/post/vcenter-file-level-restore/" class="nav-link" title="vCenter File Level Restore - Edit Configuration">vCenter File Level Restore - Edit Configuration</a>
       </li>
     </ul>
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
-        <a href="/post/tanzu-mission-control-self-managed/" class="nav-link" title="Tanzu Mission Control Self Managed">Tanzu Mission Control Self Managed</a>
+        <a href="/post/openshift-on-vsphere/" class="nav-link" title="OpenShift on vSphere - Roles and Permissions">OpenShift on vSphere - Roles and Permissions</a>
+      </li>
+      <li>
+        <a href="/post/argocd-configuration/" class="nav-link" title="ArgoCD Deployment &amp; Configuration">ArgoCD Deployment &amp; Configuration</a>
+      </li>
+      <li>
+        <a href="/post/vsphere-api/" class="nav-link" title="vSphere REST API - Intro">vSphere REST API - Intro</a>
+      </li>
+      <li>
+        <a href="/post/tanzu-overview/" class="nav-link" title="VMware Tanzu - Overview">VMware Tanzu - Overview</a>
+      </li>
+      <li>
+        <a href="/post/reformatting-drives/" class="nav-link" title="Reformatting enterprise storage drives to 512 bytes">Reformatting enterprise storage drives to 512 bytes</a>
       </li>
       <li>
         <a href="/post/tanzu-kubernetes-grid-workstation-setup/" class="nav-link" title="Tanzu Kubernetes Grid - Linux Workstation Setup">Tanzu Kubernetes Grid - Linux Workstation Setup</a>
+      </li>
+      <li>
+        <a href="/post/vmware-vsan-network-requirements/" class="nav-link" title="VMware vSAN Network Considerations">VMware vSAN Network Considerations</a>
+      </li>
+      <li>
+        <a href="/post/vsphere-monitoring/" class="nav-link" title="vSphere Monitoring with Grafana">vSphere Monitoring with Grafana</a>
       </li>
     </ul>
     <div>
@@ -719,32 +750,17 @@ With help of the webinterface create your buckets according to the naming in you
       <nav class="tags_nav">
         <a href='/categories/vmware/' class="post_tag button button_translucent" title="vmware">
           VMWARE
-          <span class="button_tally">9</span>
-        </a>
-        
-        <a href='/categories/technology/' class="post_tag button button_translucent" title="technology">
-          TECHNOLOGY
-          <span class="button_tally">5</span>
+          <span class="button_tally">15</span>
         </a>
         
         <a href='/categories/kubernetes/' class="post_tag button button_translucent" title="kubernetes">
           KUBERNETES
+          <span class="button_tally">6</span>
+        </a>
+        
+        <a href='/categories/technology/' class="post_tag button button_translucent" title="technology">
+          TECHNOLOGY
           <span class="button_tally">3</span>
-        </a>
-        
-        <a href='/categories/it/' class="post_tag button button_translucent" title="it">
-          IT
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/categories/my-2-cents/' class="post_tag button button_translucent" title="my-2-cents">
-          MY-2-CENTS
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/categories/vcf/' class="post_tag button button_translucent" title="vcf">
-          VCF
-          <span class="button_tally">1</span>
         </a>
         
         
@@ -758,38 +774,53 @@ With help of the webinterface create your buckets according to the naming in you
           <span class="button_tally">7</span>
         </a>
         
-        <a href='/tags/vmware-tanzu/' class="post_tag button button_translucent" title="vmware-tanzu">
-          VMWARE-TANZU
-          <span class="button_tally">7</span>
-        </a>
-        
-        <a href='/tags/kubernetes/' class="post_tag button button_translucent" title="kubernetes">
-          KUBERNETES
-          <span class="button_tally">4</span>
+        <a href='/tags/vmware-tanzu/' class="post_tag button button_translucent" title="vmware tanzu">
+          VMWARE TANZU
+          <span class="button_tally">6</span>
         </a>
         
         <a href='/tags/vsphere/' class="post_tag button button_translucent" title="vsphere">
           VSPHERE
+          <span class="button_tally">6</span>
+        </a>
+        
+        <a href='/tags/kubernetes/' class="post_tag button button_translucent" title="kubernetes">
+          KUBERNETES
           <span class="button_tally">3</span>
         </a>
         
-        <a href='/tags/vcf/' class="post_tag button button_translucent" title="vcf">
-          VCF
+        <a href='/tags/tanzu-kubernetes-grid/' class="post_tag button button_translucent" title="tanzu kubernetes grid">
+          TANZU KUBERNETES GRID
           <span class="button_tally">2</span>
         </a>
         
-        <a href='/tags/cheat-sheet/' class="post_tag button button_translucent" title="cheat-sheet">
-          CHEAT-SHEET
+        <a href='/tags/vcenter/' class="post_tag button button_translucent" title="vcenter">
+          VCENTER
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='/tags/vsan/' class="post_tag button button_translucent" title="vsan">
+          VSAN
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='/tags/automation/' class="post_tag button button_translucent" title="automation">
+          AUTOMATION
           <span class="button_tally">1</span>
         </a>
         
-        <a href='/tags/cni/' class="post_tag button button_translucent" title="cni">
-          CNI
+        <a href='/tags/cheat-sheet/' class="post_tag button button_translucent" title="cheat sheet">
+          CHEAT SHEET
           <span class="button_tally">1</span>
         </a>
         
-        <a href='/tags/devsecops/' class="post_tag button button_translucent" title="devsecops">
-          DEVSECOPS
+        <a href='/tags/ci/cd/' class="post_tag button button_translucent" title="ci/cd">
+          CI/CD
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/tags/cisco-aci/' class="post_tag button button_translucent" title="cisco aci">
+          CISCO ACI
           <span class="button_tally">1</span>
         </a>
         
@@ -808,36 +839,25 @@ With help of the webinterface create your buckets according to the naming in you
           <span class="button_tally">1</span>
         </a>
         
-        <a href='/tags/hpe/' class="post_tag button button_translucent" title="hpe">
-          HPE
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/tags/huawei/' class="post_tag button button_translucent" title="huawei">
-          HUAWEI
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/tags/index/' class="post_tag button button_translucent" title="index">
-          INDEX
-          <span class="button_tally">1</span>
-        </a>
-        
         
         <br>
         <div class="post_tags_toggle button">All Tags</div>
         <div class="post_tags">
           <div class="tags_list">
             
-            <a href='/tags/cheat-sheet/' class=" post_tag button button_translucent" data-position=1 title="cheat-sheet">CHEAT-SHEET<span class="button_tally">1</span>
+            <a href='/tags/automation/' class=" post_tag button button_translucent" data-position=1 title="automation">AUTOMATION<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/cni/' class=" post_tag button button_translucent" data-position=1 title="cni">CNI<span class="button_tally">1</span>
+            <a href='/tags/cheat-sheet/' class=" post_tag button button_translucent" data-position=1 title="cheat sheet">CHEAT SHEET<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/devsecops/' class=" post_tag button button_translucent" data-position=1 title="devsecops">DEVSECOPS<span class="button_tally">1</span>
+            <a href='/tags/ci/cd/' class=" post_tag button button_translucent" data-position=1 title="ci/cd">CI/CD<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/cisco-aci/' class=" post_tag button button_translucent" data-position=1 title="cisco aci">CISCO ACI<span class="button_tally">1</span>
             </a>
             
             
@@ -857,6 +877,10 @@ With help of the webinterface create your buckets according to the naming in you
             </a>
             
             
+            <a href='/tags/hpe-oneview/' class=" post_tag button button_translucent" data-position=1 title="hpe oneview">HPE ONEVIEW<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/tags/huawei/' class=" post_tag button button_translucent" data-position=1 title="huawei">HUAWEI<span class="button_tally">1</span>
             </a>
             
@@ -865,15 +889,7 @@ With help of the webinterface create your buckets according to the naming in you
             </a>
             
             
-            <a href='/tags/it-security/' class=" post_tag button button_translucent" data-position=1 title="it-security">IT-SECURITY<span class="button_tally">1</span>
-            </a>
-            
-            
-            <a href='/tags/kubernetes/' class=" post_tag button button_translucent" data-position=4 title="kubernetes">KUBERNETES<span class="button_tally">4</span>
-            </a>
-            
-            
-            <a href='/tags/kubernetes-cillium/' class=" post_tag button button_translucent" data-position=1 title="kubernetes-cillium">KUBERNETES-CILLIUM<span class="button_tally">1</span>
+            <a href='/tags/kubernetes/' class=" post_tag button button_translucent" data-position=3 title="kubernetes">KUBERNETES<span class="button_tally">3</span>
             </a>
             
             
@@ -885,27 +901,31 @@ With help of the webinterface create your buckets according to the naming in you
             </a>
             
             
-            <a href='/tags/opinion/' class=" post_tag button button_translucent" data-position=1 title="opinion">OPINION<span class="button_tally">1</span>
+            <a href='/tags/openshift/' class=" post_tag button button_translucent" data-position=1 title="openshift">OPENSHIFT<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/tanzu-kubernetes-clusters/' class=" post_tag button button_translucent" data-position=1 title="tanzu-kubernetes-clusters">TANZU-KUBERNETES-CLUSTERS<span class="button_tally">1</span>
+            <a href='/tags/tanzu-kubernetes/' class=" post_tag button button_translucent" data-position=1 title="tanzu kubernetes">TANZU KUBERNETES<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/tanzu-kubernetes-grid/' class=" post_tag button button_translucent" data-position=1 title="tanzu-kubernetes-grid">TANZU-KUBERNETES-GRID<span class="button_tally">1</span>
+            <a href='/tags/tanzu-kubernetes-clusters/' class=" post_tag button button_translucent" data-position=1 title="tanzu kubernetes clusters">TANZU KUBERNETES CLUSTERS<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/tig-stack/' class=" post_tag button button_translucent" data-position=1 title="tig-stack">TIG-STACK<span class="button_tally">1</span>
+            <a href='/tags/tanzu-kubernetes-grid/' class=" post_tag button button_translucent" data-position=2 title="tanzu kubernetes grid">TANZU KUBERNETES GRID<span class="button_tally">2</span>
             </a>
             
             
-            <a href='/tags/vcenter/' class=" post_tag button button_translucent" data-position=1 title="vcenter">VCENTER<span class="button_tally">1</span>
+            <a href='/tags/tig-stack/' class=" post_tag button button_translucent" data-position=1 title="tig stack">TIG STACK<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/vcf/' class=" post_tag button button_translucent" data-position=2 title="vcf">VCF<span class="button_tally">2</span>
+            <a href='/tags/vcenter/' class=" post_tag button button_translucent" data-position=2 title="vcenter">VCENTER<span class="button_tally">2</span>
+            </a>
+            
+            
+            <a href='/tags/vcf/' class=" post_tag button button_translucent" data-position=1 title="vcf">VCF<span class="button_tally">1</span>
             </a>
             
             
@@ -913,23 +933,47 @@ With help of the webinterface create your buckets according to the naming in you
             </a>
             
             
-            <a href='/tags/vmware-tanzu/' class=" post_tag button button_translucent" data-position=7 title="vmware-tanzu">VMWARE-TANZU<span class="button_tally">7</span>
+            <a href='/tags/vmware-cloud-foundation/' class=" post_tag button button_translucent" data-position=1 title="vmware cloud foundation">VMWARE CLOUD FOUNDATION<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/vmware-tanzu-kubernetes-grid/' class=" post_tag button button_translucent" data-position=1 title="vmware-tanzu-kubernetes-grid">VMWARE-TANZU-KUBERNETES-GRID<span class="button_tally">1</span>
+            <a href='/tags/vmware-ecs/' class=" post_tag button button_translucent" data-position=1 title="vmware ecs">VMWARE ECS<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/vsan/' class=" post_tag button button_translucent" data-position=1 title="vsan">VSAN<span class="button_tally">1</span>
+            <a href='/tags/vmware-tanzu/' class=" post_tag button button_translucent" data-position=6 title="vmware tanzu">VMWARE TANZU<span class="button_tally">6</span>
             </a>
             
             
-            <a href='/tags/vsan-over-roce/' class=" post_tag button button_translucent" data-position=1 title="vsan-over-roce">VSAN-OVER-ROCE<span class="button_tally">1</span>
+            <a href='/tags/vmware-tanzu-kubernetes-grid/' class=" post_tag button button_translucent" data-position=1 title="vmware tanzu kubernetes grid">VMWARE TANZU KUBERNETES GRID<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/vsphere/' class=" post_tag button button_translucent" data-position=3 title="vsphere">VSPHERE<span class="button_tally">3</span>
+            <a href='/tags/vmware-veco/' class=" post_tag button button_translucent" data-position=1 title="vmware veco">VMWARE VECO<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/vsan/' class=" post_tag button button_translucent" data-position=2 title="vsan">VSAN<span class="button_tally">2</span>
+            </a>
+            
+            
+            <a href='/tags/vsan-over-roce/' class=" post_tag button button_translucent" data-position=1 title="vsan over roce">VSAN OVER ROCE<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/vsphere/' class=" post_tag button button_translucent" data-position=6 title="vsphere">VSPHERE<span class="button_tally">6</span>
+            </a>
+            
+            
+            <a href='/tags/vsphere-kubernetes-service/' class=" post_tag button button_translucent" data-position=1 title="vsphere kubernetes service">VSPHERE KUBERNETES SERVICE<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/vsphere-networking/' class=" post_tag button button_translucent" data-position=1 title="vsphere networking">VSPHERE NETWORKING<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/vsphere-with-tanzu/' class=" post_tag button button_translucent" data-position=1 title="vsphere with tanzu">VSPHERE WITH TANZU<span class="button_tally">1</span>
             </a>
             
             
@@ -1024,6 +1068,14 @@ With help of the webinterface create your buckets according to the naming in you
     fill="#000000"
     d="m 12.616925,5.6916583 v 4.3315297 h -1.71607 V 5.8189683 c 0,-0.88624 -0.37289,-1.33607 -1.1187604,-1.33607 -0.82467,0 -1.23799,0.53361 -1.23799,1.58875 v 2.30122 h -1.70594 v -2.30122 c 0,-1.05514 -0.4134,-1.58875 -1.23808,-1.58875 -0.74587,0 -1.11876,0.44983 -1.11876,1.33607 v 4.2042197 h -1.71607 V 5.6916583 c 0,-0.88527 0.22541,-1.58876 0.67817,-2.10922 0.46689,-0.52047 1.07833,-0.78727 1.83735,-0.78727 0.87816,0 1.54317,0.33752 1.98288,1.01267 l 0.42744,0.71655 0.42753,-0.71655 c 0.43961,-0.67515 1.10463,-1.01267 1.9828704,-1.01267 0.75893,0 1.37037,0.2668 1.83735,0.78727 0.45268,0.52046 0.67808,1.22395 0.67808,2.10922"/>
   </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530" id="bluesky" >
+    <path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="ko-fi">
+    <path fill="#ffffff" d="M4.5,9.8527H32.7947a0,0,0,0,1,0,0v19.225a9.07,9.07,0,0,1-9.07,9.07H13.57a9.07,9.07,0,0,1-9.07-9.07V9.8527A0,0,0,0,1,4.5,9.8527Z"/>
+    <path fill="#000000" d="M12.197,25.9493l6.45,6.45,6.45-6.45a8.2,8.2,0,0,0,2.4016-5.798h0a4.5082,4.5082,0,0,0-4.212-4.5459,4.4262,4.4262,0,0,0-4.64,4.4209,4.4261,4.4261,0,0,0-4.64-4.4209,4.5082,4.5082,0,0,0-4.212,4.5459h0A8.2,8.2,0,0,0,12.197,25.9493Z"/>
+    <path fill="#ffffff" d="M32.7947,9.8527H35.73a7.77,7.77,0,0,1,0,15.5394H32.7947"/>
+  </svg>
+  </symbol>
 </svg>
 
 <footer class="footer">
@@ -1040,9 +1092,9 @@ With help of the webinterface create your buckets according to the naming in you
   </div>
 </footer>
 
-<script type="text/javascript" src="/en/js/bundle.b37e6fff3826bb034b60c13370656fe73f202be5c0b4d0eb7d1925bce85cba1bb054eda5b17cbd6bd38a1376cf3b4a8579fe0818ca6e10d5f29a57298d487cb0.js" integrity="sha512-s35v/zgmuwNLYMEzcGVv5z8gK&#43;XAtNDrfRklvOhcuhuwVO2lsXy9a9OKE3bPO0qFef4IGMpuENXymlcpjUh8sA==" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/en/js/bundle.2f36309c77205efd88cc637205808237375d2c3883c7404d70c6e50f948c8a48439e14353a335d3dd0468c438df1699de307b97d64f10c5612be666a18f66ee6.js" integrity="sha512-LzYwnHcgXv2IzGNyBYCCNzddLDiDx0BNcMblD5SMikhDnhQ1OjNdPdBGjEON8Wmd4we5fWTxDFYSvmZqGPZu5g==" crossorigin="anonymous"></script>
 
-  <script src="/js/search.min.b19f217359693afb8f0abd75ca8de6becceec41f5304950fc48e165914ef227f44d10005d02a281a66e33b482e2ff27e6eb893111505deb4f072c307e1f887bb.js"></script>
+  <script src="/js/search.min.8d141e1e7aa85984a5288b2172ad03540fc235f64379f8df11d062fd3deb9d49bbd9fb0f3df983e9663e322fa8e322a336d5350fbe833c77eb9ee7d907636cff.js"></script>
 
   </body>
 </html>

@@ -1,13 +1,54 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>vSAN on ygerber</title>
+    <title>VSAN on vBünzli</title>
     <link>/tags/vsan/</link>
-    <description>Recent content in vSAN on ygerber</description>
+    <description>Recent content in VSAN on vBünzli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Wed, 23 Aug 2023 23:13:14 +0200</lastBuildDate><atom:link href="/tags/vsan/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Dec 2024 20:20:23 +0100</lastBuildDate><atom:link href="/tags/vsan/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2-Node vSAN Cluster</title>
+      <link>/post/vsan-2-node/</link>
+      <pubDate>Tue, 10 Dec 2024 20:20:23 +0100</pubDate>
+      
+      <guid>/post/vsan-2-node/</guid>
+      <description>
+        
+          
+            &lt;h1 id=&#34;vsan-esa-2-node-cluster-guide-and-recommendations&#34;&gt;vSAN ESA 2-Node Cluster Guide and Recommendations&lt;/h1&gt;
+&lt;p&gt;This Guide will help you in your Design Considerations and during the Deployment of a 2-Node vSAN Cluster.&lt;/p&gt;
+&lt;h2 id=&#34;assumptions&#34;&gt;Assumptions&lt;/h2&gt;
+&lt;p&gt;The following assumptions where made when creating this blog post.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You have vSAN Ready Nodes or all Hardware is on the vSAN &lt;a href=&#34;https://compatibilityguide.broadcom.com/&#34;&gt;Hardware Compatibility List&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;You have VMware Cloud Foundation (VCF) Licenses or VVF with enough vSAN Add-on Licences&lt;/li&gt;
+&lt;li&gt;Phyiscal Network Adapter for vSAN have a Bandwith of 25Gbits or above&lt;/li&gt;
+&lt;li&gt;General Knowledge of vSAN and vSphere&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;design&#34;&gt;Design&lt;/h1&gt;
+&lt;h2 id=&#34;constraints&#34;&gt;Constraints&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Only one host failure can be tolerated at a time (FTT1)&lt;/li&gt;
+&lt;li&gt;Adding nodes beyond two would require reconfiguration to a standard vSAN cluster.&lt;/li&gt;
+&lt;li&gt;Requires a witness host, which needs two IP addresses - one for management and one for vSAN traffic&lt;/li&gt;
+&lt;li&gt;Managing multiple 2-node clusters can increase operational complexity&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;general-considerations&#34;&gt;General Considerations&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Do you have a dedicated vCenter for your 2-Node Cluster?&lt;/li&gt;
+&lt;li&gt;Where do you run the vCenter VM? On the 2-Node Cluster itself or outside?&lt;/li&gt;
+&lt;li&gt;Does the two physical Server run on the same physical site?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;vsan-traffic-direct-attached-or-switched&#34;&gt;vSAN Traffic: direct attached or Switched&lt;/h3&gt;
+&lt;p&gt;With a 2-Node Cluster you have the possibility to run vSAN (and vMotion) traffic over direct attached Cables. This is a great solution for RoBo or Site which do not offer 25Gbits Ports on Network Switches.&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>VMware vSAN Network Considerations</title>
       <link>/post/vmware-vsan-network-requirements/</link>
@@ -17,8 +58,15 @@
       <description>
         
           
-            Intro VMware vSAN is a Hyperconverged Infrastructure Solution from VMware. It basically turns your servers direct attached disks into a storage cluster.
-General Requirements 10 GbE network switches are the minimum requirement for all-flash vSAN Clusters 25 GBE network switches are recommended Switches that support higher port speeds are designed with higher Network Processor Unit (NPU) buffers. An NPU shared switch buffer of at least 16 MB is recommended for 10 GbE network connectivity.
+            &lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;VMware vSAN is a Hyperconverged Infrastructure Solution from VMware. It basically turns your servers direct attached disks into a storage cluster.&lt;/p&gt;
+&lt;h2 id=&#34;minimum-bandwidth-requirements-vsan-esa&#34;&gt;Minimum Bandwidth Requirements vSAN ESA&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;A minimum bandwidth of 25 Gbps is required, 10Gbit works but is only supported for the AF0 Config.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;For larger clusters or environments with high-capacity NVMe disks, even 25 Gbps may be insufficient. If you can do 100Gbps, the Performance gain will be massive.&lt;/p&gt;
           
           
         

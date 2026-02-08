@@ -1,5 +1,6 @@
 ---
-title: "[Guide] VMware Tanzu Kubernetes Grid -  getting started"
+title: "VMware Tanzu Kubernetes Grid -  getting started"
+postType: "Guide"
 date: 2023-11-29T22:04:40+01:00
 draft: true
 featured: true # Sets if post is a featured post, making appear on the home page side bar.

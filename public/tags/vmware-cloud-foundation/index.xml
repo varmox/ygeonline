@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VMware Cloud Foundation on vBünzli</title>
+    <link>/tags/vmware-cloud-foundation/</link>
+    <description>Recent content in VMware Cloud Foundation on vBünzli</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
+    <lastBuildDate>Tue, 25 Jun 2024 20:48:30 +0200</lastBuildDate><atom:link href="/tags/vmware-cloud-foundation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VMware Cloud Foundation 5.2</title>
+      <link>/post/vcf52/</link>
+      <pubDate>Tue, 25 Jun 2024 20:48:30 +0200</pubDate>
+      
+      <guid>/post/vcf52/</guid>
+      <description>
+        
+          
+            &lt;p&gt;The new VCF 5.2 Update delivers quite a few interesting updates. This blog post covers expecially the updates and improvements for Tanzu.&lt;/p&gt;
+&lt;p&gt;Part 1 covers new Feature within Tanzu on vSphere 8 Update 3.&lt;/p&gt;
+&lt;h2 id=&#34;vsphere-with-tanzu-update---vsphere-iaas-control-plane&#34;&gt;vSphere with Tanzu Update -&amp;gt; vSphere IaaS Control Plane&lt;/h2&gt;
+&lt;p&gt;vSphere with Tanzu is passé - the new naming is vSphere IaaS Control Plane.&lt;/p&gt;
+&lt;p&gt;The naming already suggest - not only Kubernetes Cluster can be deployed, also VMs (this was possible a long time but with the new naming the focus is not only on k8s). Via the vm-operator you can deploy VMs alongside Tanzu Kubernetes Cluster. The IaaS Control Plane is really interesting as you can deploy VMs with Code. A YAML File will describe your VM. For that the VM Class now support much more configuration, it handled like a normal VM provisioned through vSphere UI.&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,24 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>VMware Tanzu Kubernetes Grid on ygerber</title>
+    <title>VMware Tanzu Kubernetes Grid on vBünzli</title>
     <link>/tags/vmware-tanzu-kubernetes-grid/</link>
-    <description>Recent content in VMware Tanzu Kubernetes Grid on ygerber</description>
+    <description>Recent content in VMware Tanzu Kubernetes Grid on vBünzli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Wed, 29 Nov 2023 22:04:40 +0100</lastBuildDate><atom:link href="/tags/vmware-tanzu-kubernetes-grid/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Sep 2024 23:48:15 +0100</lastBuildDate><atom:link href="/tags/vmware-tanzu-kubernetes-grid/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>VMware Tanzu Kubernetes Grid -  getting started</title>
-      <link>/post/tkg-getting-started/</link>
-      <pubDate>Wed, 29 Nov 2023 22:04:40 +0100</pubDate>
+      <title>ArgoCD Deployment &amp; Configuration</title>
+      <link>/post/argocd-configuration/</link>
+      <pubDate>Fri, 13 Sep 2024 23:48:15 +0100</pubDate>
       
-      <guid>/post/tkg-getting-started/</guid>
+      <guid>/post/argocd-configuration/</guid>
       <description>
         
           
-            Intro This blog post is about getting started with VMware Tanzu Kubernetes Grid (TKG). TKG is used to deploy Tanzu Kubernetes Cluster to various Cloud Providers including vSphere, AWS and Azure. First, a management cluster (based on Docker and kind) is created from a Bootstrap Workstation, which itself then provides its web interface and additional CLI tools to create a Kubernetes cluster.
-TKG has no integration in vSphere UI. If you wan&#39;t to integrate Tanzu with vCenter/vSphere UI - use vSphere with Tanzu instead.
+            &lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;ArgoCD is a declarative, GitOps continuous delivery tool for Kubernetes. It&#39;s designed to make application deployment and lifecycle management automated, auditable, and easy to understand.&lt;/p&gt;
+&lt;p&gt;Key features and concepts of ArgoCD include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GitOps Methodology: Argo CD uses Git repositories as the source of truth for defining the desired application state.&lt;/li&gt;
+&lt;li&gt;Kubernetes-native: It&#39;s implemented as a Kubernetes controller that continuously monitors running applications and compares their current state against the desired state specified in Git.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This blog post explains the deployment of ArgoCD in a Tanzu Kubernetes Grid Cluster. There is also the option to provision ArgoCD as a supervisor Service.&lt;/p&gt;
           
           
         

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Velero on vBünzli</title>
+    <link>//localhost:1313/tags/velero/</link>
+    <description>Recent content in Velero on vBünzli</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
+    <lastBuildDate>Sat, 30 Nov 2024 00:46:45 +0100</lastBuildDate><atom:link href="//localhost:1313/tags/velero/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Velero</title>
+      <link>//localhost:1313/post/velero-standalone/</link>
+      <pubDate>Sat, 30 Nov 2024 00:46:45 +0100</pubDate>
+      
+      <guid>//localhost:1313/post/velero-standalone/</guid>
+      <description>
+        
+          
+            &lt;h1 id=&#34;velero&#34;&gt;Velero&lt;/h1&gt;
+&lt;p&gt;This blog post explains how to install velero on different configurations on vSphere with Tanzu / IaaS Control Plane.&lt;/p&gt;
+&lt;h2 id=&#34;different-velero-installations-with-tgks&#34;&gt;Different Velero Installations with TGKS&lt;/h2&gt;
+&lt;p&gt;Depending on your Supervisor Cluster Configuration, there are different ways to install Velero. Each approach offers different usage on velero.&lt;/p&gt;
+&lt;h3 id=&#34;ways-to-install-velero&#34;&gt;Ways to Install Velero&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Velero Plugin for vSphere&lt;/li&gt;
+&lt;li&gt;Velero &amp;quot;Standalone&amp;quot; via Helm Chart&lt;/li&gt;
+&lt;li&gt;Velero &amp;quot;Standalone&amp;quot; via velero-cli&lt;/li&gt;
+&lt;/ul&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

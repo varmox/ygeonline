@@ -1,5 +1,6 @@
 ---
-title: "[Guide] VMware vSAN Network Considerations" # Title of the blog post.
+title: "VMware vSAN Network Considerations" # Title of the blog post.
+postType: "Guide"
 date: 2023-08-23T23:13:14+02:00 # Date of post creation.
 description: "Article description." # Description used for search engine.
 featured: true # Sets if post is a featured post, making appear on the home page side bar.

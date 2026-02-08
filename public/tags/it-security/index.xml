@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>IT-Security on ygerber</title>
-    <link>/tags/it-security/</link>
-    <description>Recent content in IT-Security on ygerber</description>
+    <title>IT-Security on vBünzli</title>
+    <link>//localhost:1313/tags/it-security/</link>
+    <description>Recent content in IT-Security on vBünzli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Sun, 09 Jul 2023 15:28:45 +0200</lastBuildDate><atom:link href="/tags/it-security/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Jul 2023 15:28:45 +0200</lastBuildDate><atom:link href="//localhost:1313/tags/it-security/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>State of Enterprise IT-Security</title>
-      <link>/post/state-of-enterprise-itsecurity/</link>
+      <link>//localhost:1313/post/state-of-enterprise-itsecurity/</link>
       <pubDate>Sun, 09 Jul 2023 15:28:45 +0200</pubDate>
       
-      <guid>/post/state-of-enterprise-itsecurity/</guid>
+      <guid>//localhost:1313/post/state-of-enterprise-itsecurity/</guid>
       <description>
         
           
-            Why current Enterprise IT-Security is s shipwreck.
-The state of enterprise IT-Security is pretty bad and I don&#39;t think the current strategy to better it is any good. And here&#39;s the why:
-status quo
-But firstly, what are the security concerns of businesses regarding IT-Security?
-If we take the CIA triad for help:
-Ransomware that disrups availability and integrity Data Leaks that violences confidentiality malware/virus that disrups integrity .. and more
+            &lt;p&gt;&lt;strong&gt;Why current Enterprise IT-Security is s shipwreck.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The state of enterprise IT-Security is pretty bad and I don&#39;t think the current strategy to better it is any good. And here&#39;s the why:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;status quo&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;But firstly, what are the security concerns of businesses regarding IT-Security?&lt;/p&gt;
+&lt;p&gt;If we take the CIA triad for help:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ransomware that disrups availability and integrity&lt;/li&gt;
+&lt;li&gt;Data Leaks that violences confidentiality&lt;/li&gt;
+&lt;li&gt;malware/virus that disrups integrity&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;.. and more&lt;/p&gt;
           
           
         

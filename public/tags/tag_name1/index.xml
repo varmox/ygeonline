@@ -1,25 +1,71 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tag_name1 on ygerber</title>
-    <link>/tags/tag_name1/</link>
-    <description>Recent content in Tag_name1 on ygerber</description>
+    <title>Tag_name1 on vBünzli</title>
+    <link>//localhost:1313/tags/tag_name1/</link>
+    <description>Recent content in Tag_name1 on vBünzli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Copyright © 2022-2023, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Sun, 23 Jul 2023 22:24:18 +0200</lastBuildDate><atom:link href="/tags/tag_name1/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
+    <lastBuildDate>Mon, 16 Dec 2024 20:25:11 +0100</lastBuildDate><atom:link href="//localhost:1313/tags/tag_name1/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Leadership</title>
-      <link>/post/leadership/</link>
-      <pubDate>Sun, 23 Jul 2023 22:24:18 +0200</pubDate>
+      <title>Cis Hardening Vsphere</title>
+      <link>//localhost:1313/post/cis-hardening-vsphere/</link>
+      <pubDate>Mon, 16 Dec 2024 20:25:11 +0100</pubDate>
       
-      <guid>/post/leadership/</guid>
+      <guid>//localhost:1313/post/cis-hardening-vsphere/</guid>
       <description>
         
           
-            Fundamentals of Leadership.
-What Why How
-Challenge the status quo. They buy why you do it Authenticity Extreme Ownership Values &amp;amp; belives
+            &lt;p&gt;&lt;strong&gt;Insert Lead paragraph here.&lt;/strong&gt;&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Harbor</title>
+      <link>//localhost:1313/post/harbor/</link>
+      <pubDate>Sat, 30 Nov 2024 00:47:13 +0100</pubDate>
+      
+      <guid>//localhost:1313/post/harbor/</guid>
+      <description>
+        
+          
+            &lt;p&gt;&lt;strong&gt;Insert Lead paragraph here.&lt;/strong&gt;&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Supervisor Services</title>
+      <link>//localhost:1313/post/supervisor-services/</link>
+      <pubDate>Sat, 30 Nov 2024 00:47:03 +0100</pubDate>
+      
+      <guid>//localhost:1313/post/supervisor-services/</guid>
+      <description>
+        
+          
+            &lt;p&gt;&lt;strong&gt;Insert Lead paragraph here.&lt;/strong&gt;&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Esxi Tpm Key Backup</title>
+      <link>//localhost:1313/post/esxi-tpm-key-backup/</link>
+      <pubDate>Wed, 23 Oct 2024 12:28:07 +0200</pubDate>
+      
+      <guid>//localhost:1313/post/esxi-tpm-key-backup/</guid>
+      <description>
+        
+          
+            &lt;p&gt;&lt;strong&gt;Insert Lead paragraph here.&lt;/strong&gt;&lt;/p&gt;
           
           
         

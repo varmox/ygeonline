@@ -1,5 +1,6 @@
 ---
-title: "[HowTo] vCenter File Level Restore - Edit Configuration" # Title of the blog post.
+title: "vCenter File Level Restore - Edit Configuration" # Title of the blog post.
+postType: "HowTo"
 date: 2024-02-23T12:18:49+02:00 # Date of post creation.
 description: "Edit Configuratio before restoring a VCSA File-level Backup" # Description used for search engine.
 featured: true # Sets if post is a featured post, making appear on the home page side bar.

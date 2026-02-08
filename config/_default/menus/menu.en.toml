@@ -5,8 +5,34 @@
 
 [[main]]
   name = "VMware"
+  identifier = "vmware"
   url = "tags/vmware"
   weight = -114
+[[main]]
+  parent = "vmware"
+  name = "vSphere"
+  url = "tags/vsphere"
+  weight = 1
+[[main]]
+  parent = "vmware"
+  name = "vSAN"
+  url = "tags/vsan"
+  weight = 2
+[[main]]
+  parent = "vmware"
+  name = "VKS"
+  url = "tags/vsphere-kubernetes-service"
+  weight = 3
+[[main]]
+  parent = "vmware"
+  name = "VCF"
+  url = "tags/vcf"
+  weight = 4
+[[main]]
+  parent = "vmware"
+  name = "vCenter"
+  url = "tags/vcenter"
+  weight = 5
 
 [[main]]
   name = "K8s"

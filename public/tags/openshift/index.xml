@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenShift on vBünzli</title>
+    <link>/tags/openshift/</link>
+    <description>Recent content in OpenShift on vBünzli</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
+    <lastBuildDate>Tue, 19 Nov 2024 23:20:09 +0100</lastBuildDate><atom:link href="/tags/openshift/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenShift on vSphere - Roles and Permissions</title>
+      <link>/post/openshift-on-vsphere/</link>
+      <pubDate>Tue, 19 Nov 2024 23:20:09 +0100</pubDate>
+      
+      <guid>/post/openshift-on-vsphere/</guid>
+      <description>
+        
+          
+            &lt;h1 id=&#34;deployment-mode-installed-provisioned-infrastructure&#34;&gt;Deployment Mode: Installed Provisioned Infrastructure&lt;/h1&gt;
+&lt;p&gt;OpenShift Installer-Provisioned Infrastructure (IPI) is a deployment method for OpenShift Container Platform that provides a full-stack automated installation and setup process.&lt;/p&gt;
+&lt;p&gt;The installer manages all aspects of the cluster deployment, including the underlying infrastructure and the operating system itself. IPI creates a bootstrap virtual machine on a provisioner node, which assists in deploying the OpenShift cluster.&lt;/p&gt;
+&lt;p&gt;The most common way to deploy OpenShift is on vSphere. For the vSphere Integration Permissions are needed:&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

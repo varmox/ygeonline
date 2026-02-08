@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tanzu Packages on vBünzli</title>
+    <link>//localhost:1313/tags/tanzu-packages/</link>
+    <description>Recent content in Tanzu Packages on vBünzli</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
+    <lastBuildDate>Mon, 06 Jan 2025 15:26:46 +0100</lastBuildDate><atom:link href="//localhost:1313/tags/tanzu-packages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tanzu Package Troubleshooting</title>
+      <link>//localhost:1313/post/tanzu-package-troubleshooting/</link>
+      <pubDate>Mon, 06 Jan 2025 15:26:46 +0100</pubDate>
+      
+      <guid>//localhost:1313/post/tanzu-package-troubleshooting/</guid>
+      <description>
+        
+          
+            &lt;h1 id=&#34;cannot-delete-tanzu-package&#34;&gt;Cannot delete Tanzu Package&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;h4 id=&#34;error-messaage&#34;&gt;&lt;strong&gt;Error Messaage&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;Error: &lt;em&gt;Getting service account: serviceaccounts &amp;quot;grafana-tanzu-system-dashboards-sa&amp;quot; not found&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Resolution&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl get apps grafana -oyaml | grep finalizer
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl patch app grafana -n &amp;lt; my namespace &amp;gt; -p &amp;#39;{&amp;#34;metadata&amp;#34;:{&amp;#34;finalizers&amp;#34;:[]}}&amp;#39; --type=merge
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl delete app grafana
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

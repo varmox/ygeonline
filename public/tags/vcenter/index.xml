@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>vCenter on ygerber</title>
+    <title>VCenter on vBünzli</title>
     <link>/tags/vcenter/</link>
-    <description>Recent content in vCenter on ygerber</description>
+    <description>Recent content in VCenter on vBünzli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
@@ -17,9 +17,50 @@
       <description>
         
           
-            vCenter Troubleshooting Guide Log Files Networking Manual Network Config DNS *** Flush DNS ***
-1 2systemctl restart systemd–resolved.service 3 4systemctl restart dnsmasq HTTP Proxy Certificate Management Renew all vCenter Machine Certificates vLCM *** Cannot sync depot ***
-1 2/var/log/vmware/vmware-updatemgr/vum-server/vmware-vum-server.log 
+            &lt;h1 id=&#34;vcenter-troubleshooting-guide&#34;&gt;vCenter Troubleshooting Guide&lt;/h1&gt;
+&lt;p&gt;The following Troubleshooting Guide applies to vCenter 8 and above.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h4 id=&#34;caution&#34;&gt;Caution!&lt;/h4&gt;
+&lt;p&gt;Create a VM Snapshot of your vCenter before proceeding with any step!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;general-troubleshooting&#34;&gt;General Troubleshooting&lt;/h2&gt;
+&lt;p&gt;Log files can be accesses trough ssh or bash. SSH login works with the root user or your SSO Admi User (commonly &lt;a href=&#34;mailto:administrator@vsphere.local&#34;&gt;administrator@vsphere.local&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SSH not working&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If SSH does not work (eg. due to a networki misconfiguration) you can access the vCenter via bash (VM Remote Console).&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>vCenter File Level Restore - Edit Configuration</title>
+      <link>/post/vcenter-file-level-restore/</link>
+      <pubDate>Fri, 23 Feb 2024 12:18:49 +0200</pubDate>
+      
+      <guid>/post/vcenter-file-level-restore/</guid>
+      <description>
+        
+          
+            &lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;With vCenter File-level Backups you can restore your entire vCenter configuration. If your running vCenter has some misconfigurations (eg. a false proxy setting) and isn&#39;t working, you can use existing file-level backups and clear those misconfigurations before restoring.&lt;/p&gt;
+&lt;h2 id=&#34;basic-process&#34;&gt;Basic Process&lt;/h2&gt;
+&lt;p&gt;The Basic vCenter File-level Restore Process looks like the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Deploy a fresh vCenter via ISO (VCSA UI Installer)
+&lt;ul&gt;
+&lt;li&gt;Shutdown the defunct vCenter (IP Conflicts)&lt;/li&gt;
+&lt;li&gt;Same Network Configuration&lt;/li&gt;
+&lt;li&gt;Same build number&lt;/li&gt;
+&lt;li&gt;Same Size (Tiny, Small, Medium Large)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;When Stage 1 is completed you can start the Stage 2 Process to Restore your vCenter Configuration&lt;/li&gt;
+&lt;li&gt;In case of a misconfiguration (which has also been backed up) you have the option to edit all configurations files&lt;/li&gt;
+&lt;li&gt;Restore vCenter with configurations edits&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;stage-1---deploying-a-fresh-blank-appliance&#34;&gt;Stage 1 - Deploying a fresh (blank) appliance&lt;/h1&gt;
+&lt;p&gt;Before deploying a fresh vCenter, have a look at you VCSA Backup folder. In the root of each backupfolder there is a file &#39;backup-metadata.json&#39; - within there grab the details before deploying a fresh VCSA:&lt;/p&gt;
           
           
         

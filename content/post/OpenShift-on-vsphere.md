@@ -1,5 +1,6 @@
 ---
-title: "[Guide] OpenShift on vSphere - Roles and Permissions" # Title of the blog post.
+title: "OpenShift on vSphere - Roles and Permissions" # Title of the blog post.
+postType: "Guide"
 date: 2024-11-19T23:20:09+01:00 # Date of post creation.
 description: "Quick Guide to create the needed Roles for OpenShift on vSphere (IPI)." # Description used for search engine.
 featured: false # Sets if post is a featured post, making appear on the home page side bar.

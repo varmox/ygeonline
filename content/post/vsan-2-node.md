@@ -1,5 +1,6 @@
 ---
-title: "[Guide] 2-Node vSAN Cluster" # Title of the blog post.
+title: "2-Node vSAN Cluster" # Title of the blog post.
+postType: "Guide"
 date: 2024-12-10T20:20:23+01:00 # Date of post creation.
 description: "Examples and Design Considerations for a 2-Node vSAN Cluster" # Description used for search engine.
 featured: true # Sets if post is a featured post, making appear on the home page side bar.

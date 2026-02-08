@@ -1,21 +1,118 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>vSphere on ygerber</title>
+    <title>VSphere on vBünzli</title>
     <link>/tags/vsphere/</link>
-    <description>Recent content in vSphere on ygerber</description>
+    <description>Recent content in VSphere on vBünzli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Fri, 08 Dec 2023 20:43:03 +0200</lastBuildDate><atom:link href="/tags/vsphere/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Dec 2024 20:20:23 +0100</lastBuildDate><atom:link href="/tags/vsphere/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Tanzu with vSphere and Antrea: Cluster Creation</title>
-      <link>/post/tanzu-cluster-creation/</link>
-      <pubDate>Fri, 08 Dec 2023 20:43:03 +0200</pubDate>
+      <title>2-Node vSAN Cluster</title>
+      <link>/post/vsan-2-node/</link>
+      <pubDate>Tue, 10 Dec 2024 20:20:23 +0100</pubDate>
       
-      <guid>/post/tanzu-cluster-creation/</guid>
+      <guid>/post/vsan-2-node/</guid>
       <description>
         
+          
+            &lt;h1 id=&#34;vsan-esa-2-node-cluster-guide-and-recommendations&#34;&gt;vSAN ESA 2-Node Cluster Guide and Recommendations&lt;/h1&gt;
+&lt;p&gt;This Guide will help you in your Design Considerations and during the Deployment of a 2-Node vSAN Cluster.&lt;/p&gt;
+&lt;h2 id=&#34;assumptions&#34;&gt;Assumptions&lt;/h2&gt;
+&lt;p&gt;The following assumptions where made when creating this blog post.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You have vSAN Ready Nodes or all Hardware is on the vSAN &lt;a href=&#34;https://compatibilityguide.broadcom.com/&#34;&gt;Hardware Compatibility List&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;You have VMware Cloud Foundation (VCF) Licenses or VVF with enough vSAN Add-on Licences&lt;/li&gt;
+&lt;li&gt;Phyiscal Network Adapter for vSAN have a Bandwith of 25Gbits or above&lt;/li&gt;
+&lt;li&gt;General Knowledge of vSAN and vSphere&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;design&#34;&gt;Design&lt;/h1&gt;
+&lt;h2 id=&#34;constraints&#34;&gt;Constraints&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Only one host failure can be tolerated at a time (FTT1)&lt;/li&gt;
+&lt;li&gt;Adding nodes beyond two would require reconfiguration to a standard vSAN cluster.&lt;/li&gt;
+&lt;li&gt;Requires a witness host, which needs two IP addresses - one for management and one for vSAN traffic&lt;/li&gt;
+&lt;li&gt;Managing multiple 2-node clusters can increase operational complexity&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;general-considerations&#34;&gt;General Considerations&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Do you have a dedicated vCenter for your 2-Node Cluster?&lt;/li&gt;
+&lt;li&gt;Where do you run the vCenter VM? On the 2-Node Cluster itself or outside?&lt;/li&gt;
+&lt;li&gt;Does the two physical Server run on the same physical site?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;vsan-traffic-direct-attached-or-switched&#34;&gt;vSAN Traffic: direct attached or Switched&lt;/h3&gt;
+&lt;p&gt;With a 2-Node Cluster you have the possibility to run vSAN (and vMotion) traffic over direct attached Cables. This is a great solution for RoBo or Site which do not offer 25Gbits Ports on Network Switches.&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>vSphere Lifecycle Manager and HPE OneView for vCenter - Troubleshooting</title>
+      <link>/post/vclm-hpe-oneview/</link>
+      <pubDate>Wed, 20 Nov 2024 09:25:35 +0100</pubDate>
+      
+      <guid>/post/vclm-hpe-oneview/</guid>
+      <description>
+        
+          
+            &lt;h1 id=&#34;vsphere-lifecycle-manager-vlcm&#34;&gt;vSphere Lifecycle Manager (vLCM)&lt;/h1&gt;
+&lt;p&gt;Some Guidance when troubleshooting Issues with vSphere Lifecycle Manager and HPE OneView for vCenter as a HSM (Hardware Support Manager).&lt;/p&gt;
+&lt;h2 id=&#34;log-files&#34;&gt;Log Files&lt;/h2&gt;
+&lt;p&gt;The General Log File for vLCM is here:&lt;/p&gt;
+&lt;p&gt;Log File: /var/log/vmware/vmware-updatemgr/vum-server/vmware-vum-server.log&lt;/p&gt;
+&lt;p&gt;To see error from this log file&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;cat&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;var&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vmware&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vmware&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;updatemgr&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vum&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;server&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vmware&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vum&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;server&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;log&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;grep&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;error&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;3rd Party Depots and their the vCenter Access to those depot is logged in the following file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;cat&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;var&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vmware&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;envoy&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;envoy&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;access&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;log&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;grep&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;hpe&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;common-errors&#34;&gt;Common Errors&lt;/h2&gt;
+&lt;h3 id=&#34;cannot-sync-software-depots&#34;&gt;Cannot sync software depots&lt;/h3&gt;
+&lt;p&gt;To verify that the online depot registration was successful, navigate to &lt;em&gt;Menu &amp;gt; Lifecycle Manager &amp;gt; Settings &amp;gt; Administration &amp;gt; Patch Setup&lt;/em&gt;. The values in the Enabled and Connectivity Status columns should be &lt;em&gt;Yes&lt;/em&gt; and &lt;em&gt;Connected&lt;/em&gt; respectively. If the Connectivity Status is Not Connected, verify the proper settings for the vCenter proxy configuration and perform a manual sync of the updates.&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>OpenShift on vSphere - Roles and Permissions</title>
+      <link>/post/openshift-on-vsphere/</link>
+      <pubDate>Tue, 19 Nov 2024 23:20:09 +0100</pubDate>
+      
+      <guid>/post/openshift-on-vsphere/</guid>
+      <description>
+        
+          
+            &lt;h1 id=&#34;deployment-mode-installed-provisioned-infrastructure&#34;&gt;Deployment Mode: Installed Provisioned Infrastructure&lt;/h1&gt;
+&lt;p&gt;OpenShift Installer-Provisioned Infrastructure (IPI) is a deployment method for OpenShift Container Platform that provides a full-stack automated installation and setup process.&lt;/p&gt;
+&lt;p&gt;The installer manages all aspects of the cluster deployment, including the underlying infrastructure and the operating system itself. IPI creates a bootstrap virtual machine on a provisioner node, which assists in deploying the OpenShift cluster.&lt;/p&gt;
+&lt;p&gt;The most common way to deploy OpenShift is on vSphere. For the vSphere Integration Permissions are needed:&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>vSphere REST API - Intro</title>
+      <link>/post/vsphere-api/</link>
+      <pubDate>Thu, 20 Jun 2024 22:22:08 +0200</pubDate>
+      
+      <guid>/post/vsphere-api/</guid>
+      <description>
+        
+          
+            &lt;h1 id=&#34;getting-started-with-the-vsphere-api&#34;&gt;Getting started with the vSphere API&lt;/h1&gt;
+&lt;p&gt;The vSphere REST API, introduced in vSphere 6.5, represents a significant leap forward in managing and automating VMware environments. This modern, developer-friendly interface offers a more streamlined approach to interacting with vSphere compared to its predecessor, the SOAP-based vSphere Web Services API.&lt;/p&gt;
+&lt;p&gt;Key features of the vSphere REST API include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;RESTful architecture: It follows REST principles, using standard HTTP methods (GET, POST, PUT, DELETE) for operations.&lt;/li&gt;
+&lt;li&gt;JSON-based: Requests and responses use JSON format, making it easier to parse and work with data.&lt;/li&gt;
+&lt;li&gt;Simplified interaction: The API is designed to be more intuitive and easier to use than the older SOAP-based API.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To get started with the vSphere REST API, you can use the built-in API Explorer in vCenter Server, accessible at https://&amp;lt; vcenter.example.com &amp;gt;/apiexplorer. This tool provides interactive documentation and allows you to test API calls directly from your browser.&lt;/p&gt;
           
           
         
@@ -31,9 +128,45 @@
       <description>
         
           
-            vSphere Monitoring with TIG (Telegraf, InfluxDB, Grafana) This blog post describes a solution for monitoring SDDC infrastructure using Telegraf, InfluxDB, and Grafana. This solution is based on Docker and displays graphs and metrics via Grafana. All metrics are described in the telegraf.conf file.
-TL;DR: https://github.com/varmox/vsphere-monitoring.git
-Prerequiries RHEL based Linux Docker &amp;amp; Docker Compose (or Podman with Docker Compose. In this tutorial we are using docker &amp;amp; docker compose) installed 3 internal IPs for telegraf, grafana and influxdb containers.
+            &lt;h1 id=&#34;vsphere-monitoring-with-tig-telegraf-influxdb-grafana&#34;&gt;vSphere Monitoring with TIG (Telegraf, InfluxDB, Grafana)&lt;/h1&gt;
+&lt;p&gt;This blog post describes a solution for monitoring  SDDC infrastructure using Telegraf, InfluxDB, and Grafana. This solution is based on Docker and displays graphs and metrics via Grafana. All metrics are described in the &lt;em&gt;&lt;strong&gt;telegraf.conf&lt;/strong&gt;&lt;/em&gt; file.&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+  &lt;picture&gt;
+
+    
+      
+        
+        
+        
+        
+        
+        
+    &lt;img
+      loading=&#34;lazy&#34;
+      decoding=&#34;async&#34;
+      alt=&#34;Grafana - vSphere Overview&#34;
+      
+        class=&#34;image_figure image_external image_processed&#34;
+        width=&#34;3338&#34;
+        height=&#34;1334&#34;
+        src=&#34;/images/QbfN11Q_17788218198938191418.png&#34;
+      
+      
+    /&gt;
+
+    &lt;/picture&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;TL;DR:
+&lt;a href=&#34;https://github.com/varmox/vsphere-monitoring.git&#34;&gt;https://github.com/varmox/vsphere-monitoring.git&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;prerequiries&#34;&gt;Prerequiries&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;RHEL based Linux&lt;/li&gt;
+&lt;li&gt;Docker &amp;amp; Docker Compose (or Podman with Docker Compose. In this tutorial we are using docker &amp;amp; docker compose) installed&lt;/li&gt;
+&lt;li&gt;3 internal IPs for telegraf, grafana and influxdb containers.&lt;/li&gt;
+&lt;li&gt;Access to vSphere API (read-only is sufficient)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Environment Variables&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
           
           
         
@@ -49,10 +182,12 @@ Prerequiries RHEL based Linux Docker &amp;amp; Docker Compose (or Podman with Do
       <description>
         
           
-            Quick Tip: vSphere with Tanzu an HA-Proxy This is a short article with tips and tricks I experienced when deploying vSphere with Tanzu and HA-Proxy as a Load Balancer.
-Deploying Ha-Proxy OVA Network
-Alwasys use three NICs when deploying in a production environment. It is very important that these IP addresses do not overlap with the address ranges of your workloads and load balancers, or with the gateway itself.
-At first it can be somewhat confusing what networks are needed and which services will be deployed in each network.
+            &lt;h1 id=&#34;quick-tip-vsphere-with-tanzu-an-ha-proxy&#34;&gt;Quick Tip: vSphere with Tanzu an HA-Proxy&lt;/h1&gt;
+&lt;p&gt;This is a short article with tips and tricks I experienced when deploying vSphere with Tanzu and HA-Proxy as a Load Balancer.&lt;/p&gt;
+&lt;h2 id=&#34;deploying-ha-proxy-ova&#34;&gt;Deploying Ha-Proxy OVA&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Network&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Alwasys use three NICs when deploying in a production environment. It is very important that these  IP addresses do not overlap with the address ranges of your workloads and load balancers, or with the gateway itself.&lt;/p&gt;
+&lt;p&gt;At first it can be somewhat confusing what networks are needed and which services will be deployed in each network.&lt;/p&gt;
           
           
         

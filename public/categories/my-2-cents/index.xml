@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>my 2 cents on ygerber</title>
-    <link>/categories/my-2-cents/</link>
-    <description>Recent content in my 2 cents on ygerber</description>
+    <title>My 2 Cents on vBünzli</title>
+    <link>//localhost:1313/categories/my-2-cents/</link>
+    <description>Recent content in My 2 Cents on vBünzli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Tue, 25 Jun 2024 08:30:38 +0200</lastBuildDate><atom:link href="/categories/my-2-cents/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 25 Jun 2024 08:30:38 +0200</lastBuildDate><atom:link href="//localhost:1313/categories/my-2-cents/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DevSecOps</title>
-      <link>/post/devsecops/</link>
+      <link>//localhost:1313/post/devsecops/</link>
       <pubDate>Tue, 25 Jun 2024 08:30:38 +0200</pubDate>
       
-      <guid>/post/devsecops/</guid>
+      <guid>//localhost:1313/post/devsecops/</guid>
       <description>
         
           
-            Introduction Due to the rise of containerized applications the new word DevOps or DevSecOps.
-So what is DevOps?
-Basically the developer should also build &amp;amp; operate the infrastructure on which is code runs on.
-And DevSecOps?
-We need Security, so adapt DevOps Practises also for Security. Devs should also be resonsible to securing their infrastructure.
-What are the goals?
-The main Goal for DevOps Practises is to shorten time of the SDLC (Systems Develoopment Lifecyle).
+            &lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Due to the rise of containerized applications the new word DevOps or DevSecOps.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;So what is DevOps?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Basically the developer should also build &amp;amp; operate the infrastructure on which is code runs on.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;And DevSecOps?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;We need Security, so adapt DevOps Practises also for Security. Devs should also be resonsible to securing their infrastructure.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What are the goals?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The main Goal for DevOps Practises is to shorten time of the SDLC (Systems Develoopment Lifecyle). Basically be faster to ship code into production.&lt;/p&gt;
           
           
         

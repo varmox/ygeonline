@@ -1,5 +1,6 @@
 ---
-title: "[Guide] vSphere VM - conflicted PortID" # Title of the blog post.
+title: "vSphere VM - conflicted PortID" # Title of the blog post.
+postType: "Guide"
 date: 2024-11-22T07:41:26+01:00 # Date of post creation.
 description: "How to fix conflicted PortIDs on vSphere VMs (PortID 'c-')" # Description used for search engine.
 featured: true # Sets if post is a featured post, making appear on the home page side bar.

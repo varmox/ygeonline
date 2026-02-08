@@ -9,8 +9,9 @@
   
   >
   <head>
-<title>VMware vCenter Troubleshooting Guide | ygerber</title>
+<title>VMware vCenter Troubleshooting Guide | vBünzli</title>
 <meta charset="utf-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <script async src="https://www.googletagmanager.com/gtag/js?id=XXXXXXXXXX"></script>
@@ -29,15 +30,16 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Article description." />
+<meta name="description" content="A Troubleshooting Guide for variuos vCenter Problems" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="@varmox">
 <meta name="twitter:title" content="VMware vCenter Troubleshooting Guide" />
-<meta name="twitter:image" content="/images/path/share.png"/>
+<meta name="twitter:image" content="/images/thumbnail.png"/>
 <meta property="og:url" content="/post/vcenter-troubleshooting/" />
 <meta property="og:title" content="VMware vCenter Troubleshooting Guide" />
-<meta property="og:description" content="Article description." />
-<meta property="og:image" content="/images/path/share.png" />
+<meta property="og:description" content="A Troubleshooting Guide for variuos vCenter Problems" />
+<meta property="og:image" content="/images/thumbnail.png" />
+  <meta name="keywords" content="vCenter,VCF" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
@@ -47,15 +49,15 @@
 
 
 
-<link rel="preload" href="/css/styles.42e2c5f6d8cf9c52872666f8d8b2678ad0c426978b9d78aff3c33b7a1e7f6f97f54bcdaf0518a25fb0fe26367d04f8b07c683b3b38b331cb098daadee06b1f3e.css" integrity = "sha512-QuLF9tjPnFKHJmb42LJnitDEJpeLnXiv88M7eh5/b5f1S82vBRiiX7D&#43;JjZ9BPiwfGg7OzizMcsJjare4GsfPg==" as="style" crossorigin="anonymous">
+<link rel="preload" href="/css/styles.28e3156792a33b97ba888e7acd6332e65e0a04431094fa89d055987a4f000423510faa3c85534428d91f2e64c74d2c2a9e1d907fcdc2d32699e38506a03abda1.css" integrity = "sha512-KOMVZ5KjO5e6iI56zWMy5l4KBEMQlPqJ0FWYek8ABCNRD6o8hVNEKNkfLmTHTSwqnh2Qf83C0yaZ44UGoDq9oQ==" as="style" crossorigin="anonymous">
 
 
 
-<link rel="preload" href="/en/js/bundle.b37e6fff3826bb034b60c13370656fe73f202be5c0b4d0eb7d1925bce85cba1bb054eda5b17cbd6bd38a1376cf3b4a8579fe0818ca6e10d5f29a57298d487cb0.js" as="script" integrity=
-"sha512-s35v/zgmuwNLYMEzcGVv5z8gK&#43;XAtNDrfRklvOhcuhuwVO2lsXy9a9OKE3bPO0qFef4IGMpuENXymlcpjUh8sA==" crossorigin="anonymous">
+<link rel="preload" href="/en/js/bundle.2f36309c77205efd88cc637205808237375d2c3883c7404d70c6e50f948c8a48439e14353a335d3dd0468c438df1699de307b97d64f10c5612be666a18f66ee6.js" as="script" integrity=
+"sha512-LzYwnHcgXv2IzGNyBYCCNzddLDiDx0BNcMblD5SMikhDnhQ1OjNdPdBGjEON8Wmd4we5fWTxDFYSvmZqGPZu5g==" crossorigin="anonymous">
 
 
-<link rel="stylesheet" type="text/css" href="/css/styles.42e2c5f6d8cf9c52872666f8d8b2678ad0c426978b9d78aff3c33b7a1e7f6f97f54bcdaf0518a25fb0fe26367d04f8b07c683b3b38b331cb098daadee06b1f3e.css" integrity="sha512-QuLF9tjPnFKHJmb42LJnitDEJpeLnXiv88M7eh5/b5f1S82vBRiiX7D&#43;JjZ9BPiwfGg7OzizMcsJjare4GsfPg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="/css/styles.28e3156792a33b97ba888e7acd6332e65e0a04431094fa89d055987a4f000423510faa3c85534428d91f2e64c74d2c2a9e1d907fcdc2d32699e38506a03abda1.css" integrity="sha512-KOMVZ5KjO5e6iI56zWMy5l4KBEMQlPqJ0FWYek8ABCNRD6o8hVNEKNkfLmTHTSwqnh2Qf83C0yaZ44UGoDq9oQ==" crossorigin="anonymous">
 
   </head>
   <body
@@ -66,7 +68,7 @@
   >
 
 <header class="nav_header" >
-  <nav class="nav"><a href='/' class="nav_brand nav_item" title="ygerber">ygerber
+  <nav class="nav"><a href='/' class="nav_brand nav_item" title="vBünzli"><span class="logo-prompt">&gt;_</span>&nbsp;vBünzli
   <div class="nav_close">
     <div><svg class="icon">
   <title>open-menu</title>
@@ -87,7 +89,15 @@
         
 
   <div class="nav_parent">
-    <a href="/tags/vmware" class="nav_item" title="VMware">VMware </a>
+    <a href="/tags/vmware" class="nav_item" title="VMware">VMware <img src='/icons/caret-icon.svg' alt="icon" class="nav_icon"></a>
+    <div class="nav_sub">
+      <span class="nav_child"></span>
+        <a href="/tags/vsphere" class="nav_child nav_item" title="vSphere">vSphere</a>
+        <a href="/tags/vsan" class="nav_child nav_item" title="vSAN">vSAN</a>
+        <a href="/tags/vsphere-kubernetes-service" class="nav_child nav_item" title="VKS">VKS</a>
+        <a href="/tags/vcf" class="nav_child nav_item" title="VCF">VCF</a>
+        <a href="/tags/vcenter" class="nav_child nav_item" title="vCenter">vCenter</a>
+    </div>
   </div>
   <div class="nav_parent">
     <a href="/tags/kubernetes" class="nav_item" title="K8s">K8s </a>
@@ -135,7 +145,7 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">VMware vCenter Troubleshooting Guide</h1>
+    <h1 class="post_title"><span class="post-type-badge post-type-guide">Guide</span>VMware vCenter Troubleshooting Guide</h1>
   <div class="post_meta">
     <span><svg class="icon">
   <title>calendar</title>
@@ -143,8 +153,9 @@
 </svg>
 </span>
     <span class="post_date">
-      Aug 23, 2024</span>
-    <span class="post_time"> · 1 min read</span><span>&nbsp;· <a href='/tags/vcenter/' title="vCenter" class="post_tag button button_translucent">vCenter
+      Aug 23, 2024	  
+    </span>
+    <span class="post_time"> · 6 min read</span><span>&nbsp;· <a href='/tags/vcenter/' title="vCenter" class="post_tag button button_translucent">vCenter
         </a><a href='/tags/vcf/' title="VCF" class="post_tag button button_translucent">VCF
         </a>
     </span>
@@ -182,39 +193,20 @@
   </div>
   </span>
   </div>
-<div class="post_featured"><figure>
-  <picture>
 
-    
-      
-        
-        
-        
-        
-        
-        
-    <img
-      loading="lazy"
-      decoding="async"
-      alt="Description of image"
-      
-        class="image_figure image_featured image_internal image_unprocessed"
-        src="/images/path/file.jpg"
-      
-      
-        title="This is the featured image."
-      
-    />
-
-    <figcaption class="caption_figure caption_featured caption_internal">This is the featured image.</figcaption></picture>
-</figure>
-
-      </div>
       <div class="post_toc">
         <h2>Overview</h2>
         <nav id="TableOfContents">
   <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#general-troubleshooting">General Troubleshooting</a></li>
+    <li><a href="#services">Services</a></li>
     <li><a href="#log-files">Log Files</a></li>
+    <li><a href="#ways-to-access-your-vcenter">Ways to access your vcenter</a></li>
     <li><a href="#networking">Networking</a>
       <ul>
         <li><a href="#manual-network-config">Manual Network Config</a></li>
@@ -225,32 +217,263 @@
     <li><a href="#certificate-management">Certificate Management</a>
       <ul>
         <li><a href="#renew-all-vcenter-machine-certificates">Renew all vCenter Machine Certificates</a></li>
+        <li><a href="#vmware-security-token-service-sts-certificate">VMware Security Token Service (STS) certificate</a></li>
+        <li><a href="#fix-trust-issues---lsdoctor">Fix trust issues - lsdoctor</a></li>
       </ul>
     </li>
+    <li><a href="#vsphere-ha">vSphere HA</a></li>
+    <li><a href="#vsphere-lifecycle-manager-vlcm">vSphere Lifecycle Manager (vLCM)</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#backup">Backup</a></li>
+    <li><a href="#vcenter-appliance-file-restore">vCenter Appliance File-Restore</a>
+      <ul>
+        <li><a href="#restore-fails---unable-to-ssh-into-machine">Restore fails - unable to ssh into machine</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#simple-method-login-with-sso-user">Simple Method: Login with SSO User</a></li>
+    <li><a href="#advanced-root-password-restore">Advanced root password restore</a></li>
   </ul>
 </nav>
       </div>
     
     <div class="post_body"><h1 id="vcenter-troubleshooting-guide">vCenter Troubleshooting Guide</h1>
-<h2 id="log-files">Log Files</h2>
+<p>The following Troubleshooting Guide applies to vCenter 8 and above.</p>
+<blockquote>
+<h4 id="caution">Caution!</h4>
+<p>Create a VM Snapshot of your vCenter before proceeding with any step!</p>
+</blockquote>
+<h2 id="general-troubleshooting">General Troubleshooting</h2>
+<p>Log files can be accesses trough ssh or bash. SSH login works with the root user or your SSO Admi User (commonly <a href="mailto:administrator@vsphere.local">administrator@vsphere.local</a>)</p>
+<p><strong>SSH not working</strong></p>
+<p>If SSH does not work (eg. due to a networki misconfiguration) you can access the vCenter via bash (VM Remote Console).</p>
+<p>At the VM Remote Console press F2 to access your vCenter or press ALT + F1 to access the bash shell.</p>
+<h2 id="services">Services</h2>
+<p>If you have trouble starting services and the GUI is not working, use service-control with ssh to get all the running services:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">service-control --status
+</span></span></code></pre></div><p>To stop all services</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">service-control --stop --all
+</span></span></code></pre></div><p>To start all services:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">service-control --start --all
+</span></span></code></pre></div><h2 id="log-files">Log Files</h2>
+<p>All vCenter Log Files are stored under:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="nb">log</span><span class="o">/</span><span class="n">vmware</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl"><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="nb">log</span><span class="o">/</span><span class="n">vmware</span><span class="o">/&lt;</span><span class="n">service_name</span><span class="o">&gt;</span> 
+</span></span></code></pre></div><p>vCenter logs are grouped by component and purpose:</p>
+<ul>
+<li>vpxd.log - Main vCenter Server log for client connections, tasks, and host communication5</li>
+<li>vpxd-profiler.log - Profiled metrics for vCenter operations</li>
+<li>eam.log - ESX Agent Manager logs</li>
+<li>sms.log - Storage Monitoring Service logs</li>
+<li>ls.log - Licensing Services logs</li>
+</ul>
+<p>Some key log files and directories include:</p>
+<ul>
+<li>/var/log/vmware/vpxd/vpxd.log - The main vCenter Server log</li>
+<li>/var/log/vmware/vsphere-ui/ - vSphere UI logs</li>
+<li>/var/log/vmware/eam/eam.log - ESX Agent Manager log</li>
+<li>/var/log/vmware/eam/applmgmt.log - Appliance Management Service</li>
+</ul>
+<p>Additional Important Logs</p>
+<ul>
+<li>/var/log/vmware/vpostgres/ - VMware Postgres service logs</li>
+<li>/var/log/vmware/vcha/ - vCenter High Availability service logs</li>
+<li>/var/log/vmware/rhttpproxy/ - VMware HTTP Reverse Proxy service logs</li>
+<li>/var/log/vmware/content-library/ - VMware Content Library Service logs</li>
+<li>/var/log/vmware/applmgmt/backup.log - VCSA Backup Log</li>
+</ul>
+<p><strong>GUI</strong></p>
+<p>vCenter Server logs can be viewed from:</p>
+<ul>
+<li>Home &gt; Administration &gt; System Logs.</li>
+</ul>
+<h2 id="ways-to-access-your-vcenter">Ways to access your vcenter</h2>
+<p><em><strong>GUI (VAMI)</strong></em></p>
+<p>'https:// vcenterfqdn :5480'</p>
+<p><em><strong>SSH</strong></em></p>
+<p>Login via SSH (root user or SSO User)</p>
+<p><em><strong>DCUI</strong></em></p>
+<p>Open the VM Remote Console of the vCenter VM (via ESXi) and Press F2. After a successfull login you will be able to edit the config via DCUI.</p>
+<p>DCUI can also be opened from ssh.</p>
+<p><em><strong>Bash shell</strong></em></p>
+<p>To Access the Bash Shell:
+Open the VM Remote Console of the vCenter VM (via ESXi) and Press ALT+F1.</p>
+<p>If you need to enable bash shell, do the following first:</p>
+<ul>
+<li>Open the VM Remote Console of the vCenter VM (via ESXi) and Press F2. After a successfull login go to troubleshooting options and enable bash or ssh</li>
+</ul>
+<p><em><strong>Bash shell (Emergency Boot)</strong></em></p>
+<p>Look at <a href="/post/vcenter-troubleshooting/#-vCenter-Emergency-Boot---Edit-GRUB-Bootloader">here</a></p>
 <h2 id="networking">Networking</h2>
 <h3 id="manual-network-config">Manual Network Config</h3>
-<h3 id="dns">DNS</h3>
-<p>*** Flush DNS ***</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">
-</span></span><span class="line"><span class="ln">2</span><span class="cl">systemctl restart systemd–resolved.service
-</span></span><span class="line"><span class="ln">3</span><span class="cl">
-</span></span><span class="line"><span class="ln">4</span><span class="cl">systemctl restart dnsmasq
+<p>Run the following command to change Networking Settings from BASH</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/opt/vmware/share/vami/vami_config_net
+</span></span></code></pre></div><p>Alternatively edit the configuration files directly, to change network settings like IP address and netmask</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/etc/systemd/network/10-eth0.network 
+</span></span></code></pre></div><p>Example:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[Match]
+</span></span><span class="line"><span class="cl">Name=eth0
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[Network]
+</span></span><span class="line"><span class="cl">Address=192.168.1.100/24
+</span></span><span class="line"><span class="cl">Gateway=192.168.1.1
+</span></span><span class="line"><span class="cl">DNS=8.8.8.8
+</span></span><span class="line"><span class="cl">DNS=8.8.4.4
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[Route]
+</span></span><span class="line"><span class="cl">Destination=10.0.0.0/24
+</span></span><span class="line"><span class="cl">Gateway=192.168.1.254
+</span></span></code></pre></div><p>to modify routing information</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/etc/sysconfig/network/routes 
+</span></span></code></pre></div><p>Example</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">default 192.168.1.1
+</span></span><span class="line"><span class="cl">10.0.0.0/24 192.168.1.254
+</span></span><span class="line"><span class="cl">172.16.0.0/16 192.168.1.253
+</span></span></code></pre></div><p>Each line follows this format:
+'<TargetNetwork> <GatewayAddress> <Netmask> <Interface>'</p>
+<p>or use the builtin DCUI from the bash shell</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">dcui
+</span></span></code></pre></div><h3 id="dns">DNS</h3>
+<p><em><strong>Manual DNS Config</strong></em></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">vi etc/systemd/resolved.conf
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[Resolve] 
+</span></span><span class="line"><span class="cl">DNS=10.10.10.125
+</span></span><span class="line"><span class="cl">FallbackDNS=10.10.10.126
+</span></span><span class="line"><span class="cl">Domains=yourdomain.local
+</span></span></code></pre></div><p>or use the builtin DCUI from the bash shell</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">dcui
+</span></span></code></pre></div><p><em><strong>Flush DNS</strong></em></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">systemctl restart systemd–resolved.service
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">systemctl restart dnsmasq
 </span></span></code></pre></div><h3 id="http-proxy">HTTP Proxy</h3>
-<h2 id="certificate-management">Certificate Management</h2>
-<h3 id="renew-all-vcenter-machine-certificates">Renew all vCenter Machine Certificates</h3>
-<h1 id="vlcm">vLCM</h1>
-<p>*** Cannot sync depot ***</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">
-</span></span><span class="line"><span class="ln">2</span><span class="cl">/var/log/vmware/vmware-updatemgr/vum-server/vmware-vum-server.log
+<p>Log File: /var/log/vmware/rhttpproxy/</p>
+<p>To set a HTTP Proxy run:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/opt/vmware/share/vami/vami_config_net
+</span></span></code></pre></div><p>It is also possible to edit the file directly:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">vi /etc/sysconfig/proxy
+</span></span></code></pre></div><p>Example:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">PROXY_ENABLED=&#34;yes&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">HTTP_PROXY=&#34;http://proxy.example.com:8080&#34;
+</span></span><span class="line"><span class="cl">HTTPS_PROXY=&#34;http://proxy.example.com:8080&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">NO_PROXY=&#34;localhost, 127.0.0.1, .*.example.com, 192.168.0.0/24, 192.168.1.55&#34;
+</span></span></code></pre></div><h2 id="certificate-management">Certificate Management</h2>
+<p>Log File: /var/log/vmware/vmcad/certificate-manager.log</p>
+<p>Run this command to check certificate expiration dates:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">for store in $(/usr/lib/vmware-vmafd/bin/vecs-cli store list | grep -v TRUSTED_ROOT_CRLS); do 
+</span></span><span class="line"><span class="cl">  echo &#34;[*] Store :&#34; $store
+</span></span><span class="line"><span class="cl">  /usr/lib/vmware-vmafd/bin/vecs-cli entry list --store $store --text | grep -ie &#34;Alias&#34; -ie &#34;Not After&#34;
+</span></span><span class="line"><span class="cl">done
+</span></span></code></pre></div><h3 id="renew-all-vcenter-machine-certificates">Renew all vCenter Machine Certificates</h3>
+<p>Generally this should be done of all VMCA Certificates are self-signed and are expired. Later you can change the certificates to named ones from your Enterprise PKI.</p>
+<p>Run vCenter Certificate Manager:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/usr/lib/vmware-vmca/bin/certificate-manager
+</span></span></code></pre></div><p>Choose your desired option. Most commonly option 4 or 8 are used.</p>
+<p>This step automatically restarts the vCenter Server services. Additionally, the Name, Hostname, and VMCA values should match the Primary Network Identifier (PNID). The PNID should always match the Hostname.</p>
+<p>To get the vCenter PNID:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/usr/lib/vmware-vmafd/bin/vmafd-cli get-pnid --server-name localhost
+</span></span></code></pre></div><h3 id="vmware-security-token-service-sts-certificate">VMware Security Token Service (STS) certificate</h3>
+<p><a href="https://knowledge.broadcom.com/external/article?legacyId=79248">https://knowledge.broadcom.com/external/article?legacyId=79248</a></p>
+<h3 id="fix-trust-issues---lsdoctor">Fix trust issues - lsdoctor</h3>
+<p>Use the lsdoctor tool from VMware:
+<a href="https://knowledge.broadcom.com/external/article?legacyId=80469">https://knowledge.broadcom.com/external/article?legacyId=80469</a></p>
+<p>Upload and unzip lsdoctor on vCenter</p>
+<p>Check for issues</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">python lsdoctor.py -l 
+</span></span></code></pre></div><p>to fix trust mismatches</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">python lsdoctor.py -t 
+</span></span></code></pre></div><h2 id="vsphere-ha">vSphere HA</h2>
+<p>Log File: /var/log/fdm.log</p>
+<h2 id="vsphere-lifecycle-manager-vlcm">vSphere Lifecycle Manager (vLCM)</h2>
+<p>Log File: /var/log/vmware/vmware-updatemgr/vum-server/vmware-vum-server.log</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">cat</span> <span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="nb">log</span><span class="o">/</span><span class="n">vmware</span><span class="o">/</span><span class="n">vmware</span><span class="o">-</span><span class="n">updatemgr</span><span class="o">/</span><span class="n">vum</span><span class="o">-</span><span class="n">server</span><span class="o">/</span><span class="n">vmware</span><span class="o">-</span><span class="n">vum</span><span class="o">-</span><span class="n">server</span><span class="o">.</span><span class="n">log</span> <span class="o">|</span> <span class="n">grep</span> <span class="s2">&#34;error&#34;</span>
+</span></span></code></pre></div><p><strong>Error cannot sync depot</strong></p>
+<p>A usual error is that vCenter is unable to reach vmwaredepot. Check DNS, Firewall and HTTP Proxy Settings. The log file indicated it the following:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">--&gt;     &#34;error_type&#34;: &#34;ERROR&#34;,
+</span></span><span class="line"><span class="cl">--&gt;     &#34;messages&#34;: [
+</span></span><span class="line"><span class="cl">--&gt;         {
+</span></span><span class="line"><span class="cl">--&gt;             &#34;args&#34;: [],
+</span></span><span class="line"><span class="cl">--&gt;             &#34;default_message&#34;: &#34;A depot is inaccessible or has invalid contents. Make sure an official depot source is used and verify connection to the depot.&#34;,
+</span></span><span class="line"><span class="cl">--&gt;             &#34;id&#34;: &#34;com.vmware.vcIntegrity.lifecycle.depotContent.ValidationError&#34;
+</span></span><span class="line"><span class="cl">--&gt;         }
+</span></span><span class="line"><span class="cl">--&gt;     ]
+</span></span><span class="line"><span class="cl">--&gt; }&#34;
+</span></span><span class="line"><span class="cl">--&gt; }
+</span></span></code></pre></div><p>Check if you can access VMware Online Depots, from vCenter run:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"> curl -vvv https://hostupdate.vmware.com
+</span></span></code></pre></div><p>You should see a DigiCert Certificate printed:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">*  issuer: C=US; O=DigiCert Inc; CN=DigiCert TLS RSA SHA256 2020 CA1
+</span></span></code></pre></div><p>If not, check with your Firewall Team if they do TLS Intercepts.</p>
+<p>Also check your connected depots. Maybe there is a old depot still configured (like a old HPE OneView Instance).</p>
+<p><strong>HPE OneView for vCenter</strong></p>
+<p>Check</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">cat</span> <span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="nb">log</span><span class="o">/</span><span class="n">vmware</span><span class="o">/</span><span class="n">envoy</span><span class="o">/</span><span class="n">envoy</span><span class="o">-</span><span class="n">access</span><span class="o">.</span><span class="n">log</span> <span class="o">|</span> <span class="n">grep</span> <span class="s2">&#34;hpe&#34;</span>
+</span></span></code></pre></div><p>If you see some SSL Errors like:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">failed: cURL Error: SSL peer certificate or SSH remote key was not OK, SSL certificate problem: certificate has expired
+</span></span></code></pre></div><p>Verify if the required certs for HPE OneView for vCenter are valid.</p>
+<p><a href="https://support.hpe.com/hpesc/public/docDisplay?docId=sd00002167en_us&amp;docLocale=en_US&amp;page=GUID-ACF7270C-14CD-41A6-B02A-2FA0EE0C4723.html">Further Troubleshooting Information</a></p>
+<h1 id="backup-and-restore">Backup and Restore</h1>
+<h2 id="backup">Backup</h2>
+<p>Log files:</p>
+<ul>
+<li>/var/log/vmware/applmgmt/backup.log</li>
+<li>/var/log/vmware/applmgmt/backupscheduler.log</li>
+<li>/var/log/vmware/applmgmt/backupschedulercron.log</li>
+</ul>
+<h2 id="vcenter-appliance-file-restore">vCenter Appliance File-Restore</h2>
+<p>See: <a href="https://docs.vmware.com/en/VMware-vSphere/8.0/vsphere-vcenter-installation/GUID-F02AF073-7CFD-45B2-ACC8-DE3B6ED28022.html">VMware Docs</a></p>
+<p>If during a File Level Restore something went run, check your logs at:</p>
+<p>/var/log/vmware/applmgmt/restore.log</p>
+<h3 id="restore-fails---unable-to-ssh-into-machine">Restore fails - unable to ssh into machine</h3>
+<p>If your vCenter Restore has failed and you aren't able to ssh into the machine. Try all the ways to access your vCenter as described in <a href="/post/vcenter-troubleshooting/#ways-to-access-your-vcenter">here</a></p>
+<h1 id="vcenter-and-esxi">vCenter and ESXi</h1>
+<p><strong>Disconnect ESXi if vCener no longer exists</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cmsso-util unregister --node-pnid vcenter.domain.com --username [administrator@vsphere.local](mailto:administrator@vsphere.local) --passwd pw
+</span></span></code></pre></div><h1 id="forgot-root-password">Forgot Root Password</h1>
+<h2 id="simple-method-login-with-sso-user">Simple Method: Login with SSO User</h2>
+<p>If you forgot your root password or it is expired you can still access the vCenter via GUI or SSH with the SSO Admin User (usually <a href="mailto:administrator@vsphere.local">administrator@vsphere.local</a>)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo passwd root
+</span></span></code></pre></div><h2 id="advanced-root-password-restore">Advanced root password restore</h2>
+<ul>
+<li>Emergency boot the vCenter described  <a href="/post/vcenter-troubleshooting/#-vCenter-Emergency-Boot---Edit-GRUB-Bootloader">below</a></li>
+<li>unlock the root account</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/usr/sbin/faillock --user root --reset
+</span></span></code></pre></div><p>After that you can set a new password</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">passwd
+</span></span></code></pre></div><p>Then unmount the filesystem and reboot</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">umount / 
+</span></span><span class="line"><span class="cl">reboot -f
+</span></span></code></pre></div><h1 id="emergency-boot-edit-grub-bootloader">Emergency Boot Edit GRUB Bootloader</h1>
+<p>If you cannot SSH into or open DCUI/Bash Shell (via VM Remote Console) to your vCenter you can access the vCenter without a password the following:</p>
+<ul>
+<li>Access VM Remote Console of the vCenter VM</li>
+<li>Reboot the VM</li>
+<li>press 'e' for emergency mode</li>
+<li>GRUB Bootloader will appear, edit the boot loader the following:
+<ul>
+<li>Append these entries to the end of the line of '...consoleblank=0' with: - 'rw init=/bin/bash'</li>
+</ul>
+</li>
+<li>Proceed to boot the vCenter VM with pressing F10</li>
+<li>After booting you should be presented with a shell</li>
+<li>run:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mount -o remount,rw / 
+</span></span></code></pre></div><p>After that you can edit configuartion files as needed (in /etc/sysconfig for example)</p>
+<p>Make sure you unmount the filesystem and reboot after you have done your configuration</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">umount / 
+</span></span><span class="line"><span class="cl">reboot -f
 </span></span></code></pre></div>
-    </div>
-<div class="post_comments">
+    </div><div class="post_comments">
+  
   
   
   
@@ -277,9 +500,12 @@
     <div class="search_results results"></div>
   </div>
 
-        <h2>Yannick Gerber</h2>
+    <br>
       <div class="author_bio">
-        Technologist, perpetual student - continual incremental improvement.
+        A blog about stuff from a System Engineer based in Switzerland.
+      </div>
+      <div class="author_badge">
+        <img src="/images/vexpert-badge_Years-4.png" width="140" alt="vExpert Badge" title="vExpert Badge" />
       </div>
       <a href='/about/' class="button mt-1" role="button" title='Read More'>Read More</a>
 
@@ -289,41 +515,58 @@
         The opinions expressed on this site are my own personal opinions and do not represent my employer’s view in any way.
       </div>
     
-    
     <h2 class="mt-4">Featured Posts</h2>
     <ul>
+      <li>
+        <a href="/post/vmware-edge-compute-stack/" class="nav-link" title="VMware Edge Compute Stack">VMware Edge Compute Stack</a>
+      </li>
+      <li>
+        <a href="/post/vsan-2-node/" class="nav-link" title="2-Node vSAN Cluster">2-Node vSAN Cluster</a>
+      </li>
+      <li>
+        <a href="/post/k8s-rbac/" class="nav-link" title="RBAC on VKS">RBAC on VKS</a>
+      </li>
+      <li>
+        <a href="/post/vsphere-vm-portid-cport/" class="nav-link" title="vSphere VM - conflicted PortID">vSphere VM - conflicted PortID</a>
+      </li>
+      <li>
+        <a href="/post/vclm-hpe-oneview/" class="nav-link" title="vSphere Lifecycle Manager and HPE OneView for vCenter - Troubleshooting">vSphere Lifecycle Manager and HPE OneView for vCenter - Troubleshooting</a>
+      </li>
       <li>
         <a href="/post/vcenter-troubleshooting/" class="nav-link" title="VMware vCenter Troubleshooting Guide">VMware vCenter Troubleshooting Guide</a>
       </li>
       <li>
-        <a href="/post/vcf52/" class="nav-link" title="VMware Cloud Foundation 5.2 - Part 1">VMware Cloud Foundation 5.2 - Part 1</a>
+        <a href="/post/vcf52/" class="nav-link" title="VMware Cloud Foundation 5.2">VMware Cloud Foundation 5.2</a>
       </li>
       <li>
-        <a href="/post/devsecops/" class="nav-link" title="DevSecOps">DevSecOps</a>
-      </li>
-      <li>
-        <a href="/post/reformatting-drives/" class="nav-link" title="Reformatting enterprise storage drives to 512 bytes">Reformatting enterprise storage drives to 512 bytes</a>
-      </li>
-      <li>
-        <a href="/post/tanzu-cluster-creation/" class="nav-link" title="Tanzu with vSphere and Antrea: Cluster Creation">Tanzu with vSphere and Antrea: Cluster Creation</a>
-      </li>
-      <li>
-        <a href="/post/tkg-getting-started/" class="nav-link" title="VMware Tanzu Kubernetes Grid -  getting started">VMware Tanzu Kubernetes Grid -  getting started</a>
-      </li>
-      <li>
-        <a href="/post/cillium-getting-started/" class="nav-link" title="Cillium Gateway API - Getting Started">Cillium Gateway API - Getting Started</a>
-      </li>
-      <li>
-        <a href="/post/tanzu-kubernetes-grid-workstation-setup/" class="nav-link" title="Tanzu Kubernetes Grid - Linux Workstation Setup">Tanzu Kubernetes Grid - Linux Workstation Setup</a>
+        <a href="/post/vcenter-file-level-restore/" class="nav-link" title="vCenter File Level Restore - Edit Configuration">vCenter File Level Restore - Edit Configuration</a>
       </li>
     </ul>
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
-        <a href="/post/tanzu-mission-control-self-managed/" class="nav-link" title="Tanzu Mission Control Self Managed">Tanzu Mission Control Self Managed</a>
+        <a href="/post/openshift-on-vsphere/" class="nav-link" title="OpenShift on vSphere - Roles and Permissions">OpenShift on vSphere - Roles and Permissions</a>
+      </li>
+      <li>
+        <a href="/post/argocd-configuration/" class="nav-link" title="ArgoCD Deployment &amp; Configuration">ArgoCD Deployment &amp; Configuration</a>
+      </li>
+      <li>
+        <a href="/post/vsphere-api/" class="nav-link" title="vSphere REST API - Intro">vSphere REST API - Intro</a>
+      </li>
+      <li>
+        <a href="/post/tanzu-overview/" class="nav-link" title="VMware Tanzu - Overview">VMware Tanzu - Overview</a>
+      </li>
+      <li>
+        <a href="/post/reformatting-drives/" class="nav-link" title="Reformatting enterprise storage drives to 512 bytes">Reformatting enterprise storage drives to 512 bytes</a>
       </li>
       <li>
         <a href="/post/tanzu-kubernetes-grid-workstation-setup/" class="nav-link" title="Tanzu Kubernetes Grid - Linux Workstation Setup">Tanzu Kubernetes Grid - Linux Workstation Setup</a>
+      </li>
+      <li>
+        <a href="/post/vmware-vsan-network-requirements/" class="nav-link" title="VMware vSAN Network Considerations">VMware vSAN Network Considerations</a>
+      </li>
+      <li>
+        <a href="/post/vsphere-monitoring/" class="nav-link" title="vSphere Monitoring with Grafana">vSphere Monitoring with Grafana</a>
       </li>
     </ul>
     <div>
@@ -331,32 +574,17 @@
       <nav class="tags_nav">
         <a href='/categories/vmware/' class="post_tag button button_translucent" title="vmware">
           VMWARE
-          <span class="button_tally">9</span>
-        </a>
-        
-        <a href='/categories/technology/' class="post_tag button button_translucent" title="technology">
-          TECHNOLOGY
-          <span class="button_tally">5</span>
+          <span class="button_tally">15</span>
         </a>
         
         <a href='/categories/kubernetes/' class="post_tag button button_translucent" title="kubernetes">
           KUBERNETES
+          <span class="button_tally">6</span>
+        </a>
+        
+        <a href='/categories/technology/' class="post_tag button button_translucent" title="technology">
+          TECHNOLOGY
           <span class="button_tally">3</span>
-        </a>
-        
-        <a href='/categories/it/' class="post_tag button button_translucent" title="it">
-          IT
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/categories/my-2-cents/' class="post_tag button button_translucent" title="my-2-cents">
-          MY-2-CENTS
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/categories/vcf/' class="post_tag button button_translucent" title="vcf">
-          VCF
-          <span class="button_tally">1</span>
         </a>
         
         
@@ -370,38 +598,53 @@
           <span class="button_tally">7</span>
         </a>
         
-        <a href='/tags/vmware-tanzu/' class="post_tag button button_translucent" title="vmware-tanzu">
-          VMWARE-TANZU
-          <span class="button_tally">7</span>
-        </a>
-        
-        <a href='/tags/kubernetes/' class="post_tag button button_translucent" title="kubernetes">
-          KUBERNETES
-          <span class="button_tally">4</span>
+        <a href='/tags/vmware-tanzu/' class="post_tag button button_translucent" title="vmware tanzu">
+          VMWARE TANZU
+          <span class="button_tally">6</span>
         </a>
         
         <a href='/tags/vsphere/' class="post_tag button button_translucent" title="vsphere">
           VSPHERE
+          <span class="button_tally">6</span>
+        </a>
+        
+        <a href='/tags/kubernetes/' class="post_tag button button_translucent" title="kubernetes">
+          KUBERNETES
           <span class="button_tally">3</span>
         </a>
         
-        <a href='/tags/vcf/' class="post_tag button button_translucent" title="vcf">
-          VCF
+        <a href='/tags/tanzu-kubernetes-grid/' class="post_tag button button_translucent" title="tanzu kubernetes grid">
+          TANZU KUBERNETES GRID
           <span class="button_tally">2</span>
         </a>
         
-        <a href='/tags/cheat-sheet/' class="post_tag button button_translucent" title="cheat-sheet">
-          CHEAT-SHEET
+        <a href='/tags/vcenter/' class="post_tag button button_translucent" title="vcenter">
+          VCENTER
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='/tags/vsan/' class="post_tag button button_translucent" title="vsan">
+          VSAN
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='/tags/automation/' class="post_tag button button_translucent" title="automation">
+          AUTOMATION
           <span class="button_tally">1</span>
         </a>
         
-        <a href='/tags/cni/' class="post_tag button button_translucent" title="cni">
-          CNI
+        <a href='/tags/cheat-sheet/' class="post_tag button button_translucent" title="cheat sheet">
+          CHEAT SHEET
           <span class="button_tally">1</span>
         </a>
         
-        <a href='/tags/devsecops/' class="post_tag button button_translucent" title="devsecops">
-          DEVSECOPS
+        <a href='/tags/ci/cd/' class="post_tag button button_translucent" title="ci/cd">
+          CI/CD
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/tags/cisco-aci/' class="post_tag button button_translucent" title="cisco aci">
+          CISCO ACI
           <span class="button_tally">1</span>
         </a>
         
@@ -420,36 +663,25 @@
           <span class="button_tally">1</span>
         </a>
         
-        <a href='/tags/hpe/' class="post_tag button button_translucent" title="hpe">
-          HPE
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/tags/huawei/' class="post_tag button button_translucent" title="huawei">
-          HUAWEI
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/tags/index/' class="post_tag button button_translucent" title="index">
-          INDEX
-          <span class="button_tally">1</span>
-        </a>
-        
         
         <br>
         <div class="post_tags_toggle button">All Tags</div>
         <div class="post_tags">
           <div class="tags_list">
             
-            <a href='/tags/cheat-sheet/' class=" post_tag button button_translucent" data-position=1 title="cheat-sheet">CHEAT-SHEET<span class="button_tally">1</span>
+            <a href='/tags/automation/' class=" post_tag button button_translucent" data-position=1 title="automation">AUTOMATION<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/cni/' class=" post_tag button button_translucent" data-position=1 title="cni">CNI<span class="button_tally">1</span>
+            <a href='/tags/cheat-sheet/' class=" post_tag button button_translucent" data-position=1 title="cheat sheet">CHEAT SHEET<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/devsecops/' class=" post_tag button button_translucent" data-position=1 title="devsecops">DEVSECOPS<span class="button_tally">1</span>
+            <a href='/tags/ci/cd/' class=" post_tag button button_translucent" data-position=1 title="ci/cd">CI/CD<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/cisco-aci/' class=" post_tag button button_translucent" data-position=1 title="cisco aci">CISCO ACI<span class="button_tally">1</span>
             </a>
             
             
@@ -469,6 +701,10 @@
             </a>
             
             
+            <a href='/tags/hpe-oneview/' class=" post_tag button button_translucent" data-position=1 title="hpe oneview">HPE ONEVIEW<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/tags/huawei/' class=" post_tag button button_translucent" data-position=1 title="huawei">HUAWEI<span class="button_tally">1</span>
             </a>
             
@@ -477,15 +713,7 @@
             </a>
             
             
-            <a href='/tags/it-security/' class=" post_tag button button_translucent" data-position=1 title="it-security">IT-SECURITY<span class="button_tally">1</span>
-            </a>
-            
-            
-            <a href='/tags/kubernetes/' class=" post_tag button button_translucent" data-position=4 title="kubernetes">KUBERNETES<span class="button_tally">4</span>
-            </a>
-            
-            
-            <a href='/tags/kubernetes-cillium/' class=" post_tag button button_translucent" data-position=1 title="kubernetes-cillium">KUBERNETES-CILLIUM<span class="button_tally">1</span>
+            <a href='/tags/kubernetes/' class=" post_tag button button_translucent" data-position=3 title="kubernetes">KUBERNETES<span class="button_tally">3</span>
             </a>
             
             
@@ -497,27 +725,31 @@
             </a>
             
             
-            <a href='/tags/opinion/' class=" post_tag button button_translucent" data-position=1 title="opinion">OPINION<span class="button_tally">1</span>
+            <a href='/tags/openshift/' class=" post_tag button button_translucent" data-position=1 title="openshift">OPENSHIFT<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/tanzu-kubernetes-clusters/' class=" post_tag button button_translucent" data-position=1 title="tanzu-kubernetes-clusters">TANZU-KUBERNETES-CLUSTERS<span class="button_tally">1</span>
+            <a href='/tags/tanzu-kubernetes/' class=" post_tag button button_translucent" data-position=1 title="tanzu kubernetes">TANZU KUBERNETES<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/tanzu-kubernetes-grid/' class=" post_tag button button_translucent" data-position=1 title="tanzu-kubernetes-grid">TANZU-KUBERNETES-GRID<span class="button_tally">1</span>
+            <a href='/tags/tanzu-kubernetes-clusters/' class=" post_tag button button_translucent" data-position=1 title="tanzu kubernetes clusters">TANZU KUBERNETES CLUSTERS<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/tig-stack/' class=" post_tag button button_translucent" data-position=1 title="tig-stack">TIG-STACK<span class="button_tally">1</span>
+            <a href='/tags/tanzu-kubernetes-grid/' class=" post_tag button button_translucent" data-position=2 title="tanzu kubernetes grid">TANZU KUBERNETES GRID<span class="button_tally">2</span>
             </a>
             
             
-            <a href='/tags/vcenter/' class=" post_tag button button_translucent" data-position=1 title="vcenter">VCENTER<span class="button_tally">1</span>
+            <a href='/tags/tig-stack/' class=" post_tag button button_translucent" data-position=1 title="tig stack">TIG STACK<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/vcf/' class=" post_tag button button_translucent" data-position=2 title="vcf">VCF<span class="button_tally">2</span>
+            <a href='/tags/vcenter/' class=" post_tag button button_translucent" data-position=2 title="vcenter">VCENTER<span class="button_tally">2</span>
+            </a>
+            
+            
+            <a href='/tags/vcf/' class=" post_tag button button_translucent" data-position=1 title="vcf">VCF<span class="button_tally">1</span>
             </a>
             
             
@@ -525,23 +757,47 @@
             </a>
             
             
-            <a href='/tags/vmware-tanzu/' class=" post_tag button button_translucent" data-position=7 title="vmware-tanzu">VMWARE-TANZU<span class="button_tally">7</span>
+            <a href='/tags/vmware-cloud-foundation/' class=" post_tag button button_translucent" data-position=1 title="vmware cloud foundation">VMWARE CLOUD FOUNDATION<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/vmware-tanzu-kubernetes-grid/' class=" post_tag button button_translucent" data-position=1 title="vmware-tanzu-kubernetes-grid">VMWARE-TANZU-KUBERNETES-GRID<span class="button_tally">1</span>
+            <a href='/tags/vmware-ecs/' class=" post_tag button button_translucent" data-position=1 title="vmware ecs">VMWARE ECS<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/vsan/' class=" post_tag button button_translucent" data-position=1 title="vsan">VSAN<span class="button_tally">1</span>
+            <a href='/tags/vmware-tanzu/' class=" post_tag button button_translucent" data-position=6 title="vmware tanzu">VMWARE TANZU<span class="button_tally">6</span>
             </a>
             
             
-            <a href='/tags/vsan-over-roce/' class=" post_tag button button_translucent" data-position=1 title="vsan-over-roce">VSAN-OVER-ROCE<span class="button_tally">1</span>
+            <a href='/tags/vmware-tanzu-kubernetes-grid/' class=" post_tag button button_translucent" data-position=1 title="vmware tanzu kubernetes grid">VMWARE TANZU KUBERNETES GRID<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/vsphere/' class=" post_tag button button_translucent" data-position=3 title="vsphere">VSPHERE<span class="button_tally">3</span>
+            <a href='/tags/vmware-veco/' class=" post_tag button button_translucent" data-position=1 title="vmware veco">VMWARE VECO<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/vsan/' class=" post_tag button button_translucent" data-position=2 title="vsan">VSAN<span class="button_tally">2</span>
+            </a>
+            
+            
+            <a href='/tags/vsan-over-roce/' class=" post_tag button button_translucent" data-position=1 title="vsan over roce">VSAN OVER ROCE<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/vsphere/' class=" post_tag button button_translucent" data-position=6 title="vsphere">VSPHERE<span class="button_tally">6</span>
+            </a>
+            
+            
+            <a href='/tags/vsphere-kubernetes-service/' class=" post_tag button button_translucent" data-position=1 title="vsphere kubernetes service">VSPHERE KUBERNETES SERVICE<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/vsphere-networking/' class=" post_tag button button_translucent" data-position=1 title="vsphere networking">VSPHERE NETWORKING<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/tags/vsphere-with-tanzu/' class=" post_tag button button_translucent" data-position=1 title="vsphere with tanzu">VSPHERE WITH TANZU<span class="button_tally">1</span>
             </a>
             
             
@@ -636,6 +892,14 @@
     fill="#000000"
     d="m 12.616925,5.6916583 v 4.3315297 h -1.71607 V 5.8189683 c 0,-0.88624 -0.37289,-1.33607 -1.1187604,-1.33607 -0.82467,0 -1.23799,0.53361 -1.23799,1.58875 v 2.30122 h -1.70594 v -2.30122 c 0,-1.05514 -0.4134,-1.58875 -1.23808,-1.58875 -0.74587,0 -1.11876,0.44983 -1.11876,1.33607 v 4.2042197 h -1.71607 V 5.6916583 c 0,-0.88527 0.22541,-1.58876 0.67817,-2.10922 0.46689,-0.52047 1.07833,-0.78727 1.83735,-0.78727 0.87816,0 1.54317,0.33752 1.98288,1.01267 l 0.42744,0.71655 0.42753,-0.71655 c 0.43961,-0.67515 1.10463,-1.01267 1.9828704,-1.01267 0.75893,0 1.37037,0.2668 1.83735,0.78727 0.45268,0.52046 0.67808,1.22395 0.67808,2.10922"/>
   </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530" id="bluesky" >
+    <path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="ko-fi">
+    <path fill="#ffffff" d="M4.5,9.8527H32.7947a0,0,0,0,1,0,0v19.225a9.07,9.07,0,0,1-9.07,9.07H13.57a9.07,9.07,0,0,1-9.07-9.07V9.8527A0,0,0,0,1,4.5,9.8527Z"/>
+    <path fill="#000000" d="M12.197,25.9493l6.45,6.45,6.45-6.45a8.2,8.2,0,0,0,2.4016-5.798h0a4.5082,4.5082,0,0,0-4.212-4.5459,4.4262,4.4262,0,0,0-4.64,4.4209,4.4261,4.4261,0,0,0-4.64-4.4209,4.5082,4.5082,0,0,0-4.212,4.5459h0A8.2,8.2,0,0,0,12.197,25.9493Z"/>
+    <path fill="#ffffff" d="M32.7947,9.8527H35.73a7.77,7.77,0,0,1,0,15.5394H32.7947"/>
+  </svg>
+  </symbol>
 </svg>
 
 <footer class="footer">
@@ -652,9 +916,9 @@
   </div>
 </footer>
 
-<script type="text/javascript" src="/en/js/bundle.b37e6fff3826bb034b60c13370656fe73f202be5c0b4d0eb7d1925bce85cba1bb054eda5b17cbd6bd38a1376cf3b4a8579fe0818ca6e10d5f29a57298d487cb0.js" integrity="sha512-s35v/zgmuwNLYMEzcGVv5z8gK&#43;XAtNDrfRklvOhcuhuwVO2lsXy9a9OKE3bPO0qFef4IGMpuENXymlcpjUh8sA==" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/en/js/bundle.2f36309c77205efd88cc637205808237375d2c3883c7404d70c6e50f948c8a48439e14353a335d3dd0468c438df1699de307b97d64f10c5612be666a18f66ee6.js" integrity="sha512-LzYwnHcgXv2IzGNyBYCCNzddLDiDx0BNcMblD5SMikhDnhQ1OjNdPdBGjEON8Wmd4we5fWTxDFYSvmZqGPZu5g==" crossorigin="anonymous"></script>
 
-  <script src="/js/search.min.b19f217359693afb8f0abd75ca8de6becceec41f5304950fc48e165914ef227f44d10005d02a281a66e33b482e2ff27e6eb893111505deb4f072c307e1f887bb.js"></script>
+  <script src="/js/search.min.8d141e1e7aa85984a5288b2172ad03540fc235f64379f8df11d062fd3deb9d49bbd9fb0f3df983e9663e322fa8e322a336d5350fbe833c77eb9ee7d907636cff.js"></script>
 
   </body>
 </html>

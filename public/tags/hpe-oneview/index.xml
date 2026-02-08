@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HPE OneView on vBünzli</title>
+    <link>/tags/hpe-oneview/</link>
+    <description>Recent content in HPE OneView on vBünzli</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
+    <lastBuildDate>Wed, 20 Nov 2024 09:25:35 +0100</lastBuildDate><atom:link href="/tags/hpe-oneview/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>vSphere Lifecycle Manager and HPE OneView for vCenter - Troubleshooting</title>
+      <link>/post/vclm-hpe-oneview/</link>
+      <pubDate>Wed, 20 Nov 2024 09:25:35 +0100</pubDate>
+      
+      <guid>/post/vclm-hpe-oneview/</guid>
+      <description>
+        
+          
+            &lt;h1 id=&#34;vsphere-lifecycle-manager-vlcm&#34;&gt;vSphere Lifecycle Manager (vLCM)&lt;/h1&gt;
+&lt;p&gt;Some Guidance when troubleshooting Issues with vSphere Lifecycle Manager and HPE OneView for vCenter as a HSM (Hardware Support Manager).&lt;/p&gt;
+&lt;h2 id=&#34;log-files&#34;&gt;Log Files&lt;/h2&gt;
+&lt;p&gt;The General Log File for vLCM is here:&lt;/p&gt;
+&lt;p&gt;Log File: /var/log/vmware/vmware-updatemgr/vum-server/vmware-vum-server.log&lt;/p&gt;
+&lt;p&gt;To see error from this log file&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;cat&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;var&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vmware&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vmware&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;updatemgr&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vum&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;server&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vmware&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vum&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;server&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;log&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;grep&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;error&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;3rd Party Depots and their the vCenter Access to those depot is logged in the following file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;cat&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;var&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vmware&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;envoy&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;envoy&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;access&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;log&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;grep&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;hpe&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;common-errors&#34;&gt;Common Errors&lt;/h2&gt;
+&lt;h3 id=&#34;cannot-sync-software-depots&#34;&gt;Cannot sync software depots&lt;/h3&gt;
+&lt;p&gt;To verify that the online depot registration was successful, navigate to &lt;em&gt;Menu &amp;gt; Lifecycle Manager &amp;gt; Settings &amp;gt; Administration &amp;gt; Patch Setup&lt;/em&gt;. The values in the Enabled and Connectivity Status columns should be &lt;em&gt;Yes&lt;/em&gt; and &lt;em&gt;Connected&lt;/em&gt; respectively. If the Connectivity Status is Not Connected, verify the proper settings for the vCenter proxy configuration and perform a manual sync of the updates.&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

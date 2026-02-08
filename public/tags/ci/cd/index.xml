@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CI/CD on vBünzli</title>
+    <link>/tags/ci/cd/</link>
+    <description>Recent content in CI/CD on vBünzli</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
+    <lastBuildDate>Fri, 13 Sep 2024 23:48:15 +0100</lastBuildDate><atom:link href="/tags/ci/cd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ArgoCD Deployment &amp; Configuration</title>
+      <link>/post/argocd-configuration/</link>
+      <pubDate>Fri, 13 Sep 2024 23:48:15 +0100</pubDate>
+      
+      <guid>/post/argocd-configuration/</guid>
+      <description>
+        
+          
+            &lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;ArgoCD is a declarative, GitOps continuous delivery tool for Kubernetes. It&#39;s designed to make application deployment and lifecycle management automated, auditable, and easy to understand.&lt;/p&gt;
+&lt;p&gt;Key features and concepts of ArgoCD include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GitOps Methodology: Argo CD uses Git repositories as the source of truth for defining the desired application state.&lt;/li&gt;
+&lt;li&gt;Kubernetes-native: It&#39;s implemented as a Kubernetes controller that continuously monitors running applications and compares their current state against the desired state specified in Git.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This blog post explains the deployment of ArgoCD in a Tanzu Kubernetes Grid Cluster. There is also the option to provision ArgoCD as a supervisor Service.&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

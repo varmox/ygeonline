@@ -1,5 +1,6 @@
 ---
-title: "[QuickTip] Tanzu Package Troubleshooting" # Title of the blog post.
+title: "Tanzu Package Troubleshooting" # Title of the blog post.
+postType: "QuickTip"
 date: 2025-01-06T15:26:46+01:00 # Date of post creation.
 description: "Common Error with Tanzu Packages" # Description used for search engine.
 featured: true # Sets if post is a featured post, making appear on the home page side bar.

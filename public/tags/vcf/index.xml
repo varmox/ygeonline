@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>VCF on ygerber</title>
+    <title>VCF on vBünzli</title>
     <link>/tags/vcf/</link>
-    <description>Recent content in VCF on ygerber</description>
+    <description>Recent content in VCF on vBünzli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
@@ -17,28 +17,16 @@
       <description>
         
           
-            vCenter Troubleshooting Guide Log Files Networking Manual Network Config DNS *** Flush DNS ***
-1 2systemctl restart systemd–resolved.service 3 4systemctl restart dnsmasq HTTP Proxy Certificate Management Renew all vCenter Machine Certificates vLCM *** Cannot sync depot ***
-1 2/var/log/vmware/vmware-updatemgr/vum-server/vmware-vum-server.log 
-          
-          
-        
-      </description>
-    </item>
-    
-    <item>
-      <title>VMware Cloud Foundation 5.2 - Part 1</title>
-      <link>/post/vcf52/</link>
-      <pubDate>Tue, 25 Jun 2024 20:48:30 +0200</pubDate>
-      
-      <guid>/post/vcf52/</guid>
-      <description>
-        
-          
-            The new VCF 5.2 Update delivers quite a few interesting updates. This blog post covers expecially the updates and improvements for Tanzu.
-Part 1 covers new Feature within Tanzu on vSphere 8 Update 3.
-vSphere with Tanzu Update -&amp;gt; vSphere IaaS Control Plane vSphere with Tanzu is passé - the new naming is vSphere IaaS Control Plane.
-The naming already suggest - not only Kubernetes Cluster can be deployed, also VMs (this was possible a long time but with the new naming the focus is not only on k8s).
+            &lt;h1 id=&#34;vcenter-troubleshooting-guide&#34;&gt;vCenter Troubleshooting Guide&lt;/h1&gt;
+&lt;p&gt;The following Troubleshooting Guide applies to vCenter 8 and above.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h4 id=&#34;caution&#34;&gt;Caution!&lt;/h4&gt;
+&lt;p&gt;Create a VM Snapshot of your vCenter before proceeding with any step!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;general-troubleshooting&#34;&gt;General Troubleshooting&lt;/h2&gt;
+&lt;p&gt;Log files can be accesses trough ssh or bash. SSH login works with the root user or your SSO Admi User (commonly &lt;a href=&#34;mailto:administrator@vsphere.local&#34;&gt;administrator@vsphere.local&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SSH not working&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If SSH does not work (eg. due to a networki misconfiguration) you can access the vCenter via bash (VM Remote Console).&lt;/p&gt;
           
           
         
