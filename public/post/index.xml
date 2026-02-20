@@ -2,18 +2,98 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on vBünzli</title>
-    <link>/post/</link>
+    <link>//localhost:1313/post/</link>
     <description>Recent content in Posts on vBünzli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Mon, 30 Dec 2024 18:52:03 +0100</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Feb 2026 17:40:28 +0100</lastBuildDate><atom:link href="//localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data Services Manager - K8s </title>
+      <link>//localhost:1313/post/dsm-9-k8s/</link>
+      <pubDate>Mon, 09 Feb 2026 17:40:28 +0100</pubDate>
+      
+      <guid>//localhost:1313/post/dsm-9-k8s/</guid>
+      <description>
+        
+          
+            &lt;h1 id=&#34;vmware-data-services-manager---k8s-operator&#34;&gt;VMware Data Services Manager - K8s Operator&lt;/h1&gt;
+&lt;p&gt;VMware DSM provisions Data Services like Postgres, MySQL and MSSQL. You can consume DSM in three ways:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;DSM UI&lt;/li&gt;
+&lt;li&gt;VCF Automation&lt;/li&gt;
+&lt;li&gt;K8s Operator&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;DSM Installation is straightforward, just grab the OVA and install it. DSM will install a Plugin in vCenter and the DSM UI will be accessible with the IP you configured on the OVA setup. Nothing special needed, no NSX, no vSAN.&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Data Services Manager - Update to 9</title>
+      <link>//localhost:1313/post/dsm-9-upgrade/</link>
+      <pubDate>Mon, 09 Feb 2026 17:40:21 +0100</pubDate>
+      
+      <guid>//localhost:1313/post/dsm-9-upgrade/</guid>
+      <description>
+        
+          
+            &lt;p&gt;&lt;strong&gt;Insert Lead paragraph here.&lt;/strong&gt;&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Vcf 9 Upgrade</title>
+      <link>//localhost:1313/post/vcf-9-upgrade/</link>
+      <pubDate>Mon, 09 Feb 2026 17:39:56 +0100</pubDate>
+      
+      <guid>//localhost:1313/post/vcf-9-upgrade/</guid>
+      <description>
+        
+          
+            &lt;p&gt;&lt;strong&gt;Insert Lead paragraph here.&lt;/strong&gt;&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Tanzu Package Troubleshooting</title>
+      <link>//localhost:1313/post/tanzu-package-troubleshooting/</link>
+      <pubDate>Mon, 06 Jan 2025 15:26:46 +0100</pubDate>
+      
+      <guid>//localhost:1313/post/tanzu-package-troubleshooting/</guid>
+      <description>
+        
+          
+            &lt;h1 id=&#34;cannot-delete-tanzu-package&#34;&gt;Cannot delete Tanzu Package&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;h4 id=&#34;error-messaage&#34;&gt;&lt;strong&gt;Error Messaage&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;Error: &lt;em&gt;Getting service account: serviceaccounts &amp;quot;grafana-tanzu-system-dashboards-sa&amp;quot; not found&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Resolution&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl get apps grafana -oyaml | grep finalizer
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl patch app grafana -n &amp;lt; my namespace &amp;gt; -p &amp;#39;{&amp;#34;metadata&amp;#34;:{&amp;#34;finalizers&amp;#34;:[]}}&amp;#39; --type=merge
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl delete app grafana
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>VMware Edge Compute Stack</title>
-      <link>/post/vmware-edge-compute-stack/</link>
+      <link>//localhost:1313/post/vmware-edge-compute-stack/</link>
       <pubDate>Mon, 30 Dec 2024 18:52:03 +0100</pubDate>
       
-      <guid>/post/vmware-edge-compute-stack/</guid>
+      <guid>//localhost:1313/post/vmware-edge-compute-stack/</guid>
       <description>
         
           
@@ -27,11 +107,27 @@
     </item>
     
     <item>
+      <title>Cis Hardening Vsphere</title>
+      <link>//localhost:1313/post/cis-hardening-vsphere/</link>
+      <pubDate>Mon, 16 Dec 2024 20:25:11 +0100</pubDate>
+      
+      <guid>//localhost:1313/post/cis-hardening-vsphere/</guid>
+      <description>
+        
+          
+            &lt;p&gt;&lt;strong&gt;Insert Lead paragraph here.&lt;/strong&gt;&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
       <title>2-Node vSAN Cluster</title>
-      <link>/post/vsan-2-node/</link>
+      <link>//localhost:1313/post/vsan-2-node/</link>
       <pubDate>Tue, 10 Dec 2024 20:20:23 +0100</pubDate>
       
-      <guid>/post/vsan-2-node/</guid>
+      <guid>//localhost:1313/post/vsan-2-node/</guid>
       <description>
         
           
@@ -69,10 +165,10 @@
     
     <item>
       <title>RBAC on VKS</title>
-      <link>/post/k8s-rbac/</link>
+      <link>//localhost:1313/post/k8s-rbac/</link>
       <pubDate>Sun, 08 Dec 2024 12:29:05 +0100</pubDate>
       
-      <guid>/post/k8s-rbac/</guid>
+      <guid>//localhost:1313/post/k8s-rbac/</guid>
       <description>
         
           
@@ -91,11 +187,68 @@
     </item>
     
     <item>
+      <title>Harbor</title>
+      <link>//localhost:1313/post/harbor/</link>
+      <pubDate>Sat, 30 Nov 2024 00:47:13 +0100</pubDate>
+      
+      <guid>//localhost:1313/post/harbor/</guid>
+      <description>
+        
+          
+            &lt;p&gt;&lt;strong&gt;Insert Lead paragraph here.&lt;/strong&gt;&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Supervisor Services</title>
+      <link>//localhost:1313/post/supervisor-services/</link>
+      <pubDate>Sat, 30 Nov 2024 00:47:03 +0100</pubDate>
+      
+      <guid>//localhost:1313/post/supervisor-services/</guid>
+      <description>
+        
+          
+            &lt;p&gt;&lt;strong&gt;Insert Lead paragraph here.&lt;/strong&gt;&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Velero</title>
+      <link>//localhost:1313/post/velero-standalone/</link>
+      <pubDate>Sat, 30 Nov 2024 00:46:45 +0100</pubDate>
+      
+      <guid>//localhost:1313/post/velero-standalone/</guid>
+      <description>
+        
+          
+            &lt;h1 id=&#34;velero&#34;&gt;Velero&lt;/h1&gt;
+&lt;p&gt;This blog post explains how to install velero on different configurations on vSphere with Tanzu / IaaS Control Plane.&lt;/p&gt;
+&lt;h2 id=&#34;different-velero-installations-with-tgks&#34;&gt;Different Velero Installations with TGKS&lt;/h2&gt;
+&lt;p&gt;Depending on your Supervisor Cluster Configuration, there are different ways to install Velero. Each approach offers different usage on velero.&lt;/p&gt;
+&lt;h3 id=&#34;ways-to-install-velero&#34;&gt;Ways to Install Velero&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Velero Plugin for vSphere&lt;/li&gt;
+&lt;li&gt;Velero &amp;quot;Standalone&amp;quot; via Helm Chart&lt;/li&gt;
+&lt;li&gt;Velero &amp;quot;Standalone&amp;quot; via velero-cli&lt;/li&gt;
+&lt;/ul&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
       <title>vSphere VM - conflicted PortID</title>
-      <link>/post/vsphere-vm-portid-cport/</link>
+      <link>//localhost:1313/post/vsphere-vm-portid-cport/</link>
       <pubDate>Fri, 22 Nov 2024 07:41:26 +0100</pubDate>
       
-      <guid>/post/vsphere-vm-portid-cport/</guid>
+      <guid>//localhost:1313/post/vsphere-vm-portid-cport/</guid>
       <description>
         
           
@@ -111,10 +264,10 @@ It does not automatically reconfigure the virtual machine to connect to a regula
     
     <item>
       <title>vSphere Lifecycle Manager and HPE OneView for vCenter - Troubleshooting</title>
-      <link>/post/vclm-hpe-oneview/</link>
+      <link>//localhost:1313/post/vclm-hpe-oneview/</link>
       <pubDate>Wed, 20 Nov 2024 09:25:35 +0100</pubDate>
       
-      <guid>/post/vclm-hpe-oneview/</guid>
+      <guid>//localhost:1313/post/vclm-hpe-oneview/</guid>
       <description>
         
           
@@ -138,10 +291,10 @@ It does not automatically reconfigure the virtual machine to connect to a regula
     
     <item>
       <title>OpenShift on vSphere - Roles and Permissions</title>
-      <link>/post/openshift-on-vsphere/</link>
+      <link>//localhost:1313/post/openshift-on-vsphere/</link>
       <pubDate>Tue, 19 Nov 2024 23:20:09 +0100</pubDate>
       
-      <guid>/post/openshift-on-vsphere/</guid>
+      <guid>//localhost:1313/post/openshift-on-vsphere/</guid>
       <description>
         
           
@@ -156,11 +309,27 @@ It does not automatically reconfigure the virtual machine to connect to a regula
     </item>
     
     <item>
+      <title>Esxi Tpm Key Backup</title>
+      <link>//localhost:1313/post/esxi-tpm-key-backup/</link>
+      <pubDate>Wed, 23 Oct 2024 12:28:07 +0200</pubDate>
+      
+      <guid>//localhost:1313/post/esxi-tpm-key-backup/</guid>
+      <description>
+        
+          
+            &lt;p&gt;&lt;strong&gt;Insert Lead paragraph here.&lt;/strong&gt;&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
       <title>ArgoCD Deployment &amp; Configuration</title>
-      <link>/post/argocd-configuration/</link>
+      <link>//localhost:1313/post/argocd-configuration/</link>
       <pubDate>Fri, 13 Sep 2024 23:48:15 +0100</pubDate>
       
-      <guid>/post/argocd-configuration/</guid>
+      <guid>//localhost:1313/post/argocd-configuration/</guid>
       <description>
         
           
@@ -180,10 +349,10 @@ It does not automatically reconfigure the virtual machine to connect to a regula
     
     <item>
       <title>VMware vCenter Troubleshooting Guide</title>
-      <link>/post/vcenter-troubleshooting/</link>
+      <link>//localhost:1313/post/vcenter-troubleshooting/</link>
       <pubDate>Fri, 23 Aug 2024 22:24:18 +0200</pubDate>
       
-      <guid>/post/vcenter-troubleshooting/</guid>
+      <guid>//localhost:1313/post/vcenter-troubleshooting/</guid>
       <description>
         
           
@@ -205,10 +374,10 @@ It does not automatically reconfigure the virtual machine to connect to a regula
     
     <item>
       <title>VMware Cloud Foundation 5.2</title>
-      <link>/post/vcf52/</link>
+      <link>//localhost:1313/post/vcf52/</link>
       <pubDate>Tue, 25 Jun 2024 20:48:30 +0200</pubDate>
       
-      <guid>/post/vcf52/</guid>
+      <guid>//localhost:1313/post/vcf52/</guid>
       <description>
         
           
@@ -224,11 +393,34 @@ It does not automatically reconfigure the virtual machine to connect to a regula
     </item>
     
     <item>
+      <title>DevSecOps</title>
+      <link>//localhost:1313/post/devsecops/</link>
+      <pubDate>Tue, 25 Jun 2024 08:30:38 +0200</pubDate>
+      
+      <guid>//localhost:1313/post/devsecops/</guid>
+      <description>
+        
+          
+            &lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Due to the rise of containerized applications the new word DevOps or DevSecOps.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;So what is DevOps?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Basically the developer should also build &amp;amp; operate the infrastructure on which is code runs on.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;And DevSecOps?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;We need Security, so adapt DevOps Practises also for Security. Devs should also be resonsible to securing their infrastructure.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What are the goals?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The main Goal for DevOps Practises is to shorten time of the SDLC (Systems Develoopment Lifecyle). Basically be faster to ship code into production.&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
       <title>vSphere REST API - Intro</title>
-      <link>/post/vsphere-api/</link>
+      <link>//localhost:1313/post/vsphere-api/</link>
       <pubDate>Thu, 20 Jun 2024 22:22:08 +0200</pubDate>
       
-      <guid>/post/vsphere-api/</guid>
+      <guid>//localhost:1313/post/vsphere-api/</guid>
       <description>
         
           
@@ -249,10 +441,10 @@ It does not automatically reconfigure the virtual machine to connect to a regula
     
     <item>
       <title>vCenter File Level Restore - Edit Configuration</title>
-      <link>/post/vcenter-file-level-restore/</link>
+      <link>//localhost:1313/post/vcenter-file-level-restore/</link>
       <pubDate>Fri, 23 Feb 2024 12:18:49 +0200</pubDate>
       
-      <guid>/post/vcenter-file-level-restore/</guid>
+      <guid>//localhost:1313/post/vcenter-file-level-restore/</guid>
       <description>
         
           
@@ -283,10 +475,10 @@ It does not automatically reconfigure the virtual machine to connect to a regula
     
     <item>
       <title>VMware Tanzu - Overview</title>
-      <link>/post/tanzu-overview/</link>
+      <link>//localhost:1313/post/tanzu-overview/</link>
       <pubDate>Thu, 08 Feb 2024 20:43:03 +0200</pubDate>
       
-      <guid>/post/tanzu-overview/</guid>
+      <guid>//localhost:1313/post/tanzu-overview/</guid>
       <description>
         
           
@@ -307,10 +499,10 @@ Add-on&#39;s, Management Tools are now part of the Tanzu Business Unit (BU). Tan
     
     <item>
       <title>Reformatting enterprise storage drives to 512 bytes</title>
-      <link>/post/reformatting-drives/</link>
+      <link>//localhost:1313/post/reformatting-drives/</link>
       <pubDate>Tue, 26 Dec 2023 15:28:45 +0200</pubDate>
       
-      <guid>/post/reformatting-drives/</guid>
+      <guid>//localhost:1313/post/reformatting-drives/</guid>
       <description>
         
           
@@ -323,11 +515,76 @@ Add-on&#39;s, Management Tools are now part of the Tanzu Business Unit (BU). Tan
     </item>
     
     <item>
+      <title>Tanzu Mission Control Self Managed</title>
+      <link>//localhost:1313/post/tanzu-mission-control-self-managed/</link>
+      <pubDate>Sat, 09 Dec 2023 13:57:09 +0100</pubDate>
+      
+      <guid>//localhost:1313/post/tanzu-mission-control-self-managed/</guid>
+      <description>
+        
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Tanzu with vSphere and Antrea: Cluster Creation</title>
+      <link>//localhost:1313/post/tanzu-cluster-creation/</link>
+      <pubDate>Fri, 08 Dec 2023 20:43:03 +0200</pubDate>
+      
+      <guid>//localhost:1313/post/tanzu-cluster-creation/</guid>
+      <description>
+        
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>VMware Tanzu Kubernetes Grid -  getting started</title>
+      <link>//localhost:1313/post/tkg-getting-started/</link>
+      <pubDate>Wed, 29 Nov 2023 22:04:40 +0100</pubDate>
+      
+      <guid>//localhost:1313/post/tkg-getting-started/</guid>
+      <description>
+        
+          
+            &lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;This blog post is about getting started with VMware Tanzu Kubernetes Grid (TKG). TKG is used to deploy Tanzu Kubernetes Cluster to various Cloud Providers including vSphere, AWS and Azure.
+First, a management cluster (based on Docker and kind) is created from a Bootstrap Workstation, which itself then  provides its web interface and additional CLI tools to create a Kubernetes cluster.&lt;/p&gt;
+&lt;p&gt;TKG has no integration in vSphere UI. If you wan&#39;t to integrate Tanzu with vCenter/vSphere UI - use vSphere with Tanzu instead.&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Cillium Gateway API - Getting Started</title>
+      <link>//localhost:1313/post/cillium-getting-started/</link>
+      <pubDate>Sat, 14 Oct 2023 18:18:26 +0200</pubDate>
+      
+      <guid>//localhost:1313/post/cillium-getting-started/</guid>
+      <description>
+        
+          
+            &lt;p&gt;&lt;strong&gt;Cillium Gateway API&lt;/strong&gt;
+The Cilium Gateway API is a Kubernetes API that provides a more powerful and flexible way to manage traffic routing than the traditional Ingress API of (vanilla) Kubernetes. It is a set of resources that model service networking in Kubernetes, and is designed to be role-oriented, portable, expressive, and extensible.
+The Cilium Service Mesh Gateway API Controller requires the ability to create LoadBalancer Kubernetes services.&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
       <title>Tanzu Kubernetes Grid - Linux Workstation Setup</title>
-      <link>/post/tanzu-kubernetes-grid-workstation-setup/</link>
+      <link>//localhost:1313/post/tanzu-kubernetes-grid-workstation-setup/</link>
       <pubDate>Sun, 08 Oct 2023 20:43:03 +0200</pubDate>
       
-      <guid>/post/tanzu-kubernetes-grid-workstation-setup/</guid>
+      <guid>//localhost:1313/post/tanzu-kubernetes-grid-workstation-setup/</guid>
       <description>
         
           
@@ -349,10 +606,10 @@ Add-on&#39;s, Management Tools are now part of the Tanzu Business Unit (BU). Tan
     
     <item>
       <title>VMware vSAN Network Considerations</title>
-      <link>/post/vmware-vsan-network-requirements/</link>
+      <link>//localhost:1313/post/vmware-vsan-network-requirements/</link>
       <pubDate>Wed, 23 Aug 2023 23:13:14 +0200</pubDate>
       
-      <guid>/post/vmware-vsan-network-requirements/</guid>
+      <guid>//localhost:1313/post/vmware-vsan-network-requirements/</guid>
       <description>
         
           
@@ -373,10 +630,10 @@ Add-on&#39;s, Management Tools are now part of the Tanzu Business Unit (BU). Tan
     
     <item>
       <title>vSphere Monitoring with Grafana</title>
-      <link>/post/vsphere-monitoring/</link>
+      <link>//localhost:1313/post/vsphere-monitoring/</link>
       <pubDate>Tue, 08 Aug 2023 20:43:03 +0200</pubDate>
       
-      <guid>/post/vsphere-monitoring/</guid>
+      <guid>//localhost:1313/post/vsphere-monitoring/</guid>
       <description>
         
           
@@ -401,7 +658,7 @@ Add-on&#39;s, Management Tools are now part of the Tanzu Business Unit (BU). Tan
         class=&#34;image_figure image_external image_processed&#34;
         width=&#34;3338&#34;
         height=&#34;1334&#34;
-        src=&#34;/images/QbfN11Q_17788218198938191418.png&#34;
+        src=&#34;//localhost:1313/images/QbfN11Q_17788218198938191418.png&#34;
       
       
     /&gt;
@@ -426,11 +683,37 @@ Add-on&#39;s, Management Tools are now part of the Tanzu Business Unit (BU). Tan
     </item>
     
     <item>
+      <title>State of Enterprise IT-Security</title>
+      <link>//localhost:1313/post/state-of-enterprise-itsecurity/</link>
+      <pubDate>Sun, 09 Jul 2023 15:28:45 +0200</pubDate>
+      
+      <guid>//localhost:1313/post/state-of-enterprise-itsecurity/</guid>
+      <description>
+        
+          
+            &lt;p&gt;&lt;strong&gt;Why current Enterprise IT-Security is s shipwreck.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The state of enterprise IT-Security is pretty bad and I don&#39;t think the current strategy to better it is any good. And here&#39;s the why:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;status quo&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;But firstly, what are the security concerns of businesses regarding IT-Security?&lt;/p&gt;
+&lt;p&gt;If we take the CIA triad for help:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ransomware that disrups availability and integrity&lt;/li&gt;
+&lt;li&gt;Data Leaks that violences confidentiality&lt;/li&gt;
+&lt;li&gt;malware/virus that disrups integrity&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;.. and more&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
       <title>Tanzu Kubernetes Cluster Example Deployments</title>
-      <link>/post/tanzu-kubernetes-cluster-examples/</link>
+      <link>//localhost:1313/post/tanzu-kubernetes-cluster-examples/</link>
       <pubDate>Fri, 23 Jun 2023 23:13:14 +0200</pubDate>
       
-      <guid>/post/tanzu-kubernetes-cluster-examples/</guid>
+      <guid>//localhost:1313/post/tanzu-kubernetes-cluster-examples/</guid>
       <description>
         
           
@@ -485,10 +768,10 @@ Add-on&#39;s, Management Tools are now part of the Tanzu Business Unit (BU). Tan
     
     <item>
       <title>Quicktip: Tanzu &amp; HA-Proxy</title>
-      <link>/post/tanzu-haproxy-tips/</link>
+      <link>//localhost:1313/post/tanzu-haproxy-tips/</link>
       <pubDate>Wed, 08 Mar 2023 20:43:03 +0200</pubDate>
       
-      <guid>/post/tanzu-haproxy-tips/</guid>
+      <guid>//localhost:1313/post/tanzu-haproxy-tips/</guid>
       <description>
         
           
@@ -506,10 +789,10 @@ Add-on&#39;s, Management Tools are now part of the Tanzu Business Unit (BU). Tan
     
     <item>
       <title>K8 Cheat Sheet</title>
-      <link>/post/kubernetes/k8-cheat-sheet/</link>
+      <link>//localhost:1313/post/kubernetes/k8-cheat-sheet/</link>
       <pubDate>Sun, 04 Dec 2022 23:16:50 +0100</pubDate>
       
-      <guid>/post/kubernetes/k8-cheat-sheet/</guid>
+      <guid>//localhost:1313/post/kubernetes/k8-cheat-sheet/</guid>
       <description>
         
           
@@ -991,10 +1274,10 @@ Add-on&#39;s, Management Tools are now part of the Tanzu Business Unit (BU). Tan
     
     <item>
       <title>Huawei VRP</title>
-      <link>/post/networking/huawei-vrp/</link>
+      <link>//localhost:1313/post/networking/huawei-vrp/</link>
       <pubDate>Sun, 04 Dec 2022 15:11:13 +0100</pubDate>
       
-      <guid>/post/networking/huawei-vrp/</guid>
+      <guid>//localhost:1313/post/networking/huawei-vrp/</guid>
       <description>
         
           

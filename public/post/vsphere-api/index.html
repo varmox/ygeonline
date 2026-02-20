@@ -8,22 +8,12 @@
   
   
   >
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 <title>vSphere REST API - Intro | vBünzli</title>
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<script async src="https://www.googletagmanager.com/gtag/js?id=XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'XXXXXXXXXX');
-</script>
-
-
-
 
 
 
@@ -34,30 +24,30 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="@varmox">
 <meta name="twitter:title" content="vSphere REST API - Intro" />
-<meta name="twitter:image" content="/images/thumbnail.png"/>
-<meta property="og:url" content="/post/vsphere-api/" />
+<meta name="twitter:image" content="//localhost:1313/images/thumbnail.png"/>
+<meta property="og:url" content="//localhost:1313/post/vsphere-api/" />
 <meta property="og:title" content="vSphere REST API - Intro" />
 <meta property="og:description" content="Introduction to the vSphere REST API" />
-<meta property="og:image" content="/images/thumbnail.png" />
+<meta property="og:image" content="//localhost:1313/images/thumbnail.png" />
   <meta name="keywords" content="VMware,vSphere,Automation" />
 
-<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-<link rel="manifest" href="/icons/site.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="//localhost:1313/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/icons/favicon-32x32.png">
+<link rel="manifest" href="//localhost:1313/icons/site.webmanifest">
 
-<link rel="canonical" href="/post/vsphere-api/">
-
-
-
-<link rel="preload" href="/css/styles.28e3156792a33b97ba888e7acd6332e65e0a04431094fa89d055987a4f000423510faa3c85534428d91f2e64c74d2c2a9e1d907fcdc2d32699e38506a03abda1.css" integrity = "sha512-KOMVZ5KjO5e6iI56zWMy5l4KBEMQlPqJ0FWYek8ABCNRD6o8hVNEKNkfLmTHTSwqnh2Qf83C0yaZ44UGoDq9oQ==" as="style" crossorigin="anonymous">
+<link rel="canonical" href="//localhost:1313/post/vsphere-api/">
 
 
 
-<link rel="preload" href="/en/js/bundle.2f36309c77205efd88cc637205808237375d2c3883c7404d70c6e50f948c8a48439e14353a335d3dd0468c438df1699de307b97d64f10c5612be666a18f66ee6.js" as="script" integrity=
-"sha512-LzYwnHcgXv2IzGNyBYCCNzddLDiDx0BNcMblD5SMikhDnhQ1OjNdPdBGjEON8Wmd4we5fWTxDFYSvmZqGPZu5g==" crossorigin="anonymous">
+<link rel="preload" href="//localhost:1313/css/styles.28e3156792a33b97ba888e7acd6332e65e0a04431094fa89d055987a4f000423510faa3c85534428d91f2e64c74d2c2a9e1d907fcdc2d32699e38506a03abda1.css" integrity = "sha512-KOMVZ5KjO5e6iI56zWMy5l4KBEMQlPqJ0FWYek8ABCNRD6o8hVNEKNkfLmTHTSwqnh2Qf83C0yaZ44UGoDq9oQ==" as="style" crossorigin="anonymous">
 
 
-<link rel="stylesheet" type="text/css" href="/css/styles.28e3156792a33b97ba888e7acd6332e65e0a04431094fa89d055987a4f000423510faa3c85534428d91f2e64c74d2c2a9e1d907fcdc2d32699e38506a03abda1.css" integrity="sha512-KOMVZ5KjO5e6iI56zWMy5l4KBEMQlPqJ0FWYek8ABCNRD6o8hVNEKNkfLmTHTSwqnh2Qf83C0yaZ44UGoDq9oQ==" crossorigin="anonymous">
+
+<link rel="preload" href="//localhost:1313/en/js/bundle.f3f2e2f704137c5dbba9a58002cda379b07d9993ded26be3afe4ebc5c9060f3cd38f3a5cf527f6bb57e7cbb9d37431334eeaf0492ad8f23cffc4cd880c7b35e2.js" as="script" integrity=
+"sha512-8/Li9wQTfF27qaWAAs2jebB9mZPe0mvjr&#43;TrxckGDzzTjzpc9Sf2u1fny7nTdDEzTurwSSrY8jz/xM2IDHs14g==" crossorigin="anonymous">
+
+
+<link rel="stylesheet" type="text/css" href="//localhost:1313/css/styles.28e3156792a33b97ba888e7acd6332e65e0a04431094fa89d055987a4f000423510faa3c85534428d91f2e64c74d2c2a9e1d907fcdc2d32699e38506a03abda1.css" integrity="sha512-KOMVZ5KjO5e6iI56zWMy5l4KBEMQlPqJ0FWYek8ABCNRD6o8hVNEKNkfLmTHTSwqnh2Qf83C0yaZ44UGoDq9oQ==" crossorigin="anonymous">
 
   </head>
   <body
@@ -68,7 +58,7 @@
   >
 
 <header class="nav_header" >
-  <nav class="nav"><a href='/' class="nav_brand nav_item" title="vBünzli"><span class="logo-prompt">&gt;_</span>&nbsp;vBünzli
+  <nav class="nav"><a href='//localhost:1313/' class="nav_brand nav_item" title="vBünzli"><span class="logo-prompt">&gt;_</span>&nbsp;vBünzli
   <div class="nav_close">
     <div><svg class="icon">
   <title>open-menu</title>
@@ -89,24 +79,24 @@
         
 
   <div class="nav_parent">
-    <a href="/tags/vmware" class="nav_item" title="VMware">VMware <img src='/icons/caret-icon.svg' alt="icon" class="nav_icon"></a>
+    <a href="//localhost:1313/tags/vmware" class="nav_item" title="VMware">VMware <img src='//localhost:1313/icons/caret-icon.svg' alt="icon" class="nav_icon"></a>
     <div class="nav_sub">
       <span class="nav_child"></span>
-        <a href="/tags/vsphere" class="nav_child nav_item" title="vSphere">vSphere</a>
-        <a href="/tags/vsan" class="nav_child nav_item" title="vSAN">vSAN</a>
-        <a href="/tags/vsphere-kubernetes-service" class="nav_child nav_item" title="VKS">VKS</a>
-        <a href="/tags/vcf" class="nav_child nav_item" title="VCF">VCF</a>
-        <a href="/tags/vcenter" class="nav_child nav_item" title="vCenter">vCenter</a>
+        <a href="//localhost:1313/tags/vsphere" class="nav_child nav_item" title="vSphere">vSphere</a>
+        <a href="//localhost:1313/tags/vsan" class="nav_child nav_item" title="vSAN">vSAN</a>
+        <a href="//localhost:1313/tags/vsphere-kubernetes-service" class="nav_child nav_item" title="VKS">VKS</a>
+        <a href="//localhost:1313/tags/vcf" class="nav_child nav_item" title="VCF">VCF</a>
+        <a href="//localhost:1313/tags/vcenter" class="nav_child nav_item" title="vCenter">vCenter</a>
     </div>
   </div>
   <div class="nav_parent">
-    <a href="/tags/kubernetes" class="nav_item" title="K8s">K8s </a>
+    <a href="//localhost:1313/tags/kubernetes" class="nav_item" title="K8s">K8s </a>
   </div>
   <div class="nav_parent">
-    <a href="/tags/networking/" class="nav_item" title="Networking">Networking </a>
+    <a href="//localhost:1313/tags/networking/" class="nav_item" title="Networking">Networking </a>
   </div>
   <div class="nav_parent">
-    <a href="/about/" class="nav_item" title="About">About </a>
+    <a href="//localhost:1313/about/" class="nav_item" title="About">About </a>
   </div>
       
 <div class='follow'>
@@ -155,22 +145,22 @@
     <span class="post_date">
       Jun 20, 2024	  
     </span>
-    <span class="post_time"> · 6 min read</span><span>&nbsp;· <a href='/tags/vmware/' title="VMware" class="post_tag button button_translucent">VMware
-        </a><a href='/tags/vsphere/' title="vSphere" class="post_tag button button_translucent">vSphere
-        </a><a href='/tags/automation/' title="Automation" class="post_tag button button_translucent">Automation
+    <span class="post_time"> · 6 min read</span><span>&nbsp;· <a href='//localhost:1313/tags/vmware/' title="VMware" class="post_tag button button_translucent">VMware
+        </a><a href='//localhost:1313/tags/vsphere/' title="vSphere" class="post_tag button button_translucent">vSphere
+        </a><a href='//localhost:1313/tags/automation/' title="Automation" class="post_tag button button_translucent">Automation
         </a>
     </span>
     <span class="page_only">&nbsp;·
   <div class="post_share">
     Share on:
-    <a href="https://twitter.com/intent/tweet?text=vSphere%20REST%20API%20-%20Intro&url=%2fpost%2fvsphere-api%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+    <a href="https://twitter.com/intent/tweet?text=vSphere%20REST%20API%20-%20Intro&url=%2f%2flocalhost%3a1313%2fpost%2fvsphere-api%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
       <svg class="icon">
   <title>twitter</title>
   <use xlink:href="#twitter"></use>
 </svg>
 
     </a>
-    <a href="https://www.facebook.com/sharer.php?u=%2fpost%2fvsphere-api%2f&t=vSphere%20REST%20API%20-%20Intro" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+    <a href="https://www.facebook.com/sharer.php?u=%2f%2flocalhost%3a1313%2fpost%2fvsphere-api%2f&t=vSphere%20REST%20API%20-%20Intro" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
       <svg class="icon">
   <title>facebook</title>
   <use xlink:href="#facebook"></use>
@@ -184,7 +174,7 @@
 </svg>
 
     </a>
-    <a href="/post/vsphere-api/" title="Copy Link" class="link link_yank">
+    <a href="//localhost:1313/post/vsphere-api/" title="Copy Link" class="link link_yank">
       <svg class="icon">
   <title>copy</title>
   <use xlink:href="#copy"></use>
@@ -255,7 +245,7 @@
         class="image_figure image_external image_processed"
         width="944"
         height="1004"
-        src="/images/iP0EE4h_5275762587758774943.png"
+        src="//localhost:1313/images/iP0EE4h_5275762587758774943.png"
       
       
     />
@@ -458,7 +448,7 @@ From the burger menu, click Developer Center and select the API Explorer tab.</p
       <div class="author_badge">
         <img src="/images/vexpert-badge_Years-4.png" width="140" alt="vExpert Badge" title="vExpert Badge" />
       </div>
-      <a href='/about/' class="button mt-1" role="button" title='Read More'>Read More</a>
+      <a href='//localhost:1313/about/' class="button mt-1" role="button" title='Read More'>Read More</a>
 
     
       <div class="sidebardisclaimer">
@@ -469,73 +459,88 @@ From the burger menu, click Developer Center and select the API Explorer tab.</p
     <h2 class="mt-4">Featured Posts</h2>
     <ul>
       <li>
-        <a href="/post/vmware-edge-compute-stack/" class="nav-link" title="VMware Edge Compute Stack">VMware Edge Compute Stack</a>
+        <a href="//localhost:1313/post/dsm-9-k8s/" class="nav-link" title="Data Services Manager - K8s ">Data Services Manager - K8s</a>
       </li>
       <li>
-        <a href="/post/vsan-2-node/" class="nav-link" title="2-Node vSAN Cluster">2-Node vSAN Cluster</a>
+        <a href="//localhost:1313/post/dsm-9-upgrade/" class="nav-link" title="Data Services Manager - Update to 9">Data Services Manager - Update to 9</a>
       </li>
       <li>
-        <a href="/post/k8s-rbac/" class="nav-link" title="RBAC on VKS">RBAC on VKS</a>
+        <a href="//localhost:1313/post/vcf-9-upgrade/" class="nav-link" title="Vcf 9 Upgrade">Vcf 9 Upgrade</a>
       </li>
       <li>
-        <a href="/post/vsphere-vm-portid-cport/" class="nav-link" title="vSphere VM - conflicted PortID">vSphere VM - conflicted PortID</a>
+        <a href="//localhost:1313/post/tanzu-package-troubleshooting/" class="nav-link" title="Tanzu Package Troubleshooting">Tanzu Package Troubleshooting</a>
       </li>
       <li>
-        <a href="/post/vclm-hpe-oneview/" class="nav-link" title="vSphere Lifecycle Manager and HPE OneView for vCenter - Troubleshooting">vSphere Lifecycle Manager and HPE OneView for vCenter - Troubleshooting</a>
+        <a href="//localhost:1313/post/vmware-edge-compute-stack/" class="nav-link" title="VMware Edge Compute Stack">VMware Edge Compute Stack</a>
       </li>
       <li>
-        <a href="/post/vcenter-troubleshooting/" class="nav-link" title="VMware vCenter Troubleshooting Guide">VMware vCenter Troubleshooting Guide</a>
+        <a href="//localhost:1313/post/cis-hardening-vsphere/" class="nav-link" title="Cis Hardening Vsphere">Cis Hardening Vsphere</a>
       </li>
       <li>
-        <a href="/post/vcf52/" class="nav-link" title="VMware Cloud Foundation 5.2">VMware Cloud Foundation 5.2</a>
+        <a href="//localhost:1313/post/vsan-2-node/" class="nav-link" title="2-Node vSAN Cluster">2-Node vSAN Cluster</a>
       </li>
       <li>
-        <a href="/post/vcenter-file-level-restore/" class="nav-link" title="vCenter File Level Restore - Edit Configuration">vCenter File Level Restore - Edit Configuration</a>
+        <a href="//localhost:1313/post/k8s-rbac/" class="nav-link" title="RBAC on VKS">RBAC on VKS</a>
       </li>
     </ul>
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
-        <a href="/post/openshift-on-vsphere/" class="nav-link" title="OpenShift on vSphere - Roles and Permissions">OpenShift on vSphere - Roles and Permissions</a>
+        <a href="//localhost:1313/post/harbor/" class="nav-link" title="Harbor">Harbor</a>
       </li>
       <li>
-        <a href="/post/argocd-configuration/" class="nav-link" title="ArgoCD Deployment &amp; Configuration">ArgoCD Deployment &amp; Configuration</a>
+        <a href="//localhost:1313/post/supervisor-services/" class="nav-link" title="Supervisor Services">Supervisor Services</a>
       </li>
       <li>
-        <a href="/post/vsphere-api/" class="nav-link" title="vSphere REST API - Intro">vSphere REST API - Intro</a>
+        <a href="//localhost:1313/post/velero-standalone/" class="nav-link" title="Velero">Velero</a>
       </li>
       <li>
-        <a href="/post/tanzu-overview/" class="nav-link" title="VMware Tanzu - Overview">VMware Tanzu - Overview</a>
+        <a href="//localhost:1313/post/vsphere-vm-portid-cport/" class="nav-link" title="vSphere VM - conflicted PortID">vSphere VM - conflicted PortID</a>
       </li>
       <li>
-        <a href="/post/reformatting-drives/" class="nav-link" title="Reformatting enterprise storage drives to 512 bytes">Reformatting enterprise storage drives to 512 bytes</a>
+        <a href="//localhost:1313/post/vclm-hpe-oneview/" class="nav-link" title="vSphere Lifecycle Manager and HPE OneView for vCenter - Troubleshooting">vSphere Lifecycle Manager and HPE OneView for vCenter - Troubleshooting</a>
       </li>
       <li>
-        <a href="/post/tanzu-kubernetes-grid-workstation-setup/" class="nav-link" title="Tanzu Kubernetes Grid - Linux Workstation Setup">Tanzu Kubernetes Grid - Linux Workstation Setup</a>
+        <a href="//localhost:1313/post/openshift-on-vsphere/" class="nav-link" title="OpenShift on vSphere - Roles and Permissions">OpenShift on vSphere - Roles and Permissions</a>
       </li>
       <li>
-        <a href="/post/vmware-vsan-network-requirements/" class="nav-link" title="VMware vSAN Network Considerations">VMware vSAN Network Considerations</a>
+        <a href="//localhost:1313/post/esxi-tpm-key-backup/" class="nav-link" title="Esxi Tpm Key Backup">Esxi Tpm Key Backup</a>
       </li>
       <li>
-        <a href="/post/vsphere-monitoring/" class="nav-link" title="vSphere Monitoring with Grafana">vSphere Monitoring with Grafana</a>
+        <a href="//localhost:1313/post/argocd-configuration/" class="nav-link" title="ArgoCD Deployment &amp; Configuration">ArgoCD Deployment &amp; Configuration</a>
       </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">Categories</h2>
       <nav class="tags_nav">
-        <a href='/categories/vmware/' class="post_tag button button_translucent" title="vmware">
+        <a href='//localhost:1313/categories/vmware/' class="post_tag button button_translucent" title="vmware">
           VMWARE
-          <span class="button_tally">15</span>
+          <span class="button_tally">20</span>
         </a>
         
-        <a href='/categories/kubernetes/' class="post_tag button button_translucent" title="kubernetes">
-          KUBERNETES
-          <span class="button_tally">6</span>
-        </a>
-        
-        <a href='/categories/technology/' class="post_tag button button_translucent" title="technology">
+        <a href='//localhost:1313/categories/technology/' class="post_tag button button_translucent" title="technology">
           TECHNOLOGY
-          <span class="button_tally">3</span>
+          <span class="button_tally">10</span>
+        </a>
+        
+        <a href='//localhost:1313/categories/kubernetes/' class="post_tag button button_translucent" title="kubernetes">
+          KUBERNETES
+          <span class="button_tally">9</span>
+        </a>
+        
+        <a href='//localhost:1313/categories/dsm/' class="post_tag button button_translucent" title="dsm">
+          DSM
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='//localhost:1313/categories/it/' class="post_tag button button_translucent" title="it">
+          IT
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='//localhost:1313/categories/my-2-cents/' class="post_tag button button_translucent" title="my 2 cents">
+          MY 2 CENTS
+          <span class="button_tally">1</span>
         </a>
         
         
@@ -544,73 +549,73 @@ From the burger menu, click Developer Center and select the API Explorer tab.</p
     <div>
       <h2 class="mt-4 taxonomy" id="tags-section">Tags</h2>
       <nav class="tags_nav">
-        <a href='/tags/vmware/' class="post_tag button button_translucent" title="vmware">
+        <a href='//localhost:1313/tags/vmware/' class="post_tag button button_translucent" title="vmware">
           VMWARE
+          <span class="button_tally">9</span>
+        </a>
+        
+        <a href='//localhost:1313/tags/vmware-tanzu/' class="post_tag button button_translucent" title="vmware tanzu">
+          VMWARE TANZU
+          <span class="button_tally">8</span>
+        </a>
+        
+        <a href='//localhost:1313/tags/vsphere/' class="post_tag button button_translucent" title="vsphere">
+          VSPHERE
           <span class="button_tally">7</span>
         </a>
         
-        <a href='/tags/vmware-tanzu/' class="post_tag button button_translucent" title="vmware tanzu">
-          VMWARE TANZU
-          <span class="button_tally">6</span>
-        </a>
-        
-        <a href='/tags/vsphere/' class="post_tag button button_translucent" title="vsphere">
-          VSPHERE
-          <span class="button_tally">6</span>
-        </a>
-        
-        <a href='/tags/kubernetes/' class="post_tag button button_translucent" title="kubernetes">
+        <a href='//localhost:1313/tags/kubernetes/' class="post_tag button button_translucent" title="kubernetes">
           KUBERNETES
-          <span class="button_tally">3</span>
+          <span class="button_tally">5</span>
         </a>
         
-        <a href='/tags/tanzu-kubernetes-grid/' class="post_tag button button_translucent" title="tanzu kubernetes grid">
+        <a href='//localhost:1313/tags/tag_name1/' class="post_tag button button_translucent" title="tag_name1">
+          TAG_NAME1
+          <span class="button_tally">5</span>
+        </a>
+        
+        <a href='//localhost:1313/tags/tag_name2/' class="post_tag button button_translucent" title="tag_name2">
+          TAG_NAME2
+          <span class="button_tally">5</span>
+        </a>
+        
+        <a href='//localhost:1313/tags/data-services-manager/' class="post_tag button button_translucent" title="data services manager">
+          DATA SERVICES MANAGER
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='//localhost:1313/tags/dsm/' class="post_tag button button_translucent" title="dsm">
+          DSM
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='//localhost:1313/tags/tanzu-kubernetes-grid/' class="post_tag button button_translucent" title="tanzu kubernetes grid">
           TANZU KUBERNETES GRID
           <span class="button_tally">2</span>
         </a>
         
-        <a href='/tags/vcenter/' class="post_tag button button_translucent" title="vcenter">
+        <a href='//localhost:1313/tags/vcenter/' class="post_tag button button_translucent" title="vcenter">
           VCENTER
           <span class="button_tally">2</span>
         </a>
         
-        <a href='/tags/vsan/' class="post_tag button button_translucent" title="vsan">
+        <a href='//localhost:1313/tags/vmware-tanzu-kubernetes-grid/' class="post_tag button button_translucent" title="vmware tanzu kubernetes grid">
+          VMWARE TANZU KUBERNETES GRID
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='//localhost:1313/tags/vsan/' class="post_tag button button_translucent" title="vsan">
           VSAN
           <span class="button_tally">2</span>
         </a>
         
-        <a href='/tags/automation/' class="post_tag button button_translucent" title="automation">
+        <a href='//localhost:1313/tags/vsphere-kubernetes-service/' class="post_tag button button_translucent" title="vsphere kubernetes service">
+          VSPHERE KUBERNETES SERVICE
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='//localhost:1313/tags/automation/' class="post_tag button button_translucent" title="automation">
           AUTOMATION
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/tags/cheat-sheet/' class="post_tag button button_translucent" title="cheat sheet">
-          CHEAT SHEET
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/tags/ci/cd/' class="post_tag button button_translucent" title="ci/cd">
-          CI/CD
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/tags/cisco-aci/' class="post_tag button button_translucent" title="cisco aci">
-          CISCO ACI
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/tags/docker/' class="post_tag button button_translucent" title="docker">
-          DOCKER
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/tags/fedora/' class="post_tag button button_translucent" title="fedora">
-          FEDORA
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/tags/hardware/' class="post_tag button button_translucent" title="hardware">
-          HARDWARE
           <span class="button_tally">1</span>
         </a>
         
@@ -620,139 +625,195 @@ From the burger menu, click Developer Center and select the API Explorer tab.</p
         <div class="post_tags">
           <div class="tags_list">
             
-            <a href='/tags/automation/' class=" post_tag button button_translucent" data-position=1 title="automation">AUTOMATION<span class="button_tally">1</span>
+            <a href='//localhost:1313/tags/automation/' class=" post_tag button button_translucent" data-position=1 title="automation">AUTOMATION<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/cheat-sheet/' class=" post_tag button button_translucent" data-position=1 title="cheat sheet">CHEAT SHEET<span class="button_tally">1</span>
+            <a href='//localhost:1313/tags/cheat-sheet/' class=" post_tag button button_translucent" data-position=1 title="cheat sheet">CHEAT SHEET<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/ci/cd/' class=" post_tag button button_translucent" data-position=1 title="ci/cd">CI/CD<span class="button_tally">1</span>
+            <a href='//localhost:1313/tags/ci/cd/' class=" post_tag button button_translucent" data-position=1 title="ci/cd">CI/CD<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/cisco-aci/' class=" post_tag button button_translucent" data-position=1 title="cisco aci">CISCO ACI<span class="button_tally">1</span>
+            <a href='//localhost:1313/tags/cisco-aci/' class=" post_tag button button_translucent" data-position=1 title="cisco aci">CISCO ACI<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/docker/' class=" post_tag button button_translucent" data-position=1 title="docker">DOCKER<span class="button_tally">1</span>
+            <a href='//localhost:1313/tags/cni/' class=" post_tag button button_translucent" data-position=1 title="cni">CNI<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/fedora/' class=" post_tag button button_translucent" data-position=1 title="fedora">FEDORA<span class="button_tally">1</span>
+            <a href='//localhost:1313/tags/data-services-manager/' class=" post_tag button button_translucent" data-position=2 title="data services manager">DATA SERVICES MANAGER<span class="button_tally">2</span>
             </a>
             
             
-            <a href='/tags/hardware/' class=" post_tag button button_translucent" data-position=1 title="hardware">HARDWARE<span class="button_tally">1</span>
+            <a href='//localhost:1313/tags/devsecops/' class=" post_tag button button_translucent" data-position=1 title="devsecops">DEVSECOPS<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/hpe/' class=" post_tag button button_translucent" data-position=1 title="hpe">HPE<span class="button_tally">1</span>
+            <a href='//localhost:1313/tags/docker/' class=" post_tag button button_translucent" data-position=1 title="docker">DOCKER<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/hpe-oneview/' class=" post_tag button button_translucent" data-position=1 title="hpe oneview">HPE ONEVIEW<span class="button_tally">1</span>
+            <a href='//localhost:1313/tags/dsm/' class=" post_tag button button_translucent" data-position=2 title="dsm">DSM<span class="button_tally">2</span>
             </a>
             
             
-            <a href='/tags/huawei/' class=" post_tag button button_translucent" data-position=1 title="huawei">HUAWEI<span class="button_tally">1</span>
+            <a href='//localhost:1313/tags/fedora/' class=" post_tag button button_translucent" data-position=1 title="fedora">FEDORA<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/index/' class=" post_tag button button_translucent" data-position=1 title="index">INDEX<span class="button_tally">1</span>
+            <a href='//localhost:1313/tags/hardware/' class=" post_tag button button_translucent" data-position=1 title="hardware">HARDWARE<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/kubernetes/' class=" post_tag button button_translucent" data-position=3 title="kubernetes">KUBERNETES<span class="button_tally">3</span>
+            <a href='//localhost:1313/tags/hpe/' class=" post_tag button button_translucent" data-position=1 title="hpe">HPE<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/monitoring/' class=" post_tag button button_translucent" data-position=1 title="monitoring">MONITORING<span class="button_tally">1</span>
+            <a href='//localhost:1313/tags/hpe-oneview/' class=" post_tag button button_translucent" data-position=1 title="hpe oneview">HPE ONEVIEW<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/networking/' class=" post_tag button button_translucent" data-position=1 title="networking">NETWORKING<span class="button_tally">1</span>
+            <a href='//localhost:1313/tags/huawei/' class=" post_tag button button_translucent" data-position=1 title="huawei">HUAWEI<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/openshift/' class=" post_tag button button_translucent" data-position=1 title="openshift">OPENSHIFT<span class="button_tally">1</span>
+            <a href='//localhost:1313/tags/index/' class=" post_tag button button_translucent" data-position=1 title="index">INDEX<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/tanzu-kubernetes/' class=" post_tag button button_translucent" data-position=1 title="tanzu kubernetes">TANZU KUBERNETES<span class="button_tally">1</span>
+            <a href='//localhost:1313/tags/it-security/' class=" post_tag button button_translucent" data-position=1 title="it-security">IT-SECURITY<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/tanzu-kubernetes-clusters/' class=" post_tag button button_translucent" data-position=1 title="tanzu kubernetes clusters">TANZU KUBERNETES CLUSTERS<span class="button_tally">1</span>
+            <a href='//localhost:1313/tags/kubernetes/' class=" post_tag button button_translucent" data-position=5 title="kubernetes">KUBERNETES<span class="button_tally">5</span>
             </a>
             
             
-            <a href='/tags/tanzu-kubernetes-grid/' class=" post_tag button button_translucent" data-position=2 title="tanzu kubernetes grid">TANZU KUBERNETES GRID<span class="button_tally">2</span>
+            <a href='//localhost:1313/tags/kubernetes-cillium/' class=" post_tag button button_translucent" data-position=1 title="kubernetes cillium">KUBERNETES CILLIUM<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/tig-stack/' class=" post_tag button button_translucent" data-position=1 title="tig stack">TIG STACK<span class="button_tally">1</span>
+            <a href='//localhost:1313/tags/monitoring/' class=" post_tag button button_translucent" data-position=1 title="monitoring">MONITORING<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/vcenter/' class=" post_tag button button_translucent" data-position=2 title="vcenter">VCENTER<span class="button_tally">2</span>
+            <a href='//localhost:1313/tags/networking/' class=" post_tag button button_translucent" data-position=1 title="networking">NETWORKING<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/vcf/' class=" post_tag button button_translucent" data-position=1 title="vcf">VCF<span class="button_tally">1</span>
+            <a href='//localhost:1313/tags/openshift/' class=" post_tag button button_translucent" data-position=1 title="openshift">OPENSHIFT<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/vmware/' class=" post_tag button button_translucent" data-position=7 title="vmware">VMWARE<span class="button_tally">7</span>
+            <a href='//localhost:1313/tags/opinion/' class=" post_tag button button_translucent" data-position=1 title="opinion">OPINION<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/vmware-cloud-foundation/' class=" post_tag button button_translucent" data-position=1 title="vmware cloud foundation">VMWARE CLOUD FOUNDATION<span class="button_tally">1</span>
+            <a href='//localhost:1313/tags/postgresql/' class=" post_tag button button_translucent" data-position=1 title="postgresql">POSTGRESQL<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/vmware-ecs/' class=" post_tag button button_translucent" data-position=1 title="vmware ecs">VMWARE ECS<span class="button_tally">1</span>
+            <a href='//localhost:1313/tags/tag_name1/' class=" post_tag button button_translucent" data-position=5 title="tag_name1">TAG_NAME1<span class="button_tally">5</span>
             </a>
             
             
-            <a href='/tags/vmware-tanzu/' class=" post_tag button button_translucent" data-position=6 title="vmware tanzu">VMWARE TANZU<span class="button_tally">6</span>
+            <a href='//localhost:1313/tags/tag_name2/' class=" post_tag button button_translucent" data-position=5 title="tag_name2">TAG_NAME2<span class="button_tally">5</span>
             </a>
             
             
-            <a href='/tags/vmware-tanzu-kubernetes-grid/' class=" post_tag button button_translucent" data-position=1 title="vmware tanzu kubernetes grid">VMWARE TANZU KUBERNETES GRID<span class="button_tally">1</span>
+            <a href='//localhost:1313/tags/tanzu-kubernetes/' class=" post_tag button button_translucent" data-position=1 title="tanzu kubernetes">TANZU KUBERNETES<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/vmware-veco/' class=" post_tag button button_translucent" data-position=1 title="vmware veco">VMWARE VECO<span class="button_tally">1</span>
+            <a href='//localhost:1313/tags/tanzu-kubernetes-clusters/' class=" post_tag button button_translucent" data-position=1 title="tanzu kubernetes clusters">TANZU KUBERNETES CLUSTERS<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/vsan/' class=" post_tag button button_translucent" data-position=2 title="vsan">VSAN<span class="button_tally">2</span>
+            <a href='//localhost:1313/tags/tanzu-kubernetes-grid/' class=" post_tag button button_translucent" data-position=2 title="tanzu kubernetes grid">TANZU KUBERNETES GRID<span class="button_tally">2</span>
             </a>
             
             
-            <a href='/tags/vsan-over-roce/' class=" post_tag button button_translucent" data-position=1 title="vsan over roce">VSAN OVER ROCE<span class="button_tally">1</span>
+            <a href='//localhost:1313/tags/tanzu-packages/' class=" post_tag button button_translucent" data-position=1 title="tanzu packages">TANZU PACKAGES<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/vsphere/' class=" post_tag button button_translucent" data-position=6 title="vsphere">VSPHERE<span class="button_tally">6</span>
+            <a href='//localhost:1313/tags/tig-stack/' class=" post_tag button button_translucent" data-position=1 title="tig stack">TIG STACK<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/vsphere-kubernetes-service/' class=" post_tag button button_translucent" data-position=1 title="vsphere kubernetes service">VSPHERE KUBERNETES SERVICE<span class="button_tally">1</span>
+            <a href='//localhost:1313/tags/troubleshooting/' class=" post_tag button button_translucent" data-position=1 title="troubleshooting">TROUBLESHOOTING<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/vsphere-networking/' class=" post_tag button button_translucent" data-position=1 title="vsphere networking">VSPHERE NETWORKING<span class="button_tally">1</span>
+            <a href='//localhost:1313/tags/vcenter/' class=" post_tag button button_translucent" data-position=2 title="vcenter">VCENTER<span class="button_tally">2</span>
             </a>
             
             
-            <a href='/tags/vsphere-with-tanzu/' class=" post_tag button button_translucent" data-position=1 title="vsphere with tanzu">VSPHERE WITH TANZU<span class="button_tally">1</span>
+            <a href='//localhost:1313/tags/vcf/' class=" post_tag button button_translucent" data-position=1 title="vcf">VCF<span class="button_tally">1</span>
             </a>
             
             
-            <a href='/tags/yaml/' class=" post_tag button button_translucent" data-position=1 title="yaml">YAML<span class="button_tally">1</span>
+            <a href='//localhost:1313/tags/vcf-9/' class=" post_tag button button_translucent" data-position=1 title="vcf 9">VCF 9<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='//localhost:1313/tags/velero/' class=" post_tag button button_translucent" data-position=1 title="velero">VELERO<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='//localhost:1313/tags/vmware/' class=" post_tag button button_translucent" data-position=9 title="vmware">VMWARE<span class="button_tally">9</span>
+            </a>
+            
+            
+            <a href='//localhost:1313/tags/vmware-cloud-foundation/' class=" post_tag button button_translucent" data-position=1 title="vmware cloud foundation">VMWARE CLOUD FOUNDATION<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='//localhost:1313/tags/vmware-ecs/' class=" post_tag button button_translucent" data-position=1 title="vmware ecs">VMWARE ECS<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='//localhost:1313/tags/vmware-tanzu/' class=" post_tag button button_translucent" data-position=8 title="vmware tanzu">VMWARE TANZU<span class="button_tally">8</span>
+            </a>
+            
+            
+            <a href='//localhost:1313/tags/vmware-tanzu-kubernetes-grid/' class=" post_tag button button_translucent" data-position=2 title="vmware tanzu kubernetes grid">VMWARE TANZU KUBERNETES GRID<span class="button_tally">2</span>
+            </a>
+            
+            
+            <a href='//localhost:1313/tags/vmware-veco/' class=" post_tag button button_translucent" data-position=1 title="vmware veco">VMWARE VECO<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='//localhost:1313/tags/vsan/' class=" post_tag button button_translucent" data-position=2 title="vsan">VSAN<span class="button_tally">2</span>
+            </a>
+            
+            
+            <a href='//localhost:1313/tags/vsan-over-roce/' class=" post_tag button button_translucent" data-position=1 title="vsan over roce">VSAN OVER ROCE<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='//localhost:1313/tags/vsphere/' class=" post_tag button button_translucent" data-position=7 title="vsphere">VSPHERE<span class="button_tally">7</span>
+            </a>
+            
+            
+            <a href='//localhost:1313/tags/vsphere-kubernetes-service/' class=" post_tag button button_translucent" data-position=2 title="vsphere kubernetes service">VSPHERE KUBERNETES SERVICE<span class="button_tally">2</span>
+            </a>
+            
+            
+            <a href='//localhost:1313/tags/vsphere-networking/' class=" post_tag button button_translucent" data-position=1 title="vsphere networking">VSPHERE NETWORKING<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='//localhost:1313/tags/vsphere-with-tanzu/' class=" post_tag button button_translucent" data-position=1 title="vsphere with tanzu">VSPHERE WITH TANZU<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='//localhost:1313/tags/yaml/' class=" post_tag button button_translucent" data-position=1 title="yaml">YAML<span class="button_tally">1</span>
             </a>
             
             <div class="tags_sort"><span title="sort alphabetically">[A~Z]</span><span title="sort by count">[0~9]</span>
@@ -855,7 +916,7 @@ From the burger menu, click Developer Center and select the API Explorer tab.</p
 
 <footer class="footer">
   <div class="footer_inner wrap pale">
-    <img src='/icons/apple-touch-icon.png' class="icon icon_2 transparent" alt="Copyright © 2022-2024, Y.Gerber &amp; Authors">
+    <img src='//localhost:1313/icons/apple-touch-icon.png' class="icon icon_2 transparent" alt="Copyright © 2022-2024, Y.Gerber &amp; Authors">
     <p>Copyright&nbsp;2022-&nbsp;<span class="year"></span>&nbsp;COPYRIGHT © 2022-2024, Y.GERBER &amp; AUTHORS. All Rights Reserved</p><a class="to_top" href="#documentTop">
   <svg class="icon">
   <title>to-top</title>
@@ -867,9 +928,9 @@ From the burger menu, click Developer Center and select the API Explorer tab.</p
   </div>
 </footer>
 
-<script type="text/javascript" src="/en/js/bundle.2f36309c77205efd88cc637205808237375d2c3883c7404d70c6e50f948c8a48439e14353a335d3dd0468c438df1699de307b97d64f10c5612be666a18f66ee6.js" integrity="sha512-LzYwnHcgXv2IzGNyBYCCNzddLDiDx0BNcMblD5SMikhDnhQ1OjNdPdBGjEON8Wmd4we5fWTxDFYSvmZqGPZu5g==" crossorigin="anonymous"></script>
+<script type="text/javascript" src="//localhost:1313/en/js/bundle.f3f2e2f704137c5dbba9a58002cda379b07d9993ded26be3afe4ebc5c9060f3cd38f3a5cf527f6bb57e7cbb9d37431334eeaf0492ad8f23cffc4cd880c7b35e2.js" integrity="sha512-8/Li9wQTfF27qaWAAs2jebB9mZPe0mvjr&#43;TrxckGDzzTjzpc9Sf2u1fny7nTdDEzTurwSSrY8jz/xM2IDHs14g==" crossorigin="anonymous"></script>
 
-  <script src="/js/search.min.8d141e1e7aa85984a5288b2172ad03540fc235f64379f8df11d062fd3deb9d49bbd9fb0f3df983e9663e322fa8e322a336d5350fbe833c77eb9ee7d907636cff.js"></script>
+  <script src="//localhost:1313/js/search.min.8d141e1e7aa85984a5288b2172ad03540fc235f64379f8df11d062fd3deb9d49bbd9fb0f3df983e9663e322fa8e322a336d5350fbe833c77eb9ee7d907636cff.js"></script>
 
   </body>
 </html>
