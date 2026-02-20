@@ -1,23 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Automation on vBünzli</title>
-    <link>/tags/automation/</link>
-    <description>Recent content in Automation on vBünzli</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Thu, 20 Jun 2024 22:22:08 +0200</lastBuildDate><atom:link href="/tags/automation/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>vSphere REST API - Intro</title>
-      <link>/post/vsphere-api/</link>
-      <pubDate>Thu, 20 Jun 2024 22:22:08 +0200</pubDate>
-      
-      <guid>/post/vsphere-api/</guid>
-      <description>
-        
-          
-            &lt;h1 id=&#34;getting-started-with-the-vsphere-api&#34;&gt;Getting started with the vSphere API&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Automation on vBünzli</title><link>/tags/automation/</link><description>Recent content in Automation on vBünzli</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright><lastBuildDate>Thu, 20 Jun 2024 22:22:08 +0200</lastBuildDate><atom:link href="/tags/automation/index.xml" rel="self" type="application/rss+xml"/><item><title>vSphere REST API - Intro</title><link>/post/vsphere-api/</link><pubDate>Thu, 20 Jun 2024 22:22:08 +0200</pubDate><guid>/post/vsphere-api/</guid><description>
+&lt;h1 id="getting-started-with-the-vsphere-api"&gt;Getting started with the vSphere API&lt;/h1&gt;
 &lt;p&gt;The vSphere REST API, introduced in vSphere 6.5, represents a significant leap forward in managing and automating VMware environments. This modern, developer-friendly interface offers a more streamlined approach to interacting with vSphere compared to its predecessor, the SOAP-based vSphere Web Services API.&lt;/p&gt;
 &lt;p&gt;Key features of the vSphere REST API include:&lt;/p&gt;
 &lt;ul&gt;
@@ -25,12 +7,4 @@
 &lt;li&gt;JSON-based: Requests and responses use JSON format, making it easier to parse and work with data.&lt;/li&gt;
 &lt;li&gt;Simplified interaction: The API is designed to be more intuitive and easier to use than the older SOAP-based API.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;To get started with the vSphere REST API, you can use the built-in API Explorer in vCenter Server, accessible at https://&amp;lt; vcenter.example.com &amp;gt;/apiexplorer. This tool provides interactive documentation and allows you to test API calls directly from your browser.&lt;/p&gt;
-          
-          
-        
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;To get started with the vSphere REST API, you can use the built-in API Explorer in vCenter Server, accessible at https://&amp;lt; vcenter.example.com &amp;gt;/apiexplorer. This tool provides interactive documentation and allows you to test API calls directly from your browser.&lt;/p&gt;</description></item></channel></rss>

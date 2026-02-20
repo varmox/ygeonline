@@ -1,30 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>VMware ECS on vBünzli</title>
-    <link>/tags/vmware-ecs/</link>
-    <description>Recent content in VMware ECS on vBünzli</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Mon, 30 Dec 2024 18:52:03 +0100</lastBuildDate><atom:link href="/tags/vmware-ecs/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>VMware Edge Compute Stack</title>
-      <link>/post/vmware-edge-compute-stack/</link>
-      <pubDate>Mon, 30 Dec 2024 18:52:03 +0100</pubDate>
-      
-      <guid>/post/vmware-edge-compute-stack/</guid>
-      <description>
-        
-          
-            &lt;p&gt;VMware Edge Cloud Compute Stack is a Solution for running workloads on the Edge - &amp;quot;Edge&amp;quot; in this case means running a modified Version of ESXi on really small compute footprint. Management is done from a central Appliane called VECO (VMware Edge Cloud Orchestrator).&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VMware ECS on vBünzli</title><link>/tags/vmware-ecs/</link><description>Recent content in VMware ECS on vBünzli</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright><lastBuildDate>Mon, 30 Dec 2024 18:52:03 +0100</lastBuildDate><atom:link href="/tags/vmware-ecs/index.xml" rel="self" type="application/rss+xml"/><item><title>VMware Edge Compute Stack</title><link>/post/vmware-edge-compute-stack/</link><pubDate>Mon, 30 Dec 2024 18:52:03 +0100</pubDate><guid>/post/vmware-edge-compute-stack/</guid><description>
+&lt;p&gt;VMware Edge Cloud Compute Stack is a Solution for running workloads on the Edge - &amp;quot;Edge&amp;quot; in this case means running a modified Version of ESXi on really small compute footprint. Management is done from a central Appliane called VECO (VMware Edge Cloud Orchestrator).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;ECS vs VCF&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;ECS has nothing todo with VMware Cloud Foundation Edge (VCF-Edge). VCF Edge is just a SKU. VCF has different Edge Reference Architectures. ECS is a different Product, generally meat for smaller compute needs.&lt;/p&gt;
-          
-          
-        
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;ECS has nothing todo with VMware Cloud Foundation Edge (VCF-Edge). VCF Edge is just a SKU. VCF has different Edge Reference Architectures. ECS is a different Product, generally meat for smaller compute needs.&lt;/p&gt;</description></item></channel></rss>

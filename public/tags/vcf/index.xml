@@ -1,37 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>VCF on vBünzli</title>
-    <link>/tags/vcf/</link>
-    <description>Recent content in VCF on vBünzli</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Fri, 23 Aug 2024 22:24:18 +0200</lastBuildDate><atom:link href="/tags/vcf/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>VMware vCenter Troubleshooting Guide</title>
-      <link>/post/vcenter-troubleshooting/</link>
-      <pubDate>Fri, 23 Aug 2024 22:24:18 +0200</pubDate>
-      
-      <guid>/post/vcenter-troubleshooting/</guid>
-      <description>
-        
-          
-            &lt;h1 id=&#34;vcenter-troubleshooting-guide&#34;&gt;vCenter Troubleshooting Guide&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VCF on vBünzli</title><link>/tags/vcf/</link><description>Recent content in VCF on vBünzli</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright><lastBuildDate>Fri, 23 Aug 2024 22:24:18 +0200</lastBuildDate><atom:link href="/tags/vcf/index.xml" rel="self" type="application/rss+xml"/><item><title>VMware vCenter Troubleshooting Guide</title><link>/post/vcenter-troubleshooting/</link><pubDate>Fri, 23 Aug 2024 22:24:18 +0200</pubDate><guid>/post/vcenter-troubleshooting/</guid><description>
+&lt;h1 id="vcenter-troubleshooting-guide"&gt;vCenter Troubleshooting Guide&lt;/h1&gt;
 &lt;p&gt;The following Troubleshooting Guide applies to vCenter 8 and above.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;h4 id=&#34;caution&#34;&gt;Caution!&lt;/h4&gt;
+&lt;h4 id="caution"&gt;Caution!&lt;/h4&gt;
 &lt;p&gt;Create a VM Snapshot of your vCenter before proceeding with any step!&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;general-troubleshooting&#34;&gt;General Troubleshooting&lt;/h2&gt;
-&lt;p&gt;Log files can be accesses trough ssh or bash. SSH login works with the root user or your SSO Admi User (commonly &lt;a href=&#34;mailto:administrator@vsphere.local&#34;&gt;administrator@vsphere.local&lt;/a&gt;)&lt;/p&gt;
+&lt;h2 id="general-troubleshooting"&gt;General Troubleshooting&lt;/h2&gt;
+&lt;p&gt;Log files can be accesses trough ssh or bash. SSH login works with the root user or your SSO Admi User (commonly &lt;a href="mailto:administrator@vsphere.local"&gt;administrator@vsphere.local&lt;/a&gt;)&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;SSH not working&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;If SSH does not work (eg. due to a networki misconfiguration) you can access the vCenter via bash (VM Remote Console).&lt;/p&gt;
-          
-          
-        
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;If SSH does not work (eg. due to a networki misconfiguration) you can access the vCenter via bash (VM Remote Console).&lt;/p&gt;</description></item></channel></rss>

@@ -1,66 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Monitoring on vBünzli</title>
-    <link>/tags/monitoring/</link>
-    <description>Recent content in Monitoring on vBünzli</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Tue, 08 Aug 2023 20:43:03 +0200</lastBuildDate><atom:link href="/tags/monitoring/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>vSphere Monitoring with Grafana</title>
-      <link>/post/vsphere-monitoring/</link>
-      <pubDate>Tue, 08 Aug 2023 20:43:03 +0200</pubDate>
-      
-      <guid>/post/vsphere-monitoring/</guid>
-      <description>
-        
-          
-            &lt;h1 id=&#34;vsphere-monitoring-with-tig-telegraf-influxdb-grafana&#34;&gt;vSphere Monitoring with TIG (Telegraf, InfluxDB, Grafana)&lt;/h1&gt;
-&lt;p&gt;This blog post describes a solution for monitoring  SDDC infrastructure using Telegraf, InfluxDB, and Grafana. This solution is based on Docker and displays graphs and metrics via Grafana. All metrics are described in the &lt;em&gt;&lt;strong&gt;telegraf.conf&lt;/strong&gt;&lt;/em&gt; file.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Monitoring on vBünzli</title><link>/tags/monitoring/</link><description>Recent content in Monitoring on vBünzli</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright><lastBuildDate>Tue, 08 Aug 2023 20:43:03 +0200</lastBuildDate><atom:link href="/tags/monitoring/index.xml" rel="self" type="application/rss+xml"/><item><title>vSphere Monitoring with Grafana</title><link>/post/vsphere-monitoring/</link><pubDate>Tue, 08 Aug 2023 20:43:03 +0200</pubDate><guid>/post/vsphere-monitoring/</guid><description>
+&lt;h1 id="vsphere-monitoring-with-tig-telegraf-influxdb-grafana"&gt;vSphere Monitoring with TIG (Telegraf, InfluxDB, Grafana)&lt;/h1&gt;
+&lt;p&gt;This blog post describes a solution for monitoring SDDC infrastructure using Telegraf, InfluxDB, and Grafana. This solution is based on Docker and displays graphs and metrics via Grafana. All metrics are described in the &lt;em&gt;&lt;strong&gt;telegraf.conf&lt;/strong&gt;&lt;/em&gt; file.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-  &lt;picture&gt;
-
-    
-      
-        
-        
-        
-        
-        
-        
-    &lt;img
-      loading=&#34;lazy&#34;
-      decoding=&#34;async&#34;
-      alt=&#34;Grafana - vSphere Overview&#34;
-      
-        class=&#34;image_figure image_external image_processed&#34;
-        width=&#34;3338&#34;
-        height=&#34;1334&#34;
-        src=&#34;/images/QbfN11Q_17788218198938191418.png&#34;
-      
-      
-    /&gt;
-
-    &lt;/picture&gt;
+&lt;picture&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+alt="Grafana - vSphere Overview"
+class="image_figure image_external image_processed"
+width="3338"
+height="1334"
+src="/images/QbfN11Q_17788218198938191418.png"
+/&gt;
+&lt;/picture&gt;
 &lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;TL;DR:
-&lt;a href=&#34;https://github.com/varmox/vsphere-monitoring.git&#34;&gt;https://github.com/varmox/vsphere-monitoring.git&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;prerequiries&#34;&gt;Prerequiries&lt;/h2&gt;
+&lt;a href="https://github.com/varmox/vsphere-monitoring.git"&gt;https://github.com/varmox/vsphere-monitoring.git&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="prerequiries"&gt;Prerequiries&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;RHEL based Linux&lt;/li&gt;
 &lt;li&gt;Docker &amp;amp; Docker Compose (or Podman with Docker Compose. In this tutorial we are using docker &amp;amp; docker compose) installed&lt;/li&gt;
 &lt;li&gt;3 internal IPs for telegraf, grafana and influxdb containers.&lt;/li&gt;
 &lt;li&gt;Access to vSphere API (read-only is sufficient)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Environment Variables&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-          
-          
-        
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Environment Variables&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description></item></channel></rss>

@@ -1,35 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Tanzu Kubernetes on vBünzli</title>
-    <link>/tags/tanzu-kubernetes/</link>
-    <description>Recent content in Tanzu Kubernetes on vBünzli</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Sun, 08 Dec 2024 12:29:05 +0100</lastBuildDate><atom:link href="/tags/tanzu-kubernetes/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>RBAC on VKS</title>
-      <link>/post/k8s-rbac/</link>
-      <pubDate>Sun, 08 Dec 2024 12:29:05 +0100</pubDate>
-      
-      <guid>/post/k8s-rbac/</guid>
-      <description>
-        
-          
-            &lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tanzu Kubernetes on vBünzli</title><link>/tags/tanzu-kubernetes/</link><description>Recent content in Tanzu Kubernetes on vBünzli</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright><lastBuildDate>Sun, 08 Dec 2024 12:29:05 +0100</lastBuildDate><atom:link href="/tags/tanzu-kubernetes/index.xml" rel="self" type="application/rss+xml"/><item><title>RBAC on VKS</title><link>/post/k8s-rbac/</link><pubDate>Sun, 08 Dec 2024 12:29:05 +0100</pubDate><guid>/post/k8s-rbac/</guid><description>
+&lt;h1 id="intro"&gt;Intro&lt;/h1&gt;
 &lt;p&gt;This Blogpost explains RBAC on vSphere Kubernetes Service (VKS), formely known as Tanzu Kubernetes Grid Service (TKGS). It also shows how to give access via &lt;em&gt;kubectl&lt;/em&gt; with granular permissions, leveraging OIDC Auth with pinniped on VKS-Clusters.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;h4 id=&#34;naming&#34;&gt;&lt;strong&gt;Naming&lt;/strong&gt;&lt;/h4&gt;
+&lt;h4 id="naming"&gt;&lt;strong&gt;Naming&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;I use VKS-, TKGS- and K8s Clusters in this Blog Post. All have the same meaning - simply a Kubernetes Cluster :)&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h1 id=&#34;rbac-on-vsphere-kubernetes-service&#34;&gt;RBAC on vSphere Kubernetes Service&lt;/h1&gt;
-&lt;p&gt;Role-based Access Control on vSphere Kubernetes Cluster has a few Keypoint which should be though about. The main question you have to ask yourself: Which Level of access do I want to grant to which people?&lt;/p&gt;
-          
-          
-        
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;h1 id="rbac-on-vsphere-kubernetes-service"&gt;RBAC on vSphere Kubernetes Service&lt;/h1&gt;
+&lt;p&gt;Role-based Access Control on vSphere Kubernetes Cluster has a few Keypoint which should be though about. The main question you have to ask yourself: Which Level of access do I want to grant to which people?&lt;/p&gt;</description></item></channel></rss>

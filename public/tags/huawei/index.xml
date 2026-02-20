@@ -1,67 +1,41 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Huawei on vBünzli</title>
-    <link>/tags/huawei/</link>
-    <description>Recent content in Huawei on vBünzli</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Sun, 04 Dec 2022 15:11:13 +0100</lastBuildDate><atom:link href="/tags/huawei/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Huawei VRP</title>
-      <link>/post/networking/huawei-vrp/</link>
-      <pubDate>Sun, 04 Dec 2022 15:11:13 +0100</pubDate>
-      
-      <guid>/post/networking/huawei-vrp/</guid>
-      <description>
-        
-          
-            &lt;p&gt;&lt;strong&gt;Huawei Versatile Routing Platform (VRP) Overview&lt;/strong&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Huawei on vBünzli</title><link>/tags/huawei/</link><description>Recent content in Huawei on vBünzli</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright><lastBuildDate>Sun, 04 Dec 2022 15:11:13 +0100</lastBuildDate><atom:link href="/tags/huawei/index.xml" rel="self" type="application/rss+xml"/><item><title>Huawei VRP</title><link>/post/networking/huawei-vrp/</link><pubDate>Sun, 04 Dec 2022 15:11:13 +0100</pubDate><guid>/post/networking/huawei-vrp/</guid><description>
+&lt;p&gt;&lt;strong&gt;Huawei Versatile Routing Platform (VRP) Overview&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;This post gives an overview about the network operating system for huawei network devices - VRP.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;General&lt;/strong&gt;&lt;/p&gt;
 &lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Task&lt;/th&gt;
-          &lt;th&gt;Command&lt;/th&gt;
-          &lt;th&gt;Comment&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Enter System View&lt;/td&gt;
-          &lt;td&gt;&amp;lt; Huawei &amp;gt; sys&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Enter Interface View&lt;/td&gt;
-          &lt;td&gt;[R1] int GigabitEthernet0/0/1&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Enter Protocol View&lt;/td&gt;
-          &lt;td&gt;[R1] ospf 1&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Display Running Config in current View&lt;/td&gt;
-          &lt;td&gt;[R1- GigabitEthernet0/0/3] display this&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Display current configuration of the System&lt;/td&gt;
-          &lt;td&gt;[R1] dis current-config&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Task&lt;/th&gt;
+&lt;th&gt;Command&lt;/th&gt;
+&lt;th&gt;Comment&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Enter System View&lt;/td&gt;
+&lt;td&gt;&amp;lt; Huawei &amp;gt; sys&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Enter Interface View&lt;/td&gt;
+&lt;td&gt;[R1] int GigabitEthernet0/0/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Enter Protocol View&lt;/td&gt;
+&lt;td&gt;[R1] ospf 1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Display Running Config in current View&lt;/td&gt;
+&lt;td&gt;[R1- GigabitEthernet0/0/3] display this&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Display current configuration of the System&lt;/td&gt;
+&lt;td&gt;[R1] dis current-config&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;strong&gt;System Configuration&lt;/strong&gt;&lt;/p&gt;
-          
-          
-        
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;&lt;strong&gt;System Configuration&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>

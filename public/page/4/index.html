@@ -52,6 +52,8 @@
 
 <link rel="stylesheet" type="text/css" href="//localhost:1313/css/styles.28e3156792a33b97ba888e7acd6332e65e0a04431094fa89d055987a4f000423510faa3c85534428d91f2e64c74d2c2a9e1d907fcdc2d32699e38506a03abda1.css" integrity="sha512-KOMVZ5KjO5e6iI56zWMy5l4KBEMQlPqJ0FWYek8ABCNRD6o8hVNEKNkfLmTHTSwqnh2Qf83C0yaZ44UGoDq9oQ==" crossorigin="anonymous">
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+
   </head>
   <body
     data-code="7"
@@ -1062,6 +1064,25 @@ Task Command Comment Enter System View &lt; Huawei &gt; sys Enter Interface View
 <script type="text/javascript" src="//localhost:1313/en/js/bundle.f3f2e2f704137c5dbba9a58002cda379b07d9993ded26be3afe4ebc5c9060f3cd38f3a5cf527f6bb57e7cbb9d37431334eeaf0492ad8f23cffc4cd880c7b35e2.js" integrity="sha512-8/Li9wQTfF27qaWAAs2jebB9mZPe0mvjr&#43;TrxckGDzzTjzpc9Sf2u1fny7nTdDEzTurwSSrY8jz/xM2IDHs14g==" crossorigin="anonymous"></script>
 
   <script src="//localhost:1313/js/search.min.8d141e1e7aa85984a5288b2172ad03540fc235f64379f8df11d062fd3deb9d49bbd9fb0f3df983e9663e322fa8e322a336d5350fbe833c77eb9ee7d907636cff.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    
+    document.querySelectorAll('.post img, article img').forEach(function (img) {
+      if (img.parentElement.tagName !== 'A') {
+        var a = document.createElement('a');
+        a.href = img.src;
+        a.classList.add('glightbox');
+        a.setAttribute('data-title', img.title || img.alt || '');
+        img.parentNode.insertBefore(a, img);
+        a.appendChild(img);
+      }
+    });
+
+    GLightbox({ touchNavigation: true, loop: true });
+  });
+</script>
 
   </body>
 </html>

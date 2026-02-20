@@ -1,31 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>VSphere Networking on vBünzli</title>
-    <link>/tags/vsphere-networking/</link>
-    <description>Recent content in VSphere Networking on vBünzli</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Fri, 22 Nov 2024 07:41:26 +0100</lastBuildDate><atom:link href="/tags/vsphere-networking/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>vSphere VM - conflicted PortID</title>
-      <link>/post/vsphere-vm-portid-cport/</link>
-      <pubDate>Fri, 22 Nov 2024 07:41:26 +0100</pubDate>
-      
-      <guid>/post/vsphere-vm-portid-cport/</guid>
-      <description>
-        
-          
-            &lt;h1 id=&#34;vms-with-conflicted-portids&#34;&gt;VMs with conflicted PortIDs&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VSphere Networking on vBünzli</title><link>/tags/vsphere-networking/</link><description>Recent content in VSphere Networking on vBünzli</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright><lastBuildDate>Fri, 22 Nov 2024 07:41:26 +0100</lastBuildDate><atom:link href="/tags/vsphere-networking/index.xml" rel="self" type="application/rss+xml"/><item><title>vSphere VM - conflicted PortID</title><link>/post/vsphere-vm-portid-cport/</link><pubDate>Fri, 22 Nov 2024 07:41:26 +0100</pubDate><guid>/post/vsphere-vm-portid-cport/</guid><description>
+&lt;h1 id="vms-with-conflicted-portids"&gt;VMs with conflicted PortIDs&lt;/h1&gt;
 &lt;p&gt;In certain scenarios it can happend that the PortID (distributed port group) of a VM shows up with the prefix &amp;quot;-c&amp;quot; (eg c-245).
-vCenter Server creates a conflict port if multiple virtual machine&#39;s point to the same port.
-It does not automatically reconfigure the virtual machine to connect to a regular port if the conflict remains and the virtual machine stays connected to the conflict port.&lt;/p&gt;
-          
-          
-        
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+vCenter Server creates a conflict port if multiple virtual machine's point to the same port.
+It does not automatically reconfigure the virtual machine to connect to a regular port if the conflict remains and the virtual machine stays connected to the conflict port.&lt;/p&gt;</description></item></channel></rss>

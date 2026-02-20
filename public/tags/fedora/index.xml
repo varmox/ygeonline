@@ -1,23 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Fedora on vBünzli</title>
-    <link>/tags/fedora/</link>
-    <description>Recent content in Fedora on vBünzli</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Sun, 08 Oct 2023 20:43:03 +0200</lastBuildDate><atom:link href="/tags/fedora/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Tanzu Kubernetes Grid - Linux Workstation Setup</title>
-      <link>/post/tanzu-kubernetes-grid-workstation-setup/</link>
-      <pubDate>Sun, 08 Oct 2023 20:43:03 +0200</pubDate>
-      
-      <guid>/post/tanzu-kubernetes-grid-workstation-setup/</guid>
-      <description>
-        
-          
-            &lt;h2 id=&#34;tkg-bootstrap-machine-on-fedora&#34;&gt;TKG Bootstrap Machine on Fedora&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fedora on vBünzli</title><link>/tags/fedora/</link><description>Recent content in Fedora on vBünzli</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright><lastBuildDate>Sun, 08 Oct 2023 20:43:03 +0200</lastBuildDate><atom:link href="/tags/fedora/index.xml" rel="self" type="application/rss+xml"/><item><title>Tanzu Kubernetes Grid - Linux Workstation Setup</title><link>/post/tanzu-kubernetes-grid-workstation-setup/</link><pubDate>Sun, 08 Oct 2023 20:43:03 +0200</pubDate><guid>/post/tanzu-kubernetes-grid-workstation-setup/</guid><description>
+&lt;h2 id="tkg-bootstrap-machine-on-fedora"&gt;TKG Bootstrap Machine on Fedora&lt;/h2&gt;
 &lt;p&gt;Tanzu Kubernetes Grid needs a workstation to bootstrap your Kubernetes Cluster. This is a short guide for a Fedora based bootstrap Machine:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Requirements&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -26,12 +8,4 @@
 &lt;li&gt;dedicated admin user in the wheel-group&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Install Docker&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Docker on modern RHEL systems can  be confusing because the latest versions of RHEL replace Docker with Podman (dnf install docker will install podman). I should work with podman, but we explicity are going to install Docker Container Engine.&lt;/p&gt;
-          
-          
-        
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;Docker on modern RHEL systems can be confusing because the latest versions of RHEL replace Docker with Podman (dnf install docker will install podman). I should work with podman, but we explicity are going to install Docker Container Engine.&lt;/p&gt;</description></item></channel></rss>

@@ -1,90 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>VMware Tanzu on vBünzli</title>
-    <link>/tags/vmware-tanzu/</link>
-    <description>Recent content in VMware Tanzu on vBünzli</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Fri, 13 Sep 2024 23:48:15 +0100</lastBuildDate><atom:link href="/tags/vmware-tanzu/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>ArgoCD Deployment &amp; Configuration</title>
-      <link>/post/argocd-configuration/</link>
-      <pubDate>Fri, 13 Sep 2024 23:48:15 +0100</pubDate>
-      
-      <guid>/post/argocd-configuration/</guid>
-      <description>
-        
-          
-            &lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
-&lt;p&gt;ArgoCD is a declarative, GitOps continuous delivery tool for Kubernetes. It&#39;s designed to make application deployment and lifecycle management automated, auditable, and easy to understand.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VMware Tanzu on vBünzli</title><link>/tags/vmware-tanzu/</link><description>Recent content in VMware Tanzu on vBünzli</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright><lastBuildDate>Fri, 13 Sep 2024 23:48:15 +0100</lastBuildDate><atom:link href="/tags/vmware-tanzu/index.xml" rel="self" type="application/rss+xml"/><item><title>ArgoCD Deployment &amp; Configuration</title><link>/post/argocd-configuration/</link><pubDate>Fri, 13 Sep 2024 23:48:15 +0100</pubDate><guid>/post/argocd-configuration/</guid><description>
+&lt;h1 id="intro"&gt;Intro&lt;/h1&gt;
+&lt;p&gt;ArgoCD is a declarative, GitOps continuous delivery tool for Kubernetes. It's designed to make application deployment and lifecycle management automated, auditable, and easy to understand.&lt;/p&gt;
 &lt;p&gt;Key features and concepts of ArgoCD include:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;GitOps Methodology: Argo CD uses Git repositories as the source of truth for defining the desired application state.&lt;/li&gt;
-&lt;li&gt;Kubernetes-native: It&#39;s implemented as a Kubernetes controller that continuously monitors running applications and compares their current state against the desired state specified in Git.&lt;/li&gt;
+&lt;li&gt;Kubernetes-native: It's implemented as a Kubernetes controller that continuously monitors running applications and compares their current state against the desired state specified in Git.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;This blog post explains the deployment of ArgoCD in a Tanzu Kubernetes Grid Cluster. There is also the option to provision ArgoCD as a supervisor Service.&lt;/p&gt;
-          
-          
-        
-      </description>
-    </item>
-    
-    <item>
-      <title>VMware Cloud Foundation 5.2</title>
-      <link>/post/vcf52/</link>
-      <pubDate>Tue, 25 Jun 2024 20:48:30 +0200</pubDate>
-      
-      <guid>/post/vcf52/</guid>
-      <description>
-        
-          
-            &lt;p&gt;The new VCF 5.2 Update delivers quite a few interesting updates. This blog post covers expecially the updates and improvements for Tanzu.&lt;/p&gt;
+&lt;p&gt;This blog post explains the deployment of ArgoCD in a Tanzu Kubernetes Grid Cluster. There is also the option to provision ArgoCD as a supervisor Service.&lt;/p&gt;</description></item><item><title>VMware Cloud Foundation 5.2</title><link>/post/vcf52/</link><pubDate>Tue, 25 Jun 2024 20:48:30 +0200</pubDate><guid>/post/vcf52/</guid><description>
+&lt;p&gt;The new VCF 5.2 Update delivers quite a few interesting updates. This blog post covers expecially the updates and improvements for Tanzu.&lt;/p&gt;
 &lt;p&gt;Part 1 covers new Feature within Tanzu on vSphere 8 Update 3.&lt;/p&gt;
-&lt;h2 id=&#34;vsphere-with-tanzu-update---vsphere-iaas-control-plane&#34;&gt;vSphere with Tanzu Update -&amp;gt; vSphere IaaS Control Plane&lt;/h2&gt;
+&lt;h2 id="vsphere-with-tanzu-update---vsphere-iaas-control-plane"&gt;vSphere with Tanzu Update -&amp;gt; vSphere IaaS Control Plane&lt;/h2&gt;
 &lt;p&gt;vSphere with Tanzu is passé - the new naming is vSphere IaaS Control Plane.&lt;/p&gt;
-&lt;p&gt;The naming already suggest - not only Kubernetes Cluster can be deployed, also VMs (this was possible a long time but with the new naming the focus is not only on k8s). Via the vm-operator you can deploy VMs alongside Tanzu Kubernetes Cluster. The IaaS Control Plane is really interesting as you can deploy VMs with Code. A YAML File will describe your VM. For that the VM Class now support much more configuration, it handled like a normal VM provisioned through vSphere UI.&lt;/p&gt;
-          
-          
-        
-      </description>
-    </item>
-    
-    <item>
-      <title>VMware Tanzu - Overview</title>
-      <link>/post/tanzu-overview/</link>
-      <pubDate>Thu, 08 Feb 2024 20:43:03 +0200</pubDate>
-      
-      <guid>/post/tanzu-overview/</guid>
-      <description>
-        
-          
-            &lt;h1 id=&#34;tanzu-portfolio-explained&#34;&gt;Tanzu Portfolio explained&lt;/h1&gt;
-&lt;p&gt;Lately, we&#39;ve been having lots conversations internally and with customers about Tanzu.
-There appears to be some confusion about Tanzu&#39;s portfolio and which Tanzu products are best suited for specific use cases.&lt;/p&gt;
+&lt;p&gt;The naming already suggest - not only Kubernetes Cluster can be deployed, also VMs (this was possible a long time but with the new naming the focus is not only on k8s). Via the vm-operator you can deploy VMs alongside Tanzu Kubernetes Cluster. The IaaS Control Plane is really interesting as you can deploy VMs with Code. A YAML File will describe your VM. For that the VM Class now support much more configuration, it handled like a normal VM provisioned through vSphere UI.&lt;/p&gt;</description></item><item><title>VMware Tanzu - Overview</title><link>/post/tanzu-overview/</link><pubDate>Thu, 08 Feb 2024 20:43:03 +0200</pubDate><guid>/post/tanzu-overview/</guid><description>
+&lt;h1 id="tanzu-portfolio-explained"&gt;Tanzu Portfolio explained&lt;/h1&gt;
+&lt;p&gt;Lately, we've been having lots conversations internally and with customers about Tanzu.
+There appears to be some confusion about Tanzu's portfolio and which Tanzu products are best suited for specific use cases.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;h4 id=&#34;update-november-2024&#34;&gt;&lt;strong&gt;Update November 2024&lt;/strong&gt;&lt;/h4&gt;
+&lt;h4 id="update-november-2024"&gt;&lt;strong&gt;Update November 2024&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;With the VMware aquisition by Broadcom, the are some changes in the Naming and Product Bundles.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;The new naming for vSphere with Tanzu is IaaS Control Plane. The Kubernetes Runtime itself is part of VMware Cloud Foundation (VCF).
-Add-on&#39;s, Management Tools are now part of the Tanzu Business Unit (BU). Tanzu Products include:&lt;/p&gt;
-          
-          
-        
-      </description>
-    </item>
-    
-    <item>
-      <title>Tanzu Kubernetes Grid - Linux Workstation Setup</title>
-      <link>/post/tanzu-kubernetes-grid-workstation-setup/</link>
-      <pubDate>Sun, 08 Oct 2023 20:43:03 +0200</pubDate>
-      
-      <guid>/post/tanzu-kubernetes-grid-workstation-setup/</guid>
-      <description>
-        
-          
-            &lt;h2 id=&#34;tkg-bootstrap-machine-on-fedora&#34;&gt;TKG Bootstrap Machine on Fedora&lt;/h2&gt;
+Add-on's, Management Tools are now part of the Tanzu Business Unit (BU). Tanzu Products include:&lt;/p&gt;</description></item><item><title>Tanzu Kubernetes Grid - Linux Workstation Setup</title><link>/post/tanzu-kubernetes-grid-workstation-setup/</link><pubDate>Sun, 08 Oct 2023 20:43:03 +0200</pubDate><guid>/post/tanzu-kubernetes-grid-workstation-setup/</guid><description>
+&lt;h2 id="tkg-bootstrap-machine-on-fedora"&gt;TKG Bootstrap Machine on Fedora&lt;/h2&gt;
 &lt;p&gt;Tanzu Kubernetes Grid needs a workstation to bootstrap your Kubernetes Cluster. This is a short guide for a Fedora based bootstrap Machine:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Requirements&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -93,91 +30,53 @@ Add-on&#39;s, Management Tools are now part of the Tanzu Business Unit (BU). Tan
 &lt;li&gt;dedicated admin user in the wheel-group&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Install Docker&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Docker on modern RHEL systems can  be confusing because the latest versions of RHEL replace Docker with Podman (dnf install docker will install podman). I should work with podman, but we explicity are going to install Docker Container Engine.&lt;/p&gt;
-          
-          
-        
-      </description>
-    </item>
-    
-    <item>
-      <title>Tanzu Kubernetes Cluster Example Deployments</title>
-      <link>/post/tanzu-kubernetes-cluster-examples/</link>
-      <pubDate>Fri, 23 Jun 2023 23:13:14 +0200</pubDate>
-      
-      <guid>/post/tanzu-kubernetes-cluster-examples/</guid>
-      <description>
-        
-          
-            &lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;Docker on modern RHEL systems can be confusing because the latest versions of RHEL replace Docker with Podman (dnf install docker will install podman). I should work with podman, but we explicity are going to install Docker Container Engine.&lt;/p&gt;</description></item><item><title>Tanzu Kubernetes Cluster Example Deployments</title><link>/post/tanzu-kubernetes-cluster-examples/</link><pubDate>Fri, 23 Jun 2023 23:13:14 +0200</pubDate><guid>/post/tanzu-kubernetes-cluster-examples/</guid><description>
+&lt;h1 id="intro"&gt;Intro&lt;/h1&gt;
 &lt;p&gt;This post gives a few examples of Tanzu Kubernetes Cluster Manifests and how to deploy them.&lt;/p&gt;
-&lt;h3 id=&#34;prerequiries&#34;&gt;Prerequiries&lt;/h3&gt;
+&lt;h3 id="prerequiries"&gt;Prerequiries&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Successfull Installation of vSphere with Tanzu Supervisor&lt;/li&gt;
 &lt;li&gt;vSphere Namespace created&lt;/li&gt;
 &lt;li&gt;Already existing VM Classes, Storages Policies and Tanzu Kubernetes Releases assigned to the Namespace.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;login-via-kubectl&#34;&gt;Login via kubectl&lt;/h2&gt;
+&lt;h2 id="login-via-kubectl"&gt;Login via kubectl&lt;/h2&gt;
 &lt;p&gt;You will find the IP to your Kubernetes API on the Namespace Option &amp;quot;Link to CLI Tools&amp;quot;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl vsphere login --server=10.40.80.20
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl config get-contexts
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl config use-context &amp;lt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;get-parameters-of-your-vsphere-namespace&#34;&gt;Get Parameters of your vSphere Namespace&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;kubectl vsphere login --server=10.40.80.20
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;kubectl config get-contexts
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;kubectl config use-context &amp;lt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="get-parameters-of-your-vsphere-namespace"&gt;Get Parameters of your vSphere Namespace&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;VM Class&lt;/li&gt;
 &lt;li&gt;Storagge Policy&lt;/li&gt;
 &lt;li&gt;Tanzu Releases&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl get vmclass
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl get storageclass
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl get tanzukubernetesrelease
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;cluster-with-3-control-and-6-worker-nodes&#34;&gt;Cluster with 3 Control and 6 Worker Nodes&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;apiVersion&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;run&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tanzu&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vmware&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;com&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;v1alpha3&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;kind&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;TanzuKubernetesCluster&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;metadata&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tkgs&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cluster&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;n&#34;&gt;namespace&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tkgs&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cluster&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ns&lt;/span&gt;   
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;spec&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;topology&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;n&#34;&gt;controlPlane&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;replicas&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;vmClass&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;best&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;effort&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;large&lt;/span&gt;  
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;storageClass&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;workload&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;management&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;storage&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;policy&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;tkr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;n&#34;&gt;reference&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;       &lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;v1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;23.8&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;---&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vmware&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tkg&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;zshippable&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;n&#34;&gt;nodePools&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;replicas&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;6&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;worker&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;n&#34;&gt;vmClass&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;best&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;effort&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;large&lt;/span&gt;  
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;n&#34;&gt;storageClass&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;workload&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;management&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;storage&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;policy&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Save this file as a yaml file on your workstation.&lt;/p&gt;
-          
-          
-        
-      </description>
-    </item>
-    
-    <item>
-      <title>Quicktip: Tanzu &amp; HA-Proxy</title>
-      <link>/post/tanzu-haproxy-tips/</link>
-      <pubDate>Wed, 08 Mar 2023 20:43:03 +0200</pubDate>
-      
-      <guid>/post/tanzu-haproxy-tips/</guid>
-      <description>
-        
-          
-            &lt;h1 id=&#34;quick-tip-vsphere-with-tanzu-an-ha-proxy&#34;&gt;Quick Tip: vSphere with Tanzu an HA-Proxy&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;kubectl get vmclass
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;kubectl get storageclass
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;kubectl get tanzukubernetesrelease
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="cluster-with-3-control-and-6-worker-nodes"&gt;Cluster with 3 Control and 6 Worker Nodes&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-gdscript3" data-lang="gdscript3"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;apiVersion&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tanzu&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vmware&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;v1alpha3&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;kind&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;TanzuKubernetesCluster&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;metadata&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;tkgs&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;cluster&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;namespace&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;tkgs&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;cluster&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ns&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;spec&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;topology&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;controlPlane&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;replicas&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;vmClass&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;best&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;effort&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;large&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;storageClass&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;workload&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;management&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;storage&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;policy&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;tkr&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;reference&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;v1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="mf"&gt;23.8&lt;/span&gt;&lt;span class="o"&gt;---&lt;/span&gt;&lt;span class="n"&gt;vmware&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;tkg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;zshippable&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;nodePools&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;replicas&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;worker&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;vmClass&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;best&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;effort&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;large&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;storageClass&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;workload&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;management&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;storage&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;policy&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Save this file as a yaml file on your workstation.&lt;/p&gt;</description></item><item><title>Quicktip: Tanzu &amp; HA-Proxy</title><link>/post/tanzu-haproxy-tips/</link><pubDate>Wed, 08 Mar 2023 20:43:03 +0200</pubDate><guid>/post/tanzu-haproxy-tips/</guid><description>
+&lt;h1 id="quick-tip-vsphere-with-tanzu-an-ha-proxy"&gt;Quick Tip: vSphere with Tanzu an HA-Proxy&lt;/h1&gt;
 &lt;p&gt;This is a short article with tips and tricks I experienced when deploying vSphere with Tanzu and HA-Proxy as a Load Balancer.&lt;/p&gt;
-&lt;h2 id=&#34;deploying-ha-proxy-ova&#34;&gt;Deploying Ha-Proxy OVA&lt;/h2&gt;
+&lt;h2 id="deploying-ha-proxy-ova"&gt;Deploying Ha-Proxy OVA&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Network&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Alwasys use three NICs when deploying in a production environment. It is very important that these  IP addresses do not overlap with the address ranges of your workloads and load balancers, or with the gateway itself.&lt;/p&gt;
-&lt;p&gt;At first it can be somewhat confusing what networks are needed and which services will be deployed in each network.&lt;/p&gt;
-          
-          
-        
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;Alwasys use three NICs when deploying in a production environment. It is very important that these IP addresses do not overlap with the address ranges of your workloads and load balancers, or with the gateway itself.&lt;/p&gt;
+&lt;p&gt;At first it can be somewhat confusing what networks are needed and which services will be deployed in each network.&lt;/p&gt;</description></item></channel></rss>
