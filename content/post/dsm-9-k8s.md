@@ -1,5 +1,5 @@
 ---
-title: "Data Services Manager - K8s " # Title of the blog post.
+title: "Data Services Manager - DBaaS with Kubernetes " # Title of the blog post.
 postType: "Guide"
 date: 2026-02-09T17:40:28+01:00 # Date of post creation.
 description: "DBaaS with DSM and consume via Kubernetes" # Description used for search engine.
