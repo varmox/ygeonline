@@ -509,6 +509,14 @@ kubectl apply  -f dsm-test-deployment.yaml -n $K8S_NAMESPACE
 
 > Docker Image used for Testing: https://github.com/kastenhq/pgtest
 
+# Terraform
+
+If you want to use terraform with DSM have a look at:
+
+- https://blogs.vmware.com/cloud-foundation/2025/05/13/database-as-code-with-data-services-manager-and-terraform/
+- https://github.com/xfirestyle2k/VCF-Data-Services-Terraform
+
+You can use the kubernetes terraform provider with DSM!
 
 # Summary
 
@@ -517,6 +525,7 @@ Now we have successfully deployed a PostgreSQL Cluster with the DSM K8s Operator
 In the next blog we are going to have a look at the third option on how to consume db's via DSM, VCF Automation (VCFA)
 
 <img src="/images/dsm-vcfa.png" width="1100" alt="vExpert Badge" title="VCF Automation - Data Services" />
+
 
 
 # Resources

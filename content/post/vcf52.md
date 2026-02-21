@@ -4,7 +4,7 @@ postType: "WhatsNew"
 date: 2024-06-25T20:48:30+02:00
 draft: false
 description: "VMware Cloud Foundation Updates for Tanzu" # Description used for search engine.
-featured: true # Sets if post is a featured post, making appear on the home page side bar.
+featured: false # Sets if post is a featured post, making appear on the home page side bar.
 toc: false # Controls if a table of contents should be generated for first-level links automatically.
 # menu: main
 usePageBundles: false # Set to true to group assets like images in the same folder as this post.
