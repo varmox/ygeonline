@@ -1,9 +1,60 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VSphere Kubernetes Service on vBünzli</title><link>/tags/vsphere-kubernetes-service/</link><description>Recent content in VSphere Kubernetes Service on vBünzli</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright><lastBuildDate>Sun, 08 Dec 2024 12:29:05 +0100</lastBuildDate><atom:link href="/tags/vsphere-kubernetes-service/index.xml" rel="self" type="application/rss+xml"/><item><title>RBAC on VKS</title><link>/post/k8s-rbac/</link><pubDate>Sun, 08 Dec 2024 12:29:05 +0100</pubDate><guid>/post/k8s-rbac/</guid><description>
-&lt;h1 id="intro"&gt;Intro&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VSphere Kubernetes Service on vBünzli</title>
+    <link>//localhost:1313/tags/vsphere-kubernetes-service/</link>
+    <description>Recent content in VSphere Kubernetes Service on vBünzli</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
+    <lastBuildDate>Sun, 08 Dec 2024 12:29:05 +0100</lastBuildDate><atom:link href="//localhost:1313/tags/vsphere-kubernetes-service/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RBAC on VKS</title>
+      <link>//localhost:1313/post/k8s-rbac/</link>
+      <pubDate>Sun, 08 Dec 2024 12:29:05 +0100</pubDate>
+      
+      <guid>//localhost:1313/post/k8s-rbac/</guid>
+      <description>
+        
+          
+            &lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
 &lt;p&gt;This Blogpost explains RBAC on vSphere Kubernetes Service (VKS), formely known as Tanzu Kubernetes Grid Service (TKGS). It also shows how to give access via &lt;em&gt;kubectl&lt;/em&gt; with granular permissions, leveraging OIDC Auth with pinniped on VKS-Clusters.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;h4 id="naming"&gt;&lt;strong&gt;Naming&lt;/strong&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;naming&#34;&gt;&lt;strong&gt;Naming&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;I use VKS-, TKGS- and K8s Clusters in this Blog Post. All have the same meaning - simply a Kubernetes Cluster :)&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h1 id="rbac-on-vsphere-kubernetes-service"&gt;RBAC on vSphere Kubernetes Service&lt;/h1&gt;
-&lt;p&gt;Role-based Access Control on vSphere Kubernetes Cluster has a few Keypoint which should be though about. The main question you have to ask yourself: Which Level of access do I want to grant to which people?&lt;/p&gt;</description></item></channel></rss>
+&lt;h1 id=&#34;rbac-on-vsphere-kubernetes-service&#34;&gt;RBAC on vSphere Kubernetes Service&lt;/h1&gt;
+&lt;p&gt;Role-based Access Control on vSphere Kubernetes Cluster has a few Keypoint which should be though about. The main question you have to ask yourself: Which Level of access do I want to grant to which people?&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Velero</title>
+      <link>//localhost:1313/post/velero-standalone/</link>
+      <pubDate>Sat, 30 Nov 2024 00:46:45 +0100</pubDate>
+      
+      <guid>//localhost:1313/post/velero-standalone/</guid>
+      <description>
+        
+          
+            &lt;h1 id=&#34;velero&#34;&gt;Velero&lt;/h1&gt;
+&lt;p&gt;This blog post explains how to install velero on different configurations on vSphere with Tanzu / IaaS Control Plane.&lt;/p&gt;
+&lt;h2 id=&#34;different-velero-installations-with-tgks&#34;&gt;Different Velero Installations with TGKS&lt;/h2&gt;
+&lt;p&gt;Depending on your Supervisor Cluster Configuration, there are different ways to install Velero. Each approach offers different usage on velero.&lt;/p&gt;
+&lt;h3 id=&#34;ways-to-install-velero&#34;&gt;Ways to Install Velero&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Velero Plugin for vSphere&lt;/li&gt;
+&lt;li&gt;Velero &amp;quot;Standalone&amp;quot; via Helm Chart&lt;/li&gt;
+&lt;li&gt;Velero &amp;quot;Standalone&amp;quot; via velero-cli&lt;/li&gt;
+&lt;/ul&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

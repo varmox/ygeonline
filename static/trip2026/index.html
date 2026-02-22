@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>East Coast Road Trip – Juli 2026</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #f5f0e8;
+    --dark: #1a1814;
+    --accent: #c8451a;
+    --gold: #d4a843;
+    --muted: #8a7f72;
+    --sight: #3ecf8e;
+  }
+
+  /* ── PASSWORD GATE ── */
+  #pw-gate {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: #0f0e0c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #pw-gate-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  #pw-gate-title {
+    color: var(--cream);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.04em;
+    font-weight: 400;
+  }
+  #pw-gate-sub {
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-top: -16px;
+  }
+  #pw-gate input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+    color: var(--cream);
+    font-family: 'DM Mono', monospace;
+    font-size: 1.1rem;
+    letter-spacing: 0.4em;
+    text-align: center;
+    padding: 10px 4px;
+    width: 200px;
+    outline: none;
+    caret-color: var(--cream);
+    transition: border-color 0.2s;
+  }
+  #pw-gate input:focus { border-bottom-color: rgba(255,255,255,0.6); }
+  #pw-gate input::placeholder { color: rgba(255,255,255,0.15); letter-spacing: 0.2em; }
+  #pw-gate-error {
+    color: var(--accent);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    min-height: 1em;
+    text-align: center;
+  }
+  #pw-gate-hint {
+    color: rgba(255,255,255,0.12);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
+  }
+
+  /* ── APP ── */
+  #app { display: none; height: 100vh; flex-direction: column; }
+  #app.visible { display: flex; }
+
+  body {
+    font-family: 'DM Mono', monospace;
+    background: var(--dark);
+    color: var(--cream);
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  header {
+    padding: 16px 24px;
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    background: var(--dark);
+    z-index: 1000;
+    flex-shrink: 0;
+  }
+
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.02em;
+    color: var(--cream);
+  }
+
+  header span {
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .badge {
+    margin-left: auto;
+    background: var(--accent);
+    color: white;
+    padding: 4px 10px;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .layout {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .sidebar {
+    width: 300px;
+    flex-shrink: 0;
+    background: #111009;
+    border-right: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .sidebar-header {
+    padding: 16px 20px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .stops-list {
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--muted) transparent;
+  }
+
+  .stop-item {
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .stop-item:hover { background: rgba(255,255,255,0.04); }
+  .stop-item.active { background: rgba(200,69,26,0.12); border-left: 2px solid var(--accent); }
+
+  .stop-number {
+    font-size: 0.6rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    padding-top: 2px;
+    min-width: 24px;
+  }
+
+  .stop-info { flex: 1; }
+
+  .stop-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    color: var(--cream);
+    line-height: 1.3;
+  }
+
+  .stop-date {
+    font-size: 0.62rem;
+    color: var(--muted);
+    margin-top: 3px;
+    letter-spacing: 0.08em;
+  }
+
+  .stop-nights {
+    font-size: 0.58rem;
+    color: var(--gold);
+    margin-top: 2px;
+    letter-spacing: 0.06em;
+  }
+
+  .sidebar-footer {
+    padding: 16px 20px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    font-size: 0.62rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .sidebar-footer strong { color: var(--cream); }
+
+  #map {
+    flex: 1;
+    height: 100%;
+    background: #1a1814;
+  }
+
+  .leaflet-popup-content-wrapper {
+    background: var(--dark);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 0;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+    color: var(--cream);
+    font-family: 'DM Mono', monospace;
+  }
+
+  .leaflet-popup-tip { background: var(--dark); }
+  .leaflet-popup-close-button { color: var(--muted) !important; font-size: 18px !important; }
+
+  .popup-inner { padding: 4px; min-width: 180px; }
+
+  .popup-label {
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  .popup-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--cream);
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+
+  .popup-date {
+    font-size: 0.62rem;
+    color: var(--gold);
+    margin-bottom: 8px;
+    letter-spacing: 0.06em;
+  }
+
+  .popup-notes {
+    font-size: 0.63rem;
+    color: var(--muted);
+    line-height: 1.6;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 8px;
+  }
+
+  .popup-sight-label {
+    font-size: 0.56rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sight);
+    margin-bottom: 4px;
+  }
+
+  .popup-sight-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    color: var(--cream);
+    margin-bottom: 4px;
+  }
+
+  .popup-sight-desc {
+    font-size: 0.61rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .custom-marker {
+    width: 30px;
+    height: 30px;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    border: 2px solid var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .marker-label { transform: rotate(45deg); }
+
+  .sight-marker {
+    width: 22px;
+    height: 22px;
+    background: var(--sight);
+    border: 2px solid rgba(255,255,255,0.6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  }
+
+  .controls {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ctrl-btn {
+    background: var(--dark);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--cream);
+    padding: 8px 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .ctrl-btn:hover { background: var(--accent); border-color: var(--accent); }
+
+  .legend {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 999;
+    background: rgba(26,24,20,0.92);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 12px 16px;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    line-height: 2;
+  }
+
+  .legend-item { display: flex; align-items: center; gap: 8px; color: var(--muted); }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+  .route-loading {
+    position: absolute;
+    bottom: 24px;
+    left: 16px;
+    z-index: 999;
+    background: rgba(26,24,20,0.9);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 6px 12px;
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    display: none;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .stop-item { animation: fadeUp 0.4s ease both; }
+  .stop-item:nth-child(1)  { animation-delay: 0.05s; }
+  .stop-item:nth-child(2)  { animation-delay: 0.10s; }
+  .stop-item:nth-child(3)  { animation-delay: 0.15s; }
+  .stop-item:nth-child(4)  { animation-delay: 0.20s; }
+  .stop-item:nth-child(5)  { animation-delay: 0.25s; }
+  .stop-item:nth-child(6)  { animation-delay: 0.30s; }
+  .stop-item:nth-child(7)  { animation-delay: 0.35s; }
+  .stop-item:nth-child(8)  { animation-delay: 0.40s; }
+  .stop-item:nth-child(9)  { animation-delay: 0.45s; }
+  .stop-item:nth-child(10) { animation-delay: 0.50s; }
+  .stop-item:nth-child(11) { animation-delay: 0.55s; }
+</style>
+</head>
+<body>
+
+<!-- Password gate -->
+<div id="pw-gate">
+  <div id="pw-gate-inner">
+    <div id="pw-gate-title">East Coast Road Trip</div>
+    <div id="pw-gate-sub">Juli 2026 · Privat</div>
+    <input id="pw-gate-input" type="password" placeholder="Passwort" autocomplete="off" autocorrect="off" spellcheck="false">
+    <div id="pw-gate-error"></div>
+    <div id="pw-gate-hint">↵ Enter zum Bestätigen</div>
+  </div>
+</div>
+
+<!-- App (hidden until unlocked) -->
+<div id="app">
+  <header>
+    <h1>East Coast Road Trip</h1>
+    <span>7. – 30. Juli 2026</span>
+    <div class="badge">✈ ZRH → JFK → ZRH</div>
+  </header>
+
+  <div class="layout">
+    <div class="sidebar">
+      <div class="sidebar-header">Route · 11 Stops · 24 Tage</div>
+      <div class="stops-list" id="stopsList"></div>
+      <div class="sidebar-footer">
+        <strong>Auto:</strong> NYC Midtown → Loop → NYC<br>
+        <strong>Rückflug:</strong> 30. Juli JFK → ZRH<br>
+        <strong>Carrier:</strong> SWISS Direktflug ~9h<br>
+        <strong>Vorteil:</strong> Keine One-Way-Gebühr
+      </div>
+    </div>
+
+    <div style="position:relative; flex:1; height:100%; overflow:hidden;">
+      <div id="map"></div>
+
+      <div class="legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#c8451a;"></div> Hauptstops</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#d4a843;"></div> Tagesausflüge</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#4a9eff;"></div> Flüge</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#3ecf8e;"></div> Sehenswürdigkeiten</div>
+      </div>
+
+      <div class="controls">
+        <button class="ctrl-btn" onclick="map.fitBounds(routeBounds)">← Gesamtroute</button>
+      </div>
+
+      <div class="route-loading" id="routeLoading">Berechne Straßenroute…</div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── PASSWORD GATE ──
+(function () {
+  const SESSION_KEY = 'trip2026_ok';
+  const CORRECT_HASH = '6b042f1285cb65f4b5cdada12527f9731b5d87dbe8d4037d71b11039bf57b0aa'; // sha256("seewen")
+
+  async function sha256(str) {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+  }
+
+  function unlock() {
+    document.getElementById('pw-gate').style.display = 'none';
+    const app = document.getElementById('app');
+    app.classList.add('visible');
+    // Init map only after app is visible so Leaflet can measure dimensions
+    initMap();
+  }
+
+  if (sessionStorage.getItem(SESSION_KEY) === '1') {
+    // Already unlocked this session
+    document.addEventListener('DOMContentLoaded', unlock);
+    return;
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const input = document.getElementById('pw-gate-input');
+    const error = document.getElementById('pw-gate-error');
+    input.focus();
+
+    async function attempt() {
+      const h = await sha256(input.value.trim().toLowerCase());
+      if (h === CORRECT_HASH) {
+        sessionStorage.setItem(SESSION_KEY, '1');
+        unlock();
+      } else {
+        error.textContent = 'Falsches Passwort';
+        input.value = '';
+        input.focus();
+        setTimeout(() => { error.textContent = ''; }, 2000);
+      }
+    }
+
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') attempt();
+    });
+  });
+})();
+
+// ── MAP & DATA ──
+const stops = [
+  {
+    id: 1, name: "New York City", subtitle: "Start & Ende",
+    lat: 40.7128, lng: -74.006,
+    date: "7.–10. Juli & 27.–30. Juli", nights: "4 + 2 Nächte",
+    notes: "Empire State Building, Brooklyn Bridge, Central Park, Statue of Liberty, High Line, DUMBO. Auto mieten & zurückgeben.",
+    color: "#c8451a", type: "main",
+    sights: [
+      { name: "Empire State Building", emoji: "🏙", lat: 40.7484, lng: -73.9857, desc: "Ikonisches Art-Déco-Hochhaus, 443m. Aussichtsplattform auf dem 86. Stock mit Panoramablick über Manhattan." },
+      { name: "Central Park",          emoji: "🌳", lat: 40.7851, lng: -73.9683, desc: "340 ha Stadtpark im Herzen Manhattans. Belvedere Castle, Strawberry Fields, Boote mieten im Sommer." },
+      { name: "Brooklyn Bridge",       emoji: "🌉", lat: 40.7061, lng: -73.9969, desc: "Historische Hängebrücke (1883). Zu Fuß überqueren für Aussicht auf Manhattan Skyline & DUMBO." },
+      { name: "Statue of Liberty",     emoji: "🗽", lat: 40.6892, lng: -74.0445, desc: "Fähre ab Battery Park. Krone-Tickets weit im Voraus buchen. Liberty Island & Ellis Island." },
+      { name: "High Line",             emoji: "🌿", lat: 40.7480, lng: -74.0048, desc: "Stillgelegte Hochbahn umgebaut zum Stadtpark. Chelsea bis Hudson Yards, tolle Kunstinstallationen." },
+      { name: "MoMA",                  emoji: "🎨", lat: 40.7614, lng: -73.9776, desc: "Museum of Modern Art – Picasso, Warhol, Pollock. Freitagabends reduzierter Eintritt." }
+    ]
+  },
+  {
+    id: 2, name: "Boston", subtitle: "Massachusetts",
+    lat: 42.3601, lng: -71.0589,
+    date: "11.–13. Juli", nights: "3 Nächte",
+    notes: "Freedom Trail, Boston Tea Party Museum, Fenway Park (Baseball!), Harvard & MIT in Cambridge.",
+    color: "#c8451a", type: "main",
+    sights: [
+      { name: "Freedom Trail",          emoji: "🧱", lat: 42.3588, lng: -71.0568, desc: "4 km langer roter Pfad durch 16 historische Stätten der Amerikanischen Revolution. Start am Boston Common." },
+      { name: "Fenway Park",            emoji: "⚾", lat: 42.3467, lng: -71.0972, desc: "Ältestes MLB-Stadion (1912). Heimstätte der Boston Red Sox. Tickets im Voraus buchen!" },
+      { name: "Harvard University",     emoji: "🎓", lat: 42.3770, lng: -71.1167, desc: "Älteste Universität der USA (1636) in Cambridge. Selbstgeführte Tour durch den Yard, Harvard Art Museums." },
+      { name: "Boston Tea Party Museum",emoji: "🫖", lat: 42.3519, lng: -71.0511, desc: "Interaktives Museum auf einem historischen Schiff am Congress Street Bridge. Inklusive Tee-Verkostung." },
+      { name: "Quincy Market",          emoji: "🦞", lat: 42.3601, lng: -71.0540, desc: "Historische Markthalle mit über 70 Händlern. New England Clam Chowder und Lobster Roll probieren!" }
+    ]
+  },
+  {
+    id: 3, name: "Woodstock", subtitle: "Vermont",
+    lat: 43.6242, lng: -72.5185,
+    date: "14. Juli", nights: "Durchfahrt",
+    notes: "\"Schönstes Dorf Amerikas\" – Taftsville Covered Bridge, Dorfplatz, Mittagessen. 2h von Boston.",
+    color: "#d4a843", type: "day",
+    sights: [
+      { name: "Taftsville Covered Bridge", emoji: "🌉", lat: 43.6147, lng: -72.4742, desc: "Historische überdachte Holzbrücke von 1836, eine der ältesten in Vermont. Perfektes Fotomotiv." },
+      { name: "Woodstock Village Green",   emoji: "🏡", lat: 43.6239, lng: -72.5196, desc: "Malerischer Dorfplatz mit georgianischen Häusern, Boutiquen und Cafés. Quintessenz von New England." },
+      { name: "Billings Farm & Museum",    emoji: "🐄", lat: 43.6336, lng: -72.5214, desc: "Lebendiges Bauernhofmuseum auf einer arbeitenden Farm. Historische Landwirtschaft und Vermont-Käse." }
+    ]
+  },
+  {
+    id: 4, name: "Stowe", subtitle: "Vermont",
+    lat: 44.4654, lng: -72.6874,
+    date: "14.–15. Juli", nights: "1 Nacht",
+    notes: "Moss Glen Falls wandern, Green Mountains, Stowe Recreational Path. New England pur.",
+    color: "#c8451a", type: "main",
+    sights: [
+      { name: "Moss Glen Falls",      emoji: "💧", lat: 44.5040, lng: -72.6418, desc: "Wunderschöner 37m-Wasserfall, kurzer Wanderweg (1.6 km). Im Sommer angenehm kühl." },
+      { name: "Stowe Recreation Path",emoji: "🚴", lat: 44.4640, lng: -72.6879, desc: "9 km Weg entlang des West Branch River durch malerische Landschaft. Fahrräder vor Ort mieten." },
+      { name: "Mount Mansfield",      emoji: "⛰",  lat: 44.5437, lng: -72.8143, desc: "Höchster Gipfel Vermonts (1339m). Gondel oder Autostraße zum Gipfelkamm, atemberaubende Aussicht." },
+      { name: "Trapp Family Lodge",   emoji: "🎵", lat: 44.4779, lng: -72.7094, desc: "Von der Familie von Trapp (Sound of Music) gegründete Berglodge. Panoramablick, eigene Brauerei." }
+    ]
+  },
+  {
+    id: 5, name: "Burlington", subtitle: "Vermont",
+    lat: 44.4759, lng: -73.2121,
+    date: "15. Juli", nights: "Mittagsstopp",
+    notes: "Waterfront Park am Lake Champlain, Church Street, Vermont Creemee probieren!",
+    color: "#d4a843", type: "day",
+    sights: [
+      { name: "Waterfront Park",         emoji: "🌊", lat: 44.4793, lng: -73.2237, desc: "Schöner Park am Lake Champlain mit Blick auf die Adirondacks. Kayak- und Bootsverleih im Sommer." },
+      { name: "Church Street Marketplace",emoji: "🛍", lat: 44.4784, lng: -73.2121, desc: "Fußgängerzone mit unabhängigen Läden, Restaurants und Strassencafés. Lebendige Lokalszene." },
+      { name: "ECHO Science Center",     emoji: "🔬", lat: 44.4772, lng: -73.2225, desc: "Wissenschafts- und Naturmuseum direkt am Seeufer. Champlain-Ökosystem und interaktive Ausstellungen." }
+    ]
+  },
+  {
+    id: 6, name: "Québec City", subtitle: "Canada",
+    lat: 46.8139, lng: -71.2082,
+    date: "15.–17. Juli", nights: "2 Nächte",
+    notes: "Einzige ummauerte Stadt Nordamerikas. Château Frontenac, Citadelle, Montmorency Falls (höher als Niagara!).",
+    color: "#c8451a", type: "main",
+    sights: [
+      { name: "Château Frontenac",      emoji: "🏰", lat: 46.8197, lng: -71.2049, desc: "Ikonisches Château-Hotel (1893), Wahrzeichen von Québec. Geführte Tour oder Afternoon Tea im Grand Salon." },
+      { name: "Citadelle de Québec",    emoji: "⚔️", lat: 46.8112, lng: -71.2045, desc: "Aktive Militärfestung auf dem Cap Diamant. Wachablösung im Sommer, Musée Royal 22e Régiment." },
+      { name: "Montmorency Falls",      emoji: "🌊", lat: 46.8908, lng: -71.1508, desc: "83m hoher Wasserfall – 30m höher als Niagara! Hängebrücke über den Wasserfall, Gondelbahn." },
+      { name: "Vieux-Québec Unterstadt",emoji: "🗺",  lat: 46.8131, lng: -71.2027, desc: "UNESCO-Welterbe. Place Royale, Rue du Petit-Champlain – schönste Einkaufsstraße Nordamerikas." },
+      { name: "Plains of Abraham",      emoji: "🏛",  lat: 46.8040, lng: -71.2200, desc: "Historisches Schlachtfeld (1759) heute als Stadtpark. Musée national des beaux-arts du Québec." }
+    ]
+  },
+  {
+    id: 7, name: "Montréal", subtitle: "Canada",
+    lat: 45.5017, lng: -73.5673,
+    date: "18.–20. Juli", nights: "3 Nächte",
+    notes: "Vieux-Montréal, Notre-Dame Basilique, Vieux-Port, Mont-Royal, Plateau. Französisches Flair auf dem nordamerikanischen Kontinent.",
+    color: "#c8451a", type: "main",
+    sights: [
+      { name: "Notre-Dame Basilica",   emoji: "⛪", lat: 45.5046, lng: -73.5566, desc: "Atemberaubende neogotische Basilika (1829). AURA-Lichtshow abends sehr empfehlenswert." },
+      { name: "Mont-Royal",            emoji: "⛰",  lat: 45.5091, lng: -73.5878, desc: "Kleiner Berg mitten in der Stadt mit Aussichtsplattform. Designed von Olmsted (Central Park)." },
+      { name: "Vieux-Port de Montréal",emoji: "⚓", lat: 45.5072, lng: -73.5534, desc: "Revitalisierter alter Hafen mit Promenade, Markt, Pétanque und Sommeraktivitäten." },
+      { name: "Marché Jean-Talon",     emoji: "🥖", lat: 45.5359, lng: -73.6150, desc: "Größter Freiluftmarkt Nordamerikas. Lokale Produzenten, Käse, Ahornsirup, frische Waren." },
+      { name: "Plateau-Mont-Royal",    emoji: "🎨", lat: 45.5217, lng: -73.5812, desc: "Trendiges Viertel mit bunten Treppenhäusern, Street Art, unabhängigen Cafés und Boutiquen." }
+    ]
+  },
+  {
+    id: 8, name: "Ottawa", subtitle: "Canada",
+    lat: 45.4215, lng: -75.6919,
+    date: "21.–22. Juli", nights: "2 Nächte",
+    notes: "Parliament Hill, Byward Market, Rideau Canal. Beavertails probieren – ein Muss!",
+    color: "#c8451a", type: "main",
+    sights: [
+      { name: "Parliament Hill",           emoji: "🏛",  lat: 45.4235, lng: -75.7009, desc: "Kanadas Parlamentsgebäude (1866) auf einem Hügel über dem Ottawa River. Gratiswächsel im Sommer." },
+      { name: "Rideau Canal",              emoji: "🚣", lat: 45.4153, lng: -75.6965, desc: "UNESCO-Welterbe. Im Sommer Schiffsfahrten, Winter die längste Natureisbahn der Welt (7.8 km)." },
+      { name: "ByWard Market",             emoji: "🛒", lat: 45.4285, lng: -75.6927, desc: "Lebhafter Markt mit frischen Produkten, Restaurants und Bars. Beavertails-Stand hier probieren!" },
+      { name: "National Gallery of Canada",emoji: "🖼",  lat: 45.4296, lng: -75.6991, desc: "Beeindruckende Sammlung kanadischer und internationaler Kunst. Markant durch die Glasfassade." },
+      { name: "Canadian War Museum",       emoji: "🎖", lat: 45.4176, lng: -75.7199, desc: "Ausgezeichnetes Museum zur Militärgeschichte Kanadas. Architektonisch beeindruckendes Gebäude." }
+    ]
+  },
+  {
+    id: 9, name: "Toronto", subtitle: "Canada",
+    lat: 43.6532, lng: -79.3832,
+    date: "23.–25. Juli", nights: "3 Nächte",
+    notes: "CN Tower, Art Gallery of Ontario, Kensington Market, Distillery District, Ripley's Aquarium.",
+    color: "#c8451a", type: "main",
+    sights: [
+      { name: "CN Tower",               emoji: "📡", lat: 43.6426, lng: -79.3871, desc: "553m hoher Turm mit Glasbodenplattform und 360°-Restaurant. Abends besonders beeindruckend." },
+      { name: "Distillery District",    emoji: "🥃", lat: 43.6503, lng: -79.3596, desc: "Historische viktorianische Industrieanlage mit Galerien, Restaurants, Brauereien und Boutiquen." },
+      { name: "Kensington Market",      emoji: "🌍", lat: 43.6540, lng: -79.4010, desc: "Multikulturelles Viertel mit internationalem Streetfood, Vintage-Shops und alternativer Atmosphäre." },
+      { name: "Art Gallery of Ontario", emoji: "🎨", lat: 43.6536, lng: -79.3924, desc: "Weltklasse-Kunstmuseum mit Werken von Monet, Picasso und der Group of Seven. Architekt: Frank Gehry." },
+      { name: "Toronto Islands",        emoji: "🏝",  lat: 43.6225, lng: -79.3816, desc: "Kleine Inseln im Lake Ontario, 15 Min. Fähre. Strände, Fahrräder mieten, Skyline-Aussicht." },
+      { name: "St. Lawrence Market",    emoji: "🦐", lat: 43.6488, lng: -79.3712, desc: "Samstags-Bauernmarkt im historischen Stadtmarkt. Peameal Bacon Sandwich – Torontos Klassiker!" }
+    ]
+  },
+  {
+    id: 10, name: "Niagara Falls", subtitle: "Ontario, Canada",
+    lat: 43.0896, lng: -79.0849,
+    date: "26. Juli", nights: "Tagesausflug",
+    notes: "Kanadische Seite! Maid of the Mist Boot-Tour buchen. 1.5h von Toronto. Rückkehr abends.",
+    color: "#d4a843", type: "day",
+    sights: [
+      { name: "Horseshoe Falls",        emoji: "🌊", lat: 43.0778, lng: -79.0780, desc: "Hauptwasserfall auf kanadischer Seite, 57m hoch, 670m breit. Bester Aussichtspunkt: Table Rock." },
+      { name: "Maid of the Mist",       emoji: "⛵", lat: 43.0851, lng: -79.0773, desc: "Legendäre Boot-Tour direkt zu den Wasserfällen. Poncho wird gestellt. Im Voraus buchen!" },
+      { name: "Journey Behind the Falls",emoji: "💧", lat: 43.0790, lng: -79.0788, desc: "Tunnel hinter dem Vorhang des Horseshoe Falls. Eindrucksvolles Erlebnis, wird sehr nass!" },
+      { name: "Niagara-on-the-Lake",    emoji: "🍷", lat: 43.2553, lng: -79.0715, desc: "Charmante historische Stadt 20 Min. von den Fällen. Weingüter, Shaw Festival Theater." }
+    ]
+  },
+  {
+    id: 11, name: "JFK → ZRH", subtitle: "Rückflug",
+    lat: 40.6413, lng: -73.7781,
+    date: "30. Juli", nights: "Abflug",
+    notes: "SWISS Direktflug JFK → ZRH. Ca. 9h. Ankunft Zürich früh morgens. Kein Umsteigen.",
+    color: "#4a9eff", type: "flight",
+    sights: []
+  }
+];
+
+const roadWaypoints = [
+  { from: 0, to: 1 }, { from: 1, to: 2 }, { from: 2, to: 3 },
+  { from: 3, to: 4 }, { from: 4, to: 5 }, { from: 5, to: 6 },
+  { from: 6, to: 7 }, { from: 7, to: 8 }, { from: 8, to: 9 },
+  { from: 9, to: 0 }
+];
+
+let map;
+const routeBounds = L.latLngBounds(stops.map(s => [s.lat, s.lng])).extend([47.4582, 8.5555]);
+
+function decodePolyline(str) {
+  let index = 0, lat = 0, lng = 0, result = [];
+  while (index < str.length) {
+    let b, shift = 0, res = 0;
+    do { b = str.charCodeAt(index++) - 63; res |= (b & 0x1f) << shift; shift += 5; } while (b >= 0x20);
+    const dlat = (res & 1) ? ~(res >> 1) : (res >> 1); lat += dlat;
+    shift = 0; res = 0;
+    do { b = str.charCodeAt(index++) - 63; res |= (b & 0x1f) << shift; shift += 5; } while (b >= 0x20);
+    const dlng = (res & 1) ? ~(res >> 1) : (res >> 1); lng += dlng;
+    result.push([lat / 1e5, lng / 1e5]);
+  }
+  return result;
+}
+
+async function fetchRoute(a, b) {
+  try {
+    const url = `https://router.project-osrm.org/route/v1/driving/${a.lng},${a.lat};${b.lng},${b.lat}?overview=full&geometries=polyline`;
+    const data = await (await fetch(url)).json();
+    if (data.code === 'Ok') return decodePolyline(data.routes[0].geometry);
+  } catch (_) {}
+  return [[a.lat, a.lng], [b.lat, b.lng]];
+}
+
+const routeLayer = L.layerGroup();
+const sightLayer = L.layerGroup();
+
+async function buildRoadRoutes() {
+  const loadingEl = document.getElementById('routeLoading');
+  loadingEl.style.display = 'block';
+  const segments = await Promise.allSettled(
+    roadWaypoints.map(({ from, to }) => fetchRoute(stops[from], stops[to]))
+  );
+  segments.forEach((result, i) => {
+    const coords = result.status === 'fulfilled'
+      ? result.value
+      : [[stops[roadWaypoints[i].from].lat, stops[roadWaypoints[i].from].lng],
+         [stops[roadWaypoints[i].to].lat,   stops[roadWaypoints[i].to].lng]];
+    L.polyline(coords, { color: '#c8451a', weight: 2.5, opacity: 0.75, lineJoin: 'round' }).addTo(routeLayer);
+  });
+  loadingEl.style.display = 'none';
+  setTimeout(() => map.fitBounds(L.latLngBounds(stops.map(s => [s.lat, s.lng])).extend([47.4582, 8.5555]).pad(0.08)), 100);
+}
+
+function showSights(stop) {
+  sightLayer.clearLayers();
+  (stop.sights || []).forEach(sight => {
+    const icon = L.divIcon({
+      html: `<div class="sight-marker">${sight.emoji}</div>`,
+      className: '', iconSize: [22, 22], iconAnchor: [11, 11], popupAnchor: [0, -14]
+    });
+    L.marker([sight.lat, sight.lng], { icon })
+      .addTo(sightLayer)
+      .bindPopup(`
+        <div class="popup-inner">
+          <div class="popup-sight-label">Sehenswürdigkeit · ${stop.name}</div>
+          <div class="popup-sight-title">${sight.emoji} ${sight.name}</div>
+          <div class="popup-sight-desc">${sight.desc}</div>
+        </div>`, { maxWidth: 240 });
+  });
+}
+
+function focusStop(stop, item) {
+  document.querySelectorAll('.stop-item').forEach(el => el.classList.remove('active'));
+  item.classList.add('active');
+  map.flyTo([stop.lat, stop.lng], 13, { duration: 1.2 });
+  setTimeout(() => { stop.marker.openPopup(); showSights(stop); }, 1200);
+}
+
+function initMap() {
+  map = L.map('map', { center: [44, -74], zoom: 6, zoomControl: false });
+  L.control.zoom({ position: 'bottomleft' }).addTo(map);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '© CartoDB', subdomains: 'abcd', maxZoom: 19
+  }).addTo(map);
+
+  // Flight line
+  L.polyline([[40.6413, -73.7781], [47.4582, 8.5555]],
+    { color: '#4a9eff', weight: 1.5, opacity: 0.5, dashArray: '4, 8' }).addTo(map);
+
+  routeLayer.addTo(map);
+  sightLayer.addTo(map);
+
+  // Build sidebar + markers
+  const listEl = document.getElementById('stopsList');
+  stops.forEach(stop => {
+    const item = document.createElement('div');
+    item.className = 'stop-item';
+    item.innerHTML = `
+      <div class="stop-number">${String(stop.id).padStart(2,'0')}</div>
+      <div class="stop-info">
+        <div class="stop-name">${stop.name}</div>
+        <div class="stop-date">${stop.date}</div>
+        <div class="stop-nights">${stop.nights}</div>
+      </div>`;
+    item.addEventListener('click', () => focusStop(stop, item));
+    listEl.appendChild(item);
+
+    const icon = L.divIcon({
+      html: `<div class="custom-marker" style="background:${stop.color};${stop.type==='flight'?'opacity:0.8':''}"><span class="marker-label">${stop.id}</span></div>`,
+      className: '', iconSize: [30, 30], iconAnchor: [9, 28], popupAnchor: [6, -28]
+    });
+    const marker = L.marker([stop.lat, stop.lng], { icon }).addTo(map)
+      .bindPopup(`
+        <div class="popup-inner">
+          <div class="popup-label">Stop ${String(stop.id).padStart(2,'0')} · ${stop.subtitle}</div>
+          <div class="popup-title">${stop.name}</div>
+          <div class="popup-date">${stop.date} · ${stop.nights}</div>
+          <div class="popup-notes">${stop.notes}</div>
+        </div>`, { maxWidth: 260 });
+
+    stop.marker = marker;
+    stop.listItem = item;
+
+    marker.on('click', () => {
+      document.querySelectorAll('.stop-item').forEach(el => el.classList.remove('active'));
+      item.classList.add('active');
+      item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      showSights(stop);
+    });
+  });
+
+  buildRoadRoutes();
+}
+</script>
+</body>
+</html>
