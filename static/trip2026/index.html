@@ -191,37 +191,67 @@
   .sidebar:not(.collapsed) ~ div #sidebar-toggle,
   #sidebar-toggle.open { left: 312px; }
 
+  /* ── HEADER TOGGLE (mobile only) ── */
+  #header-toggle {
+    display: none; /* shown only in mobile media query */
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+    background: var(--accent);
+    border: none;
+    color: white;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 7px 13px;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  #header-toggle svg {
+    width: 14px; height: 14px;
+    stroke: white; fill: none;
+    stroke-width: 2; stroke-linecap: round;
+    flex-shrink: 0;
+  }
+
   /* ── MOBILE overlay drawer ── */
   @media (max-width: 640px) {
-    header h1 { font-size: 1rem; }
+    header {
+      padding: 10px 14px;
+      align-items: center;
+    }
+    header h1 { font-size: 0.95rem; }
     header span { display: none; }
+    .badge { display: none; }
+
+    /* header toggle pill — replaces the floating ☰ */
+    #header-toggle {
+      display: flex;
+    }
+    /* hide the floating map toggle on mobile */
+    #sidebar-toggle { display: none !important; }
 
     .sidebar {
       position: absolute;
       top: 0; left: 0; bottom: 0;
-      width: 280px;
+      width: 85vw;
+      max-width: 320px;
       z-index: 1050;
       transform: translateX(-100%);
-      /* override desktop width transition */
       transition: transform 0.3s ease;
     }
     .sidebar.open {
       transform: translateX(0);
-      width: 280px; /* keep width on mobile */
     }
-    /* collapsed class does nothing on mobile (open/close handled by .open) */
-    .sidebar.collapsed { width: 280px; }
+    .sidebar.collapsed { width: 85vw; }
 
-    /* dim overlay behind drawer */
-    #sidebar-overlay {
-      display: block;
-    }
+    #sidebar-overlay { display: block; }
 
-    #sidebar-toggle { left: 12px !important; top: 12px; }
-    #sidebar-toggle.open { left: 12px !important; }
-
-    .legend { top: 56px; right: 8px; padding: 8px 10px; font-size: 0.55rem; }
+    .legend { top: 52px; right: 8px; padding: 8px 10px; font-size: 0.55rem; line-height: 1.8; }
     .controls { bottom: 16px; right: 8px; }
+    .ctrl-btn { font-size: 0.6rem; padding: 7px 12px; }
   }
 
   /* mobile dim overlay */
@@ -489,6 +519,11 @@
     <h1>East Coast Road Trip</h1>
     <span>7. – 30. Juli 2026</span>
     <div class="badge">✈ ZRH → JFK → ZRH</div>
+    <!-- mobile-only route list button -->
+    <button id="header-toggle" title="Route anzeigen">
+      <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      Route
+    </button>
   </header>
 
   <div class="layout">
@@ -870,20 +905,25 @@ function initMap() {
   buildRoadRoutes();
 
   // ── Sidebar toggle ──
-  const sidebar   = document.getElementById('sidebar');
-  const toggleBtn = document.getElementById('sidebar-toggle');
-  const overlay   = document.getElementById('sidebar-overlay');
-  const isMobile  = () => window.innerWidth <= 640;
+  const sidebar      = document.getElementById('sidebar');
+  const toggleBtn    = document.getElementById('sidebar-toggle');
+  const headerToggle = document.getElementById('header-toggle');
+  const overlay      = document.getElementById('sidebar-overlay');
+  const isMobile     = () => window.innerWidth <= 640;
+
+  const OPEN_SVG  = `<svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg> Route`;
+  const CLOSE_SVG = `<svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Schliessen`;
 
   function openSidebar() {
     if (isMobile()) {
       sidebar.classList.add('open');
       overlay.style.display = 'block';
+      headerToggle.innerHTML = CLOSE_SVG;
     } else {
       sidebar.classList.remove('collapsed');
+      toggleBtn.textContent = '✕';
+      toggleBtn.classList.add('open');
     }
-    toggleBtn.textContent = '✕';
-    toggleBtn.classList.add('open');
     setTimeout(() => map.invalidateSize(), 320);
   }
 
@@ -891,11 +931,12 @@ function initMap() {
     if (isMobile()) {
       sidebar.classList.remove('open');
       overlay.style.display = 'none';
+      headerToggle.innerHTML = OPEN_SVG;
     } else {
       sidebar.classList.add('collapsed');
+      toggleBtn.textContent = '☰';
+      toggleBtn.classList.remove('open');
     }
-    toggleBtn.textContent = '☰';
-    toggleBtn.classList.remove('open');
     setTimeout(() => map.invalidateSize(), 320);
   }
 
@@ -903,8 +944,14 @@ function initMap() {
     return isMobile() ? sidebar.classList.contains('open') : !sidebar.classList.contains('collapsed');
   }
 
-  toggleBtn.addEventListener('click', () => isOpen() ? closeSidebar() : openSidebar());
+  toggleBtn.addEventListener('click',    () => isOpen() ? closeSidebar() : openSidebar());
+  headerToggle.addEventListener('click', () => isOpen() ? closeSidebar() : openSidebar());
   overlay.addEventListener('click', closeSidebar);
+
+  // auto-close sidebar when user taps a stop on mobile
+  document.getElementById('stopsList').addEventListener('click', () => {
+    if (isMobile()) closeSidebar();
+  });
 
   // start collapsed on mobile, open on desktop
   if (isMobile()) {
