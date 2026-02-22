@@ -135,8 +135,10 @@
     display: flex;
     flex: 1;
     overflow: hidden;
+    position: relative;
   }
 
+  /* ── SIDEBAR ── */
   .sidebar {
     width: 300px;
     flex-shrink: 0;
@@ -145,6 +147,13 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    transition: width 0.3s ease, transform 0.3s ease;
+  }
+
+  /* collapsed on desktop: shrink to zero width */
+  .sidebar.collapsed {
+    width: 0;
+    border-right: none;
   }
 
   .sidebar-header {
@@ -154,6 +163,74 @@
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--muted);
+    white-space: nowrap;
+  }
+
+  /* ── SIDEBAR TOGGLE BUTTON ── */
+  #sidebar-toggle {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 1100;
+    width: 36px;
+    height: 36px;
+    background: rgba(26,24,20,0.92);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--cream);
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, left 0.3s ease;
+    flex-shrink: 0;
+  }
+  #sidebar-toggle:hover { background: var(--accent); border-color: var(--accent); }
+
+  /* shift toggle right when sidebar is open on desktop */
+  .sidebar:not(.collapsed) ~ div #sidebar-toggle,
+  #sidebar-toggle.open { left: 312px; }
+
+  /* ── MOBILE overlay drawer ── */
+  @media (max-width: 640px) {
+    header h1 { font-size: 1rem; }
+    header span { display: none; }
+
+    .sidebar {
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      width: 280px;
+      z-index: 1050;
+      transform: translateX(-100%);
+      /* override desktop width transition */
+      transition: transform 0.3s ease;
+    }
+    .sidebar.open {
+      transform: translateX(0);
+      width: 280px; /* keep width on mobile */
+    }
+    /* collapsed class does nothing on mobile (open/close handled by .open) */
+    .sidebar.collapsed { width: 280px; }
+
+    /* dim overlay behind drawer */
+    #sidebar-overlay {
+      display: block;
+    }
+
+    #sidebar-toggle { left: 12px !important; top: 12px; }
+    #sidebar-toggle.open { left: 12px !important; }
+
+    .legend { top: 56px; right: 8px; padding: 8px 10px; font-size: 0.55rem; }
+    .controls { bottom: 16px; right: 8px; }
+  }
+
+  /* mobile dim overlay */
+  #sidebar-overlay {
+    display: none;
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1040;
   }
 
   .stops-list {
@@ -415,7 +492,7 @@
   </header>
 
   <div class="layout">
-    <div class="sidebar">
+    <div class="sidebar" id="sidebar">
       <div class="sidebar-header">Route · 11 Stops · 24 Tage</div>
       <div class="stops-list" id="stopsList"></div>
       <div class="sidebar-footer">
@@ -426,7 +503,13 @@
       </div>
     </div>
 
+    <!-- dim overlay for mobile drawer -->
+    <div id="sidebar-overlay"></div>
+
     <div style="position:relative; flex:1; height:100%; overflow:hidden;">
+      <!-- toggle button lives inside the map container so it floats over the map -->
+      <button id="sidebar-toggle" title="Route ein-/ausblenden">☰</button>
+
       <div id="map"></div>
 
       <div class="legend">
@@ -774,6 +857,48 @@ function initMap() {
   });
 
   buildRoadRoutes();
+
+  // ── Sidebar toggle ──
+  const sidebar   = document.getElementById('sidebar');
+  const toggleBtn = document.getElementById('sidebar-toggle');
+  const overlay   = document.getElementById('sidebar-overlay');
+  const isMobile  = () => window.innerWidth <= 640;
+
+  function openSidebar() {
+    if (isMobile()) {
+      sidebar.classList.add('open');
+      overlay.style.display = 'block';
+    } else {
+      sidebar.classList.remove('collapsed');
+    }
+    toggleBtn.textContent = '✕';
+    toggleBtn.classList.add('open');
+    setTimeout(() => map.invalidateSize(), 320);
+  }
+
+  function closeSidebar() {
+    if (isMobile()) {
+      sidebar.classList.remove('open');
+      overlay.style.display = 'none';
+    } else {
+      sidebar.classList.add('collapsed');
+    }
+    toggleBtn.textContent = '☰';
+    toggleBtn.classList.remove('open');
+    setTimeout(() => map.invalidateSize(), 320);
+  }
+
+  function isOpen() {
+    return isMobile() ? sidebar.classList.contains('open') : !sidebar.classList.contains('collapsed');
+  }
+
+  toggleBtn.addEventListener('click', () => isOpen() ? closeSidebar() : openSidebar());
+  overlay.addEventListener('click', closeSidebar);
+
+  // start collapsed on mobile, open on desktop
+  if (isMobile()) {
+    sidebar.classList.remove('open');
+  }
 }
 </script>
 </body>
