@@ -28,4 +28,4 @@ See [also](https://www.reddit.com/r/BUENZLI/)
 
 System Engineer based in central Switzerland 
 
-<img src="/images/vexpert-badge_Years-4.png" width="128" alt="vExpert Badge" title="vExpert Badge" />
+<img src="/images/vexpert-badge_Years-4.png" width="256" alt="vExpert Badge" title="vExpert Badge" />
