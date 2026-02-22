@@ -5,7 +5,7 @@ date = "2022-05-10"
 aliases = ["about-us", "about-hugo", "contact"]
 author = "Yannick Gerber"
 +++
-Hi my name is Yannick Gerber, System Engineer from central switzerland. Working on mostly VMware topics.
+Hi, my name is Yannick Gerber, System Engineer from central switzerland. Working on mostly VMware topics.
 
 This blog is about virtualization, networking, kubernetes and general IT related topics. Opinions are my own.
 
