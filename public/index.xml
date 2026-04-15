@@ -7,7 +7,236 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Sat, 21 Feb 2026 00:42:27 +0100</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Apr 2026 22:07:06 +0200</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VCF FAQ</title>
+      <link>//localhost:1313/post/vcf-faq/</link>
+      <pubDate>Wed, 15 Apr 2026 22:07:06 +0200</pubDate>
+      
+      <guid>//localhost:1313/post/vcf-faq/</guid>
+      <description>
+        
+          
+            &lt;h1 id=&#34;vcf-faq&#34;&gt;VCF FAQ&lt;/h1&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;What is Greenfield and Brownfield?&lt;/strong&gt;&lt;/summary&gt;
+&lt;p&gt;Greenfield is a fresh installation. Brownfield is taking your existing VMware infrastructure and migrating it to 9.&lt;/p&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Do I need SDDC Manager / Fleet Manager with VCF9?&lt;/strong&gt;&lt;/summary&gt;
+&lt;p&gt;No — for VCF9 you just need VCF Operations.&lt;/p&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;How do I upgrade from vSphere 8 to vSphere 9?&lt;/strong&gt;&lt;/summary&gt;
+&lt;p&gt;TL;DR: Install VCF Ops (or upgrade Aria Ops 8.18 to 9). Then update vCenter and ESX as you have in previous years.&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Useful VMware Links</title>
+      <link>//localhost:1313/post/vmware-links/</link>
+      <pubDate>Fri, 10 Apr 2026 20:24:29 +0200</pubDate>
+      
+      <guid>//localhost:1313/post/vmware-links/</guid>
+      <description>
+        
+          
+            &lt;p&gt;A curated collection of VMware resources I keep coming back to — official docs, KBs, tools, and community content. Grouped by product area for quick access.&lt;/p&gt;
+&lt;div id=&#34;vmware-links&#34;&gt;
+&lt;p&gt;
+  &lt;button type=&#34;button&#34; id=&#34;export-bookmarks-btn&#34;
+          style=&#34;display:inline-block;padding:0.6em 1.2em;font-size:1rem;font-weight:600;color:#fff;background:#0091da;border:none;border-radius:4px;cursor:pointer;&#34;&gt;
+    ⬇ Download as Browser Bookmarks
+  &lt;/button&gt;
+  &lt;span style=&#34;margin-left:0.5em;font-size:0.9em;opacity:0.75;&#34;&gt;
+    (Netscape HTML format — import into Chrome, Firefox, Safari, Edge)
+  &lt;/span&gt;
+&lt;/p&gt;
+&lt;script&gt;
+(function () {
+  var btn = document.getElementById(&#39;export-bookmarks-btn&#39;);
+  if (!btn) return;
+
+  btn.addEventListener(&#39;click&#39;, function () {
+    var root = document.getElementById(&#39;vmware-links&#39;);
+    if (!root) return;
+
+    // Walk siblings after the wrapper in document order to collect H2 + following table pairs.
+    // Because the wrapper only contains the button, the H2/tables live as siblings of #vmware-links
+    // in the rendered post content. We scan the nearest content container instead.
+    var container = root.parentElement;
+    var nodes = container ? Array.from(container.children) : [];
+
+    var folders = [];
+    var current = null;
+    nodes.forEach(function (el) {
+      if (el.tagName === &#39;H2&#39;) {
+        current = { name: el.textContent.trim(), links: [] };
+        folders.push(current);
+      } else if (el.tagName === &#39;TABLE&#39; &amp;&amp; current) {
+        el.querySelectorAll(&#39;tbody tr&#39;).forEach(function (tr) {
+          var a = tr.querySelector(&#39;a[href]&#39;);
+          if (!a) return;
+          var href = a.getAttribute(&#39;href&#39;);
+          if (!href || href.indexOf(&#39;https://example.com&#39;) === 0) return; // skip placeholders
+          current.links.push({ title: a.textContent.trim() || href, href: href });
+        });
+      }
+    });
+
+    var lines = [];
+    lines.push(&#39;&lt;!DOCTYPE NETSCAPE-Bookmark-file-1&gt;&#39;);
+    lines.push(&#39;&lt;META HTTP-EQUIV=&#34;Content-Type&#34; CONTENT=&#34;text/html; charset=UTF-8&#34;&gt;&#39;);
+    lines.push(&#39;&lt;TITLE&gt;Bookmarks&lt;/TITLE&gt;&#39;);
+    lines.push(&#39;&lt;H1&gt;Bookmarks&lt;/H1&gt;&#39;);
+    lines.push(&#39;&lt;DL&gt;&lt;p&gt;&#39;);
+    lines.push(&#39;    &lt;DT&gt;&lt;H3&gt;VMware Links&lt;/H3&gt;&#39;);
+    lines.push(&#39;    &lt;DL&gt;&lt;p&gt;&#39;);
+
+    var esc = function (s) {
+      return String(s).replace(/&amp;/g, &#39;&amp;amp;&#39;).replace(/&lt;/g, &#39;&amp;lt;&#39;).replace(/&gt;/g, &#39;&amp;gt;&#39;).replace(/&#34;/g, &#39;&amp;quot;&#39;);
+    };
+
+    folders.forEach(function (f) {
+      if (!f.links.length) return;
+      lines.push(&#39;        &lt;DT&gt;&lt;H3&gt;&#39; + esc(f.name) + &#39;&lt;/H3&gt;&#39;);
+      lines.push(&#39;        &lt;DL&gt;&lt;p&gt;&#39;);
+      f.links.forEach(function (l) {
+        lines.push(&#39;            &lt;DT&gt;&lt;A HREF=&#34;&#39; + esc(l.href) + &#39;&#34;&gt;&#39; + esc(l.title) + &#39;&lt;/A&gt;&#39;);
+      });
+      lines.push(&#39;        &lt;/DL&gt;&lt;p&gt;&#39;);
+    });
+
+    lines.push(&#39;    &lt;/DL&gt;&lt;p&gt;&#39;);
+    lines.push(&#39;&lt;/DL&gt;&lt;p&gt;&#39;);
+
+    var blob = new Blob([lines.join(&#39;\n&#39;)], { type: &#39;text/html;charset=utf-8&#39; });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement(&#39;a&#39;);
+    a.href = url;
+    a.download = &#39;vmware-links.html&#39;;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+  });
+})();
+&lt;/script&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;vsphere&#34;&gt;vSphere&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Name&lt;/th&gt;
+          &lt;th&gt;Description&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;https://example.com&#34;&gt;Title&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Short description.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;vsan&#34;&gt;vSAN&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Name&lt;/th&gt;
+          &lt;th&gt;Description&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;https://example.com&#34;&gt;Title&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Short description.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;nsx&#34;&gt;NSX&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Name&lt;/th&gt;
+          &lt;th&gt;Description&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;https://example.com&#34;&gt;Title&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Short description.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;vcf-vmware-cloud-foundation&#34;&gt;VCF (VMware Cloud Foundation)&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Name&lt;/th&gt;
+          &lt;th&gt;Description&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;https://example.com&#34;&gt;Title&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Short description.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;vks-vmware-vsphere-kubernetes-service&#34;&gt;VKS (VMware vSphere Kubernetes Service)&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Name&lt;/th&gt;
+          &lt;th&gt;Description&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;https://example.com&#34;&gt;Title&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Short description.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;aria&#34;&gt;Aria&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Name&lt;/th&gt;
+          &lt;th&gt;Description&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;https://example.com&#34;&gt;Title&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Short description.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;kb--community&#34;&gt;KB &amp;amp; Community&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Name&lt;/th&gt;
+          &lt;th&gt;Description&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;https://example.com&#34;&gt;Title&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Short description.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>Vcd Postgres Update</title>
       <link>//localhost:1313/post/vcd-postgres-update/</link>

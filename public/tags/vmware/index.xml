@@ -7,7 +7,51 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Tue, 25 Jun 2024 20:48:30 +0200</lastBuildDate><atom:link href="//localhost:1313/tags/vmware/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Apr 2026 20:24:29 +0200</lastBuildDate><atom:link href="//localhost:1313/tags/vmware/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Useful VMware Links</title>
+      <link>//localhost:1313/post/vmware-links/</link>
+      <pubDate>Fri, 10 Apr 2026 20:24:29 +0200</pubDate>
+      
+      <guid>//localhost:1313/post/vmware-links/</guid>
+      <description>
+        
+          
+            &lt;p&gt;A curated collection of VMware resources I keep coming back to — official docs, KBs, tools, and community content. Grouped by product area for quick access.&lt;/p&gt;
+&lt;h2 id=&#34;vsphere&#34;&gt;vSphere&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://example.com&#34;&gt;Title&lt;/a&gt;&lt;/strong&gt; — short description.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;vsan&#34;&gt;vSAN&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://example.com&#34;&gt;Title&lt;/a&gt;&lt;/strong&gt; — short description.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;nsx&#34;&gt;NSX&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://example.com&#34;&gt;Title&lt;/a&gt;&lt;/strong&gt; — short description.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;vcf-vmware-cloud-foundation&#34;&gt;VCF (VMware Cloud Foundation)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://example.com&#34;&gt;Title&lt;/a&gt;&lt;/strong&gt; — short description.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;vks-vmware-vsphere-kubernetes-service&#34;&gt;VKS (VMware vSphere Kubernetes Service)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://example.com&#34;&gt;Title&lt;/a&gt;&lt;/strong&gt; — short description.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;aria&#34;&gt;Aria&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://example.com&#34;&gt;Title&lt;/a&gt;&lt;/strong&gt; — short description.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;kb--community&#34;&gt;KB &amp;amp; Community&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://example.com&#34;&gt;Title&lt;/a&gt;&lt;/strong&gt; — short description.&lt;/li&gt;
+&lt;/ul&gt;
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>VMware Cloud Foundation 5.2</title>
       <link>//localhost:1313/post/vcf52/</link>

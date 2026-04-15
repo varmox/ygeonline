@@ -3,27 +3,45 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>//localhost:1313/</loc>
-    <lastmod>2026-02-21T00:42:27+01:00</lastmod>
+    <lastmod>2026-04-10T20:24:29+02:00</lastmod>
   </url><url>
     <loc>//localhost:1313/categories/</loc>
-    <lastmod>2026-02-21T00:42:27+01:00</lastmod>
+    <lastmod>2026-04-10T20:24:29+02:00</lastmod>
   </url><url>
     <loc>//localhost:1313/tags/index/</loc>
-    <lastmod>2026-02-21T00:42:27+01:00</lastmod>
+    <lastmod>2026-04-10T20:24:29+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/links/</loc>
+    <lastmod>2026-04-10T20:24:29+02:00</lastmod>
   </url><url>
     <loc>//localhost:1313/post/</loc>
-    <lastmod>2026-02-21T00:42:27+01:00</lastmod>
+    <lastmod>2026-04-10T20:24:29+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/</loc>
+    <lastmod>2026-04-10T20:24:29+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/technology/</loc>
+    <lastmod>2026-04-10T20:24:29+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/post/vmware-links/</loc>
+    <lastmod>2026-04-10T20:24:29+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/vcf/</loc>
+    <lastmod>2026-04-10T20:24:29+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/vks/</loc>
+    <lastmod>2026-04-10T20:24:29+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/vmware/</loc>
+    <lastmod>2026-04-10T20:24:29+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/vsphere/</loc>
+    <lastmod>2026-04-10T20:24:29+02:00</lastmod>
   </url><url>
     <loc>//localhost:1313/tags/tag_name1/</loc>
     <lastmod>2026-02-21T00:42:27+01:00</lastmod>
   </url><url>
     <loc>//localhost:1313/tags/tag_name2/</loc>
-    <lastmod>2026-02-21T00:42:27+01:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/</loc>
-    <lastmod>2026-02-21T00:42:27+01:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/categories/technology/</loc>
     <lastmod>2026-02-21T00:42:27+01:00</lastmod>
   </url><url>
     <loc>//localhost:1313/post/vcd-postgres-update/</loc>
@@ -101,9 +119,6 @@
     <loc>//localhost:1313/tags/vsan/</loc>
     <lastmod>2024-12-10T20:20:23+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/vsphere/</loc>
-    <lastmod>2024-12-10T20:20:23+01:00</lastmod>
-  </url><url>
     <loc>//localhost:1313/post/k8s-rbac/</loc>
     <lastmod>2024-12-08T12:29:05+01:00</lastmod>
   </url><url>
@@ -173,14 +188,8 @@
     <loc>//localhost:1313/tags/vcenter/</loc>
     <lastmod>2024-08-23T22:24:18+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/vcf/</loc>
-    <lastmod>2024-08-23T22:24:18+02:00</lastmod>
-  </url><url>
     <loc>//localhost:1313/post/vcenter-troubleshooting/</loc>
     <lastmod>2024-08-23T22:24:18+02:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/vmware/</loc>
-    <lastmod>2024-06-25T20:48:30+02:00</lastmod>
   </url><url>
     <loc>//localhost:1313/tags/vmware-cloud-foundation/</loc>
     <lastmod>2024-06-25T20:48:30+02:00</lastmod>
