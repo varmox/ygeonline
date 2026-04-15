@@ -3,7 +3,7 @@ title: "VCF FAQ"
 date: 2026-04-15T22:07:06+02:00
 description: "Common questions about VMware Cloud Foundation 9."
 featured: true
-draft: true
+draft: false
 toc: false
 usePageBundles: false
 categories:
