@@ -18,21 +18,18 @@
         
           
             &lt;h1 id=&#34;data-services-manager-and-vcf-automation&#34;&gt;Data Services Manager and VCF Automation&lt;/h1&gt;
-&lt;p&gt;DSM Ressources can be provisioned through DSM UI, Kubernetes Operator and VCF Automation. This post is about the DSM and VCF Automation.&lt;/p&gt;
-&lt;img src=&#34;//localhost:1313/images/dsm5.png&#34; width=&#34;1100&#34; alt=&#34;vExpert Badge&#34; title=&#34;VMware Data Services Manager&#34; /&gt;
-&lt;p&gt;asasdasd&lt;/p&gt;
-&lt;p&gt;Our Goal is that we can provision PostgreSQL Cluster through VCF Automation.&lt;/p&gt;
-&lt;img src=&#34;//localhost:1313/images/vcfa-dsm/vcfa-1.png&#34; width=&#34;1100&#34; alt=&#34;vExpert Badge&#34; title=&#34;VMware Data Services Manager&#34; /&gt;
-&lt;p&gt;break&lt;/p&gt;
-&lt;img src=&#34;//localhost:1313/images/vcfa-dsm/vcfa-2.png&#34; width=&#34;1100&#34; alt=&#34;vExpert Badge&#34; title=&#34;VMware Data Services Manager&#34; /&gt;
-&lt;p&gt;break&lt;/p&gt;
-&lt;h1 id=&#34;prerequiries&#34;&gt;Prerequiries&lt;/h1&gt;
-&lt;p&gt;VCFA leverages VKS / Supervisor for the DSM Integration:&lt;/p&gt;
+&lt;p&gt;DSM resources can be provisioned through the DSM UI, Kubernetes Operator, and VCF Automation. This post covers the DSM and VCF Automation integration.&lt;/p&gt;
+&lt;img src=&#34;//localhost:1313/images/dsm5.png&#34; width=&#34;1100&#34; alt=&#34;DSM Overview&#34; title=&#34;VMware Data Services Manager&#34; /&gt;
+&lt;p&gt;Our goal is to provision a PostgreSQL cluster through VCF Automation.&lt;/p&gt;
+&lt;img src=&#34;//localhost:1313/images/vcfa-dsm/vcfa-1.png&#34; width=&#34;1100&#34; alt=&#34;VCFA DSM provisioning&#34; title=&#34;VMware Data Services Manager&#34; /&gt;
+&lt;img src=&#34;//localhost:1313/images/vcfa-dsm/vcfa-2.png&#34; width=&#34;1100&#34; alt=&#34;VCFA DSM provisioning details&#34; title=&#34;VMware Data Services Manager&#34; /&gt;
+&lt;h1 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h1&gt;
+&lt;p&gt;VCFA leverages VKS / Supervisor for the DSM integration:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Infrastructure Polices for DSM UI&lt;/li&gt;
-&lt;li&gt;vSphere Namespaces for VCF A&lt;/li&gt;
+&lt;li&gt;Infrastructure Policies for DSM UI&lt;/li&gt;
+&lt;li&gt;vSphere Namespaces for VCFA&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Thus we need a Supervisor configured on the vSphere Cluster where DSM-Ressources should reside in. For that to work wee need the DSM Supervisor Service (Database Consumption Operator).&lt;/p&gt;
+&lt;p&gt;Thus we need a Supervisor configured on the vSphere Cluster where DSM resources should reside. For that to work we need the DSM Supervisor Service (Database Consumption Operator).&lt;/p&gt;
           
           
         
@@ -55,7 +52,7 @@
 &lt;/details&gt;
 &lt;details&gt;
 &lt;summary&gt;&lt;strong&gt;Do I need SDDC Manager / Fleet Manager with VCF9?&lt;/strong&gt;&lt;/summary&gt;
-&lt;p&gt;No — for 9 you just need VCF Operations. Because VCF Operations will handle the licensing for 9.&lt;/p&gt;
+&lt;p&gt;No — for VCF 9 you just need VCF Operations, which handles the licensing.&lt;/p&gt;
 &lt;/details&gt;
 &lt;details&gt;
 &lt;summary&gt;&lt;strong&gt;How do I upgrade from vSphere 8 to vSphere 9?&lt;/strong&gt;&lt;/summary&gt;

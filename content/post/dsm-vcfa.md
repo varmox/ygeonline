@@ -1,20 +1,15 @@
 ---
 title: "Data Services Manager with VCF Automation" # Title of the blog post.
+postType: "Guide"
 date: 2026-04-20T21:03:16+02:00 # Date of post creation.
-description: "DSM with VCFA." # Description used for search engine.
-featured: true # Sets if post is a featured post, making appear on the home page side bar.
-draft: true # Sets whether to render this page. Draft of true will not be rendered.
-toc: false # Controls if a table of contents should be generated for first-level links automatically.
-# menu: main
-usePageBundles: false # Set to true to group assets like images in the same folder as this post.
-featureImage: "/images/path/file.jpg" # Sets featured image on blog post.
-featureImageAlt: 'Description of image' # Alternative text for featured image.
-featureImageCap: 'This is the featured image.' # Caption (optional).
-thumbnail: "/images/path/thumbnail.png" # Sets thumbnail image appearing inside card on homepage.
-shareImage: "/images/path/share.png" # Designate a separate image for social media sharing.
-codeMaxLines: 10 # Override global value for how many lines within a code block before auto-collapsing.
-codeLineNumbers: false # Override global value for showing of line numbers within code block.
-figurePositionShow: true # Override global value for showing the figure label.
+description: "How to set up Data Services Manager with VCF Automation to provision PostgreSQL clusters."
+featured: true
+draft: true
+toc: true
+usePageBundles: false
+codeMaxLines: 10
+codeLineNumbers: false
+figurePositionShow: true
 categories:
   - VMware
   - VCFA
@@ -28,37 +23,28 @@ tags:
 
 # Data Services Manager and VCF Automation
 
-DSM Ressources can be provisioned through DSM UI, Kubernetes Operator and VCF Automation. This post is about the DSM and VCF Automation. 
+DSM resources can be provisioned through the DSM UI, Kubernetes Operator, and VCF Automation. This post covers the DSM and VCF Automation integration.
 
+<img src="/images/dsm5.png" width="1100" alt="DSM Overview" title="VMware Data Services Manager" />
 
-<img src="/images/dsm5.png" width="1100" alt="vExpert Badge" title="VMware Data Services Manager" />
+Our goal is to provision a PostgreSQL cluster through VCF Automation.
 
-asasdasd
+<img src="/images/vcfa-dsm/vcfa-1.png" width="1100" alt="VCFA DSM provisioning" title="VMware Data Services Manager" />
 
-Our Goal is that we can provision PostgreSQL Cluster through VCF Automation.
+<img src="/images/vcfa-dsm/vcfa-2.png" width="1100" alt="VCFA DSM provisioning details" title="VMware Data Services Manager" />
 
+# Prerequisites
 
-<img src="/images/vcfa-dsm/vcfa-1.png" width="1100" alt="vExpert Badge" title="VMware Data Services Manager" />
+VCFA leverages VKS / Supervisor for the DSM integration:
 
-break
+- Infrastructure Policies for DSM UI
+- vSphere Namespaces for VCFA
 
-<img src="/images/vcfa-dsm/vcfa-2.png" width="1100" alt="vExpert Badge" title="VMware Data Services Manager" />
-
-
-break
-
-# Prerequiries
-
-VCFA leverages VKS / Supervisor for the DSM Integration: 
-
-- Infrastructure Polices for DSM UI
-- vSphere Namespaces for VCF A
-
-Thus we need a Supervisor configured on the vSphere Cluster where DSM-Ressources should reside in. For that to work wee need the DSM Supervisor Service (Database Consumption Operator).
+Thus we need a Supervisor configured on the vSphere Cluster where DSM resources should reside. For that to work we need the DSM Supervisor Service (Database Consumption Operator).
 
 ## Register DSM Supervisor Service
 
-A Supervisor Service leverages vSphere Pods (CRX Runtime), this Service will allow VCFA-DSM Extension to consume the Supervisor.
+A Supervisor Service leverages vSphere Pods (CRX Runtime). This service allows the VCFA-DSM extension to consume the Supervisor.
 
 
 
@@ -66,7 +52,7 @@ A Supervisor Service leverages vSphere Pods (CRX Runtime), this Service will all
 
 
 
-We need two YAML Files for that:
+We need two YAML files for that:
 Download the package.yaml and values.yaml files.
 Navigate to https://support.broadcom.com/group/ecx/productdownloads?subfamily=vSphere%20Supervisor%20Services.
 
@@ -124,112 +110,86 @@ consumptionClusterName: vcf-mgmt-cl01-sn01
 
 ```
 
-Registering the Service happens via vSphere UI:
+Registering the service happens via the vSphere UI:
 
-<img src="/images/vcfa-dsm/dsm-supervisor-service-1.png" width="1100" alt="vExpert Badge" title="VMware Data Services Manager" />
+<img src="/images/vcfa-dsm/dsm-supervisor-service-1.png" width="1100" alt="Register DSM Supervisor Service step 1" title="VMware Data Services Manager" />
 
+<img src="/images/vcfa-dsm/dsm-supervisor-service-2.png" width="1100" alt="Register DSM Supervisor Service step 2" title="VMware Data Services Manager" />
 
-break
-
-<img src="/images/vcfa-dsm/dsm-supervisor-service-2.png" width="1100" alt="vExpert Badge" title="VMware Data Services Manager" />
-
-
-break
-
-<img src="/images/vcfa-dsm/dsm-supervisor-service-3.png" width="1100" alt="vExpert Badge" title="VMware Data Services Manager" />
-
-break
+<img src="/images/vcfa-dsm/dsm-supervisor-service-3.png" width="1100" alt="Register DSM Supervisor Service step 3" title="VMware Data Services Manager" />
 
 
 
 
-Further Informations: https://techdocs.broadcom.com/us/en/vmware-cis/dsm/data-services-manager/9-0/using-vmware-data-services-manager-with-vmware-cloud-foundation/using-as-a-provider/install-the-dsm-supervisor-service.html 
+
+Further information: https://techdocs.broadcom.com/us/en/vmware-cis/dsm/data-services-manager/9-0/using-vmware-data-services-manager-with-vmware-cloud-foundation/using-as-a-provider/install-the-dsm-supervisor-service.html
 
 
 # Register VCFA DSM Service
 
-Now we need to connect VCFA to DSM. For that Login to VCFA as a Provider Admin:
+Now we need to connect VCFA to DSM. For that, log in to VCFA as a Provider Admin:
 
 +NEW CONNECTION
 
-<img src="/images/vcfa-dsm/dsm-vcfa-connection-1.png" width="1100" alt="vExpert Badge" title="VMware Data Services Manager" />
+<img src="/images/vcfa-dsm/dsm-vcfa-connection-1.png" width="1100" alt="VCFA DSM new connection" title="VMware Data Services Manager" />
 
-break
+And fill out the details (DSM cert can be downloaded via browser):
 
-And fill out the Details (DSM Cert can be downloaded via Browser)
-
-<img src="/images/vcfa-dsm/dsm-vcfa-connection-2.png" width="1100" alt="vExpert Badge" title="VMware Data Services Manager" />
+<img src="/images/vcfa-dsm/dsm-vcfa-connection-2.png" width="1100" alt="VCFA DSM connection details" title="VMware Data Services Manager" />
 
 
 
 ## Create VCFA Policy
 
-Now we create a Policy in which vSphere Namespace and VCFA Organization DSM can be consumed:
+Now we create a policy that defines in which vSphere Namespace and VCFA Organization DSM can be consumed:
 
-<img src="/images/vcfa-dsm/dsm-vcfa-policy-1.png" width="1100" alt="vExpert Badge" title="VMware Data Services Manager" />
+<img src="/images/vcfa-dsm/dsm-vcfa-policy-1.png" width="1100" alt="VCFA DSM policy creation" title="VMware Data Services Manager" />
 
-break
-
-
-<img src="/images/vcfa-dsm/dsm-vcfa-policy-2.png" width="1100" alt="vExpert Badge" title="VMware Data Services Manager" />
+<img src="/images/vcfa-dsm/dsm-vcfa-policy-2.png" width="1100" alt="VCFA DSM policy details" title="VMware Data Services Manager" />
 
 Also check in vSphere UI if the vSphere Namespace is ready:
 
 
-<img src="/images/vcfa-dsm/dsm-vsphere-ns-1.png" width="1100" alt="vExpert Badge" title="VMware Data Services Manager" />
+<img src="/images/vcfa-dsm/dsm-vsphere-ns-1.png" width="1100" alt="vSphere Namespace ready" title="VMware Data Services Manager" />
 
 
 # Create a DBaaS
 
-Login into VCFA as a Org or Project Admin:
+Log in to VCFA as an Org or Project Admin:
 
-Provision a Postgres Cluster:
+Provision a Postgres cluster:
 
-<img src="/images/vcfa-dsm/vcfa-1.png" width="1100" alt="vExpert Badge" title="VMware Data Services Manager" />
-
-break
+<img src="/images/vcfa-dsm/vcfa-1.png" width="1100" alt="VCFA Postgres provisioning" title="VMware Data Services Manager" />
 
 
-FIll out the details:
+
+Fill out the details:
 
 <img src="/images/vcfa-dsm/vcfa-2.png" width="1100" alt="DSM" title="VMware Data Services Manager" />
 
-# Login to Postgres Cluster
+# Log in to Postgres Cluster
 
-Now the Postgres Service is provisioned through VCFA. To connect to the database use for example pgadmin:
+Now the Postgres service is provisioned through VCFA. To connect to the database, use for example pgAdmin:
 
-<img src="/images/vcfa-dsm/dsm-ready.png" width="1100" alt="DSM" title="VMware Data Services Manager" />
+<img src="/images/vcfa-dsm/dsm-ready.png" width="1100" alt="DSM database ready" title="VMware Data Services Manager" />
 
+<img src="/images/vcfa-dsm/dsm-ready-pgadmin.png" width="1100" alt="pgAdmin connection to DSM database" title="VMware Data Services Manager" />
 
-break
+<img src="/images/vcfa-dsm/dsm-ready-pgadmin-2.png" width="1100" alt="pgAdmin connected to DSM database" title="VMware Data Services Manager" />
 
-<img src="/images/vcfa-dsm/dsm-ready-pgadmin.png" width="1100" alt="DSM" title="VMware Data Services Manager" />
+Within the DSM UI, the database cannot be edited as it was deployed through VCFA and the Kubernetes Consumption Operator.
 
-break
+<img src="/images/vcfa-dsm/dsm-99.png" width="1100" alt="DSM UI read-only view" title="VMware Data Services Manager" />
 
+<img src="/images/vcfa-dsm/dsm-100.png" width="1100" alt="DSM UI managed by VCFA" title="VMware Data Services Manager" />
 
-<img src="/images/vcfa-dsm/dsm-ready-pgadmin-2.png" width="1100" alt="DSM" title="VMware Data Services Manager" />
-
-
-
-Within the DSM UI, the Database cannot be edited as it was deployed through VCFA and the Kubernetes Consumption Operator.
-
-
-
-<img src="/images/vcfa-dsm/dsm-99.png" width="1100" alt="DSM" title="VMware Data Services Manager" />
-
-
-break
-
-
-<img src="/images/vcfa-dsm/dsm-100.png" width="1100" alt="DSM" title="VMware Data Services Manager" />
-
-break
 
 
 
 # Conclusion
 
-Setting up DSM with VCFA is quite easy and straight forward. As everything that is provisioned via VCFA you can use the YAML File for the DBaaS in yor CI/CD Pipeline. For further Informations consult TechDocs:
+Setting up DSM with VCFA is quite easy and straightforward. As with everything provisioned via VCFA, you can use the YAML file for the DBaaS in your CI/CD pipeline. If you want to provision DBs from within your K8s guest cluster (and still have the DBs running outside of them), see my post about the DSM Kubernetes Operator: https://ygerber.online/post/dsm-9-k8s/
+
+TechDocs article for DSM with VCFA:
 
 https://techdocs.broadcom.com/us/en/vmware-cis/dsm/data-services-manager/9-0/using-vmware-data-services-manager-with-vmware-cloud-foundation/using-as-a-provider.html

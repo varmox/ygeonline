@@ -7,7 +7,35 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Wed, 15 Apr 2026 22:07:06 +0200</lastBuildDate><atom:link href="//localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Apr 2026 21:03:16 +0200</lastBuildDate><atom:link href="//localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data Services Manager with VCF Automation</title>
+      <link>//localhost:1313/post/dsm-vcfa/</link>
+      <pubDate>Mon, 20 Apr 2026 21:03:16 +0200</pubDate>
+      
+      <guid>//localhost:1313/post/dsm-vcfa/</guid>
+      <description>
+        
+          
+            &lt;h1 id=&#34;data-services-manager-and-vcf-automation&#34;&gt;Data Services Manager and VCF Automation&lt;/h1&gt;
+&lt;p&gt;DSM resources can be provisioned through the DSM UI, Kubernetes Operator, and VCF Automation. This post covers the DSM and VCF Automation integration.&lt;/p&gt;
+&lt;img src=&#34;//localhost:1313/images/dsm5.png&#34; width=&#34;1100&#34; alt=&#34;DSM Overview&#34; title=&#34;VMware Data Services Manager&#34; /&gt;
+&lt;p&gt;Our goal is to provision a PostgreSQL cluster through VCF Automation.&lt;/p&gt;
+&lt;img src=&#34;//localhost:1313/images/vcfa-dsm/vcfa-1.png&#34; width=&#34;1100&#34; alt=&#34;VCFA DSM provisioning&#34; title=&#34;VMware Data Services Manager&#34; /&gt;
+&lt;img src=&#34;//localhost:1313/images/vcfa-dsm/vcfa-2.png&#34; width=&#34;1100&#34; alt=&#34;VCFA DSM provisioning details&#34; title=&#34;VMware Data Services Manager&#34; /&gt;
+&lt;h1 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h1&gt;
+&lt;p&gt;VCFA leverages VKS / Supervisor for the DSM integration:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Infrastructure Policies for DSM UI&lt;/li&gt;
+&lt;li&gt;vSphere Namespaces for VCFA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Thus we need a Supervisor configured on the vSphere Cluster where DSM resources should reside. For that to work we need the DSM Supervisor Service (Database Consumption Operator).&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>VCF FAQ</title>
       <link>//localhost:1313/post/vcf-faq/</link>
@@ -24,7 +52,7 @@
 &lt;/details&gt;
 &lt;details&gt;
 &lt;summary&gt;&lt;strong&gt;Do I need SDDC Manager / Fleet Manager with VCF9?&lt;/strong&gt;&lt;/summary&gt;
-&lt;p&gt;No — for VCF9 you just need VCF Operations.&lt;/p&gt;
+&lt;p&gt;No — for VCF 9 you just need VCF Operations, which handles the licensing.&lt;/p&gt;
 &lt;/details&gt;
 &lt;details&gt;
 &lt;summary&gt;&lt;strong&gt;How do I upgrade from vSphere 8 to vSphere 9?&lt;/strong&gt;&lt;/summary&gt;
@@ -126,6 +154,55 @@
 })();
 &lt;/script&gt;
 &lt;/div&gt;
+&lt;h2 id=&#34;vcf-design-and-sizing&#34;&gt;VCF Design and Sizing&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Name&lt;/th&gt;
+          &lt;th&gt;Description&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;https://example.com&#34;&gt;vSAN Sizer&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Short description.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;https://example.com&#34;&gt;Private Cloud Sizer&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Short description.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;vcf-converge-existing-infrastructre&#34;&gt;VCF Converge Existing Infrastructre&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Name&lt;/th&gt;
+          &lt;th&gt;Description&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-0/deployment/converging-your-existing-vsphere-infrastructure-to-a-vcf-or-vvf-platform-/supported-scenarios-to-converge-to-vcf.html&#34;&gt;Supported Scenarios&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Upgrade from vSphere to 9&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;vcf-preparation&#34;&gt;VCF Preparation&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Name&lt;/th&gt;
+          &lt;th&gt;Description&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-0/planning-and-preparation.html&#34;&gt;Planning and Preparation&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Short description.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 &lt;h2 id=&#34;vsphere&#34;&gt;vSphere&lt;/h2&gt;
 &lt;table&gt;
   &lt;thead&gt;
@@ -151,8 +228,28 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;https://example.com&#34;&gt;Title&lt;/a&gt;&lt;/td&gt;
-          &lt;td&gt;Short description.&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://www.vmware.com/products/cloud-infrastructure/vsan/resources#technical-paper&#34;&gt;vSAN Technical Guides&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;All vSAN Technical Guides&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;https://www.vmware.com/docs/vmware-vsan-technology-overview&#34;&gt;vSAN Technology Overview&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;vSAN Overview&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;https://www.vmware.com/docs/vmware-vsan-design-guide&#34;&gt;vSAN Design Guide&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;The Main vSAN Design Guide&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;https://www.vmware.com/docs/vsan-stretched-cluster-guide&#34;&gt;vSAN Strechted Cluster Guide&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;The Main vSAN Strechted Cluster Guide&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;https://blogs.vmware.com/cloud-foundation/technical/storage/&#34;&gt;vSAN Blog&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;The official vSAN Blog&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;https://www.vmware.com/docs/vmw-vsan-space-efficiency&#34;&gt;vSAN Space Efficiency&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Compression, Dedupe and Erasure Coding&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;

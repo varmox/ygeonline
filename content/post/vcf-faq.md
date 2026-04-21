@@ -24,7 +24,7 @@ Greenfield is a fresh installation. Brownfield is taking your existing VMware in
 <details>
 <summary><strong>Do I need SDDC Manager / Fleet Manager with VCF9?</strong></summary>
 
-No — for 9 you just need VCF Operations. Because VCF Operations will handle the licensing for 9.
+No — for VCF 9 you just need VCF Operations, which handles the licensing.
 </details>
 
 <details>
@@ -32,7 +32,7 @@ No — for 9 you just need VCF Operations. Because VCF Operations will handle th
 
 TL;DR: Install VCF Ops (or upgrade Aria Ops 8.18 to 9). Then update vCenter and ESX as you have in previous years.
 
-If you want to use all the Features that VCF Brings. Use VCF Installer. Is way easier.
+If you want to use all the features that VCF brings, use the VCF Installer. It's way easier.
 
 https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-0/deployment/converging-your-existing-vsphere-infrastructure-to-a-vcf-or-vvf-platform-/supported-scenarios-to-converge-to-vcf.html
 
@@ -44,7 +44,6 @@ https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-0/deploym
 VCF Installer does the upgrade automatically for you. No need for manual OVA provisioning etc. It also includes a lot of prebuilt checks (hardware compatibility, configuration issues, etc.).
 
 https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-0/deployment/what-is-the-vcf-installer-.html
-
 
 </details>
 
@@ -100,7 +99,7 @@ Keeping Management and Workload separate keeps the blast radius small. Keep your
 </details>
 
 <details>
-<summary><strong>What's the minimum amount of servers for a VCF9 installation?</strong></summary>
+<summary><strong>What's the minimum number of servers for a VCF9 installation?</strong></summary>
 
 With external block storage it's 2 servers. With vSAN it's 3.
 
@@ -123,18 +122,14 @@ If you want to use VCF Automation with VPCs (aka the "All-Apps" organization) yo
 <details>
 <summary><strong>Is VCF Automation mandatory?</strong></summary>
 
-No - it is a optional component. Consumption can happen through vCenter or VCF Automation, or both.
+No — it is an optional component. Consumption can happen through vCenter or VCF Automation, or both.
 </details>
 
 <details>
 <summary><strong>What APIs are changing with vSphere and VCF9?</strong></summary>
 
-Generally if you update your vCenter from 8 to 9 existing Integrations will work - 
+Generally, if you update your vCenter from 8 to 9, existing integrations will continue to work.
 
-Further Information: https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-0/release-notes/vmware-cloud-foundation-90-release-notes/platform-whats-new/whats-new-vcf-cli-api-sdk/vcf-changelog.html 
+Further information: https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-0/release-notes/vmware-cloud-foundation-90-release-notes/platform-whats-new/whats-new-vcf-cli-api-sdk/vcf-changelog.html
 
 </details>
-
-
-
-

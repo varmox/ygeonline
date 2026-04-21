@@ -24,7 +24,7 @@
 &lt;/details&gt;
 &lt;details&gt;
 &lt;summary&gt;&lt;strong&gt;Do I need SDDC Manager / Fleet Manager with VCF9?&lt;/strong&gt;&lt;/summary&gt;
-&lt;p&gt;No — for 9 you just need VCF Operations. Because VCF Operations will handle the licensing for 9.&lt;/p&gt;
+&lt;p&gt;No — for VCF 9 you just need VCF Operations, which handles the licensing.&lt;/p&gt;
 &lt;/details&gt;
 &lt;details&gt;
 &lt;summary&gt;&lt;strong&gt;How do I upgrade from vSphere 8 to vSphere 9?&lt;/strong&gt;&lt;/summary&gt;
