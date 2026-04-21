@@ -4,7 +4,7 @@ postType: "Guide"
 date: 2026-04-20T21:03:16+02:00 # Date of post creation.
 description: "How to set up Data Services Manager with VCF Automation to provision PostgreSQL clusters."
 featured: true
-draft: true
+draft: false
 toc: true
 usePageBundles: false
 codeMaxLines: 10
