@@ -31,6 +31,8 @@ Our goal is to provision a PostgreSQL cluster through VCF Automation.
 
 <img src="/images/vcfa-dsm/vcfa-1.png" width="1100" alt="VCFA DSM provisioning" title="VMware Data Services Manager" />
 
+break
+
 <img src="/images/vcfa-dsm/vcfa-2.png" width="1100" alt="VCFA DSM provisioning details" title="VMware Data Services Manager" />
 
 # Prerequisites
