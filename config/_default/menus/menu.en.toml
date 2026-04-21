@@ -33,6 +33,16 @@
   name = "vCenter"
   url = "tags/vcenter"
   weight = 5
+[[main]]
+  parent = "vmware"
+  name = "DSM"
+  url = "categories/dsm"
+  weight = 6
+[[main]]
+  parent = "vmware"
+  name = "VCFA"
+  url = "categories/vcfa"
+  weight = 7
 
 [[main]]
   name = "K8s"

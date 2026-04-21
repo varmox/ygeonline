@@ -22,6 +22,7 @@
 &lt;img src=&#34;//localhost:1313/images/dsm5.png&#34; width=&#34;1100&#34; alt=&#34;DSM Overview&#34; title=&#34;VMware Data Services Manager&#34; /&gt;
 &lt;p&gt;Our goal is to provision a PostgreSQL cluster through VCF Automation.&lt;/p&gt;
 &lt;img src=&#34;//localhost:1313/images/vcfa-dsm/vcfa-1.png&#34; width=&#34;1100&#34; alt=&#34;VCFA DSM provisioning&#34; title=&#34;VMware Data Services Manager&#34; /&gt;
+&lt;p&gt;break&lt;/p&gt;
 &lt;img src=&#34;//localhost:1313/images/vcfa-dsm/vcfa-2.png&#34; width=&#34;1100&#34; alt=&#34;VCFA DSM provisioning details&#34; title=&#34;VMware Data Services Manager&#34; /&gt;
 &lt;h1 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h1&gt;
 &lt;p&gt;VCFA leverages VKS / Supervisor for the DSM integration:&lt;/p&gt;

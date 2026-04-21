@@ -7,7 +7,36 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Mon, 09 Feb 2026 17:40:28 +0100</lastBuildDate><atom:link href="//localhost:1313/categories/vmware/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Apr 2026 21:03:16 +0200</lastBuildDate><atom:link href="//localhost:1313/categories/vmware/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data Services Manager with VCF Automation</title>
+      <link>//localhost:1313/post/dsm-vcfa/</link>
+      <pubDate>Mon, 20 Apr 2026 21:03:16 +0200</pubDate>
+      
+      <guid>//localhost:1313/post/dsm-vcfa/</guid>
+      <description>
+        
+          
+            &lt;h1 id=&#34;data-services-manager-and-vcf-automation&#34;&gt;Data Services Manager and VCF Automation&lt;/h1&gt;
+&lt;p&gt;DSM resources can be provisioned through the DSM UI, Kubernetes Operator, and VCF Automation. This post covers the DSM and VCF Automation integration.&lt;/p&gt;
+&lt;img src=&#34;//localhost:1313/images/dsm5.png&#34; width=&#34;1100&#34; alt=&#34;DSM Overview&#34; title=&#34;VMware Data Services Manager&#34; /&gt;
+&lt;p&gt;Our goal is to provision a PostgreSQL cluster through VCF Automation.&lt;/p&gt;
+&lt;img src=&#34;//localhost:1313/images/vcfa-dsm/vcfa-1.png&#34; width=&#34;1100&#34; alt=&#34;VCFA DSM provisioning&#34; title=&#34;VMware Data Services Manager&#34; /&gt;
+&lt;p&gt;break&lt;/p&gt;
+&lt;img src=&#34;//localhost:1313/images/vcfa-dsm/vcfa-2.png&#34; width=&#34;1100&#34; alt=&#34;VCFA DSM provisioning details&#34; title=&#34;VMware Data Services Manager&#34; /&gt;
+&lt;h1 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h1&gt;
+&lt;p&gt;VCFA leverages VKS / Supervisor for the DSM integration:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Infrastructure Policies for DSM UI&lt;/li&gt;
+&lt;li&gt;vSphere Namespaces for VCFA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Thus we need a Supervisor configured on the vSphere Cluster where DSM resources should reside. For that to work we need the DSM Supervisor Service (Database Consumption Operator).&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>Data Services Manager - DBaaS with Kubernetes </title>
       <link>//localhost:1313/post/dsm-9-k8s/</link>
