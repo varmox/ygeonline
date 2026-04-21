@@ -2,320 +2,224 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/</loc>
-    <lastmod>2026-04-10T20:24:29+02:00</lastmod>
+    <loc>/</loc>
+    <lastmod>2026-04-20T21:03:16+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/categories/</loc>
-    <lastmod>2026-04-10T20:24:29+02:00</lastmod>
+    <loc>/categories/</loc>
+    <lastmod>2026-04-20T21:03:16+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/index/</loc>
-    <lastmod>2026-04-10T20:24:29+02:00</lastmod>
+    <loc>/post/dsm-vcfa/</loc>
+    <lastmod>2026-04-20T21:03:16+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/links/</loc>
-    <lastmod>2026-04-10T20:24:29+02:00</lastmod>
+    <loc>/categories/dsm/</loc>
+    <lastmod>2026-04-20T21:03:16+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/post/</loc>
-    <lastmod>2026-04-10T20:24:29+02:00</lastmod>
+    <loc>/tags/dsm/</loc>
+    <lastmod>2026-04-20T21:03:16+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/</loc>
-    <lastmod>2026-04-10T20:24:29+02:00</lastmod>
+    <loc>/tags/index/</loc>
+    <lastmod>2026-04-20T21:03:16+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/categories/technology/</loc>
-    <lastmod>2026-04-10T20:24:29+02:00</lastmod>
+    <loc>/post/</loc>
+    <lastmod>2026-04-20T21:03:16+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/post/vmware-links/</loc>
-    <lastmod>2026-04-10T20:24:29+02:00</lastmod>
+    <loc>/tags/</loc>
+    <lastmod>2026-04-20T21:03:16+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/vcf/</loc>
-    <lastmod>2026-04-10T20:24:29+02:00</lastmod>
+    <loc>/categories/vcfa/</loc>
+    <lastmod>2026-04-20T21:03:16+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/vks/</loc>
-    <lastmod>2026-04-10T20:24:29+02:00</lastmod>
+    <loc>/tags/vcfa/</loc>
+    <lastmod>2026-04-20T21:03:16+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/vmware/</loc>
-    <lastmod>2026-04-10T20:24:29+02:00</lastmod>
+    <loc>/categories/vmware/</loc>
+    <lastmod>2026-04-20T21:03:16+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/vsphere/</loc>
-    <lastmod>2026-04-10T20:24:29+02:00</lastmod>
+    <loc>/tags/vmware/</loc>
+    <lastmod>2026-04-20T21:03:16+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/tag_name1/</loc>
-    <lastmod>2026-02-21T00:42:27+01:00</lastmod>
+    <loc>/categories/technology/</loc>
+    <lastmod>2026-04-15T22:07:06+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/tag_name2/</loc>
-    <lastmod>2026-02-21T00:42:27+01:00</lastmod>
+    <loc>/tags/vcf/</loc>
+    <lastmod>2026-04-15T22:07:06+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/post/vcd-postgres-update/</loc>
-    <lastmod>2026-02-21T00:42:27+01:00</lastmod>
+    <loc>/post/vcf-faq/</loc>
+    <lastmod>2026-04-15T22:07:06+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/post/vks-vmotion/</loc>
-    <lastmod>2026-02-21T00:41:34+01:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/post/vks-troubleshooting/</loc>
-    <lastmod>2026-02-21T00:41:13+01:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/data-services-manager/</loc>
+    <loc>/tags/data-services-manager/</loc>
     <lastmod>2026-02-09T17:40:28+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/post/dsm-9-k8s/</loc>
+    <loc>/post/dsm-9-k8s/</loc>
     <lastmod>2026-02-09T17:40:28+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/categories/dsm/</loc>
+    <loc>/tags/postgresql/</loc>
     <lastmod>2026-02-09T17:40:28+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/dsm/</loc>
-    <lastmod>2026-02-09T17:40:28+01:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/postgresql/</loc>
-    <lastmod>2026-02-09T17:40:28+01:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/categories/vmware/</loc>
-    <lastmod>2026-02-09T17:40:28+01:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/post/dsm-9-upgrade/</loc>
-    <lastmod>2026-02-09T17:40:21+01:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/vcf-9/</loc>
-    <lastmod>2026-02-09T17:40:21+01:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/post/vcf-9-upgrade/</loc>
-    <lastmod>2026-02-09T17:39:56+01:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/architecture/</loc>
-    <lastmod>2026-01-21T00:39:48+01:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/design/</loc>
-    <lastmod>2026-01-21T00:39:48+01:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/post/design-methodology/</loc>
-    <lastmod>2026-01-21T00:39:48+01:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/categories/kubernetes/</loc>
-    <lastmod>2025-01-06T15:26:46+01:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/post/tanzu-package-troubleshooting/</loc>
-    <lastmod>2025-01-06T15:26:46+01:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/tanzu-packages/</loc>
-    <lastmod>2025-01-06T15:26:46+01:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/troubleshooting/</loc>
-    <lastmod>2025-01-06T15:26:46+01:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/vmware-ecs/</loc>
+    <loc>/categories/kubernetes/</loc>
     <lastmod>2024-12-30T18:52:03+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/post/vmware-edge-compute-stack/</loc>
+    <loc>/tags/vmware-ecs/</loc>
     <lastmod>2024-12-30T18:52:03+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/vmware-veco/</loc>
+    <loc>/post/vmware-edge-compute-stack/</loc>
     <lastmod>2024-12-30T18:52:03+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/post/cis-hardening-vsphere/</loc>
-    <lastmod>2024-12-16T20:25:11+01:00</lastmod>
+    <loc>/tags/vmware-veco/</loc>
+    <lastmod>2024-12-30T18:52:03+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/post/vsan-2-node/</loc>
+    <loc>/post/vsan-2-node/</loc>
     <lastmod>2024-12-10T20:20:23+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/vsan/</loc>
+    <loc>/tags/vsan/</loc>
     <lastmod>2024-12-10T20:20:23+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/post/k8s-rbac/</loc>
+    <loc>/tags/vsphere/</loc>
+    <lastmod>2024-12-10T20:20:23+01:00</lastmod>
+  </url><url>
+    <loc>/post/k8s-rbac/</loc>
     <lastmod>2024-12-08T12:29:05+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/tanzu-kubernetes/</loc>
+    <loc>/tags/tanzu-kubernetes/</loc>
     <lastmod>2024-12-08T12:29:05+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/tanzu-kubernetes-grid/</loc>
+    <loc>/tags/tanzu-kubernetes-grid/</loc>
     <lastmod>2024-12-08T12:29:05+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/vsphere-kubernetes-service/</loc>
+    <loc>/tags/vsphere-kubernetes-service/</loc>
     <lastmod>2024-12-08T12:29:05+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/vsphere-with-tanzu/</loc>
+    <loc>/tags/vsphere-with-tanzu/</loc>
     <lastmod>2024-12-08T12:29:05+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/post/harbor/</loc>
-    <lastmod>2024-11-30T00:47:13+01:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/post/supervisor-services/</loc>
-    <lastmod>2024-11-30T00:47:03+01:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/post/velero-standalone/</loc>
-    <lastmod>2024-11-30T00:46:45+01:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/velero/</loc>
-    <lastmod>2024-11-30T00:46:45+01:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/cisco-aci/</loc>
+    <loc>/tags/cisco-aci/</loc>
     <lastmod>2024-11-22T07:41:26+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/vsphere-networking/</loc>
+    <loc>/tags/vsphere-networking/</loc>
     <lastmod>2024-11-22T07:41:26+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/post/vsphere-vm-portid-cport/</loc>
+    <loc>/post/vsphere-vm-portid-cport/</loc>
     <lastmod>2024-11-22T07:41:26+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/hpe-oneview/</loc>
+    <loc>/tags/hpe-oneview/</loc>
     <lastmod>2024-11-20T09:25:35+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/post/vclm-hpe-oneview/</loc>
+    <loc>/post/vclm-hpe-oneview/</loc>
     <lastmod>2024-11-20T09:25:35+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/openshift/</loc>
+    <loc>/tags/openshift/</loc>
     <lastmod>2024-11-19T23:20:09+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/post/openshift-on-vsphere/</loc>
+    <loc>/post/openshift-on-vsphere/</loc>
     <lastmod>2024-11-19T23:20:09+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/post/esxi-tpm-key-backup/</loc>
-    <lastmod>2024-10-23T12:28:07+02:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/post/argocd-configuration/</loc>
+    <loc>/post/argocd-configuration/</loc>
     <lastmod>2024-09-13T23:48:15+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/ci/cd/</loc>
+    <loc>/tags/ci/cd/</loc>
     <lastmod>2024-09-13T23:48:15+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/kubernetes/</loc>
+    <loc>/tags/kubernetes/</loc>
     <lastmod>2024-09-13T23:48:15+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/vmware-tanzu/</loc>
+    <loc>/tags/vmware-tanzu/</loc>
     <lastmod>2024-09-13T23:48:15+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/vmware-tanzu-kubernetes-grid/</loc>
+    <loc>/tags/vmware-tanzu-kubernetes-grid/</loc>
     <lastmod>2024-09-13T23:48:15+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/vcenter/</loc>
+    <loc>/tags/vcenter/</loc>
     <lastmod>2024-08-23T22:24:18+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/post/vcenter-troubleshooting/</loc>
+    <loc>/post/vcenter-troubleshooting/</loc>
     <lastmod>2024-08-23T22:24:18+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/vmware-cloud-foundation/</loc>
+    <loc>/tags/vmware-cloud-foundation/</loc>
     <lastmod>2024-06-25T20:48:30+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/post/vcf52/</loc>
+    <loc>/post/vcf52/</loc>
     <lastmod>2024-06-25T20:48:30+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/post/devsecops/</loc>
-    <lastmod>2024-06-25T08:30:38+02:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/devsecops/</loc>
-    <lastmod>2024-06-25T08:30:38+02:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/categories/my-2-cents/</loc>
-    <lastmod>2024-06-25T08:30:38+02:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/automation/</loc>
+    <loc>/tags/automation/</loc>
     <lastmod>2024-06-20T22:22:08+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/post/vsphere-api/</loc>
+    <loc>/post/vsphere-api/</loc>
     <lastmod>2024-06-20T22:22:08+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/post/vcenter-file-level-restore/</loc>
+    <loc>/post/vcenter-file-level-restore/</loc>
     <lastmod>2024-02-23T12:18:49+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/post/tanzu-overview/</loc>
+    <loc>/post/tanzu-overview/</loc>
     <lastmod>2024-02-08T20:43:03+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/hardware/</loc>
+    <loc>/tags/hardware/</loc>
     <lastmod>2023-12-26T15:28:45+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/hpe/</loc>
+    <loc>/tags/hpe/</loc>
     <lastmod>2023-12-26T15:28:45+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/post/reformatting-drives/</loc>
+    <loc>/post/reformatting-drives/</loc>
     <lastmod>2023-12-26T15:28:45+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/post/tanzu-mission-control-self-managed/</loc>
-    <lastmod>2023-12-09T13:57:09+01:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/post/tanzu-cluster-creation/</loc>
-    <lastmod>2023-12-08T20:43:03+02:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/categories/it/</loc>
-    <lastmod>2023-11-29T22:04:40+01:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/post/tkg-getting-started/</loc>
-    <lastmod>2023-11-29T22:04:40+01:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/post/cillium-getting-started/</loc>
-    <lastmod>2023-10-14T18:18:26+02:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/cni/</loc>
-    <lastmod>2023-10-14T18:18:26+02:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/kubernetes-cillium/</loc>
-    <lastmod>2023-10-14T18:18:26+02:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/docker/</loc>
+    <loc>/tags/docker/</loc>
     <lastmod>2023-10-08T20:43:03+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/fedora/</loc>
+    <loc>/tags/fedora/</loc>
     <lastmod>2023-10-08T20:43:03+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/post/tanzu-kubernetes-grid-workstation-setup/</loc>
+    <loc>/post/tanzu-kubernetes-grid-workstation-setup/</loc>
     <lastmod>2023-10-08T20:43:03+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/post/vmware-vsan-network-requirements/</loc>
+    <loc>/post/vmware-vsan-network-requirements/</loc>
     <lastmod>2023-08-23T23:13:14+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/vsan-over-roce/</loc>
+    <loc>/tags/vsan-over-roce/</loc>
     <lastmod>2023-08-23T23:13:14+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/monitoring/</loc>
+    <loc>/tags/monitoring/</loc>
     <lastmod>2023-08-08T20:43:03+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/tig-stack/</loc>
+    <loc>/tags/tig-stack/</loc>
     <lastmod>2023-08-08T20:43:03+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/post/vsphere-monitoring/</loc>
+    <loc>/post/vsphere-monitoring/</loc>
     <lastmod>2023-08-08T20:43:03+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/it-security/</loc>
-    <lastmod>2023-07-09T15:28:45+02:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/opinion/</loc>
-    <lastmod>2023-07-09T15:28:45+02:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/post/state-of-enterprise-itsecurity/</loc>
-    <lastmod>2023-07-09T15:28:45+02:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/post/tanzu-kubernetes-cluster-examples/</loc>
+    <loc>/post/tanzu-kubernetes-cluster-examples/</loc>
     <lastmod>2023-06-23T23:13:14+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/tanzu-kubernetes-clusters/</loc>
+    <loc>/tags/tanzu-kubernetes-clusters/</loc>
     <lastmod>2023-06-23T23:13:14+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/yaml/</loc>
+    <loc>/tags/yaml/</loc>
     <lastmod>2023-06-23T23:13:14+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/post/tanzu-haproxy-tips/</loc>
+    <loc>/post/tanzu-haproxy-tips/</loc>
     <lastmod>2023-03-08T20:43:03+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/cheat-sheet/</loc>
+    <loc>/tags/cheat-sheet/</loc>
     <lastmod>2022-12-04T23:16:50+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/post/kubernetes/k8-cheat-sheet/</loc>
+    <loc>/post/kubernetes/k8-cheat-sheet/</loc>
     <lastmod>2022-12-04T23:16:50+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/huawei/</loc>
+    <loc>/tags/huawei/</loc>
     <lastmod>2022-12-04T15:11:13+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/post/networking/huawei-vrp/</loc>
+    <loc>/post/networking/huawei-vrp/</loc>
     <lastmod>2022-12-04T15:11:13+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/networking/</loc>
+    <loc>/tags/networking/</loc>
     <lastmod>2022-12-04T15:11:13+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/about/</loc>
+    <loc>/about/</loc>
     <lastmod>2022-05-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/archives/</loc>
+    <loc>/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/search/</loc>
+    <loc>/search/</loc>
   </url><url>
-    <loc>//localhost:1313/series/</loc>
+    <loc>/series/</loc>
   </url>
 </urlset>
