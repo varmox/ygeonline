@@ -24,7 +24,7 @@ Greenfield is a fresh installation. Brownfield is taking your existing VMware in
 <details>
 <summary><strong>Do I need SDDC Manager / Fleet Manager with VCF9?</strong></summary>
 
-No — for VCF9 you just need VCF Operations.
+No — for 9 you just need VCF Operations. Because VCF Operations will handle the licensing for 9.
 </details>
 
 <details>
@@ -33,18 +33,34 @@ No — for VCF9 you just need VCF Operations.
 TL;DR: Install VCF Ops (or upgrade Aria Ops 8.18 to 9). Then update vCenter and ESX as you have in previous years.
 
 If you want to use all the Features that VCF Brings. Use VCF Installer. Is way easier.
+
+https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-0/deployment/converging-your-existing-vsphere-infrastructure-to-a-vcf-or-vvf-platform-/supported-scenarios-to-converge-to-vcf.html
+
 </details>
 
 <details>
 <summary><strong>What's the VCF Installer doing then?</strong></summary>
 
 VCF Installer does the upgrade automatically for you. No need for manual OVA provisioning etc. It also includes a lot of prebuilt checks (hardware compatibility, configuration issues, etc.).
+
+https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-0/deployment/what-is-the-vcf-installer-.html
+
+
 </details>
 
 <details>
 <summary><strong>What is VCF Fleet Management?</strong></summary>
 
 It's part of VCF Operations. The Fleet Manager will upgrade your whole VCF fleet (vCenter, NSX, Ops, ESX, SDDCm) for you. No manual patching needed. Lots of prebuilt checks.
+
+Fleet Manager also handles the following things centrally:
+- Certificates
+- Passwords
+- Tags
+- Configuration Profiles
+
+https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-0/overview-of-vmware-cloud-foundation-9/what-is-vmware-cloud-foundation-and-vmware-vsphere-foundation/vcf-operations-overview/fleet-management.html
+
 </details>
 
 <details>
@@ -87,6 +103,9 @@ Keeping Management and Workload separate keeps the blast radius small. Keep your
 <summary><strong>What's the minimum amount of servers for a VCF9 installation?</strong></summary>
 
 With external block storage it's 2 servers. With vSAN it's 3.
+
+https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-0/design/design-library/cluster-models/single-instance-single-availability-zone.html
+
 </details>
 
 <details>
@@ -100,3 +119,22 @@ No. NSX will get deployed when you upgrade with the VCF Installer, but you don't
 
 If you want to use VCF Automation with VPCs (aka the "All-Apps" organization) you need NSX. That's the case with a self-service vSphere Kubernetes cluster.
 </details>
+
+<details>
+<summary><strong>Is VCF Automation mandatory?</strong></summary>
+
+No - it is a optional component. Consumption can happen through vCenter or VCF Automation, or both.
+</details>
+
+<details>
+<summary><strong>What APIs are changing with vSphere and VCF9?</strong></summary>
+
+Generally if you update your vCenter from 8 to 9 existing Integrations will work - 
+
+Further Information: https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-0/release-notes/vmware-cloud-foundation-90-release-notes/platform-whats-new/whats-new-vcf-cli-api-sdk/vcf-changelog.html 
+
+</details>
+
+
+
+

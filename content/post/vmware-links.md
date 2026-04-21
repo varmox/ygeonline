@@ -102,6 +102,26 @@ A curated collection of VMware resources I keep coming back to — official docs
 
 </div>
 
+## VCF Design and Sizing
+
+| Name | Description |
+| --- | --- |
+| [vSAN Sizer](https://example.com) | Short description. |
+| [Private Cloud Sizer](https://example.com) | Short description. |
+
+## VCF Converge Existing Infrastructre
+
+| Name | Description |
+| --- | --- |
+| [Supported Scenarios](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-0/deployment/converging-your-existing-vsphere-infrastructure-to-a-vcf-or-vvf-platform-/supported-scenarios-to-converge-to-vcf.html) | Upgrade from vSphere to 9 |
+
+
+## VCF Preparation
+
+| Name | Description |
+| --- | --- |
+| [Planning and Preparation](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-0/planning-and-preparation.html) | Short description. |
+
 ## vSphere
 
 | Name | Description |
@@ -112,7 +132,12 @@ A curated collection of VMware resources I keep coming back to — official docs
 
 | Name | Description |
 | --- | --- |
-| [Title](https://example.com) | Short description. |
+| [vSAN Technical Guides](https://www.vmware.com/products/cloud-infrastructure/vsan/resources#technical-paper) | All vSAN Technical Guides |
+| [vSAN Technology Overview](https://www.vmware.com/docs/vmware-vsan-technology-overview) | vSAN Overview |
+| [vSAN Design Guide](https://www.vmware.com/docs/vmware-vsan-design-guide) | The Main vSAN Design Guide |
+| [vSAN Strechted Cluster Guide](https://www.vmware.com/docs/vsan-stretched-cluster-guide) | The Main vSAN Strechted Cluster Guide |
+| [vSAN Blog](https://blogs.vmware.com/cloud-foundation/technical/storage/) | The official vSAN Blog |
+| [vSAN Space Efficiency](https://www.vmware.com/docs/vmw-vsan-space-efficiency) | Compression, Dedupe and Erasure Coding|
 
 ## NSX
 
