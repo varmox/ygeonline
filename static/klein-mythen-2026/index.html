@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="gsw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Chli Mythe 2026 – schaffed mir's?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#101F33;
+    --dusk:#28415C;
+    --glow:#C65B49;      /* Alpenglühen am Fels */
+    --gold:#FFB158;      /* Morgesunne / CTA */
+    --snow:#F4F7FB;
+    --pine:#0B1625;
+    --pine2:#16283E;
+    --muted:rgba(244,247,251,.66);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:"Bricolage Grotesque", system-ui, -apple-system, sans-serif;
+    color:var(--snow);
+    background:linear-gradient(180deg,var(--night) 0%,var(--dusk) 60%,var(--glow) 110%);
+    min-height:100dvh;
+    overflow-x:hidden;
+    display:flex;flex-direction:column;
+  }
+
+  /* ---------- Foto-Hintergrund: Chli Mythe & Haggenspitz ---------- */
+  .bg{
+    position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:url("mythen.jpg") center 30%/cover no-repeat;
+  }
+  .bg::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,
+      rgba(13,25,42,.82) 0%,
+      rgba(13,25,42,.62) 42%,
+      rgba(16,31,51,.38) 72%,
+      rgba(22,38,60,.55) 100%);
+  }
+
+  /* ---------- Layout ---------- */
+  main{position:relative;z-index:2;flex:1;display:flex;align-items:center;justify-content:center;padding:48px 20px 56px}
+  .step{max-width:640px;width:100%;text-align:center}
+  h1,.sub{text-shadow:0 2px 18px rgba(8,15,26,.55)}
+  .eyebrow{
+    display:inline-block;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--gold);border:1px solid rgba(255,177,88,.45);border-radius:999px;padding:6px 14px;margin-bottom:22px;
+  }
+  h1{font-size:clamp(30px,6.4vw,52px);font-weight:800;line-height:1.06;letter-spacing:-.01em;margin-bottom:14px}
+  h1 em{font-style:normal;color:var(--gold)}
+  .sub{font-size:clamp(15px,2.4vw,18px);color:var(--muted);max-width:46ch;margin:0 auto 34px}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    font:inherit;font-weight:800;font-size:19px;border:0;border-radius:16px;padding:16px 34px;cursor:pointer;
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .btn:focus-visible{outline:3px solid var(--snow);outline-offset:3px}
+  .btn-ja{
+    background:var(--gold);color:#2A1706;
+    box-shadow:0 8px 24px rgba(255,177,88,.35);
+  }
+  .btn-ja:hover{transform:translateY(-2px) scale(1.03)}
+  .btn-ja:active{transform:scale(.97)}
+  .btn-nei{
+    background:transparent;color:var(--muted);border:1.5px solid rgba(244,247,251,.35);
+    font-weight:600;font-size:16px;padding:13px 26px;
+  }
+  .btn-nei.fleeing{position:fixed;z-index:50;margin:0}
+  @media (prefers-reduced-motion: no-preference){
+    .btn-nei.fleeing{transition:top .28s cubic-bezier(.2,.9,.3,1.2), left .28s cubic-bezier(.2,.9,.3,1.2)}
+  }
+  .btnrow{display:flex;gap:18px;justify-content:center;align-items:center;flex-wrap:wrap}
+
+  /* ---------- Schritt 2: Date ---------- */
+  .dates{display:grid;gap:10px;margin:0 0 22px;text-align:left}
+  .date-opt{position:relative}
+  .date-opt input{position:absolute;opacity:0;pointer-events:none}
+  .date-opt label{
+    display:flex;align-items:center;gap:12px;cursor:pointer;
+    background:rgba(244,247,251,.07);border:1.5px solid rgba(244,247,251,.18);
+    border-radius:14px;padding:14px 16px;font-weight:600;font-size:16px;
+    transition:border-color .12s, background .12s;
+  }
+  .date-opt label:hover{border-color:rgba(255,177,88,.5)}
+  .date-opt input:focus-visible + label{outline:3px solid var(--snow);outline-offset:2px}
+  .date-opt input:checked + label{background:rgba(255,177,88,.16);border-color:var(--gold)}
+  .date-opt .box{
+    width:22px;height:22px;flex:0 0 22px;border-radius:7px;border:2px solid rgba(244,247,251,.5);
+    display:grid;place-items:center;font-size:14px;color:#2A1706;
+  }
+  .date-opt input:checked + label .box{background:var(--gold);border-color:var(--gold)}
+  .date-opt input:checked + label .box::after{content:"✓";font-weight:800}
+
+  .field{margin:0 0 16px;text-align:left}
+  .field label{display:block;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  .field input,.field textarea{
+    width:100%;font:inherit;font-size:16px;color:var(--snow);
+    background:rgba(244,247,251,.07);border:1.5px solid rgba(244,247,251,.18);border-radius:12px;padding:12px 14px;
+  }
+  .field input:focus-visible,.field textarea:focus-visible{outline:none;border-color:var(--gold)}
+  .field textarea{resize:vertical;min-height:64px}
+  .hint{font-size:13px;color:var(--muted);margin-top:14px}
+  .btn-back{
+    background:transparent;color:var(--muted);border:1.5px solid rgba(244,247,251,.35);
+    font-weight:600;font-size:16px;padding:13px 26px;
+  }
+  .btn-back:hover{border-color:rgba(244,247,251,.6);color:var(--snow)}
+  .err{color:#FFC7B8;font-size:14px;font-weight:600;margin-top:12px;display:none}
+
+  /* ---------- Schritt 3 ---------- */
+  .flagpeak{width:120px;height:auto;margin:0 auto 18px;display:block}
+  @media (prefers-reduced-motion: no-preference){
+    .flagpeak .flag{transform-origin:left bottom;animation:wave 1.6s ease-in-out infinite}
+    @keyframes wave{50%{transform:skewY(-6deg)}}
+  }
+
+  .hidden{display:none !important}
+  footer{position:relative;z-index:2;text-align:center;padding:10px 0 14px;font-size:12px;color:rgba(244,247,251,.55)}
+  footer a{color:rgba(244,247,251,.7)}
+</style>
+</head>
+<body>
+
+<div class="bg" aria-hidden="true"></div>
+
+<main>
+
+  <!-- ===== Schritt 1 ===== -->
+  <section class="step" id="step1">
+    <span class="eyebrow">Chli Mythe · 1811 m · Mission 2026</span>
+    <h1>Schaffed mir's im 2026<br><em>ändlich</em> uf de Chli Mythe?</h1>
+    <p class="sub">Sit Jahre gredt, nie gmacht. Jetzt wird's ernscht. Es git genau ei richtigi Antwort.</p>
+    <div class="btnrow">
+      <button class="btn btn-ja" id="btnJa">Ja, klar! 🏔️</button>
+      <button class="btn btn-nei" id="btnNei">Nei</button>
+    </div>
+  </section>
+
+  <!-- ===== Schritt 2 ===== -->
+  <section class="step hidden" id="step2">
+    <span class="eyebrow">Sehr guet. Und wänn?</span>
+    <h1>Wähl alli Täg, wo's bi dir <em>gaht</em></h1>
+    <p class="sub">Mehreri aachlicke isch erlaubt – meh Uswahl, meh Chance uf Gipfel.</p>
+
+    <div class="dates" id="dates"><!-- wird per JS befüllt --></div>
+
+    <div class="field">
+      <label for="msg">No öppis? (optional)</label>
+      <textarea id="msg" placeholder="z.B. «nur bi guetem Wätter» oder «i bring d Nussgipfel mit»"></textarea>
+    </div>
+
+    <div class="btnrow">
+      <button class="btn btn-back" id="btnBack">← Zrugg</button>
+      <button class="btn btn-ja" id="btnSend">Abschicke ⛰️</button>
+    </div>
+    <p class="err" id="err">Hoppla – hät nid klappet. Probier's grad nomal.</p>
+    <p class="hint">Dini Antwort gaht direkt as Organisationskomitee (1 Person, sehr motiviert).</p>
+  </section>
+
+  <!-- ===== Schritt 3 ===== -->
+  <section class="step hidden" id="step3">
+    <svg class="flagpeak" viewBox="0 0 120 110" aria-hidden="true">
+      <path fill="var(--pine)" d="M0 110 L45 30 L60 45 L78 8 L120 110 Z"/>
+      <line x1="78" y1="8" x2="78" y2="-14" stroke="var(--snow)" stroke-width="3"/>
+      <path class="flag" fill="var(--gold)" d="M78 -14 L104 -8 L78 -2 Z"/>
+    </svg>
+    <h1>Merci! <em>Gipfel gebucht.</em></h1>
+    <p class="sub" id="recap"></p>
+  </section>
+
+</main>
+
+<footer>ygerber.online · Chli Mythe 2026 · Foto: <a href="https://commons.wikimedia.org/wiki/File:Haggenegg_mit_Haggenspitz_und_Klein_Mythen.jpg">Albinfo</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></footer>
+
+<script>
+/* ================= KONFIG =================
+   1) DATES: d Wandertermin – Labels eifach aapasse bi Änderige.
+   2) NTFY_TOPIC: Antworte laufed über ntfy.sh (gratis Push).
+      App installiere (ntfy, iOS/Android) und das Topic abonniere,
+      oder im Browser: https://ntfy.sh/klein-mythen-2026-zg7k3p
+      Topic gern ändere – eifach überall gliich.               */
+const DATES = [
+  { id: "d1", label: "Sa, 19. September 2026" },
+  { id: "d2", label: "Sa, 10. Oktober 2026" },
+  { id: "d3", label: "So, 11. Oktober 2026" },
+  { id: "d4", label: "Sa, 17. Oktober 2026" },
+  { id: "d5", label: "So, 18. Oktober 2026" },
+  { id: "d6", label: "Sa, 31. Oktober 2026" } // dii «31.11.» gits nid – bitte prüefe 😉
+];
+const NTFY_TOPIC = "klein-mythen-2026-zg7k3p";
+/* ========================================== */
+
+const $ = id => document.getElementById(id);
+
+/* Datum-Optione rendere */
+(() => {
+  const wrap = $("dates");
+  DATES.forEach(d => {
+    const div = document.createElement("div");
+    div.className = "date-opt";
+    div.innerHTML =
+      '<input type="checkbox" id="' + d.id + '" value="' + d.label + '">' +
+      '<label for="' + d.id + '"><span class="box"></span>' + d.label + "</label>";
+    wrap.appendChild(div);
+  });
+})();
+
+/* ---------- De flüchtend Nei-Button ---------- */
+const nei = $("btnNei");
+const taunts = ["Nei", "Sicher?", "Würkli?!", "Überleg's dir 😏", "Chasch mi nid verwütsche",
+                "D Mythe warted…", "Es git kei Nei 😄", "Gib uf"];
+let dodges = 0;
+const isTouch = window.matchMedia("(hover: none)").matches;
+
+function moveNei() {
+  if (!nei.classList.contains("fleeing")) {
+    const r = nei.getBoundingClientRect();
+    nei.classList.add("fleeing");
+    nei.style.left = r.left + "px";
+    nei.style.top = r.top + "px";
+  }
+  const pad = 16;
+  const w = nei.offsetWidth, h = nei.offsetHeight;
+  const maxX = window.innerWidth - w - pad;
+  const maxY = window.innerHeight - h - pad;
+  nei.style.left = (pad + Math.random() * Math.max(maxX - pad, 1)) + "px";
+  nei.style.top  = (pad + Math.random() * Math.max(maxY - pad, 1)) + "px";
+  dodges++;
+  nei.textContent = taunts[Math.min(dodges, taunts.length - 1)];
+  if (dodges > 4) nei.style.transform = "scale(" + Math.max(1 - (dodges - 4) * 0.08, 0.55) + ")";
+}
+
+if (isTouch) {
+  /* Mobile: teleportiert nach es paar Sekunde eifach irgendwo ane */
+  let timer = setInterval(() => { if (!$("step1").classList.contains("hidden")) moveNei(); }, 2500 + Math.random() * 1500);
+  nei.addEventListener("touchstart", e => { e.preventDefault(); moveNei(); }, { passive: false });
+  nei.addEventListener("click", e => e.preventDefault());
+} else {
+  /* Desktop: haut ab, sobald d Muus druf zue chunt */
+  nei.addEventListener("mouseenter", moveNei);
+  nei.addEventListener("focus", moveNei); /* au per Tastatur kei Chance */
+  nei.addEventListener("click", e => { e.preventDefault(); moveNei(); });
+}
+
+/* ---------- Schritt-Wechsel ---------- */
+$("btnJa").addEventListener("click", () => {
+  $("step1").classList.add("hidden");
+  nei.classList.add("hidden");
+  $("step2").classList.remove("hidden");
+  window.scrollTo({ top: 0 });
+});
+
+$("btnBack").addEventListener("click", () => {
+  $("step2").classList.add("hidden");
+  /* Nei-Button zrugg an Platz und frisch ufsetze */
+  dodges = 0;
+  nei.classList.remove("fleeing", "hidden");
+  nei.style.left = ""; nei.style.top = ""; nei.style.transform = "";
+  nei.textContent = "Nei";
+  $("step1").classList.remove("hidden");
+  window.scrollTo({ top: 0 });
+});
+
+/* ---------- Absände via ntfy ---------- */
+$("btnSend").addEventListener("click", async () => {
+  const picked = [...document.querySelectorAll('#dates input:checked')].map(i => i.value);
+  const err = $("err");
+  err.style.display = "none";
+
+  if (picked.length === 0) { err.textContent = "Mindestens ei Datum aachlicke – susch gits kei Gipfel."; err.style.display = "block"; return; }
+
+  const msg = "🏔 Zuesag für de Chli Mythe!\n" +
+              "Täg: " + picked.join(", ") +
+              ($("msg").value.trim() ? "\nBemärkig: " + $("msg").value.trim() : "");
+
+  const btn = $("btnSend");
+  btn.disabled = true; btn.textContent = "Schickt's grad ufe…";
+  try {
+    const res = await fetch("https://ntfy.sh/" + NTFY_TOPIC, {
+      method: "POST",
+      body: msg,
+      headers: { "Title": "Klein Mythen 2026 - Antwort", "Tags": "mountain", "Priority": "default" }
+    });
+    if (!res.ok) throw new Error("ntfy " + res.status);
+    $("step2").classList.add("hidden");
+    $("recap").textContent = "Du bisch registriert für: " + picked.join(" · ") + ". Details folged – Turnschueh parat halte.";
+    $("step3").classList.remove("hidden");
+    window.scrollTo({ top: 0 });
+  } catch (e) {
+    err.textContent = "Hoppla – s Abschicke hät nid klappet. Internet checke und nomal probiere.";
+    err.style.display = "block";
+    btn.disabled = false; btn.textContent = "Abschicke ⛰️";
+  }
+});
+</script>
+</body>
+</html>
