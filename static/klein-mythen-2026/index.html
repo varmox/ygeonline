@@ -55,12 +55,18 @@
   h1{font-size:clamp(30px,6.4vw,52px);font-weight:800;line-height:1.06;letter-spacing:-.01em;margin-bottom:14px}
   h1 em{font-style:normal;color:var(--gold)}
   .sub{font-size:clamp(15px,2.4vw,18px);color:var(--muted);max-width:46ch;margin:0 auto 34px}
+  .facts{
+    font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--muted);
+    margin:-22px auto 32px;max-width:52ch;
+  }
+  .facts em{font-style:italic;color:rgba(244,247,251,.8)}
 
   /* ---------- Buttons ---------- */
   .btn{
     font:inherit;font-weight:800;font-size:19px;border:0;border-radius:16px;padding:16px 34px;cursor:pointer;
     transition:transform .12s ease, box-shadow .12s ease;
   }
+  a.btn{display:inline-block;text-decoration:none;text-align:center}
   .btn:focus-visible{outline:3px solid var(--snow);outline-offset:3px}
   .btn-ja{
     background:var(--gold);color:#2A1706;
@@ -73,6 +79,10 @@
     font-weight:600;font-size:16px;padding:13px 26px;
   }
   .btn-nei.fleeing{position:fixed;z-index:50;margin:0}
+  .btn-nei.surrendered{
+    background:var(--gold);color:#2A1706;border-color:var(--gold);font-weight:800;
+    box-shadow:0 8px 24px rgba(255,177,88,.35);
+  }
   @media (prefers-reduced-motion: no-preference){
     .btn-nei.fleeing{transition:top .28s cubic-bezier(.2,.9,.3,1.2), left .28s cubic-bezier(.2,.9,.3,1.2)}
     .btn.tease{animation:tease .7s ease-in-out 2}
@@ -144,6 +154,7 @@
     <span class="eyebrow">Chli Mythe · 1811 m · Mission 2026</span>
     <h1>Schaffed miers im 2026<br><em>ändlich</em> uf de Chli Mythe?</h1>
     <p class="sub">Sit Jahre gredt, nie gmacht. Jetzt wird's ernscht. Es git genau ei richtigi Antwort.</p>
+    <p class="facts">1811 m ü. M. · T4+ · Tourebeschrieb: <em>«D Händ müend zum Hosesack ziitwiis usegno werde.»</em></p>
     <div class="btnrow">
       <button class="btn btn-ja" id="btnJa">Ja, klar! 🏔️</button>
       <button class="btn btn-nei" id="btnNei">Nei</button>
@@ -181,6 +192,11 @@
     </svg>
     <h1>Merci! <em>Gipfel gebucht.</em></h1>
     <p class="sub" id="recap"></p>
+    <p class="facts" id="countdown"></p>
+    <div class="btnrow">
+      <button class="btn btn-ja" id="btnIcs">Täg im Kaländer blockiere 📅</button>
+      <a class="btn btn-back" href="https://www.meteoschweiz.admin.ch/lokalprognose/schwyz/6430.html" target="_blank" rel="noopener">Wätter-Check ⛅</a>
+    </div>
   </section>
 
 </main>
@@ -195,12 +211,12 @@
       oder im Browser: https://ntfy.sh/klein-mythen-2026-zg7k3p
       Topic gern ändere – eifach überall gliich.               */
 const DATES = [
-  { id: "d1", label: "Sa, 19. September 2026" },
-  { id: "d2", label: "Sa, 10. Oktober 2026" },
-  { id: "d3", label: "So, 11. Oktober 2026" },
-  { id: "d4", label: "Sa, 17. Oktober 2026" },
-  { id: "d5", label: "So, 18. Oktober 2026" },
-  { id: "d6", label: "Sa, 31. Oktober 2026" } // dii «31.11.» gits nid – bitte prüefe 😉
+  { id: "d1", iso: "2026-09-19", label: "Sa, 19. September 2026" },
+  { id: "d2", iso: "2026-10-10", label: "Sa, 10. Oktober 2026" },
+  { id: "d3", iso: "2026-10-11", label: "So, 11. Oktober 2026" },
+  { id: "d4", iso: "2026-10-17", label: "Sa, 17. Oktober 2026" },
+  { id: "d5", iso: "2026-10-18", label: "So, 18. Oktober 2026" },
+  { id: "d6", iso: "2026-10-31", label: "Sa, 31. Oktober 2026" }
 ];
 const NTFY_TOPIC = "klein-mythen-2026-zg7k3p";
 /* ========================================== */
@@ -225,9 +241,19 @@ const nei = $("btnNei");
 const taunts = ["Nei", "Sicher?", "Würkli?!", "Überleggs dier 😏", "Chasch mi nid verwütsche",
                 "D Mythe warted…", "Es git kei Nei 😄", "Gib uf"];
 let dodges = 0;
+let surrendered = false;
 const isTouch = window.matchMedia("(hover: none)").matches;
 
+function surrender() {
+  /* Easter Egg: nach 10 Fluchtversüech ergit sich de Chnopf */
+  surrendered = true;
+  nei.textContent = "Ok ok… Ja 🏳️";
+  nei.classList.add("surrendered");
+  nei.style.transform = "";
+}
+
 function moveNei() {
+  if (surrendered) return;
   if (!nei.classList.contains("fleeing")) {
     const r = nei.getBoundingClientRect();
     nei.classList.add("fleeing");
@@ -241,20 +267,21 @@ function moveNei() {
   nei.style.left = (pad + Math.random() * Math.max(maxX - pad, 1)) + "px";
   nei.style.top  = (pad + Math.random() * Math.max(maxY - pad, 1)) + "px";
   dodges++;
+  if (dodges >= 10) { surrender(); return; }
   nei.textContent = taunts[Math.min(dodges, taunts.length - 1)];
   if (dodges > 4) nei.style.transform = "scale(" + Math.max(1 - (dodges - 4) * 0.08, 0.55) + ")";
 }
 
 if (isTouch) {
   /* Mobile: teleportiert nach es paar Sekunde eifach irgendwo ane */
-  let timer = setInterval(() => { if (!$("step1").classList.contains("hidden")) moveNei(); }, 2500 + Math.random() * 1500);
-  nei.addEventListener("touchstart", e => { e.preventDefault(); moveNei(); }, { passive: false });
-  nei.addEventListener("click", e => e.preventDefault());
+  let timer = setInterval(() => { if (!surrendered && !$("step1").classList.contains("hidden")) moveNei(); }, 2500 + Math.random() * 1500);
+  nei.addEventListener("touchstart", e => { if (surrendered) return; e.preventDefault(); moveNei(); }, { passive: false });
+  nei.addEventListener("click", e => { if (surrendered) { goStep2(); } else { e.preventDefault(); } });
 } else {
   /* Desktop: haut ab, sobald d Muus druf zue chunt */
   nei.addEventListener("mouseenter", moveNei);
   nei.addEventListener("focus", moveNei); /* au per Tastatur kei Chance */
-  nei.addEventListener("click", e => { e.preventDefault(); moveNei(); });
+  nei.addEventListener("click", e => { if (surrendered) { goStep2(); } else { e.preventDefault(); moveNei(); } });
 }
 
 /* Köder: bi Inaktivität waggled beidi Chnöpf chli */
@@ -269,20 +296,22 @@ setInterval(() => {
 }, 4000);
 
 /* ---------- Schritt-Wechsel ---------- */
-$("btnJa").addEventListener("click", () => {
+function goStep2() {
   $("step1").classList.add("hidden");
   nei.classList.add("hidden");
   /* Wär de Gag verpasst hät, überchunt ihn als Fuessnote */
   $("psNei").classList.toggle("hidden", dodges > 0);
   $("step2").classList.remove("hidden");
   window.scrollTo({ top: 0 });
-});
+}
+$("btnJa").addEventListener("click", goStep2);
 
 $("btnBack").addEventListener("click", () => {
   $("step2").classList.add("hidden");
   /* Nei-Button zrugg an Platz und frisch ufsetze */
   dodges = 0;
-  nei.classList.remove("fleeing", "hidden");
+  surrendered = false;
+  nei.classList.remove("fleeing", "hidden", "surrendered");
   nei.style.left = ""; nei.style.top = ""; nei.style.transform = "";
   nei.textContent = "Nei";
   $("step1").classList.remove("hidden");
@@ -290,8 +319,11 @@ $("btnBack").addEventListener("click", () => {
 });
 
 /* ---------- Absände via ntfy ---------- */
+let pickedDates = []; /* für ICS und Countdown */
+
 $("btnSend").addEventListener("click", async () => {
-  const picked = [...document.querySelectorAll('#dates input:checked')].map(i => i.value);
+  pickedDates = DATES.filter(d => $(d.id).checked);
+  const picked = pickedDates.map(d => d.label);
   const err = $("err");
   err.style.display = "none";
 
@@ -312,6 +344,7 @@ $("btnSend").addEventListener("click", async () => {
     if (!res.ok) throw new Error("ntfy " + res.status);
     $("step2").classList.add("hidden");
     $("recap").textContent = "Du bisch registriert für: " + picked.join(" · ") + ". Details folged – Turnschueh parat halte.";
+    $("countdown").textContent = countdownText();
     $("step3").classList.remove("hidden");
     window.scrollTo({ top: 0 });
   } catch (e) {
@@ -319,6 +352,51 @@ $("btnSend").addEventListener("click", async () => {
     err.style.display = "block";
     btn.disabled = false; btn.textContent = "Abschicke ⛰️";
   }
+});
+
+/* ---------- Countdown zur erschte Chance ---------- */
+function countdownText() {
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const future = pickedDates
+    .map(d => ({ ...d, date: new Date(d.iso + "T00:00:00") }))
+    .filter(d => d.date >= today)
+    .sort((a, b) => a.date - b.date);
+  if (future.length === 0) return "Alli gwählte Täg sind scho verbii – Ziit für en Plan B. 😅";
+  const days = Math.round((future[0].date - today) / 86400000);
+  if (days === 0) return "Hüt isch de Tag! 🥾";
+  if (days === 1) return "No 1 Tag bis zur erschte Chance (" + future[0].label + ").";
+  return "No " + days + " Täg bis zur erschte Chance (" + future[0].label + ").";
+}
+
+/* ---------- Kaländer-Download (.ics) ---------- */
+$("btnIcs").addEventListener("click", () => {
+  const pad = n => String(n).padStart(2, "0");
+  const now = new Date();
+  const stamp = now.getUTCFullYear() + pad(now.getUTCMonth() + 1) + pad(now.getUTCDate()) +
+                "T" + pad(now.getUTCHours()) + pad(now.getUTCMinutes()) + pad(now.getUTCSeconds()) + "Z";
+  const events = pickedDates.map(d => {
+    const start = d.iso.replaceAll("-", "");
+    const endD = new Date(d.iso + "T00:00:00"); endD.setDate(endD.getDate() + 1);
+    const end = endD.getFullYear() + pad(endD.getMonth() + 1) + pad(endD.getDate());
+    return [
+      "BEGIN:VEVENT",
+      "UID:chli-mythe-2026-" + d.id + "@ygerber.online",
+      "DTSTAMP:" + stamp,
+      "DTSTART;VALUE=DATE:" + start,
+      "DTEND;VALUE=DATE:" + end,
+      "SUMMARY:Chli Mythe 2026 (provisorisch) 🏔",
+      "DESCRIPTION:Gipfel-Mission Chli Mythe – Details folged. ygerber.online/klein-mythen-2026",
+      "TRANSP:TRANSPARENT",
+      "END:VEVENT"
+    ].join("\r\n");
+  });
+  const ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//ygerber.online//chli-mythe-2026//DE",
+               events.join("\r\n"), "END:VCALENDAR"].join("\r\n");
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([ics], { type: "text/calendar;charset=utf-8" }));
+  a.download = "chli-mythe-2026.ics";
+  a.click();
+  URL.revokeObjectURL(a.href);
 });
 </script>
 </body>
