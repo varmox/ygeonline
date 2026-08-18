@@ -7,7 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2022-2024, Y.Gerber &amp; Authors</copyright>
-    <lastBuildDate>Mon, 20 Apr 2026 21:03:16 +0200</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Apr 2026 19:22:10 +0200</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dsm Topologies</title>
+      <link>//localhost:1313/post/dsm-topologies/</link>
+      <pubDate>Tue, 21 Apr 2026 19:22:10 +0200</pubDate>
+      
+      <guid>//localhost:1313/post/dsm-topologies/</guid>
+      <description>
+        
+          
+            &lt;p&gt;&lt;strong&gt;Insert Lead paragraph here.&lt;/strong&gt;&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>Data Services Manager with VCF Automation</title>
       <link>//localhost:1313/post/dsm-vcfa/</link>

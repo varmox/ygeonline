@@ -92,4 +92,4 @@ Now that we have the three layers whats very important and what should always be
 - Assumptions
 - Risks
 
-When working on a project design decisions should 
+When working on a project design decisions should be documented
