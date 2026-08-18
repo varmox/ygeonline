@@ -3,10 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>//localhost:1313/</loc>
-    <lastmod>2026-04-20T21:03:16+02:00</lastmod>
+    <lastmod>2026-04-21T19:22:10+02:00</lastmod>
   </url><url>
     <loc>//localhost:1313/categories/</loc>
-    <lastmod>2026-04-20T21:03:16+02:00</lastmod>
+    <lastmod>2026-04-21T19:22:10+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/post/dsm-topologies/</loc>
+    <lastmod>2026-04-21T19:22:10+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/index/</loc>
+    <lastmod>2026-04-21T19:22:10+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/post/</loc>
+    <lastmod>2026-04-21T19:22:10+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/tag_name1/</loc>
+    <lastmod>2026-04-21T19:22:10+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/tag_name2/</loc>
+    <lastmod>2026-04-21T19:22:10+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/</loc>
+    <lastmod>2026-04-21T19:22:10+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/technology/</loc>
+    <lastmod>2026-04-21T19:22:10+02:00</lastmod>
   </url><url>
     <loc>//localhost:1313/post/dsm-vcfa/</loc>
     <lastmod>2026-04-20T21:03:16+02:00</lastmod>
@@ -15,15 +36,6 @@
     <lastmod>2026-04-20T21:03:16+02:00</lastmod>
   </url><url>
     <loc>//localhost:1313/tags/dsm/</loc>
-    <lastmod>2026-04-20T21:03:16+02:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/index/</loc>
-    <lastmod>2026-04-20T21:03:16+02:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/post/</loc>
-    <lastmod>2026-04-20T21:03:16+02:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/</loc>
     <lastmod>2026-04-20T21:03:16+02:00</lastmod>
   </url><url>
     <loc>//localhost:1313/categories/vcfa/</loc>
@@ -37,9 +49,6 @@
   </url><url>
     <loc>//localhost:1313/tags/vmware/</loc>
     <lastmod>2026-04-20T21:03:16+02:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/categories/technology/</loc>
-    <lastmod>2026-04-15T22:07:06+02:00</lastmod>
   </url><url>
     <loc>//localhost:1313/tags/vcf/</loc>
     <lastmod>2026-04-15T22:07:06+02:00</lastmod>
@@ -58,12 +67,6 @@
   </url><url>
     <loc>//localhost:1313/tags/vsphere/</loc>
     <lastmod>2026-04-10T20:24:29+02:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/tag_name1/</loc>
-    <lastmod>2026-02-21T00:42:27+01:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/tag_name2/</loc>
-    <lastmod>2026-02-21T00:42:27+01:00</lastmod>
   </url><url>
     <loc>//localhost:1313/post/vcd-postgres-update/</loc>
     <lastmod>2026-02-21T00:42:27+01:00</lastmod>
