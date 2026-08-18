@@ -75,6 +75,13 @@
   .btn-nei.fleeing{position:fixed;z-index:50;margin:0}
   @media (prefers-reduced-motion: no-preference){
     .btn-nei.fleeing{transition:top .28s cubic-bezier(.2,.9,.3,1.2), left .28s cubic-bezier(.2,.9,.3,1.2)}
+    .btn.tease{animation:tease .7s ease-in-out 2}
+    @keyframes tease{
+      20%{transform:rotate(-4deg) translateX(-3px)}
+      40%{transform:rotate(4deg) translateX(3px)}
+      60%{transform:rotate(-3deg)}
+      80%{transform:rotate(3deg)}
+    }
   }
   .btnrow{display:flex;gap:18px;justify-content:center;align-items:center;flex-wrap:wrap}
 
@@ -162,6 +169,7 @@
     </div>
     <p class="err" id="err">Hoppla – hät nid klappet. Probier's grad nomal.</p>
     <p class="hint">Dini Antwort gaht direkt as Organisationskomitee (1 Person, sehr motiviert).</p>
+    <p class="hint hidden" id="psNei">PS: de «Nei»-Chnopf wär sowieso vereist. 😉</p>
   </section>
 
   <!-- ===== Schritt 3 ===== -->
@@ -177,7 +185,7 @@
 
 </main>
 
-<footer>ygerber.online · Chli Mythe 2026 · Foto: <a href="https://commons.wikimedia.org/wiki/File:Haggenegg_mit_Haggenspitz_und_Klein_Mythen.jpg">Albinfo</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></footer>
+<footer>ygerber.online · Chli Mythe 2026</footer>
 
 <script>
 /* ================= KONFIG =================
@@ -214,7 +222,7 @@ const $ = id => document.getElementById(id);
 
 /* ---------- De flüchtend Nei-Button ---------- */
 const nei = $("btnNei");
-const taunts = ["Nei", "Sicher?", "Würkli?!", "Überleg's dir 😏", "Chasch mi nid verwütsche",
+const taunts = ["Nei", "Sicher?", "Würkli?!", "Überleggs dier 😏", "Chasch mi nid verwütsche",
                 "D Mythe warted…", "Es git kei Nei 😄", "Gib uf"];
 let dodges = 0;
 const isTouch = window.matchMedia("(hover: none)").matches;
@@ -249,10 +257,23 @@ if (isTouch) {
   nei.addEventListener("click", e => { e.preventDefault(); moveNei(); });
 }
 
+/* Köder: bi Inaktivität waggled beidi Chnöpf chli */
+setInterval(() => {
+  if (dodges === 0 && !$("step1").classList.contains("hidden")) {
+    [$("btnJa"), nei].forEach(b => {
+      b.classList.remove("tease");
+      void b.offsetWidth; /* Animation neu starte */
+      b.classList.add("tease");
+    });
+  }
+}, 4000);
+
 /* ---------- Schritt-Wechsel ---------- */
 $("btnJa").addEventListener("click", () => {
   $("step1").classList.add("hidden");
   nei.classList.add("hidden");
+  /* Wär de Gag verpasst hät, überchunt ihn als Fuessnote */
+  $("psNei").classList.toggle("hidden", dodges > 0);
   $("step2").classList.remove("hidden");
   window.scrollTo({ top: 0 });
 });
