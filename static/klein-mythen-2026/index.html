@@ -268,7 +268,9 @@ function moveNei() {
   nei.style.top  = (pad + Math.random() * Math.max(maxY - pad, 1)) + "px";
   dodges++;
   if (dodges >= 10) { surrender(); return; }
-  nei.textContent = taunts[Math.min(dodges, taunts.length - 1)];
+  /* Uf em Handy bliibt de Text di erschte 2 Sprüng eifach «Nei» */
+  const ti = Math.max(isTouch ? dodges - 2 : dodges, 0);
+  nei.textContent = taunts[Math.min(ti, taunts.length - 1)];
   if (dodges > 4) nei.style.transform = "scale(" + Math.max(1 - (dodges - 4) * 0.08, 0.55) + ")";
 }
 
