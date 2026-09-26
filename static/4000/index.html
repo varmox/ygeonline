@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="gsw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>4000er 2027 – Häppy Birthday Rahel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#101F33;
+    --dusk:#28415C;
+    --glow:#C65B49;      /* Alpenglühen am Fels */
+    --gold:#FFB158;      /* Morgesunne / CTA */
+    --snow:#F4F7FB;
+    --pine:#0B1625;
+    --pine2:#16283E;
+    --muted:rgba(244,247,251,.66);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:"Bricolage Grotesque", system-ui, -apple-system, sans-serif;
+    color:var(--snow);
+    background:linear-gradient(180deg,var(--night) 0%,var(--dusk) 60%,var(--glow) 110%);
+    min-height:100dvh;
+    overflow-x:hidden;
+    display:flex;flex-direction:column;
+  }
+
+  /* ---------- Foto-Hintergrund: Liskamm & Matterhorn (27.08.2021) ---------- */
+  .bg{
+    position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:url("bg.jpg") center 42%/cover no-repeat;
+  }
+  .bg::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,
+      rgba(13,25,42,.82) 0%,
+      rgba(13,25,42,.66) 42%,
+      rgba(16,31,51,.46) 72%,
+      rgba(22,38,60,.58) 100%);
+  }
+
+  /* ---------- Layout ---------- */
+  main{position:relative;z-index:2;flex:1;display:flex;align-items:center;justify-content:center;padding:48px 20px 56px}
+  .step{max-width:640px;width:100%;text-align:center}
+  h1,.sub{text-shadow:0 2px 18px rgba(8,15,26,.55)}
+  .eyebrow{
+    display:inline-block;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--gold);border:1px solid rgba(255,177,88,.45);border-radius:999px;padding:6px 14px;margin-bottom:22px;
+  }
+  h1{font-size:clamp(30px,6.4vw,52px);font-weight:800;line-height:1.06;letter-spacing:-.01em;margin-bottom:14px}
+  h1 em{font-style:normal;color:var(--gold)}
+  .sub{font-size:clamp(15px,2.4vw,18px);color:var(--muted);max-width:46ch;margin:0 auto 34px}
+  .facts{
+    font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--muted);
+    margin:-22px auto 32px;max-width:52ch;
+  }
+  .facts em{font-style:italic;color:rgba(244,247,251,.8)}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    font:inherit;font-weight:800;font-size:19px;border:0;border-radius:16px;padding:16px 34px;cursor:pointer;
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  a.btn{display:inline-block;text-decoration:none;text-align:center}
+  .btn:focus-visible{outline:3px solid var(--snow);outline-offset:3px}
+  .btn-ja{
+    background:var(--gold);color:#2A1706;
+    box-shadow:0 8px 24px rgba(255,177,88,.35);
+  }
+  .btn-ja:hover{transform:translateY(-2px) scale(1.03)}
+  .btn-ja:active{transform:scale(.97)}
+  .btn-nei{
+    background:transparent;color:var(--muted);border:1.5px solid rgba(244,247,251,.35);
+    font-weight:600;font-size:16px;padding:13px 26px;
+  }
+  .btn-nei.fleeing{position:fixed;z-index:50;margin:0}
+  .btn-nei.surrendered{
+    background:var(--gold);color:#2A1706;border-color:var(--gold);font-weight:800;
+    box-shadow:0 8px 24px rgba(255,177,88,.35);
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .btn-nei.fleeing{transition:top .28s cubic-bezier(.2,.9,.3,1.2), left .28s cubic-bezier(.2,.9,.3,1.2)}
+    .btn.tease{animation:tease .7s ease-in-out 2}
+    @keyframes tease{
+      20%{transform:rotate(-4deg) translateX(-3px)}
+      40%{transform:rotate(4deg) translateX(3px)}
+      60%{transform:rotate(-3deg)}
+      80%{transform:rotate(3deg)}
+    }
+  }
+  .btnrow{display:flex;gap:18px;justify-content:center;align-items:center;flex-wrap:wrap}
+
+  /* ---------- Schritt 2: Date ---------- */
+  .dates{display:grid;gap:10px;margin:0 0 22px;text-align:left}
+  .date-opt{position:relative}
+  .date-opt input{position:absolute;opacity:0;pointer-events:none}
+  .date-opt label{
+    display:flex;align-items:center;gap:12px;cursor:pointer;
+    background:rgba(244,247,251,.07);border:1.5px solid rgba(244,247,251,.18);
+    border-radius:14px;padding:14px 16px;font-weight:600;font-size:16px;
+    transition:border-color .12s, background .12s;
+  }
+  .date-opt label:hover{border-color:rgba(255,177,88,.5)}
+  .date-opt input:focus-visible + label{outline:3px solid var(--snow);outline-offset:2px}
+  .date-opt input:checked + label{background:rgba(255,177,88,.16);border-color:var(--gold)}
+  .date-opt .box{
+    width:22px;height:22px;flex:0 0 22px;border-radius:7px;border:2px solid rgba(244,247,251,.5);
+    display:grid;place-items:center;font-size:14px;color:#2A1706;
+  }
+  .date-opt input:checked + label .box{background:var(--gold);border-color:var(--gold)}
+  .date-opt input:checked + label .box::after{content:"✓";font-weight:800}
+
+  .field{margin:0 0 16px;text-align:left}
+  .field label{display:block;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  .field input,.field textarea{
+    width:100%;font:inherit;font-size:16px;color:var(--snow);
+    background:rgba(244,247,251,.07);border:1.5px solid rgba(244,247,251,.18);border-radius:12px;padding:12px 14px;
+  }
+  .field input:focus-visible,.field textarea:focus-visible{outline:none;border-color:var(--gold)}
+  .field textarea{resize:vertical;min-height:64px}
+  .hint{font-size:13px;color:var(--muted);margin-top:14px}
+  .btn-back{
+    background:transparent;color:var(--muted);border:1.5px solid rgba(244,247,251,.35);
+    font-weight:600;font-size:16px;padding:13px 26px;
+  }
+  .btn-back:hover{border-color:rgba(244,247,251,.6);color:var(--snow)}
+  .err{color:#FFC7B8;font-size:14px;font-weight:600;margin-top:12px;display:none}
+
+  /* ---------- Schritt 3 ---------- */
+  .flagpeak{width:120px;height:auto;margin:0 auto 18px;display:block}
+  @media (prefers-reduced-motion: no-preference){
+    .flagpeak .flag{transform-origin:left bottom;animation:wave 1.6s ease-in-out infinite}
+    @keyframes wave{50%{transform:skewY(-6deg)}}
+  }
+
+  .polaroids{display:flex;gap:18px;justify-content:center;align-items:flex-start;flex-wrap:wrap;margin:26px 0 30px}
+  .polaroids figure{
+    background:#fff;padding:8px 8px 24px;border-radius:4px;width:150px;
+    box-shadow:0 12px 30px rgba(8,15,26,.5);transform:rotate(-3.5deg);
+    transition:transform .15s ease;
+  }
+  .polaroids figure:nth-child(2){transform:rotate(2.5deg)}
+  .polaroids figure:nth-child(3){transform:rotate(-1.5deg)}
+  .polaroids figure:hover{transform:rotate(0) scale(1.06)}
+  .polaroids img{width:100%;display:block;border-radius:2px}
+  .polaroids figcaption{font-size:11px;font-weight:600;color:#33506B;margin-top:8px;text-align:center}
+
+  .hidden{display:none !important}
+  footer{position:relative;z-index:2;text-align:center;padding:10px 0 14px;font-size:12px;color:rgba(244,247,251,.55)}
+  footer a{color:rgba(244,247,251,.7)}
+</style>
+</head>
+<body>
+
+<div class="bg" aria-hidden="true"></div>
+
+<main>
+
+  <!-- ===== Schritt 1 ===== -->
+  <section class="step" id="step1">
+    <span class="eyebrow">Häppy 30igste, Rahel! 🎂 · Mission 2027</span>
+    <h1>Schaffed miers im Summer 2027<br>zäme uf en <em>4000er</em>?</h1>
+    <p class="sub">Zum runde Geburtstag es Gschänk, wo mer sälber ufe träge muess: Seil, Steigise, dünni Luft – und en Uussicht, wo jede Muskelkater wert isch. Es git genau ei richtigi Antwort.</p>
+    <p class="facts">4000+ m ü. M. · Hochtour · Gletscher · <em>«D Händ chömed diesmal gar nid erscht in Hosesack.»</em></p>
+    <div class="btnrow">
+      <button class="btn btn-ja" id="btnJa">Ja, klar! 🏔️</button>
+      <button class="btn btn-nei" id="btnNei">Nei</button>
+    </div>
+  </section>
+
+  <!-- ===== Schritt 2 ===== -->
+  <section class="step hidden" id="step2">
+    <span class="eyebrow">Sehr guet. Und wenn?</span>
+    <h1>Wähl alli Wuchenänd, wo's bi dier <em>gaht</em></h1>
+    <p class="sub">Juli und Auguscht 2027 – jedes Wuchenänd staht zur Uswahl (Hochtour heisst: zwei Täg inkl. Hütteschlaf). Mehreri aachlicke = meh Gipfelchance.</p>
+
+    <div class="dates" id="dates"><!-- wird per JS befüllt --></div>
+
+    <div class="field">
+      <label for="msg">No öppis? (optional)</label>
+      <textarea id="msg" placeholder="z.B. «Wallis wär schön» oder «i träg d Gipfelschoggi»"></textarea>
+    </div>
+
+    <div class="btnrow">
+      <button class="btn btn-back" id="btnBack">← Zrugg</button>
+      <button class="btn btn-ja" id="btnSend">Abschicke ⛰️</button>
+    </div>
+    <p class="err" id="err">Hoppla – hät nid klappet. Probier's grad nomal.</p>
+    <p class="hint">Dini Antwort gaht direkt as Organisationskomitee (1 Person, sehr motiviert).</p>
+    <p class="hint hidden" id="psNei">PS: de «Nei»-Chnopf wär sowieso vereist. 😉</p>
+  </section>
+
+  <!-- ===== Schritt 3 ===== -->
+  <section class="step hidden" id="step3">
+    <svg class="flagpeak" viewBox="0 0 120 110" aria-hidden="true">
+      <path fill="var(--pine)" d="M0 110 L45 30 L60 45 L78 8 L120 110 Z"/>
+      <line x1="78" y1="8" x2="78" y2="-14" stroke="var(--snow)" stroke-width="3"/>
+      <path class="flag" fill="var(--gold)" d="M78 -14 L104 -8 L78 -2 Z"/>
+    </svg>
+    <h1>Merci! <em>Gipfel gebucht.</em></h1>
+    <p class="sub" id="recap"></p>
+    <p class="facts" id="countdown"></p>
+    <p class="facts">Und falls Zwiifel beständ – s Beweismaterial vom 27.08.2021:</p>
+    <div class="polaroids" aria-label="Fotos vo de Tour 2021">
+      <figure><img src="r1.jpg" alt="Rahel mit usbreitete Ärm ufem Gletscher"><figcaption>Beweisstück A: Form ✓</figcaption></figure>
+      <figure><img src="r2.jpg" alt="Selfie vor de Schneekuppe"><figcaption>Beweisstück B: Luune ✓</figcaption></figure>
+      <figure><img src="r3.jpg" alt="Pause uf de Hütteterrasse"><figcaption>Beweisstück C: Hütte-Kafi ✓</figcaption></figure>
+    </div>
+    <div class="btnrow">
+      <button class="btn btn-ja" id="btnIcs">Wuchenänd im Kaländer blockiere 📅</button>
+      <a class="btn btn-back" href="https://www.meteoschweiz.admin.ch/lokalprognose/zermatt/3920.html" target="_blank" rel="noopener">Wätter-Check ⛅</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>ygerber.online/4000 · für d Rahel zum 30igste 🎂</footer>
+
+<script>
+/* ================= KONFIG =================
+   1) DATES: d Tour-Wuchenänd – Labels eifach aapasse bi Änderige.
+   2) NTFY_TOPIC: Antworte laufed über ntfy.sh (gratis Push).
+      App installiere (ntfy, iOS/Android) und das Topic abonniere,
+      oder im Browser: https://ntfy.sh/viertusiger-2027-rk8m3x
+      Topic gern ändere – eifach überall gliich.               */
+const DATES = [ /* iso = Samschtig; s Event gaht Sa+So */
+  { id: "d1", iso: "2027-07-03", label: "Sa/So, 3./4. Juli 2027" },
+  { id: "d2", iso: "2027-07-10", label: "Sa/So, 10./11. Juli 2027" },
+  { id: "d3", iso: "2027-07-17", label: "Sa/So, 17./18. Juli 2027" },
+  { id: "d4", iso: "2027-07-24", label: "Sa/So, 24./25. Juli 2027" },
+  { id: "d5", iso: "2027-07-31", label: "Sa/So, 31. Juli / 1. Aug. 2027 🇨🇭" },
+  { id: "d6", iso: "2027-08-07", label: "Sa/So, 7./8. Auguscht 2027" },
+  { id: "d7", iso: "2027-08-14", label: "Sa/So, 14./15. Auguscht 2027" },
+  { id: "d8", iso: "2027-08-21", label: "Sa/So, 21./22. Auguscht 2027" },
+  { id: "d9", iso: "2027-08-28", label: "Sa/So, 28./29. Auguscht 2027" }
+];
+const NTFY_TOPIC = "viertusiger-2027-rk8m3x";
+/* ========================================== */
+
+const $ = id => document.getElementById(id);
+
+/* 🎂 Geburtstags-Konfetti (eimalig bim Lade, ~5s) */
+(() => {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const c = document.createElement("canvas");
+  c.style.cssText = "position:fixed;inset:0;z-index:80;pointer-events:none";
+  document.body.appendChild(c);
+  const ctx = c.getContext("2d");
+  const resize = () => { c.width = innerWidth; c.height = innerHeight; };
+  resize(); addEventListener("resize", resize);
+  const cols = ["#FFB158", "#F45B9B", "#7EC8E3", "#F4F7FB", "#C65B49"];
+  const P = Array.from({ length: 90 }, () => ({
+    x: Math.random() * innerWidth, y: -20 - Math.random() * innerHeight * .6,
+    s: 5 + Math.random() * 6, v: 1.4 + Math.random() * 2.4,
+    r: Math.random() * Math.PI, vr: (Math.random() - .5) * .2,
+    dx: (Math.random() - .5) * 1.2, col: cols[(Math.random() * cols.length) | 0]
+  }));
+  const t0 = performance.now();
+  (function tick(t) {
+    ctx.clearRect(0, 0, c.width, c.height);
+    ctx.globalAlpha = Math.max(0, 1 - (t - t0) / 5200);
+    P.forEach(p => {
+      p.y += p.v; p.x += p.dx; p.r += p.vr;
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.r);
+      ctx.fillStyle = p.col; ctx.fillRect(-p.s / 2, -p.s / 3, p.s, p.s * .66); ctx.restore();
+    });
+    if (ctx.globalAlpha > 0) requestAnimationFrame(tick); else c.remove();
+  })(t0);
+})();
+
+/* Datum-Optione rendere */
+(() => {
+  const wrap = $("dates");
+  DATES.forEach(d => {
+    const div = document.createElement("div");
+    div.className = "date-opt";
+    div.innerHTML =
+      '<input type="checkbox" id="' + d.id + '" value="' + d.label + '">' +
+      '<label for="' + d.id + '"><span class="box"></span>' + d.label + "</label>";
+    wrap.appendChild(div);
+  });
+})();
+
+/* ---------- De flüchtend Nei-Button ---------- */
+const nei = $("btnNei");
+const taunts = ["Nei", "Sicher?", "Würkli?!", "Überleggs dier 😏", "Chasch mi nid verwütsche",
+                "De Gipfel wartet…", "Es git kei Nei 😄", "Gib uf"];
+let dodges = 0;
+let surrendered = false;
+const isTouch = window.matchMedia("(hover: none)").matches;
+
+function surrender() {
+  /* Easter Egg: nach 10 Fluchtversüech ergit sich de Chnopf */
+  surrendered = true;
+  nei.textContent = "Ok ok… Ja 🏳️";
+  nei.classList.add("surrendered");
+  nei.style.transform = "";
+}
+
+function moveNei() {
+  if (surrendered) return;
+  if (!nei.classList.contains("fleeing")) {
+    const r = nei.getBoundingClientRect();
+    nei.classList.add("fleeing");
+    nei.style.left = r.left + "px";
+    nei.style.top = r.top + "px";
+  }
+  const pad = 16;
+  const w = nei.offsetWidth, h = nei.offsetHeight;
+  const maxX = window.innerWidth - w - pad;
+  const maxY = window.innerHeight - h - pad;
+  nei.style.left = (pad + Math.random() * Math.max(maxX - pad, 1)) + "px";
+  nei.style.top  = (pad + Math.random() * Math.max(maxY - pad, 1)) + "px";
+  dodges++;
+  if (dodges >= 10) { surrender(); return; }
+  /* Uf em Handy bliibt de Text di erschte 2 Sprüng eifach «Nei» */
+  const ti = Math.max(isTouch ? dodges - 2 : dodges, 0);
+  nei.textContent = taunts[Math.min(ti, taunts.length - 1)];
+  if (dodges > 4) nei.style.transform = "scale(" + Math.max(1 - (dodges - 4) * 0.08, 0.55) + ")";
+}
+
+if (isTouch) {
+  /* Mobile: teleportiert nach es paar Sekunde eifach irgendwo ane */
+  let timer = setInterval(() => { if (!surrendered && !$("step1").classList.contains("hidden")) moveNei(); }, 2500 + Math.random() * 1500);
+  nei.addEventListener("touchstart", e => { if (surrendered) return; e.preventDefault(); moveNei(); }, { passive: false });
+  nei.addEventListener("click", e => { if (surrendered) { goStep2(); } else { e.preventDefault(); } });
+} else {
+  /* Desktop: haut ab, sobald d Muus druf zue chunt */
+  nei.addEventListener("mouseenter", moveNei);
+  nei.addEventListener("focus", moveNei); /* au per Tastatur kei Chance */
+  nei.addEventListener("click", e => { if (surrendered) { goStep2(); } else { e.preventDefault(); moveNei(); } });
+}
+
+/* Köder: bi Inaktivität waggled beidi Chnöpf chli */
+setInterval(() => {
+  if (dodges === 0 && !$("step1").classList.contains("hidden")) {
+    [$("btnJa"), nei].forEach(b => {
+      b.classList.remove("tease");
+      void b.offsetWidth; /* Animation neu starte */
+      b.classList.add("tease");
+    });
+  }
+}, 4000);
+
+/* ---------- Schritt-Wechsel ---------- */
+function goStep2() {
+  $("step1").classList.add("hidden");
+  nei.classList.add("hidden");
+  /* Wär de Gag verpasst hät, überchunt ihn als Fuessnote */
+  $("psNei").classList.toggle("hidden", dodges > 0);
+  $("step2").classList.remove("hidden");
+  window.scrollTo({ top: 0 });
+}
+$("btnJa").addEventListener("click", goStep2);
+
+$("btnBack").addEventListener("click", () => {
+  $("step2").classList.add("hidden");
+  /* Nei-Button zrugg an Platz und frisch ufsetze */
+  dodges = 0;
+  surrendered = false;
+  nei.classList.remove("fleeing", "hidden", "surrendered");
+  nei.style.left = ""; nei.style.top = ""; nei.style.transform = "";
+  nei.textContent = "Nei";
+  $("step1").classList.remove("hidden");
+  window.scrollTo({ top: 0 });
+});
+
+/* ---------- Absände via ntfy ---------- */
+let pickedDates = []; /* für ICS und Countdown */
+
+$("btnSend").addEventListener("click", async () => {
+  pickedDates = DATES.filter(d => $(d.id).checked);
+  const picked = pickedDates.map(d => d.label);
+  const err = $("err");
+  err.style.display = "none";
+
+  if (picked.length === 0) { err.textContent = "Mindestens ei Wuchenänd aachlicke – susch gits kei Gipfel."; err.style.display = "block"; return; }
+
+  const msg = "🏔 Zuesag vo de Rahel für de 4000er!\n" +
+              "Wuchenänd: " + picked.join(", ") +
+              ($("msg").value.trim() ? "\nBemärkig: " + $("msg").value.trim() : "");
+
+  const btn = $("btnSend");
+  btn.disabled = true; btn.textContent = "Schickt's grad ufe…";
+  try {
+    const res = await fetch("https://ntfy.sh/" + NTFY_TOPIC, {
+      method: "POST",
+      body: msg,
+      headers: { "Title": "4000er 2027 - Antwort vo Rahel", "Tags": "mountain", "Priority": "default" }
+    });
+    if (!res.ok) throw new Error("ntfy " + res.status);
+    $("step2").classList.add("hidden");
+    $("recap").textContent = "Du bisch registriert für: " + picked.join(" · ") + ". Details folged – Steigise parat halte.";
+    $("countdown").textContent = countdownText();
+    $("step3").classList.remove("hidden");
+    window.scrollTo({ top: 0 });
+  } catch (e) {
+    err.textContent = "Hoppla – s Abschicke hät nid klappet. Internet checke und nomal probiere.";
+    err.style.display = "block";
+    btn.disabled = false; btn.textContent = "Abschicke ⛰️";
+  }
+});
+
+/* ---------- Countdown zur erschte Chance ---------- */
+function countdownText() {
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const future = pickedDates
+    .map(d => ({ ...d, date: new Date(d.iso + "T00:00:00") }))
+    .filter(d => d.date >= today)
+    .sort((a, b) => a.date - b.date);
+  if (future.length === 0) return "Alli gwählte Täg sind scho verbii – Ziit für en Plan B. 😅";
+  const days = Math.round((future[0].date - today) / 86400000);
+  if (days === 0) return "Hüt gahts los! 🧗‍♀️";
+  if (days === 1) return "No 1 Tag bis zum erschte mögliche Gipfel-Wuchenänd (" + future[0].label + ").";
+  return "No " + days + " Täg bis zum erschte mögliche Gipfel-Wuchenänd (" + future[0].label + ").";
+}
+
+/* ---------- Kaländer-Download (.ics) ---------- */
+$("btnIcs").addEventListener("click", () => {
+  const pad = n => String(n).padStart(2, "0");
+  const now = new Date();
+  const stamp = now.getUTCFullYear() + pad(now.getUTCMonth() + 1) + pad(now.getUTCDate()) +
+                "T" + pad(now.getUTCHours()) + pad(now.getUTCMinutes()) + pad(now.getUTCSeconds()) + "Z";
+  const events = pickedDates.map(d => {
+    const start = d.iso.replaceAll("-", "");
+    const endD = new Date(d.iso + "T00:00:00"); endD.setDate(endD.getDate() + 2); /* Sa+So */
+    const end = endD.getFullYear() + pad(endD.getMonth() + 1) + pad(endD.getDate());
+    return [
+      "BEGIN:VEVENT",
+      "UID:viertusiger-2027-" + d.id + "@ygerber.online",
+      "DTSTAMP:" + stamp,
+      "DTSTART;VALUE=DATE:" + start,
+      "DTEND;VALUE=DATE:" + end,
+      "SUMMARY:4000er-Wuchenänd (provisorisch) 🏔",
+      "DESCRIPTION:Gipfel-Mission 4000er – Details folged. ygerber.online/4000",
+      "TRANSP:TRANSPARENT",
+      "END:VEVENT"
+    ].join("\r\n");
+  });
+  const ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//ygerber.online//viertusiger-2027//DE",
+               events.join("\r\n"), "END:VCALENDAR"].join("\r\n");
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([ics], { type: "text/calendar;charset=utf-8" }));
+  a.download = "4000er-2027.ics";
+  a.click();
+  URL.revokeObjectURL(a.href);
+});
+</script>
+</body>
+</html>
