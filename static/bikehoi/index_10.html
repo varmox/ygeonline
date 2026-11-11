@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="gsw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Basiskurs 301 – Iiladig</title>
+<style>
+  :root{
+    --night:#101F33;
+    --dusk:#28415C;
+    --gold:#FFB158;        /* CTA */
+    --copper:#C87E4F;      /* Moscow-Mule-Becher */
+    --snow:#F4F7FB;
+    --pine:#0B1625;
+    --muted:rgba(244,247,251,.66);
+    --glass:rgba(13,24,40,.52);
+    --glass-edge:rgba(244,247,251,.14);
+    --spring:cubic-bezier(.34,1.45,.52,1); /* Feder-Kurve */
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI",Roboto,system-ui,sans-serif;
+    color:var(--snow);
+    background:linear-gradient(180deg,var(--night) 0%,var(--dusk) 70%);
+    min-height:100dvh;
+    overflow-x:hidden;
+    display:flex;flex-direction:column;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ---------- Foto-Hintergrund: Mythen ---------- */
+  .bg{
+    position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:url("bg.jpg") center 32%/cover no-repeat;
+  }
+  @media (max-width:600px){
+    .bg{background-image:url("bg-m.jpg")}
+  }
+  .bg::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,
+      rgba(13,25,42,.72) 0%,
+      rgba(13,25,42,.5) 45%,
+      rgba(16,31,51,.36) 75%,
+      rgba(22,38,60,.6) 100%);
+  }
+
+  /* ---------- Layout ---------- */
+  main{position:relative;z-index:2;flex:1;display:flex;align-items:center;justify-content:center;padding:44px 16px 52px}
+  .step{max-width:660px;width:100%;text-align:center}
+  .card{
+    background:var(--glass);
+    -webkit-backdrop-filter:blur(26px) saturate(150%);
+    backdrop-filter:blur(26px) saturate(150%);
+    border:1px solid var(--glass-edge);
+    border-radius:28px;
+    padding:clamp(26px,5vw,46px);
+    box-shadow:0 24px 70px rgba(5,10,20,.45);
+  }
+  .eyebrow{
+    display:inline-block;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--gold);border:1px solid rgba(255,177,88,.4);border-radius:999px;padding:6px 15px;margin-bottom:20px;
+  }
+  h1{font-size:clamp(29px,6vw,48px);font-weight:700;line-height:1.05;letter-spacing:-.022em;margin-bottom:14px}
+  h1 em{font-style:normal;color:var(--gold)}
+  .sub{font-size:clamp(15px,2.3vw,17px);line-height:1.45;color:var(--muted);max-width:48ch;margin:0 auto 30px}
+  .facts{font-size:13px;font-weight:500;letter-spacing:.03em;color:var(--muted);margin:-18px auto 28px;max-width:54ch}
+  .facts em{font-style:italic;color:rgba(244,247,251,.82)}
+
+  /* ---------- Buttons (Pille, Feder bim Drücke) ---------- */
+  .btn{
+    font:inherit;font-weight:600;font-size:17px;border:0;border-radius:980px;padding:15px 32px;cursor:pointer;
+    transition:transform .35s var(--spring), box-shadow .25s ease, opacity .2s;
+    will-change:transform;
+  }
+  a.btn{display:inline-block;text-decoration:none;text-align:center}
+  .btn:focus-visible{outline:3px solid var(--snow);outline-offset:3px}
+  .btn-ja{background:var(--gold);color:#2A1706;box-shadow:0 8px 24px rgba(255,177,88,.32)}
+  .btn-ja:hover{transform:translateY(-1px) scale(1.04)}
+  .btn-ja:active{transform:scale(.94)}
+  .btn-ja:disabled{opacity:.55;transform:none;cursor:default}
+  .btn-nei,.btn-back{
+    background:rgba(244,247,251,.08);color:var(--muted);border:1px solid rgba(244,247,251,.28);
+    font-weight:500;font-size:15px;padding:13px 26px;
+  }
+  .btn-back:hover{border-color:rgba(244,247,251,.55);color:var(--snow)}
+  .btn-nei.fleeing{position:fixed;z-index:50;margin:0}
+  .btn-nei.surrendered{background:var(--gold);color:#2A1706;border-color:var(--gold);font-weight:700;box-shadow:0 8px 24px rgba(255,177,88,.32)}
+  @media (prefers-reduced-motion: no-preference){
+    .btn-nei.fleeing{transition:top .3s var(--spring), left .3s var(--spring)}
+    .btn.tease{animation:tease .7s ease-in-out 2}
+    @keyframes tease{
+      20%{transform:rotate(-4deg) translateX(-3px)}
+      40%{transform:rotate(4deg) translateX(3px)}
+      60%{transform:rotate(-3deg)}
+      80%{transform:rotate(3deg)}
+    }
+  }
+  .btnrow{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap}
+
+  /* ---------- Formular ---------- */
+  .field{margin:0 0 16px;text-align:left}
+  .field label{display:block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  .field input,.field textarea{
+    width:100%;font:inherit;font-size:16px;color:var(--snow);
+    background:rgba(244,247,251,.08);border:1px solid rgba(244,247,251,.2);border-radius:14px;padding:13px 15px;
+    transition:border-color .2s, background .2s;
+  }
+  .field input:focus-visible,.field textarea:focus-visible{outline:none;border-color:var(--gold);background:rgba(244,247,251,.11)}
+  .field textarea{resize:vertical;min-height:62px}
+  .hint{font-size:13px;color:var(--muted);margin-top:14px}
+  .err{color:#FFC7B8;font-size:14px;font-weight:600;margin-top:12px;display:none}
+
+  /* ---------- Programm-Optione ---------- */
+  .opts{display:grid;gap:10px;margin:0 0 24px;text-align:left}
+  .opt{
+    display:flex;align-items:flex-start;gap:13px;
+    background:rgba(244,247,251,.07);border:1px solid rgba(244,247,251,.16);
+    border-radius:18px;padding:15px 16px;
+    transition:border-color .25s, background .25s, opacity .25s;
+  }
+  .opt .tick{
+    width:24px;height:24px;flex:0 0 24px;border-radius:999px;border:2px solid rgba(244,247,251,.45);
+    display:grid;place-items:center;font-size:14px;font-weight:800;color:#2A1706;margin-top:1px;
+    transition:background .3s var(--spring), border-color .2s, transform .35s var(--spring);
+  }
+  .opt .t{font-weight:600;font-size:15.5px;line-height:1.35}
+  .opt .d{font-size:13px;color:var(--muted);margin-top:3px;line-height:1.4}
+  .opt.fixed{border-color:rgba(255,177,88,.45);background:rgba(255,177,88,.1)}
+  .opt.fixed .tick{background:var(--gold);border-color:var(--gold)}
+  .opt.fixed .tick::after{content:"✓"}
+  .opt.mule{cursor:pointer}
+  .opt.mule.locked{opacity:.62;cursor:not-allowed}
+  .opt.mule.unlocked:hover{border-color:rgba(200,126,79,.65)}
+  .opt.mule.on{border-color:var(--copper);background:rgba(200,126,79,.14)}
+  .opt.mule.on .tick{background:var(--copper);border-color:var(--copper);transform:scale(1.1)}
+  .opt.mule.on .tick::after{content:"✓"}
+
+  /* ---------- Stämpfelcharte ---------- */
+  .stampcard{
+    background:rgba(244,247,251,.1);
+    border:1px solid rgba(200,126,79,.4);
+    border-radius:20px;padding:18px 16px 15px;margin:0 0 24px;text-align:left;
+  }
+  .stampcard h3{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--copper);margin-bottom:3px}
+  .stampcard .status{font-size:13px;color:var(--muted);margin-bottom:13px}
+  .stamps{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;max-width:330px}
+  .stamp{
+    aspect-ratio:1;border-radius:999px;display:grid;place-items:center;
+    font-size:15px;font-weight:800;
+    border:2px solid rgba(200,126,79,.55);color:#fff;
+    background:transparent;
+    transition:background .4s var(--spring), transform .4s var(--spring);
+  }
+  .stamp.full{background:var(--copper);border-color:var(--copper);transform:rotate(-8deg)}
+  .stamp.empty{border-style:dashed;color:rgba(244,247,251,.4)}
+  @media (prefers-reduced-motion: no-preference){
+    .stamp.empty{animation:pulse 2.4s ease-in-out infinite}
+    @keyframes pulse{50%{border-color:rgba(200,126,79,.95)}}
+    .stamp.pop{animation:pop .55s var(--spring)}
+    @keyframes pop{0%{transform:scale(.3) rotate(30deg)}100%{transform:scale(1) rotate(-8deg)}}
+  }
+  .coderow{display:flex;gap:9px;margin-top:14px;flex-wrap:wrap}
+  .coderow input{
+    flex:1;min-width:150px;font:inherit;font-size:15px;color:var(--snow);text-transform:uppercase;letter-spacing:.06em;
+    background:rgba(244,247,251,.08);border:1px solid rgba(244,247,251,.2);border-radius:999px;padding:11px 16px;
+  }
+  .coderow input:focus-visible{outline:none;border-color:var(--copper)}
+  .btn-code{background:var(--copper);color:#fff;font-size:14px;font-weight:600;padding:11px 20px}
+  .btn-code:active{transform:scale(.94)}
+  .codemsg{font-size:13px;font-weight:600;margin-top:9px;display:none}
+
+  /* ---------- Datum ---------- */
+  .dates{display:grid;gap:9px;margin:0 0 22px;text-align:left;grid-template-columns:1fr 1fr}
+  @media (max-width:520px){.dates{grid-template-columns:1fr}}
+  .date-opt{position:relative}
+  .date-opt input{position:absolute;opacity:0;pointer-events:none}
+  .date-opt label{
+    display:flex;align-items:center;gap:11px;cursor:pointer;
+    background:rgba(244,247,251,.07);border:1px solid rgba(244,247,251,.16);
+    border-radius:14px;padding:12px 14px;font-weight:500;font-size:15px;
+    transition:border-color .2s, background .2s;
+  }
+  .date-opt label:hover{border-color:rgba(255,177,88,.5)}
+  .date-opt input:focus-visible + label{outline:3px solid var(--snow);outline-offset:2px}
+  .date-opt input:checked + label{background:rgba(255,177,88,.15);border-color:var(--gold)}
+  .date-opt .box{
+    width:21px;height:21px;flex:0 0 21px;border-radius:7px;border:2px solid rgba(244,247,251,.45);
+    display:grid;place-items:center;font-size:13px;color:#2A1706;
+    transition:background .3s var(--spring);
+  }
+  .date-opt input:checked + label .box{background:var(--gold);border-color:var(--gold)}
+  .date-opt input:checked + label .box::after{content:"✓";font-weight:800}
+
+  h2{font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 12px;text-align:left}
+
+  /* ---------- Schritt 3 ---------- */
+  .flagpeak{width:110px;height:auto;margin:0 auto 16px;display:block}
+  @media (prefers-reduced-motion: no-preference){
+    .flagpeak .flag{transform-origin:left bottom;animation:wave 1.6s ease-in-out infinite}
+    @keyframes wave{50%{transform:skewY(-6deg)}}
+  }
+
+  .reveal{overflow:hidden}
+  @media (prefers-reduced-motion: no-preference){
+    .reveal{animation:reveal .5s var(--spring)}
+    @keyframes reveal{0%{opacity:0;transform:translateY(14px) scale(.98)}100%{opacity:1;transform:none}}
+  }
+
+  .hidden{display:none !important}
+  footer{position:relative;z-index:2;text-align:center;padding:10px 0 14px;font-size:12px;color:rgba(244,247,251,.5)}
+</style>
+</head>
+<body>
+
+<div class="bg" aria-hidden="true"></div>
+<!-- Biker isch im Foto sälber (bg.jpg), uf em Mythenweg -->
+
+<main>
+
+  <!-- ===== Schritt 1 ===== -->
+  <section class="step" id="step1">
+    <div class="card">
+      <span class="eyebrow">Offizielli Iiladig · Wintersemester 2026</span>
+      <h1>Basiskurs 301:<br><em>Mountainbike</em> für Nid-Mythe-Bestiiger</h1>
+      <p class="sub">Du hesch de Mythe (no) nid bestiege? Kei Problem – defür gits jetzt es Bildigsagebot uf zwei Räder. Bisch debi?</p>
+      <p class="facts">Kurs-Nr. 301 · Level: <em>Advanced</em> · Theorie: 0 Min · Praxis: bis d Bei brännid und de Grind gwagglet</p>
+      <div class="btnrow">
+        <button class="btn btn-ja" id="btnJa">Ja, ich mäld mi aa! 🚵</button>
+        <button class="btn btn-nei" id="btnNei">Nei</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Schritt 2a: Username ===== -->
+  <section class="step hidden" id="step2a">
+    <div class="card">
+      <span class="eyebrow">Kurs-Aamäldig · Schritt 1 vo 2</span>
+      <h1>Wer isch am <em>Start</em>?</h1>
+      <p class="sub">Din Benutzername ladt dini persönlichi Stämpfelcharte – die bruuchts später für d Belohnig.</p>
+      <div class="field">
+        <label for="uname">Benutzername</label>
+        <input type="text" id="uname" autocomplete="nickname" maxlength="30" placeholder="z.B. trailqueen_87">
+      </div>
+      <div class="btnrow">
+        <button class="btn btn-back" id="btnBackA">← Zrugg</button>
+        <button class="btn btn-ja" id="btnUser">Charte lade 💳</button>
+      </div>
+      <p class="err" id="errA">Ohni Name kei Charte – so sind d Regle. 🤷</p>
+    </div>
+  </section>
+
+  <!-- ===== Schritt 2b: Programm + Date ===== -->
+  <section class="step hidden" id="step2b">
+    <div class="card">
+      <span class="eyebrow">Kurs-Aamäldig · Schritt 2 vo 2</span>
+      <h1>Dis <em>Programm</em></h1>
+      <p class="sub" id="greet"></p>
+
+      <h2>Kurs-Inhalt</h2>
+      <div class="opts">
+        <div class="opt fixed">
+          <span class="tick"></span>
+          <div>
+            <div class="t">🚵 Biken inkl. «Basiskurs 301 – Mountainbike für Nid-Mythe-Bestiiger»</div>
+            <div class="d">Level: Advanced · Teilnahm obligatorisch (isch ja de Kurs)</div>
+          </div>
+        </div>
+        <div class="opt mule locked" id="optMule" role="checkbox" aria-checked="false" aria-disabled="true" tabindex="0">
+          <span class="tick"></span>
+          <div>
+            <div class="t">🍹 Danach: Moscow Mule <span id="muleLock">🔒</span></div>
+            <div class="d" id="muleDesc">Gsperrt – wird erscht bi 10 vo 10 Stämpfel freigschaltet.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stampcard" id="stampcard">
+        <h3>☕ Offizielli Mule-Stämpfelcharte</h3>
+        <p class="status" id="stampStatus"></p>
+        <div class="stamps" id="stamps" aria-label="Stämpfelcharte"></div>
+        <div class="coderow">
+          <input type="text" id="code" placeholder="Stämpfel-Code" aria-label="Stämpfel-Code">
+          <button class="btn btn-code" id="btnCode">Stämpfle</button>
+        </div>
+        <p class="codemsg" id="codemsg"></p>
+      </div>
+
+      <h2>Wänn chasch?</h2>
+      <p class="sub" style="text-align:left;margin:0 0 14px">Alli Wuchenänd-Täg bis Wiehnachte stönd zur Uswahl – wähl alli, wo's bi dier gaht.</p>
+      <div class="dates" id="dates"><!-- per JS --></div>
+
+      <div class="field">
+        <label for="msg">No öppis? (optional)</label>
+        <textarea id="msg" placeholder="z.B. «nur bi Sunneschiin» oder «ich bring d Bananeweggli mit»"></textarea>
+      </div>
+
+      <div class="btnrow">
+        <button class="btn btn-back" id="btnBackB">← Zrugg</button>
+        <button class="btn btn-ja" id="btnSend">Aamäldig abschicke 🚵</button>
+      </div>
+      <p class="err" id="err">Hoppla – hät nid klappet. Probier's grad nomal.</p>
+      <p class="hint">Dini Aamäldig gaht direkt a d Kursleitig (1 Person, scho im Trainingslager).</p>
+      <p class="hint hidden" id="psNei">PS: de «Nei»-Chnopf hät sowieso scho lang kei Profil meh. 😉</p>
+    </div>
+  </section>
+
+  <!-- ===== Schritt 3 ===== -->
+  <section class="step hidden" id="step3">
+    <div class="card">
+      <svg class="flagpeak" viewBox="0 0 120 110" aria-hidden="true">
+        <path fill="var(--pine)" d="M0 110 L45 30 L60 45 L78 8 L120 110 Z"/>
+        <line x1="78" y1="8" x2="78" y2="-14" stroke="var(--snow)" stroke-width="3"/>
+        <path class="flag" fill="var(--gold)" d="M78 -14 L104 -8 L78 -2 Z"/>
+      </svg>
+      <h1>Merci! <em>Aamäldig im Trockene.</em></h1>
+      <p class="sub" id="recap"></p>
+      <p class="facts" id="countdown"></p>
+      <div class="btnrow">
+        <button class="btn btn-ja" id="btnIcs">Täg im Kaländer blockiere 📅</button>
+        <a class="btn btn-back" href="https://www.meteoschweiz.admin.ch/lokalprognose/schwyz/6430.html" target="_blank" rel="noopener">Wätter-Check ⛅</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>ygerber.online · Basiskurs 301 · Kursleitig behaltet sich Zuesatzrunde vor<br>Foto: <a href="https://commons.wikimedia.org/wiki/File:Mythen.5692.JPG">Chris.urs-o</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a> (Biker: Eigebau)</footer>
+
+<script>
+/* ================= KONFIG =================
+   1) DATES: Wuchenänd-Täg bis 20.12. (ohni 5./6.12.).
+   2) NTFY_TOPIC: Antworte laufed über ntfy.sh (gratis Push).
+      App installiere (ntfy, iOS/Android) und s Topic abonniere,
+      oder im Browser: https://ntfy.sh/basiskurs301-7kq4wd
+   3) STAMP_CODE: de Code für de 10. Stämpfel – verrätsch du
+      nach der Tour. Gern ändere (Grossschribig egal).
+   4) START_STAMPS: womit e neui Charte startet (9 vo 10). */
+const DATES = [
+  { id: "d1",  iso: "2026-11-14", label: "Sa, 14. Nov." },
+  { id: "d2",  iso: "2026-11-15", label: "So, 15. Nov." },
+  { id: "d3",  iso: "2026-11-21", label: "Sa, 21. Nov." },
+  { id: "d4",  iso: "2026-11-22", label: "So, 22. Nov." },
+  { id: "d5",  iso: "2026-11-28", label: "Sa, 28. Nov." },
+  { id: "d6",  iso: "2026-11-29", label: "So, 29. Nov." },
+  { id: "d7",  iso: "2026-12-12", label: "Sa, 12. Dez." },
+  { id: "d8",  iso: "2026-12-13", label: "So, 13. Dez." },
+  { id: "d9",  iso: "2026-12-19", label: "Sa, 19. Dez." },
+  { id: "d10", iso: "2026-12-20", label: "So, 20. Dez." }
+];
+const NTFY_TOPIC = "basiskurs301-7kq4wd";
+const STAMP_CODE = "AUAAA";
+const START_STAMPS = 9;
+const TOTAL_STAMPS = 10;
+/* ========================================== */
+
+const $ = id => document.getElementById(id);
+
+/* ---------- Stämpfelcharte: Speicherig pro Username ---------- */
+let username = "";
+let stampCount = START_STAMPS;
+let muleOn = false;
+
+const storeKey = u => "stempelkarte301:" + u.toLowerCase();
+
+function loadCard(u) {
+  try {
+    const raw = localStorage.getItem(storeKey(u));
+    if (raw) {
+      const d = JSON.parse(raw);
+      stampCount = Math.min(Number(d.stamps) || START_STAMPS, TOTAL_STAMPS);
+      return;
+    }
+  } catch (e) { /* Private Mode etc. – eifach frisch starte */ }
+  stampCount = START_STAMPS;
+  saveCard();
+}
+function saveCard() {
+  try { localStorage.setItem(storeKey(username), JSON.stringify({ stamps: stampCount })); }
+  catch (e) { /* kei Drama */ }
+}
+
+function renderStamps(popLast) {
+  const wrap = $("stamps");
+  wrap.innerHTML = "";
+  for (let i = 1; i <= TOTAL_STAMPS; i++) {
+    const s = document.createElement("div");
+    const full = i <= stampCount;
+    s.className = "stamp " + (full ? "full" : "empty");
+    s.textContent = full ? "M" : i;
+    if (popLast && i === stampCount) s.classList.add("pop");
+    wrap.appendChild(s);
+  }
+  $("stampStatus").textContent = username + " · Stand: " + stampCount + " vo " + TOTAL_STAMPS +
+    (stampCount >= TOTAL_STAMPS ? " – Charte voll! 🎉" : " – no " + (TOTAL_STAMPS - stampCount) + " Stämpfel bis zum Mule.");
+  updateMule();
+}
+
+function updateMule() {
+  const full = stampCount >= TOTAL_STAMPS;
+  const opt = $("optMule");
+  opt.classList.toggle("locked", !full);
+  opt.classList.toggle("unlocked", full);
+  opt.setAttribute("aria-disabled", String(!full));
+  $("muleLock").textContent = full ? "" : "🔒";
+  if (full) {
+    $("muleDesc").textContent = muleOn
+      ? "Freigschaltet und reserviert – Ingwer wird kalt gstellt. 🫙"
+      : "Freigschaltet! Aaklicke zum Reserviere.";
+  } else {
+    muleOn = false;
+    opt.classList.remove("on");
+    opt.setAttribute("aria-checked", "false");
+    $("muleDesc").textContent = "Gsperrt – wird erscht bi 10 vo 10 Stämpfel freigschaltet. De letscht Stämpfel git's… uf em Bike. 😏";
+  }
+}
+
+function toggleMule() {
+  if (stampCount < TOTAL_STAMPS) {
+    /* gsperrt: churz wagle als Feedback */
+    const opt = $("optMule");
+    opt.classList.remove("tease"); void opt.offsetWidth; opt.classList.add("tease");
+    return;
+  }
+  muleOn = !muleOn;
+  const opt = $("optMule");
+  opt.classList.toggle("on", muleOn);
+  opt.setAttribute("aria-checked", String(muleOn));
+  updateMule();
+}
+$("optMule").addEventListener("click", toggleMule);
+$("optMule").addEventListener("keydown", e => { if (e.key === " " || e.key === "Enter") { e.preventDefault(); toggleMule(); } });
+
+/* Stämpfel-Code iilöse */
+$("btnCode").addEventListener("click", () => {
+  const val = $("code").value.trim().toUpperCase();
+  const msg = $("codemsg");
+  msg.style.display = "block";
+  if (!val) { msg.style.color = "#FFC7B8"; msg.textContent = "Zerscht en Code iigäh."; return; }
+  if (val !== STAMP_CODE.toUpperCase()) {
+    msg.style.color = "#FFC7B8";
+    msg.textContent = "Dä Code kennt d Kursleitig nid. Tipp: De richtig git's nach der Tour. 😉";
+    return;
+  }
+  if (stampCount >= TOTAL_STAMPS) {
+    msg.style.color = "var(--muted)"; msg.textContent = "Charte isch scho voll – easy bliibe."; return;
+  }
+  stampCount++;
+  saveCard();
+  renderStamps(true);
+  msg.style.color = "#9FE3A8";
+  msg.textContent = "Stämpfel " + stampCount + " gsetzt! De Mule isch freigschaltet. 🍹";
+  $("code").value = "";
+});
+
+/* ---------- Datum-Optione ---------- */
+(() => {
+  const wrap = $("dates");
+  DATES.forEach(d => {
+    const div = document.createElement("div");
+    div.className = "date-opt";
+    div.innerHTML =
+      '<input type="checkbox" id="' + d.id + '" value="' + d.label + '">' +
+      '<label for="' + d.id + '"><span class="box"></span>' + d.label + "</label>";
+    wrap.appendChild(div);
+  });
+})();
+
+/* ---------- De flüchtend Nei-Button ---------- */
+const nei = $("btnNei");
+const taunts = ["Nei", "Sicher?", "Würkli?!", "Überleggs dier 😏", "Chasch mi nid verwütsche",
+                "De Trail wartet…", "Es git kei Nei 😄", "Gib uf"];
+let dodges = 0;
+let surrendered = false;
+const isTouch = window.matchMedia("(hover: none)").matches;
+
+function surrender() {
+  surrendered = true;
+  nei.textContent = "Ok ok… Ja 🏳️";
+  nei.classList.add("surrendered");
+  nei.style.transform = "";
+}
+
+function moveNei() {
+  if (surrendered) return;
+  if (!nei.classList.contains("fleeing")) {
+    const r = nei.getBoundingClientRect();
+    nei.classList.add("fleeing");
+    nei.style.left = r.left + "px";
+    nei.style.top = r.top + "px";
+  }
+  const pad = 16;
+  const w = nei.offsetWidth, h = nei.offsetHeight;
+  const maxX = window.innerWidth - w - pad;
+  const maxY = window.innerHeight - h - pad;
+  nei.style.left = (pad + Math.random() * Math.max(maxX - pad, 1)) + "px";
+  nei.style.top  = (pad + Math.random() * Math.max(maxY - pad, 1)) + "px";
+  dodges++;
+  if (dodges >= 10) { surrender(); return; }
+  /* Uf em Handy bliibt de Text di erschte 2 Sprüng eifach «Nei» */
+  const ti = Math.max(isTouch ? dodges - 2 : dodges, 0);
+  nei.textContent = taunts[Math.min(ti, taunts.length - 1)];
+  if (dodges > 4) nei.style.transform = "scale(" + Math.max(1 - (dodges - 4) * 0.08, 0.55) + ")";
+}
+
+if (isTouch) {
+  setInterval(() => { if (!surrendered && !$("step1").classList.contains("hidden")) moveNei(); }, 2500 + Math.random() * 1500);
+  nei.addEventListener("touchstart", e => { if (surrendered) return; e.preventDefault(); moveNei(); }, { passive: false });
+  nei.addEventListener("click", e => { if (surrendered) { goStep2a(); } else { e.preventDefault(); } });
+} else {
+  nei.addEventListener("mouseenter", moveNei);
+  nei.addEventListener("focus", moveNei);
+  nei.addEventListener("click", e => { if (surrendered) { goStep2a(); } else { e.preventDefault(); moveNei(); } });
+}
+
+/* Köder: bi Inaktivität waggled beidi Chnöpf chli */
+setInterval(() => {
+  if (dodges === 0 && !$("step1").classList.contains("hidden")) {
+    [$("btnJa"), nei].forEach(b => {
+      b.classList.remove("tease");
+      void b.offsetWidth;
+      b.classList.add("tease");
+    });
+  }
+}, 4000);
+
+/* ---------- Schritt-Wechsel ---------- */
+function show(id) {
+  ["step1", "step2a", "step2b", "step3"].forEach(s => $(s).classList.toggle("hidden", s !== id));
+  const el = $(id).querySelector(".card");
+  el.classList.remove("reveal"); void el.offsetWidth; el.classList.add("reveal");
+  window.scrollTo({ top: 0 });
+}
+
+function goStep2a() {
+  nei.classList.add("hidden");
+  $("psNei").classList.toggle("hidden", dodges > 0);
+  show("step2a");
+  $("uname").focus();
+}
+$("btnJa").addEventListener("click", goStep2a);
+
+$("btnBackA").addEventListener("click", () => {
+  dodges = 0;
+  surrendered = false;
+  nei.classList.remove("fleeing", "hidden", "surrendered");
+  nei.style.left = ""; nei.style.top = ""; nei.style.transform = "";
+  nei.textContent = "Nei";
+  show("step1");
+});
+
+$("btnUser").addEventListener("click", () => {
+  const u = $("uname").value.trim();
+  if (!u) { $("errA").style.display = "block"; return; }
+  $("errA").style.display = "none";
+  username = u;
+  loadCard(u);
+  $("greet").textContent = "Salü " + u + " – din Kursplatz isch reserviert. S Programm gseht so us:";
+  renderStamps(false);
+  show("step2b");
+});
+$("uname").addEventListener("keydown", e => { if (e.key === "Enter") $("btnUser").click(); });
+
+$("btnBackB").addEventListener("click", () => show("step2a"));
+
+/* ---------- Absände via ntfy ---------- */
+let pickedDates = [];
+
+$("btnSend").addEventListener("click", async () => {
+  pickedDates = DATES.filter(d => $(d.id).checked);
+  const picked = pickedDates.map(d => d.label);
+  const err = $("err");
+  err.style.display = "none";
+
+  if (picked.length === 0) { err.textContent = "Mindestens ei Tag aachlicke – susch gits kei Kurs."; err.style.display = "block"; return; }
+
+  const msg = "🚵 Aamäldig Basiskurs 301!\n" +
+              "Vo: " + username + "\n" +
+              "Täg: " + picked.join(", ") + "\n" +
+              "Moscow Mule: " + (muleOn ? "JA (Charte voll) 🍹" : "no gsperrt (" + stampCount + "/" + TOTAL_STAMPS + ")") +
+              ($("msg").value.trim() ? "\nBemärkig: " + $("msg").value.trim() : "");
+
+  const btn = $("btnSend");
+  btn.disabled = true; btn.textContent = "Schickt's grad übere…";
+  try {
+    const res = await fetch("https://ntfy.sh/" + NTFY_TOPIC, {
+      method: "POST",
+      body: msg,
+      headers: { "Title": "Basiskurs 301 - Aamäldig", "Tags": "bike", "Priority": "default" }
+    });
+    if (!res.ok) throw new Error("ntfy " + res.status);
+    $("recap").textContent = username + ", du bisch aagmäldet für: " + picked.join(" · ") +
+      (muleOn ? ". De Moscow Mule staht kalt parat. 🍹" : ". De Mule folgt, sobald d Charte voll isch (" + stampCount + "/" + TOTAL_STAMPS + ").");
+    $("countdown").textContent = countdownText();
+    show("step3");
+  } catch (e) {
+    err.textContent = "Hoppla – s Abschicke hät nid klappet. Internet checke und nomal probiere.";
+    err.style.display = "block";
+    btn.disabled = false; btn.textContent = "Aamäldig abschicke 🚵";
+  }
+});
+
+/* ---------- Countdown ---------- */
+function countdownText() {
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const future = pickedDates
+    .map(d => ({ ...d, date: new Date(d.iso + "T00:00:00") }))
+    .filter(d => d.date >= today)
+    .sort((a, b) => a.date - b.date);
+  if (future.length === 0) return "Alli gwählte Täg sind scho verbii – Ziit für en Plan B. 😅";
+  const days = Math.round((future[0].date - today) / 86400000);
+  if (days === 0) return "Hüt gahts los! 🚵";
+  if (days === 1) return "No 1 Tag bis zur erschte Kurs-Chance (" + future[0].label + ").";
+  return "No " + days + " Täg bis zur erschte Kurs-Chance (" + future[0].label + ").";
+}
+
+/* ---------- Kaländer-Download (.ics) ---------- */
+$("btnIcs").addEventListener("click", () => {
+  const pad = n => String(n).padStart(2, "0");
+  const now = new Date();
+  const stamp = now.getUTCFullYear() + pad(now.getUTCMonth() + 1) + pad(now.getUTCDate()) +
+                "T" + pad(now.getUTCHours()) + pad(now.getUTCMinutes()) + pad(now.getUTCSeconds()) + "Z";
+  const events = pickedDates.map(d => {
+    const start = d.iso.replaceAll("-", "");
+    const endD = new Date(d.iso + "T00:00:00"); endD.setDate(endD.getDate() + 1);
+    const end = endD.getFullYear() + pad(endD.getMonth() + 1) + pad(endD.getDate());
+    return [
+      "BEGIN:VEVENT",
+      "UID:basiskurs301-" + d.id + "@ygerber.online",
+      "DTSTAMP:" + stamp,
+      "DTSTART;VALUE=DATE:" + start,
+      "DTEND;VALUE=DATE:" + end,
+      "SUMMARY:Basiskurs 301 – Bike (provisorisch) 🚵",
+      "DESCRIPTION:Mountainbike für Nid-Mythe-Bestiiger – Details folged.",
+      "TRANSP:TRANSPARENT",
+      "END:VEVENT"
+    ].join("\r\n");
+  });
+  const ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//ygerber.online//basiskurs301//DE",
+               events.join("\r\n"), "END:VCALENDAR"].join("\r\n");
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([ics], { type: "text/calendar;charset=utf-8" }));
+  a.download = "basiskurs-301.ics";
+  a.click();
+  URL.revokeObjectURL(a.href);
+});
+</script>
+</body>
+</html>
