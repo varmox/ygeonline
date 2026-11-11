@@ -272,7 +272,7 @@
           <span class="tick"></span>
           <div>
             <div class="t">🍹 Danach: Moscow Mule <span id="muleLock">🔒</span></div>
-            <div class="d" id="muleDesc">Gsperrt – wird erscht bi 10 vo 10 Stämpfel freigschaltet.</div>
+            <div class="d" id="muleDesc">Gsperrt – wird erscht bi 10 vo 10 Stämpfel friigschaltet.</div>
           </div>
         </div>
       </div>
@@ -407,13 +407,13 @@ function updateMule() {
   $("muleLock").textContent = full ? "" : "🔒";
   if (full) {
     $("muleDesc").textContent = muleOn
-      ? "Freigschaltet und reserviert – Ingwer wird kalt gstellt. 🫙"
-      : "Freigschaltet! Aaklicke zum Reserviere.";
+      ? "Friigschaltet und reserviert – Ingwer wird kalt gstellt. 🫙"
+      : "Friigschaltet! Aaklicke zum Reserviere.";
   } else {
     muleOn = false;
     opt.classList.remove("on");
     opt.setAttribute("aria-checked", "false");
-    $("muleDesc").textContent = "Gsperrt – wird erscht bi 10 vo 10 Stämpfel freigschaltet. De letscht Stämpfel git's… uf em Bike. 😏";
+    $("muleDesc").textContent = "Gsperrt – wird erscht bi 10 vo 10 Stämpfel friigschaltet. De letscht Stämpfel git's… uf em Bike. 😏";
   }
 }
 
@@ -451,7 +451,7 @@ $("btnCode").addEventListener("click", () => {
   saveCard();
   renderStamps(true);
   msg.style.color = "#9FE3A8";
-  msg.textContent = "Stämpfel " + stampCount + " gsetzt! De Mule isch freigschaltet. 🍹";
+  msg.textContent = "Stämpfel " + stampCount + " gsetzt! De Mule isch friigschaltet. 🍹";
   $("code").value = "";
 });
 
