@@ -131,6 +131,11 @@
   .opt.fixed{border-color:rgba(255,177,88,.45);background:rgba(255,177,88,.1)}
   .opt.fixed .tick{background:var(--gold);border-color:var(--gold)}
   .opt.fixed .tick::after{content:"✓"}
+  .opt.creme{cursor:pointer}
+  .opt.creme:hover{border-color:rgba(255,177,88,.55)}
+  .opt.creme.on{border-color:var(--gold);background:rgba(255,177,88,.13)}
+  .opt.creme.on .tick{background:var(--gold);border-color:var(--gold);transform:scale(1.1)}
+  .opt.creme.on .tick::after{content:"✓"}
   .opt.mule{cursor:pointer}
   .opt.mule.locked{opacity:.62;cursor:not-allowed}
   .opt.mule.unlocked:hover{border-color:rgba(200,126,79,.65)}
@@ -162,7 +167,7 @@
     .stamp.pop{animation:pop .55s var(--spring)}
     @keyframes pop{0%{transform:scale(.3) rotate(30deg)}100%{transform:scale(1) rotate(-8deg)}}
   }
-  .coderow{display:flex;gap:9px;margin-top:14px;flex-wrap:wrap}
+  .coderow{display:flex;gap:9px;flex-wrap:wrap}
   .coderow input{
     flex:1;min-width:150px;font:inherit;font-size:15px;color:var(--snow);text-transform:uppercase;letter-spacing:.06em;
     background:rgba(244,247,251,.08);border:1px solid rgba(244,247,251,.2);border-radius:999px;padding:11px 16px;
@@ -170,7 +175,26 @@
   .coderow input:focus-visible{outline:none;border-color:var(--copper)}
   .btn-code{background:var(--copper);color:#fff;font-size:14px;font-weight:600;padding:11px 20px}
   .btn-code:active{transform:scale(.94)}
-  .codemsg{font-size:13px;font-weight:600;margin-top:9px;display:none}
+  .gor{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:center;margin:12px 0 2px}
+  .btn-game{background:var(--copper);color:#fff;font-size:14px;font-weight:600;padding:11px 20px;margin-top:10px}
+  .btn-game:active{transform:scale(.94)}
+  .gamebox{margin-top:14px}
+  .gstats{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:10px}
+  .gboard svg{display:block;width:100%;max-width:440px;margin:0 auto;background:#FFFFFF;border-radius:14px}
+  .parrow{cursor:pointer}
+  .parrow .ln,.parrow .hd{transition:stroke .15s, fill .15s}
+  .parrow:hover .ln{stroke:var(--copper)}
+  .parrow:hover .hd{fill:var(--copper)}
+  .parrow.gone{opacity:0;pointer-events:none;transition:opacity .9s ease-in}
+  .parrow.gone-legacy{transform:translate(var(--tx),var(--ty));opacity:0;pointer-events:none;
+    transition:transform .6s cubic-bezier(.5,0,1,1), opacity .6s ease}
+  .parrow.bump .ln{stroke:#E2574C}
+  .parrow.bump .hd{fill:#E2574C}
+  @media (prefers-reduced-motion: reduce){
+    .parrow.gone,.parrow.gone-legacy{transition:none;transform:none}
+    .parrow .ln,.parrow .hd{transition:none !important}
+  }
+  .gmsg{font-size:13px;font-weight:600;margin-top:10px;display:none}
 
   /* ---------- Datum ---------- */
   .dates{display:grid;gap:9px;margin:0 0 22px;text-align:left;grid-template-columns:1fr 1fr}
@@ -268,6 +292,13 @@
             <div class="d">Level: Advanced · Teilnahm obligatorisch (isch ja de Kurs)</div>
           </div>
         </div>
+        <div class="opt creme" id="optCreme" role="checkbox" aria-checked="false" tabindex="0">
+          <span class="tick"></span>
+          <div>
+            <div class="t">🍰 Danach: 23× Mini-Cremeschnitte</div>
+            <div class="d">Exakt 23 Stück. Nid 22, nid 24. D Kursleitig garantiert d Logistik.</div>
+          </div>
+        </div>
         <div class="opt mule locked" id="optMule" role="checkbox" aria-checked="false" aria-disabled="true" tabindex="0">
           <span class="tick"></span>
           <div>
@@ -281,15 +312,26 @@
         <h3>☕ Offizielli Mule-Stämpfelcharte</h3>
         <p class="status" id="stampStatus"></p>
         <div class="stamps" id="stamps" aria-label="Stämpfelcharte"></div>
-        <div class="coderow">
-          <input type="text" id="code" placeholder="Stämpfel-Code" aria-label="Stämpfel-Code">
-          <button class="btn btn-code" id="btnCode">Stämpfle</button>
+        <div id="game">
+          <p class="status" style="margin:14px 0 8px">De 10. Stämpfel git's uf zwei Wäg – entweder oder:</p>
+          <div class="coderow">
+            <input type="text" id="code" placeholder="Stämpfel-Code" aria-label="Stämpfel-Code">
+            <button class="btn btn-code" id="btnCode">Stämpfle</button>
+          </div>
+          <p class="gor">– oder –</p>
+          <button class="btn btn-game" id="btnGame">🎯 Sälber verdiene: s Pfyl-Puzzle</button>
+          <div class="gamebox hidden" id="gamebox">
+            <p class="status" style="margin-bottom:10px">Befrii alli 48 Pfyl vom Brätt: En Pfyl flügt i d Richtig vo sim Spitz use – aber nur, wenn ihm uf dere Bahn <em>kein andere</em> im Wäg staht. Tippsch en blockierte aa, gits en Fähler – bi 8 Fähler mischlet s Brätt nüü. 😉</p>
+            <div class="gstats"><span id="gProg">No 48 Pfyl</span><span id="gErr">Fähler 0 / 8</span></div>
+            <div class="gboard" id="gboard" aria-label="Pfyl-Brätt"></div>
+          </div>
         </div>
-        <p class="codemsg" id="codemsg"></p>
+        <p class="gmsg" id="codemsg"></p>
+        <p class="gmsg" id="gmsg"></p>
       </div>
 
-      <h2>Wänn chasch?</h2>
-      <p class="sub" style="text-align:left;margin:0 0 14px">Alli Wuchenänd-Täg bis Wiehnachte stönd zur Uswahl – wähl alli, wo's bi dier gaht.</p>
+      <h2>Wenn gömmer?</h2>
+      <p class="sub" style="text-align:left;margin:0 0 14px">Alli Wuchenänd bis Wiehnachte stönd zur Uswahl – plus di ganz Wuche vom 23.–27. Nov. Wähl alli Täg, wo's bi dier gaht.</p>
       <div class="dates" id="dates"><!-- per JS --></div>
 
       <div class="field">
@@ -303,7 +345,6 @@
       </div>
       <p class="err" id="err">Hoppla – hät nid klappet. Probier's grad nomal.</p>
       <p class="hint">Dini Aamäldig gaht direkt a d Kursleitig (1 Person, scho im Trainingslager).</p>
-      <p class="hint hidden" id="psNei">PS: de «Nei»-Chnopf hät sowieso scho lang kei Profil meh. 😉</p>
     </div>
   </section>
 
@@ -331,18 +372,29 @@
 
 <script>
 /* ================= KONFIG =================
-   1) DATES: Wuchenänd-Täg bis 20.12. (ohni 5./6.12.).
+   1) DATES: Wuchenänd-Täg bis 20.12. (ohni 5./6.12.) plus 23.-27.11.
    2) NTFY_TOPIC: Antworte laufed über ntfy.sh (gratis Push).
       App installiere (ntfy, iOS/Android) und s Topic abonniere,
       oder im Browser: https://ntfy.sh/basiskurs301-7kq4wd
-   3) STAMP_CODE: de Code für de 10. Stämpfel – verrätsch du
-      nach der Tour. Gern ändere (Grossschribig egal).
+   3) De 10. Stämpfel git's uf ZWEI Wäg (entweder oder):
+      a) De Code iigäh – verrätsch du nach der Tour.
+         Gültig isch alles vo "aua" bis "AUAAAAAA…"
+         (Muster STAMP_CODE_RE, Grossschribig egal).
+      b) S Pfyl-Puzzle löse: ARROW_COUNT langi, gwundeni Pfyl uf eme COLS x ROWS Gitter. En Pfyl
+      flügt nur use, wenn sini Flugbahn (gradus ab em Spitz
+      bis zum Rand) frei isch. MISTAKES_MAX Fählversüech,
+      denn mischlet s Brätt nüü. Garantiert lösbar.
    4) START_STAMPS: womit e neui Charte startet (9 vo 10). */
 const DATES = [
   { id: "d1",  iso: "2026-11-14", label: "Sa, 14. Nov." },
   { id: "d2",  iso: "2026-11-15", label: "So, 15. Nov." },
   { id: "d3",  iso: "2026-11-21", label: "Sa, 21. Nov." },
   { id: "d4",  iso: "2026-11-22", label: "So, 22. Nov." },
+  { id: "d11", iso: "2026-11-23", label: "Mo, 23. Nov." },
+  { id: "d12", iso: "2026-11-24", label: "Di, 24. Nov." },
+  { id: "d13", iso: "2026-11-25", label: "Mi, 25. Nov." },
+  { id: "d14", iso: "2026-11-26", label: "Do, 26. Nov." },
+  { id: "d15", iso: "2026-11-27", label: "Fr, 27. Nov." },
   { id: "d5",  iso: "2026-11-28", label: "Sa, 28. Nov." },
   { id: "d6",  iso: "2026-11-29", label: "So, 29. Nov." },
   { id: "d7",  iso: "2026-12-12", label: "Sa, 12. Dez." },
@@ -351,7 +403,10 @@ const DATES = [
   { id: "d10", iso: "2026-12-20", label: "So, 20. Dez." }
 ];
 const NTFY_TOPIC = "basiskurs301-7kq4wd";
-const STAMP_CODE = "AUAAA";
+const STAMP_CODE_RE = /^aua+$/i;  /* aua, AUAA, Auaaaa, … */
+const COLS = 30, ROWS = 30;
+const ARROW_COUNT = 48;
+const MISTAKES_MAX = 8;      /* erlaubti Fählversüech pro Brätt */
 const START_STAMPS = 9;
 const TOTAL_STAMPS = 10;
 /* ========================================== */
@@ -395,6 +450,7 @@ function renderStamps(popLast) {
   }
   $("stampStatus").textContent = username + " · Stand: " + stampCount + " vo " + TOTAL_STAMPS +
     (stampCount >= TOTAL_STAMPS ? " – Charte voll! 🎉" : " – no " + (TOTAL_STAMPS - stampCount) + " Stämpfel bis zum Mule.");
+  $("game").style.display = stampCount >= TOTAL_STAMPS ? "none" : "";
   updateMule();
 }
 
@@ -413,7 +469,7 @@ function updateMule() {
     muleOn = false;
     opt.classList.remove("on");
     opt.setAttribute("aria-checked", "false");
-    $("muleDesc").textContent = "Gsperrt – wird erscht bi 10 vo 10 Stämpfel friigschaltet. De letscht Stämpfel git's… uf em Bike. 😏";
+    $("muleDesc").textContent = "Gsperrt – wird erscht bi 10 vo 10 Stämpfel friigschaltet. De letscht Stämpfel git's… uf em Bike. 😉";
   }
 }
 
@@ -430,29 +486,262 @@ function toggleMule() {
   opt.setAttribute("aria-checked", String(muleOn));
   updateMule();
 }
+let cremeOn = false;
+function toggleCreme() {
+  cremeOn = !cremeOn;
+  const opt = $("optCreme");
+  opt.classList.toggle("on", cremeOn);
+  opt.setAttribute("aria-checked", String(cremeOn));
+}
+$("optCreme").addEventListener("click", toggleCreme);
+$("optCreme").addEventListener("keydown", e => { if (e.key === " " || e.key === "Enter") { e.preventDefault(); toggleCreme(); } });
+
 $("optMule").addEventListener("click", toggleMule);
 $("optMule").addEventListener("keydown", e => { if (e.key === " " || e.key === "Enter") { e.preventDefault(); toggleMule(); } });
 
-/* Stämpfel-Code iilöse */
+/* ---------- S Pfyl-Puzzle: 10. Stämpfel verdiene ---------- */
+const G = { arrows: [], occ: [], left: 0, errs: 0, active: false };
+const OFFSET_OK = typeof CSS !== "undefined" && CSS.supports && CSS.supports("offset-path", 'path("M0,0 L1,1")');
+
+function gMsgShow(txt, color) {
+  const m = $("gmsg");
+  m.style.display = "block"; m.style.color = color; m.textContent = txt;
+}
+
+/* Brätt-Generator: baut d Pfyl rückwärts zur Lösigsreihefolg uf –
+   jede neu platziert Pfyl hät e freii Flugbahn gegenüber de scho
+   platzierte. Drum isch jedes Brätt beweisbar lösbar, und solang
+   no Pfyl da sind, isch immer mindestens eine friebar. */
+const DX = { up: 0, down: 0, left: -1, right: 1 };
+const DY = { up: -1, down: 1, left: 0, right: 0 };
+const DIRS = ["up", "down", "left", "right"];
+const BACK = { up: "down", down: "up", left: "right", right: "left" };
+
+function tryGen() {
+  const occ = new Array(COLS * ROWS).fill(-1);
+  const arrows = [];
+  const inB = (x, y) => x >= 0 && x < COLS && y >= 0 && y < ROWS;
+  const free = (x, y) => inB(x, y) && occ[y * COLS + x] === -1;
+  const onRay = (x, y, hx, hy, d) =>
+    (d === "right" && y === hy && x > hx) || (d === "left" && y === hy && x < hx) ||
+    (d === "down" && x === hx && y > hy) || (d === "up" && x === hx && y < hy);
+  let attempts = 0;
+  while (arrows.length < ARROW_COUNT && attempts < 60000) {
+    attempts++;
+    /* langi, gwundeni Pfyl; geg s Änd dörfed si churz sii */
+    const lmin = attempts > 45000 ? 2 : attempts > 30000 ? 3 : 6;
+    const d = DIRS[(Math.random() * 4) | 0];
+    const hx = (Math.random() * COLS) | 0, hy = (Math.random() * ROWS) | 0;
+    if (!free(hx, hy)) continue;
+    /* Flugbahn ab Spitz muess frei sii */
+    let cx = hx + DX[d], cy = hy + DY[d], rayOk = true;
+    while (inB(cx, cy)) { if (occ[cy * COLS + cx] !== -1) { rayOk = false; break; } cx += DX[d]; cy += DY[d]; }
+    if (!rayOk) continue;
+    const len = 8 + ((Math.random() * 12) | 0);
+    const cells = [{ x: hx, y: hy }];
+    let back = BACK[d], gx = hx, gy = hy;
+    for (let k = 1; k < len; k++) {
+      const turnable = DIRS.filter(o => o !== BACK[back]);
+      const order = (Math.random() < 0.55 ? [back] : []).concat(turnable.filter(o => o !== back).sort(() => Math.random() - 0.5));
+      if (!order.includes(back)) order.push(back);
+      let placed = false;
+      for (const o of order) {
+        const nx = gx + DX[o], ny = gy + DY[o];
+        if (free(nx, ny) && !cells.some(c => c.x === nx && c.y === ny) && !onRay(nx, ny, hx, hy, d)) {
+          cells.push({ x: nx, y: ny }); gx = nx; gy = ny; back = o; placed = true; break;
+        }
+      }
+      if (!placed) break;
+    }
+    if (cells.length < lmin) continue;
+    const id = arrows.length;
+    cells.forEach(c => occ[c.y * COLS + c.x] = id);
+    arrows.push({ cells, dir: d, gone: false });
+  }
+  return arrows.length === ARROW_COUNT ? { arrows, occ } : null;
+}
+
+function genBoard() {
+  let res = null;
+  for (let t = 0; t < 80 && !res; t++) res = tryGen();
+  /* Notfall (statistisch quasi uusgschlosse): chliners Brätt wird nie bruucht,
+     tryGen klappt in >90% vo de Fäll pro Aalauf */
+  G.arrows = res.arrows;
+  G.occ = res.occ;
+  G.left = ARROW_COUNT;
+  G.errs = 0;
+}
+
+function gRenderBoard() {
+  const wrap = $("gboard");
+  const ns = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(ns, "svg");
+  svg.setAttribute("viewBox", "-0.5 -0.5 " + (COLS + 1) + " " + (ROWS + 1));
+  /* Hilfs-Pünktli uf em Gitter (dezänt, under de Pfyl) */
+  const defs = document.createElementNS(ns, "defs");
+  defs.innerHTML = '<pattern id="gdots" width="1" height="1" patternUnits="userSpaceOnUse">' +
+                   '<circle cx="0.5" cy="0.5" r="0.055" fill="#C9CED7"/></pattern>';
+  svg.appendChild(defs);
+  const dotbg = document.createElementNS(ns, "rect");
+  dotbg.setAttribute("x", 0); dotbg.setAttribute("y", 0);
+  dotbg.setAttribute("width", COLS); dotbg.setAttribute("height", ROWS);
+  dotbg.setAttribute("fill", "url(#gdots)");
+  svg.appendChild(dotbg);
+  G.arrows.forEach((a, id) => {
+    const g = document.createElementNS(ns, "g");
+    g.setAttribute("class", "parrow");
+    g.dataset.id = id;
+    const h = a.cells[0];
+    const hx = h.x + 0.5, hy = h.y + 0.5;
+    /* «Rail»: dr eigeti Pfad, verlängeret gradus bis wiit übere Rand –
+       d Linie wird per Stroke-Dash als Uusschnitt druf zeichnet und
+       cha so em Pfad nah dur d Kurve druus gliite */
+    const distToEdge = { up: h.y, down: ROWS - 1 - h.y, left: h.x, right: COLS - 1 - h.x }[a.dir];
+    const exitX = hx + DX[a.dir] * (distToEdge + 2), exitY = hy + DY[a.dir] * (distToEdge + 2);
+    const rail = "M" + a.cells.slice().reverse().map(c => (c.x + 0.5) + "," + (c.y + 0.5)).join(" L") +
+                 " L" + exitX + "," + exitY;
+    const bodyLen = (a.cells.length - 1) + 0.05;          /* Schwanz bis Chopf-Aafang */
+    const railLen = (a.cells.length - 1) + distToEdge + 2; /* ganzi Rail-Längi */
+    a.railLen = railLen; a.bodyLen = bodyLen;
+    const pts = a.cells.slice().reverse().map(c => (c.x + 0.5) + "," + (c.y + 0.5)).join(" L");
+    const tipX = hx + DX[a.dir] * 0.62, tipY = hy + DY[a.dir] * 0.62;
+    const ln = document.createElementNS(ns, "path");
+    ln.setAttribute("d", rail);
+    ln.setAttribute("fill", "none");
+    ln.setAttribute("stroke", "#15181D");
+    ln.setAttribute("stroke-width", "0.17");
+    ln.setAttribute("stroke-linecap", "butt");
+    ln.setAttribute("stroke-linejoin", "miter");
+    ln.setAttribute("stroke-dasharray", bodyLen + " " + (railLen + bodyLen + 5));
+    ln.setAttribute("class", "ln");
+    a.ln = ln;
+    /* Klassische, satte Pfylspitz – fahrt per offset-path uf de Rail mit */
+    const hd = document.createElementNS(ns, "path");
+    hd.setAttribute("d", "M0.57,0 L0,0.3 L0,-0.3 Z");
+    hd.setAttribute("fill", "#15181D");
+    hd.setAttribute("class", "hd");
+    if (OFFSET_OK) {
+      hd.style.offsetPath = 'path("' + rail + '")';
+      hd.style.offsetDistance = bodyLen + "px";
+      hd.style.offsetRotate = "auto";
+    } else {
+      /* Fallback ohni offset-path: Chopf fix am Ändi */
+      const ang = { right: 0, down: 90, left: 180, up: 270 }[a.dir];
+      const bx = hx + DX[a.dir] * 0.05, by = hy + DY[a.dir] * 0.05;
+      hd.setAttribute("transform", "translate(" + bx + "," + by + ") rotate(" + ang + ")");
+    }
+    a.hd = hd;
+    /* Unsichtbari, breiti Tipp-Flächi */
+    const hit = document.createElementNS(ns, "path");
+    hit.setAttribute("d", "M" + pts + " L" + tipX + "," + tipY);
+    hit.setAttribute("fill", "none");
+    hit.setAttribute("stroke", "rgba(0,0,0,0)");
+    hit.setAttribute("stroke-width", "0.9");
+    hit.setAttribute("stroke-linecap", "round");
+    hit.setAttribute("stroke-linejoin", "round");
+    g.appendChild(ln); g.appendChild(hd); g.appendChild(hit);
+    g.addEventListener("click", () => gTap(id, g));
+    svg.appendChild(g);
+  });
+  wrap.innerHTML = "";
+  wrap.appendChild(svg);
+  gStats();
+}
+
+function gStats() {
+  $("gProg").textContent = "No " + G.left + " Pfyl";
+  $("gErr").textContent = "Fähler " + G.errs + " / " + MISTAKES_MAX;
+}
+
+function rayFree(id) {
+  const a = G.arrows[id];
+  const h = a.cells[0];
+  let cx = h.x + DX[a.dir], cy = h.y + DY[a.dir];
+  while (cx >= 0 && cx < COLS && cy >= 0 && cy < ROWS) {
+    if (G.occ[cy * COLS + cx] !== -1) return false;
+    cx += DX[a.dir]; cy += DY[a.dir];
+  }
+  return true;
+}
+
+function gTap(id, g) {
+  if (!G.active || G.arrows[id].gone) return;
+  const a = G.arrows[id];
+  if (rayFree(id)) {
+    a.gone = true;
+    a.cells.forEach(c => G.occ[c.y * COLS + c.x] = -1);
+    G.left--;
+    /* em eigene Pfad nah use gliite */
+    if (OFFSET_OK) {
+      const dur = Math.min(1.4, 0.4 + a.railLen * 0.028);
+      a.ln.style.transition = "stroke-dashoffset " + dur + "s cubic-bezier(.45,0,.9,.5)";
+      a.ln.style.strokeDashoffset = -a.railLen;
+      a.hd.style.transition = "offset-distance " + dur + "s cubic-bezier(.45,0,.9,.5)";
+      a.hd.style.offsetDistance = a.railLen + "px";
+      g.classList.add("gone");
+    } else {
+      const h = a.cells[0];
+      const distToEdge = { up: h.y, down: ROWS - 1 - h.y, left: h.x, right: COLS - 1 - h.x }[a.dir];
+      const fly = distToEdge + a.cells.length + 3;
+      g.style.setProperty("--tx", (DX[a.dir] * fly) + "px");
+      g.style.setProperty("--ty", (DY[a.dir] * fly) + "px");
+      g.classList.add("gone-legacy");
+    }
+    gStats();
+    if (G.left === 0) gWin();
+  } else {
+    G.errs++;
+    g.classList.add("bump");
+    setTimeout(() => g.classList.remove("bump"), 350);
+    gStats();
+    if (G.errs >= MISTAKES_MAX) {
+      gMsgShow(MISTAKES_MAX + " Fähler – s Brätt mischlet sich nüü. Es sind no " + G.left + " gsi… vo vorne! 😉", "#FFC7B8");
+      genBoard();
+      gRenderBoard();
+    }
+  }
+}
+
+function awardStamp() {
+  if (stampCount < TOTAL_STAMPS) {
+    stampCount++;
+    saveCard();
+    renderStamps(true);
+  }
+}
+
+function gWin() {
+  G.active = false;
+  $("gamebox").classList.add("hidden");
+  awardStamp();
+  gMsgShow("Alli " + ARROW_COUNT + " Pfyl befriit! Respekt. Stämpfel " + stampCount + " gsetzt – de Mule isch friigschaltet. 🍹", "#9FE3A8");
+}
+
+/* Wäg A: Stämpfel-Code vo de Kursleitig */
 $("btnCode").addEventListener("click", () => {
   const val = $("code").value.trim().toUpperCase();
-  const msg = $("codemsg");
-  msg.style.display = "block";
-  if (!val) { msg.style.color = "#FFC7B8"; msg.textContent = "Zerscht en Code iigäh."; return; }
-  if (val !== STAMP_CODE.toUpperCase()) {
-    msg.style.color = "#FFC7B8";
-    msg.textContent = "Dä Code kennt d Kursleitig nid. Tipp: De richtig git's nach der Tour. 😉";
+  const m = $("codemsg");
+  m.style.display = "block";
+  if (!val) { m.style.color = "#FFC7B8"; m.textContent = "Zerscht en Code iigäh."; return; }
+  if (!STAMP_CODE_RE.test(val)) {
+    m.style.color = "#FFC7B8";
+    m.textContent = "Dä Code kennt d Kursleitig nid. Tipp: De richtig git's nach der Tour – oder gwünn s Puzzle. 😉";
     return;
   }
-  if (stampCount >= TOTAL_STAMPS) {
-    msg.style.color = "var(--muted)"; msg.textContent = "Charte isch scho voll – easy bliibe."; return;
-  }
-  stampCount++;
-  saveCard();
-  renderStamps(true);
-  msg.style.color = "#9FE3A8";
-  msg.textContent = "Stämpfel " + stampCount + " gsetzt! De Mule isch friigschaltet. 🍹";
+  awardStamp();
+  m.style.color = "#9FE3A8";
+  m.textContent = "Code stimmt! Stämpfel " + stampCount + " gsetzt – de Mule isch friigschaltet. 🍹";
   $("code").value = "";
+});
+$("code").addEventListener("keydown", e => { if (e.key === "Enter") $("btnCode").click(); });
+
+$("btnGame").addEventListener("click", () => {
+  G.active = true;
+  $("btnGame").classList.add("hidden");
+  $("gamebox").classList.remove("hidden");
+  $("gmsg").style.display = "none";
+  genBoard();
+  gRenderBoard();
 });
 
 /* ---------- Datum-Optione ---------- */
@@ -470,7 +759,7 @@ $("btnCode").addEventListener("click", () => {
 
 /* ---------- De flüchtend Nei-Button ---------- */
 const nei = $("btnNei");
-const taunts = ["Nei", "Sicher?", "Würkli?!", "Überleggs dier 😏", "Chasch mi nid verwütsche",
+const taunts = ["Nei", "Sicher?", "Würkli?!", "Überleggs dier 😉", "Chasch mi nid verwütsche",
                 "De Trail wartet…", "Es git kei Nei 😄", "Gib uf"];
 let dodges = 0;
 let surrendered = false;
@@ -536,7 +825,6 @@ function show(id) {
 
 function goStep2a() {
   nei.classList.add("hidden");
-  $("psNei").classList.toggle("hidden", dodges > 0);
   show("step2a");
   $("uname").focus();
 }
@@ -579,6 +867,7 @@ $("btnSend").addEventListener("click", async () => {
   const msg = "🚵 Aamäldig Basiskurs 301!\n" +
               "Vo: " + username + "\n" +
               "Täg: " + picked.join(", ") + "\n" +
+              "Mini-Cremeschnitte: " + (cremeOn ? "JA, 23 Stück 🍰" : "nei") + "\n" +
               "Moscow Mule: " + (muleOn ? "JA (Charte voll) 🍹" : "no gsperrt (" + stampCount + "/" + TOTAL_STAMPS + ")") +
               ($("msg").value.trim() ? "\nBemärkig: " + $("msg").value.trim() : "");
 
@@ -592,7 +881,8 @@ $("btnSend").addEventListener("click", async () => {
     });
     if (!res.ok) throw new Error("ntfy " + res.status);
     $("recap").textContent = username + ", du bisch aagmäldet für: " + picked.join(" · ") +
-      (muleOn ? ". De Moscow Mule staht kalt parat. 🍹" : ". De Mule folgt, sobald d Charte voll isch (" + stampCount + "/" + TOTAL_STAMPS + ").");
+      (cremeOn ? " D 23 Mini-Cremeschnitte sind in Produktion. 🍰" : "") +
+      (muleOn ? " De Moscow Mule staht kalt parat. 🍹" : " De Mule folgt, sobald d Charte voll isch (" + stampCount + "/" + TOTAL_STAMPS + ").");
     $("countdown").textContent = countdownText();
     show("step3");
   } catch (e) {
